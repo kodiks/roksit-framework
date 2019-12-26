@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "roksit-lib": [
+        "dist/roksit-lib"
+      ],
+      "roksit-lib/*": [
+        "dist/roksit-lib/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
