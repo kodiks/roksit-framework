@@ -7,7 +7,15 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "copy-scss": "cp -r projects/roksit-lib/src/lib/assets dist/roksit-lib/assets",
+    "copy-files": "cp README.md dist/roksit-lib",
+    "pack-archive": "cd dist/roksit-lib && npm pack . && cp roksit-lib-0.*.tgz ../..",
+    "remove-archive": "rm dist/roksit-lib/roksit-lib-0.*.tgz && cd ../..",
+    "compile-lib": "ng build roksit-lib && npm run copy-scss && npm run copy-files && npm run pack-archive && npm run remove-archive",
+    "schematics:build": "tsc -p projects/schematics/tsconfig.json",
+    "schematics:copy": "npm run schematics:build && webpack",
+    "compile": "npm run compile-lib && npm run schematics:copy"
   },
   "private": true,
   "dependencies": {
@@ -21,7 +29,8 @@
     "@angular/router": "~8.2.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
-    "zone.js": "~0.9.1"
+    "zone.js": "~0.9.1",
+    "roksit-lib": "file:roksit-lib-0.0.1.tgz"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.802.2",
