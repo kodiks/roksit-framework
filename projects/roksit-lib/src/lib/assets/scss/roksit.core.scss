@@ -2,7 +2,12 @@
     Roksit Core Scss Importing
 */
 
-@import "./bootstrap/bootstrap.scss";
+@import "./bootstrap/bootstrap-reboot.scss";
+@import "./bootstrap/bootstrap-grid.scss";
+
+@import "./core/variables.scss";
 
 @import "./core/colors.scss";
 @import "./core/helper.scss";
+
+@import "./core/components/button.scss";

@@ -63,7 +63,9 @@
               "projects/roksit-tester/src/assets"
             ],
             "styles": [
-              "node_modules/roksit-lib/assets/scss/roksit.core.scss",
+              // "node_modules/roksit-lib/assets/scss/roksit.core.scss",
+              // "dist/roksit-lib/assets/scss/roksit.core.scss",
+              "projects/roksit-lib/src/lib/assets/scss/roksit.core.scss",
               "projects/roksit-tester/src/styles.scss"
             ],
             "scripts": []

@@ -1,3 +1,68 @@
 .btn {
-    
+  background: $white;
+  padding: 11px 20px;
+  border: 1px solid $o-grey;
+  border-radius: $border-radius;
+  color: $accent;
+  font-size: $font-size;
+  font-weight: $font-weight;
+
+  &.btn-default {
+    color: $blue-grey;
+  }
+
+  &.btn-icon {
+    i-feather {
+      margin-right: 10px;
+
+      .feather {
+        position: relative;
+        top: -2px;
+        color: $blue-grey;
+      }
+    }
+
+    &:not(.btn-link):focus {
+      .feather {
+        color: $white;
+      }
+    }
+  }
+
+  &.btn-link {
+    border: none;
+
+    &:focus {
+      outline: none !important;
+      color: $primary;
+
+      .feather  {
+        color: $primary !important;
+      }
+    }
+  }
+
+  &:hover {
+    color: $primary;
+    border-color: $primary;
+    transition: 0.2s;
+  }
+
+  &:not(.btn-link):focus {
+    outline: none !important;
+    color: $white;
+    background: $primary;
+    border-color: $primary;
+  }
+
+  &.disabled,
+  [disabled],
+  &:disabled {
+    color: $light-blue-grey;
+    border-color: $disabled;
+
+    .feather {
+      color: $light-blue-grey;
+    }
+  }
 }

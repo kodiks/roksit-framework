@@ -1,7 +1,13 @@
 import { NgModule } from '@angular/core';
+import { IconsModule } from './icons/icons.module';
 
 @NgModule({
-    imports: [],
+    imports: [
+        IconsModule
+    ],
+    exports: [
+        IconsModule
+    ],
     declarations: [],
     bootstrap: [],
 })

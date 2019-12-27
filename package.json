@@ -15,7 +15,8 @@
     "compile-lib": "ng build roksit-lib && npm run copy-scss && npm run copy-files && npm run pack-archive && npm run remove-archive",
     "schematics:build": "tsc -p projects/schematics/tsconfig.json",
     "schematics:copy": "npm run schematics:build && webpack",
-    "compile": "npm run compile-lib && npm run schematics:copy"
+    "compile": "npm run compile-lib && npm run schematics:copy",
+    "build:watch": "ng build roksit-lib && npm run copy-scss"
   },
   "private": true,
   "dependencies": {
@@ -27,10 +28,11 @@
     "@angular/platform-browser": "~8.2.0",
     "@angular/platform-browser-dynamic": "~8.2.0",
     "@angular/router": "~8.2.0",
+    "angular-feather": "^6.0.8",
+    "roksit-lib": "file:roksit-lib-0.0.1.tgz",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
-    "zone.js": "~0.9.1",
-    "roksit-lib": "file:roksit-lib-0.0.1.tgz"
+    "zone.js": "~0.9.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.802.2",
