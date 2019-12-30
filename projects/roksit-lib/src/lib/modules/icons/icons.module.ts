@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { FeatherModule } from 'angular-feather';
 import { allIcons } from 'angular-feather/icons';
 
@@ -10,4 +10,8 @@ import { allIcons } from 'angular-feather/icons';
         FeatherModule
     ]
 })
-export class IconsModule { }
+export class IconsModule {
+    public static forRoot(): ModuleWithProviders {
+        return { ngModule: IconsModule, providers: [] };
+    }
+}

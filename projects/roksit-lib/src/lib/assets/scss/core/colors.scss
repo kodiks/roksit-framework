@@ -1,5 +1,7 @@
 $primary: #3397c5;
 
+$primary-light-200: #bdeaff;
+
 $accent: #ff7b00;
 
 $security: #f95656;
@@ -16,6 +18,8 @@ $total: #4353ff;
 
 $blue-grey: #97a5bb;
 
+$gray: #445165;
+
 $light-blue-grey: #ccd4e0;
 
 $o-grey: rgba(37, 38, 94, 0.2);
@@ -27,3 +31,30 @@ $disabled: rgba(68, 81, 101, 0.1);
 */
 
 $white: #ffffff;
+
+$theme-colors: (
+  "primary": $primary,
+  "primary-light-200": $primary-light-200,
+  "accent": $accent,
+  "security": $security,
+  "harmfull": $harmfull,
+  "safe": $safe,
+  "unsafe": $unsafe,
+  "total": $total,
+  "blue-grey": $blue-grey,
+  "gray": $gray,
+  "light-blue-grey": $light-blue-grey,
+  "o-grey": $o-grey,
+  "disabled": $disabled,
+  "white": $white
+);
+
+@each $name, $theme-color in $theme-colors {
+  .text-#{$name} {
+    color: $theme-color;
+  }
+
+  .bg-#{$name} {
+    background: $theme-color;
+  }
+}

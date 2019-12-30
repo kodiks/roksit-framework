@@ -1,12 +1,15 @@
 import { NgModule } from '@angular/core';
 import { IconsModule } from './icons/icons.module';
+import { RkMenuModule } from './rk-menu/rk-menu.module';
 
 @NgModule({
     imports: [
-        IconsModule
+        IconsModule,
+        RkMenuModule,
     ],
     exports: [
-        IconsModule
+        IconsModule,
+        RkMenuModule,
     ],
     declarations: [],
     bootstrap: [],

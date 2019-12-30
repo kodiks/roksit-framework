@@ -1,3 +1,21 @@
+@mixin widthAndHeight($width, $height, $class: ".feather", $selector: i-feather) {
+  #{$class} {
+    width: $width;
+    height: $height;
+  }
+
+  #{$selector} {
+    width: $width;
+    height: $height;
+  }
+}
+
+@mixin iconMargin($marginRight) {
+  i-feather {
+    margin-right: $marginRight !important;
+  }
+}
+
 .btn {
   background: $white;
   padding: 11px 20px;
@@ -6,6 +24,50 @@
   color: $accent;
   font-size: $font-size;
   font-weight: $font-weight;
+
+  /* Button Size */
+
+  &.btn-xl {
+    font-size: 16px;
+    padding: 16px 20px;
+
+    @include widthAndHeight(24px, 24px);
+    @include iconMargin(10px);
+  }
+
+  &.btn-large {
+    font-size: 16px;
+    padding: 14px 20px;
+
+    @include widthAndHeight(24px, 24px);
+    @include iconMargin(10px);
+  }
+
+  &.btn-medium {
+    font-size: 14px;
+    padding: 11px 20px;
+
+    @include widthAndHeight(20px, 20px);
+    @include iconMargin(8px);
+  }
+
+  &.btn-small {
+    font-size: 12px;
+    padding: 9px 20px;
+
+    @include widthAndHeight(16px, 16px);
+    @include iconMargin(7px);
+  }
+
+  &.btn-xs {
+    font-size: 10px;
+    padding: 5px 12px;
+
+    @include widthAndHeight(12px, 12px);
+    @include iconMargin(5px);
+  }
+
+  /* #Button Size */
 
   &.btn-default {
     color: $blue-grey;
@@ -16,8 +78,6 @@
       margin-right: 10px;
 
       .feather {
-        position: relative;
-        top: -2px;
         color: $blue-grey;
       }
     }
@@ -38,6 +98,16 @@
 
       .feather  {
         color: $primary !important;
+      }
+    }
+
+    &.disabled,
+    &:disabled,
+    &[disabled] {
+      color: $light-blue-grey;
+
+      .feather {
+        color: $light-blue-grey;
       }
     }
   }

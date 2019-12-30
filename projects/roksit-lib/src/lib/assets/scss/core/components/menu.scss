@@ -1,0 +1,79 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+
+  .menu-item {
+    outline: 0;
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    color: $gray;
+    font-size: $font-size;
+    font-weight: $font-weight;
+    border-radius: 5px;
+    align-items: center;
+    border: 1px solid transparent;
+    margin-bottom: 12px;
+
+    .icon {
+      width: 24px;
+      height: 24px;
+      color: $primary;
+    }
+
+    .text {
+      margin-left: 14px;
+      flex: 1;
+      text-align: left;
+    }
+
+    .arrow-down {
+      width: 24px;
+      height: 24px;
+      color: $blue-grey;
+    }
+
+    &:hover {
+      border: 1px solid $primary;
+      color: $primary;
+      box-shadow: 0 2px 10px 0 rgba(37, 38, 94, 0.15);
+      transition: 0.2s;
+    }
+
+    &:focus,
+    &.active {
+      background: $primary;
+      color: $white;
+      box-shadow: 0 2px 10px 0 rgba(37, 38, 94, 0.15);
+      i-feather {
+        color: $white;
+      }
+    }
+
+    &.active {
+      .icon.arrow {
+        position: relative;
+        transform: rotate(180deg);
+        transition: .2s;
+      }
+    }
+
+    &.default  {
+      color: $blue-grey;
+      font-size: 12px;
+      .icon {
+        color: $blue-grey !important;
+      }
+
+      &:hover {
+        color: $primary;
+      }
+
+      &:focus  {
+        background: $primary-light-200;
+        color: $primary;
+      }
+    }
+  }
+}

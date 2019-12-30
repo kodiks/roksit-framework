@@ -1,0 +1,11 @@
+<button class="menu-item" [ngClass]="{'active': isActive}">
+    <div class="icon">
+        <i-feather [name]="icon"></i-feather>
+    </div>
+    <div class="text">
+        {{ text }}
+    </div>
+    <div class="icon arrow">
+        <i-feather name="chevron-down"></i-feather>
+    </div>
+</button>
