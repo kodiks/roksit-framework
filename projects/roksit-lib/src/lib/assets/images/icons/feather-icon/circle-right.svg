@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>feather-icon/circle-right</title>
+    <desc>Created with Sketch.</desc>
+    <g id="feather-icon/circle-right" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M12,0 C18.627417,0 24,5.372583 24,12 C24,18.627417 18.627417,24 12,24 C5.372583,24 0,18.627417 0,12 C0,5.372583 5.372583,0 12,0 Z M9.25105133,6.25105133 C8.91631622,6.58578644 8.91631622,7.12849928 9.25105133,7.46323438 L13.7878169,12 L9.25105133,16.5367656 C8.91631622,16.8715007 8.91631622,17.4142136 9.25105133,17.7489487 C9.58578644,18.0836838 10.1284993,18.0836838 10.4632344,17.7489487 L15.6060915,12.6060915 C15.9408266,12.2713564 15.9408266,11.7286436 15.6060915,11.3939085 L10.4632344,6.25105133 C10.1284993,5.91631622 9.58578644,5.91631622 9.25105133,6.25105133 Z" id="Combined-Shape" fill="#97A5BB"></path>
+    </g>
+</svg>
