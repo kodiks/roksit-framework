@@ -1,0 +1,52 @@
+.rk-input {
+  outline: 0;
+  border: 1px solid $light-blue-grey;
+  border-radius: 5px;
+  background: $white;
+  padding: 8px 14px;
+  font-size: 12px;
+  color: $blue-grey;
+  transition: 0.1s;
+  height: 36px;
+
+  ::placeholder {
+    color: $blue-grey;
+  }
+
+  &.textarea {
+    vertical-align: top;
+    height: auto;
+  }
+
+  &:focus {
+    border-color: $primary;
+    box-shadow: 0 2px 10px 0 rgba(37, 38, 94, 0.15);
+    caret-color: $primary;
+    color: $gray;
+    transition: 0.1s;
+  }
+
+  &:disabled,
+  &.disabled,
+  &[disabled] {
+    background: $pale-grey;
+    border-color: rgba($color: $light-blue-grey, $alpha: 0.5);
+    color: $light-blue-grey;
+
+    &::placeholder {
+      color: $light-blue-grey;
+    }
+  }
+
+  &:invalid {
+    border-color: $security;
+
+    &::placeholder {
+      color: $security;
+    }
+
+    &:focus {
+      caret-color: $security;
+    }
+  }
+}
