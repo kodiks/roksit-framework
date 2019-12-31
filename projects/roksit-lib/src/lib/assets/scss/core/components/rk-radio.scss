@@ -1,0 +1,95 @@
+$rk-radio-checked-color: $primary;
+$rk-radio-border-color: $primary;
+$rk-radio-size: 22px;
+$rk-radio-checked-size: 10px;
+$rk-radio-ripple-size: 15px;
+$rk-radio-label-color: #303759;
+
+$disabled-rk-radio-color: #979ebc;
+
+@keyframes ripple {
+  0% {
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);
+  }
+  50% {
+    box-shadow: 0px 0px 0px $rk-radio-ripple-size rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    box-shadow: 0px 0px 0px $rk-radio-ripple-size rgba(0, 0, 0, 0);
+  }
+}
+
+.rk-radio {
+  margin: 16px 0;
+
+  &.rk-radio-inline {
+    display: inline-block;
+  }
+
+  input[type="radio"] {
+    display: none;
+    &:checked + label:before {
+      border-color: $rk-radio-checked-color;
+      //   animation: ripple 0.2s linear forwards;
+    }
+    &:checked + label:after {
+      transform: scale(1);
+    }
+  }
+
+  input[type="radio"]:disabled,
+  input[type="radio"].disabled,
+  input[type="radio"][disabled] {
+    &:checked + label::before {
+      border-color: $disabled-rk-radio-color;
+    }
+
+    & + label:before {
+      border: 2px solid $disabled-rk-radio-color;
+    }
+
+    & + label {
+      color: $disabled-rk-radio-color;
+    }
+
+    & + label:after {
+      background: $disabled-rk-radio-color;
+    }
+  }
+
+  label {
+    display: inline-block;
+    min-height: $rk-radio-size;
+    position: relative;
+    padding: 0 ($rk-radio-size + 10px);
+    margin-bottom: 0;
+    cursor: pointer;
+    vertical-align: middle;
+    color: $rk-radio-label-color;
+    padding-top: 2px;
+    font-size: 12px;
+    &:before,
+    &:after {
+      position: absolute;
+      content: "";
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      transition-property: transform, border-color;
+    }
+    &:before {
+      left: 0;
+      top: 0;
+      width: $rk-radio-size;
+      height: $rk-radio-size;
+      border: 2px solid $rk-radio-border-color;
+    }
+    &:after {
+      top: $rk-radio-size / 2 - $rk-radio-checked-size / 2;
+      left: $rk-radio-size / 2 - $rk-radio-checked-size / 2;
+      width: $rk-radio-checked-size;
+      height: $rk-radio-checked-size;
+      transform: scale(0);
+      background: $rk-radio-checked-color;
+    }
+  }
+}
