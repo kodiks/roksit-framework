@@ -1,0 +1,16 @@
+<div class="rk-select" (click)="!itemsContainerHidden ? setItemsContainerHidden(true) : setItemsContainerHidden(false)">
+    <div class="rk-select-value">
+        {{ selectedOption ? selectedOption.displayText : chooseText }}
+    </div>
+
+    <i-feather name="chevron-down" class="rk-select-icon" [ngClass]="{'transformed': !itemsContainerHidden}"></i-feather>
+
+    <div class="rk-select-items-container" [hidden]="itemsContainerHidden">
+        <div class="rk-select-items">
+            <div class="rk-select-item" [ngClass]="{'active': index == selectedIndex}"
+                *ngFor="let option of options; let index = index" (click)="selectOption(option, index)">
+                {{ option.displayText }}
+            </div>
+        </div>
+    </div>
+</div>

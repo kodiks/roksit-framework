@@ -1,6 +1,23 @@
 <div class="container-fluid mt-2">
   <div class="row">
     <div class="col-12">
+      <!-- <div class="rk-select" >
+        <select [(ngModel)]="zz">
+          <option value="1" selected>Text1</option>
+          <option value="2">Text2</option>
+          <option value="3">Text3</option>
+          <option value="4">Text4</option>
+        </select>
+      </div> -->
+
+      <rk-select [options]="options"></rk-select>
+
+      {{zz}}
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-12">
       <button class="btn">Text</button>
       <button class="btn btn-default ml-2">Text</button>
       <button class="btn btn-icon ml-2">

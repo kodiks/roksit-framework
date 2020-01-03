@@ -68,7 +68,9 @@
               "projects/roksit-lib/src/lib/assets/scss/roksit.core.scss",
               "projects/roksit-tester/src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -162,6 +164,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "roksit-lib"
 }

@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { RoksitModule } from 'projects/roksit-lib/src/public-api';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -11,6 +13,8 @@ import { RoksitModule } from 'projects/roksit-lib/src/public-api';
   imports: [
     BrowserModule,
     RoksitModule,
+    CommonModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

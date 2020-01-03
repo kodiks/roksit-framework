@@ -1,4 +1,5 @@
 $switch-base-color: #4fb75d;
+$switch-bg-color: #cbd0e5;
 
 .rk-form-switch {
   display: inline-block;
@@ -16,7 +17,7 @@ $switch-base-color: #4fb75d;
   margin-right: 0.5rem;
   width: 52px;
   height: 24px;
-  background-color: #9d9d9d;
+  background-color: $switch-bg-color;
   border-radius: 12px;
   vertical-align: middle;
   transition: all 0.3s linear;
@@ -28,7 +29,7 @@ $switch-base-color: #4fb75d;
   left: 0;
   width: 48px;
   height: 22px;
-  background-color: #9d9d9d;
+  background-color: $switch-bg-color;
   border-radius: 11px;
   transform: translate3d(2px, 2px, 0) scale3d(1, 1, 1);
   transition: all 0.25s linear;
