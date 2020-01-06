@@ -1,0 +1,15 @@
+<div class="pagination-row">
+    <div class="page-info">
+        <div class="pageview-count">
+            <rk-select [options]="pageViewCounts"></rk-select>
+        </div>
+
+        <span>Gösterilen {{ (currentPage - 1) * pageViewCount  }} - {{  currentPage  * pageViewCount }} /
+            {{ totalCount }}</span>
+    </div>
+
+    <div>
+        <ngb-pagination [collectionSize]="totalCount" [(page)]="currentPage" [pageSize]="pageViewCount"
+            [boundaryLinks]="true"></ngb-pagination>
+    </div>
+</div>
