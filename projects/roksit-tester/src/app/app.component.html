@@ -1,18 +1,10 @@
 <div class="container-fluid mt-2">
   <div class="row">
-    <div class="col-12">
-      <!-- <div class="rk-select" >
-        <select [(ngModel)]="zz">
-          <option value="1" selected>Text1</option>
-          <option value="2">Text2</option>
-          <option value="3">Text3</option>
-          <option value="4">Text4</option>
-        </select>
-      </div> -->
-
-      <rk-select [options]="options"></rk-select>
-
-      {{zz}}
+    <div class="col-6">
+      <rk-select [(ngModel)]="name" [options]="options"></rk-select>
+    </div>
+    <div class="col-6">
+      <rk-select class="d-block" [(ngModel)]="name1" icon="calendar" [options]="options"></rk-select>
     </div>
   </div>
 

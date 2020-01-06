@@ -12,14 +12,27 @@
 
   font-size: 12px;
   line-height: 36px;
+  z-index: 1001;
 
-  &:hover {
+  display: flex;
+  padding-left: 10px;
+
+  &.disabled {
+    border-color: rgba($color: $light-blue-grey, $alpha: 0.5);
+    color: $light-blue-grey;
+  }
+
+  &:not(.disabled):hover {
     background: $primary;
     color: $white !important;
     border-color: $primary;
   }
 
   .rk-select-icon {
+    position: absolute;
+  }
+
+  .rk-arrow-select-icon {
     position: absolute;
     top: 0;
     right: 10px;
@@ -51,6 +64,11 @@
     overflow: hidden;
     overflow-y: auto;
     max-height: 400px;
+
+    &:last-child {
+      z-index: 1009;
+    }
+
     .rk-select-items {
       width: 100%;
       height: 100%;
