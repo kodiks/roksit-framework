@@ -1,0 +1,17 @@
+.pagination-row {
+    display: flex;
+
+    .page-info {
+        display: flex;
+        flex-grow: 1;
+
+        .pageview-count {
+            width: 200px;
+        }
+
+        span {
+            padding-top: 10px;
+            margin-left: 15px;
+        }
+    }
+}
