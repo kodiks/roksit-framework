@@ -1,10 +1,12 @@
-import { NgModule, ModuleWithProviders } from '@angular/core';
+import { NgModule, ModuleWithProviders, Directive, Input, TemplateRef } from '@angular/core';
 import { IconsModule } from '../icons/icons.module';
 import { CommonModule } from '@angular/common';
 import { RkTableService } from './rk-table.service';
 import { RkTablePaginationComponent } from './rk-table-pagination/rk-table-pagination.component';
 import {NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
 import { RkSelectModule } from '../rk-select/rk-select.module';
+import { RkTableComponent } from './rk-table/rk-table.component';
+ 
 
 @NgModule({
     imports: [
@@ -14,13 +16,15 @@ import { RkSelectModule } from '../rk-select/rk-select.module';
         RkSelectModule
     ],
     exports: [
-        RkTablePaginationComponent
+        RkTablePaginationComponent,
+        RkTableComponent 
     ],
     declarations: [
-        RkTablePaginationComponent
+        RkTablePaginationComponent,
+        RkTableComponent 
     ],
     providers: [
-        RkTableService
+        RkTableService 
     ],
 })
 export class RkTableModule {

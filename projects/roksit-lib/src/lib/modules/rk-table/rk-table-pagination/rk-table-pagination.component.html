@@ -9,7 +9,7 @@
     </div>
 
     <div>
-        <ngb-pagination [collectionSize]="totalCount" [(page)]="currentPage" [pageSize]="pageViewCount"
+        <ngb-pagination (pageChange)="onPageChange($event)" [collectionSize]="totalCount" [(page)]="currentPage" [pageSize]="pageViewCount"
             [boundaryLinks]="true"></ngb-pagination>
     </div>
 </div>
