@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { RkTableService } from './rk-table.service';
 import { RkTablePaginationComponent } from './rk-table-pagination/rk-table-pagination.component';
 import {NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
-import { RkSelectModule } from '../rk-select/rk-select.module';
 import { RkTableComponent } from './rk-table/rk-table.component';
  
 
@@ -13,7 +12,6 @@ import { RkTableComponent } from './rk-table/rk-table.component';
         CommonModule,
         IconsModule,
         NgbPaginationModule,
-        RkSelectModule
     ],
     exports: [
         RkTablePaginationComponent,

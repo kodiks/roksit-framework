@@ -1,7 +1,4 @@
 import { Component } from '@angular/core';
-import { RkSelectModel } from 'projects/roksit-lib/src/lib/modules/rk-select/rk-select.component';
-
-
 
 interface Country {
   name: string;
@@ -47,7 +44,7 @@ export class AppComponent {
 
   countries = COUNTRIES;
 
-  options: RkSelectModel[] = [
+  options: any[] = [
     { displayText: 'Text 1', value: 1 },
     { displayText: 'Text 2', value: 1 },
     { displayText: 'Text 3', value: 1 },

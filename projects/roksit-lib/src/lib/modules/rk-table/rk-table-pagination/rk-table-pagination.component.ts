@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { RkSelectModel } from '../../rk-select/rk-select.component';
 
 @Component({
     selector: 'rk-table-pagination',
@@ -16,11 +15,11 @@ export class RkTablePaginationComponent implements OnInit {
     @Output() pageViewCountChange: EventEmitter<number> = new EventEmitter();
 
 
-    pageViewCounts: RkSelectModel[] = [
-        { displayText: '20', value: 20 },
-        { displayText: '50', value: 50 },
-        { displayText: '100', value: 100 }
-    ];
+    // pageViewCounts: RkSelectModel[] = [
+    //     { displayText: '20', value: 20 },
+    //     { displayText: '50', value: 50 },
+    //     { displayText: '100', value: 100 }
+    // ];
 
     constructor() { }
 
@@ -28,7 +27,7 @@ export class RkTablePaginationComponent implements OnInit {
         this.pageChange.emit(pageNumber);
     }
 
-    onPageViewCountChange(pageViewcount: RkSelectModel) {
+    onPageViewCountChange(pageViewcount) {
         this.pageViewCountChange.emit(pageViewcount.value as number);
     }
 
