@@ -1,7 +1,7 @@
 <div class="pagination-row">
     <div class="page-info">
         <div class="pageview-count">
-            <rk-select [options]="pageViewCounts"></rk-select>
+            <rk-select [options]="pageViewCounts" (selectedChange)="onPageViewCountChange($event)" ></rk-select>
         </div>
 
         <span>Gösterilen {{ (currentPage - 1) * pageViewCount  }} - {{  currentPage  * pageViewCount }} /
@@ -9,7 +9,7 @@
     </div>
 
     <div>
-        <ngb-pagination [collectionSize]="totalCount" [(page)]="currentPage" [pageSize]="pageViewCount"
+        <ngb-pagination (pageChange)="onPageChange($event)" [collectionSize]="totalCount" [(page)]="currentPage" [pageSize]="pageViewCount"
             [boundaryLinks]="true"></ngb-pagination>
     </div>
 </div>

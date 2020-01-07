@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
     selector: 'rk-select',
@@ -13,6 +13,8 @@ export class RkSelectComponent implements OnInit {
 
     @Input() chooseText = 'Lütfen seçiniz';
 
+    @Output("selectedChange") onSelect : EventEmitter<RkSelectModel> = new EventEmitter();
+
     selectedIndex: number;
 
     selectedOption: RkSelectModel;
@@ -24,6 +26,8 @@ export class RkSelectComponent implements OnInit {
     public selectOption(option: RkSelectModel, index: number) {
         this.selectedOption = option;
         this.selectedIndex = index;
+
+        this.onSelect.emit(option);
 
         this.setItemsContainerHidden(false);
     }

@@ -1,0 +1,20 @@
+<div class="table">
+  <div class="table-content">
+    <table class="table table-striped">
+      <thead>
+        <ng-container *ngTemplateOutlet="headerTemplate">
+
+        </ng-container>
+      </thead>
+      <tbody>
+        <ng-container *ngTemplateOutlet="bodyTemplate">
+
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="table-pagination" *ngIf="showPagination">
+    <rk-table-pagination (pageChange)="onPageChange($event)" (pageViewCountChange)="onPageViewCountChange($event)" ></rk-table-pagination>
+  </div>
+</div>
