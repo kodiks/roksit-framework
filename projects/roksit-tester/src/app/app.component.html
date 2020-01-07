@@ -1,4 +1,4 @@
-<div class="container-fluid mt-2">
+<div class="container-fluid mt-2" style="padding-bottom: 50px;">
   <div class="row">
     <!-- <div class="col-6">
       <rk-select [(ngModel)]="name" [options]="options"></rk-select>
@@ -258,7 +258,8 @@
 
   <div class="row mt-3">
     <div class="col-6">
-      <rk-table [hTemp]="header" [bTemp]="body" (pageChange)="onPageChange($event)" (pageViewCountChange)="onPageViewCountChange($event)">
+      <rk-table [hTemp]="header" [bTemp]="body" (pageChange)="onPageChange($event)"
+        (pageViewCountChange)="onPageViewCountChange($event)">
         <ng-template #header>
           <tr>
             <th scope="col">#</th>
@@ -280,6 +281,13 @@
           </tr>
         </ng-template>
       </rk-table>
+    </div>
+  </div>
+
+
+  <div class="row mt-3">
+    <div class="col-6">
+      <rk-list [config]="listConfig" ></rk-list>
     </div>
   </div>
 </div>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RkListConfigModel } from 'projects/roksit-lib/src/lib/modules/rk-layout/rk-list/rk-list.component';
 
 interface Country {
   name: string;
@@ -61,6 +62,17 @@ export class AppComponent {
     { displayText: 'Text 15', value: 1 },
     { displayText: 'Text 16', value: 1 },
   ];
+
+  listConfig: RkListConfigModel = {
+    title: "Title",
+    items: [{
+      content: "Lorem ipsum is placeholder text commonly used in the graphic",
+      subContent: "20 minutes ago"
+    }, {
+      content: "Lorem ipsum is placeholder text commonly used in the graphic",
+      subContent: "20 minutes ago"
+    }]
+  }
 
   onPageChange(page: number) {
     this.countries = this.shuffle(this.countries);

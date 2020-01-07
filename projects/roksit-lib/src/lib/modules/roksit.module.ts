@@ -5,6 +5,7 @@ import { RkFilterBadgeModule } from './rk-filter-badge/rk-filter-badge.module';
 import { RkTableModule } from './rk-table/rk-table.module';
 import { NgSelect2Module } from 'ng-select2';
 import { SharedModule } from './shared/shared.module';
+import { RkLayoutModule } from './rk-layout/rk-layout.module';
 
 
 
@@ -15,14 +16,16 @@ import { SharedModule } from './shared/shared.module';
         RkMenuModule,
         RkFilterBadgeModule,
         RkTableModule,
-        NgSelect2Module
+        NgSelect2Module,
+        RkLayoutModule
     ],
     exports: [ 
         IconsModule,
         RkMenuModule,
         RkFilterBadgeModule,
         RkTableModule,
-        NgSelect2Module
+        NgSelect2Module,
+        RkLayoutModule
     ],
     declarations: [],
     bootstrap: [],
