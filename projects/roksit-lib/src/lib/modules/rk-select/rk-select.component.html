@@ -1,9 +1,13 @@
-<div class="rk-select" (click)="!itemsContainerHidden ? setItemsContainerHidden(true) : setItemsContainerHidden(false)">
+<div class="rk-select" [ngClass]="{'disabled': disabled}"
+    (click)="!itemsContainerHidden ? setItemsContainerHidden(true) : setItemsContainerHidden(false)">
+    <i-feather *ngIf="icon" name="{{icon}}"></i-feather>
+
     <div class="rk-select-value">
         {{ selectedOption ? selectedOption.displayText : chooseText }}
     </div>
 
-    <i-feather name="chevron-down" class="rk-select-icon" [ngClass]="{'transformed': !itemsContainerHidden}"></i-feather>
+    <i-feather name="chevron-down" class="rk-arrow-select-icon" [ngClass]="{'transformed': !itemsContainerHidden}">
+    </i-feather>
 
     <div class="rk-select-items-container" [hidden]="itemsContainerHidden">
         <div class="rk-select-items">

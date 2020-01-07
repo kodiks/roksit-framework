@@ -1,19 +1,35 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import * as $ from 'jquery';
+import { NgModel, NG_VALUE_ACCESSOR, NgControl, ControlValueAccessor } from '@angular/forms';
+import { Subscription } from 'rxjs';
+import { Component, OnInit, Self, Input, Output, ViewChild, EventEmitter } from '@angular/core';
 
 @Component({
     selector: 'rk-select',
     templateUrl: 'rk-select.component.html',
-    styleUrls: ['rk-select.component.scss']
+    styleUrls: ['rk-select.component.scss'],
+    // providers: [{
+    //     provide: NG_VALUE_ACCESSOR,
+    //     useExisting: RkSelectComponent,
+    //     multi: true,
+    // }],
 })
-export class RkSelectComponent implements OnInit {
+export class RkSelectComponent implements OnInit, ControlValueAccessor {
 
-    constructor() { }
+    constructor(
+        @Self() public controlDir: NgControl
+    ) {
+        controlDir.valueAccessor = this;
+    }
 
     @Input() options: RkSelectModel[];
+
+    @Input() disabled: boolean;
 
     @Input() chooseText = 'Lütfen seçiniz';
 
     @Output("selectedChange") onSelect : EventEmitter<RkSelectModel> = new EventEmitter();
+    
+    @Input() icon: string;
 
     selectedIndex: number;
 
@@ -21,10 +37,21 @@ export class RkSelectComponent implements OnInit {
 
     itemsContainerHidden = true;
 
-    ngOnInit() { }
+    @ViewChild(NgModel, { static: false }) model: NgModel;
+
+    private onChange: (value: string) => void;
+
+    private onTouched: (value: string) => void;
+
+    private valueChanges: Subscription;
+
+    ngOnInit() {
+        console.log(this.model);
+    }
 
     public selectOption(option: RkSelectModel, index: number) {
-        this.selectedOption = option;
+        this.writeValue(option);
+
         this.selectedIndex = index;
 
         this.onSelect.emit(option);
@@ -33,29 +60,36 @@ export class RkSelectComponent implements OnInit {
     }
 
     setItemsContainerHidden(hidden: boolean) {
-        this.itemsContainerHidden = hidden;
+        if (!this.disabled) {
+            this.itemsContainerHidden = hidden;
+        }
     }
 
     setBackdrop(isAdding: boolean) {
-        const appRoot = document.getElementsByTagName('app-root');
+        const appRoot = $('app-root');
 
         if (isAdding) {
-            appRoot.item(0).innerHTML += `<div class="rk-backdrop"></div>`;
+            appRoot.append(`<div class="rk-backdrop"></div>`);
 
-            appRoot.item(0).addEventListener('click', () => {
-                this.setBackdrop(false);
-            });
+            $('.rk-backdrop').remove();
+
+            this.setItemsContainerHidden(false);
         } else {
-            const backDrop = document.getElementsByClassName('rk-backdrop');
-
-            // tslint:disable-next-line: prefer-for-of
-            for (let i = 0; i < backDrop.length; i++) {
-                const element = backDrop[i];
-
-                element.remove();
-            }
-
+            $('.rk-backdrop').remove();
         }
+    }
+
+    writeValue(obj: any): void {
+        this.selectedOption = obj;
+    }
+    registerOnChange(fn: () => void): void {
+        // throw new Error("Method not implemented.");
+    }
+    registerOnTouched(fn: () => void): void {
+        // throw new Error("Method not implemented.");
+    }
+    setDisabledState?(isDisabled: boolean): void {
+        // throw new Error("Method not implemented.");
     }
 
 }
