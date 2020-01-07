@@ -2,23 +2,23 @@ import { NgModule } from '@angular/core';
 import { IconsModule } from './icons/icons.module';
 import { RkMenuModule } from './rk-menu/rk-menu.module';
 import { RkFilterBadgeModule } from './rk-filter-badge/rk-filter-badge.module';
-import { RkSelectModule } from './rk-select/rk-select.module';
 import { RkTableModule } from './rk-table/rk-table.module';
+import { NgSelect2Module } from 'ng-select2';
 
 @NgModule({
     imports: [
         IconsModule,
         RkMenuModule,
         RkFilterBadgeModule,
-        RkSelectModule,
-        RkTableModule
+        RkTableModule,
+        NgSelect2Module
     ],
     exports: [
         IconsModule,
         RkMenuModule,
         RkFilterBadgeModule,
-        RkSelectModule,
-        RkTableModule
+        RkTableModule,
+        NgSelect2Module
     ],
     declarations: [],
     bootstrap: [],
