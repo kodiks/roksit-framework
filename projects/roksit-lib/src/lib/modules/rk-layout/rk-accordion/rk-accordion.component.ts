@@ -26,7 +26,7 @@ export class RkAccordionComponent implements OnInit, OnChanges, AfterViewInit {
 
         this.panels.toArray().forEach(item => item.showAccordion = false);
 
-        comp.showAccordion = !comp.showAccordion;
+        comp.showAccordion = !status;
       });
     });
   }
