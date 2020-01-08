@@ -1,0 +1,34 @@
+::ng-deep .progress {
+  border-radius: 10px !important;
+  width: 94% !important;
+
+  .progress-bar {
+    border-radius: 10px !important;
+    width: 94% !important;
+  }
+}
+
+.percentage {
+  float: right;
+  margin-top: -5px;
+  font-size: 10px;
+  color: #445165;
+}
+
+.progressbar {
+  &.medium-size {
+    ::ng-deep .progress {
+      height: 15px !important;
+    }
+
+    .percentage {
+      font-size: 14px !important;
+      line-height: 1.7;
+    }
+  }
+  &.small-size {
+    ::ng-deep .progress {
+      height: 6px !important;
+    }
+  }
+}

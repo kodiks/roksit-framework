@@ -6,6 +6,7 @@ import { RkTableModule } from './rk-table/rk-table.module';
 import { NgSelect2Module } from 'ng-select2';
 import { SharedModule } from './shared/shared.module';
 import { RkLayoutModule } from './rk-layout/rk-layout.module';
+import { RkProgressBarModule } from './rk-progressbar/rk-progressbar.module';
 
 
 
@@ -17,7 +18,8 @@ import { RkLayoutModule } from './rk-layout/rk-layout.module';
         RkFilterBadgeModule,
         RkTableModule,
         NgSelect2Module,
-        RkLayoutModule
+        RkLayoutModule,
+        RkProgressBarModule
     ],
     exports: [ 
         IconsModule,
@@ -25,7 +27,8 @@ import { RkLayoutModule } from './rk-layout/rk-layout.module';
         RkFilterBadgeModule,
         RkTableModule,
         NgSelect2Module,
-        RkLayoutModule
+        RkLayoutModule,
+        RkProgressBarModule
     ],
     declarations: [],
     bootstrap: [],
