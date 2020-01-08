@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RkListConfigModel } from 'projects/roksit-lib/src/lib/modules/rk-layout/rk-list/rk-list.component';
+import { RkCardConfigModel } from 'projects/roksit-lib/src/lib/modules/rk-layout/rk-card/rk-card.component';
 
 interface Country {
   name: string;
@@ -72,6 +73,19 @@ export class AppComponent {
       content: "Lorem ipsum is placeholder text commonly used in the graphic",
       subContent: "20 minutes ago"
     }]
+  }
+
+  cardConfig: RkCardConfigModel = {
+    header : {
+      avatarUrl : "https://material.angular.io/assets/img/examples/shiba1.jpg",
+      subTitle : "Dog Breed",
+      title : "Shiba Inu"
+    },
+    body : {
+      imageUrl : "https://material.angular.io/assets/img/examples/shiba2.jpg",
+      content : `The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small,
+      agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.`
+    }
   }
 
   onPageChange(page: number) {

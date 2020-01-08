@@ -1,0 +1,21 @@
+<div class="rk-card">
+   <div class="rk-card-header">
+      <div class="rk-avatar">
+         <img [src]="config.header.avatarUrl">
+      </div>
+
+      <div class="rk-header-content">
+         <ul>
+            <li class="header-title">{{ config.header.title }}</li>
+            <li class="header-sub-title">{{ config.header.subTitle }}</li>
+         </ul>
+      </div>
+   </div>
+
+   <div class="rk-card-body">
+      <img *ngIf="config.body.imageUrl && config.body.imageUrl.length > 0" [src]="config.body.imageUrl">
+      <div class="rk-card-body-inner">
+         <p> {{ config.body.content }} </p>
+      </div>
+   </div>
+</div>
