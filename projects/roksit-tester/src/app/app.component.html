@@ -258,9 +258,8 @@
 
   <div class="row mt-3">
     <div class="col-6">
-      <rk-table  (pageChange)="onPageChange($event)"
-        (pageViewCountChange)="onPageViewCountChange($event)">
-        <ng-template #header >
+      <rk-table (pageChange)="onPageChange($event)" (pageViewCountChange)="onPageViewCountChange($event)">
+        <ng-template #header>
           <tr>
             <th scope="col">#</th>
             <th scope="col">Country</th>
@@ -286,15 +285,34 @@
 
 
   <div class="row mt-3">
-    <div class="col-6">
-      <rk-list [config]="listConfig" ></rk-list>
+    <div class="col-3">
+      <rk-list [config]="listConfig"></rk-list>
     </div>
   </div>
 
-  
+
   <div class="row mt-3">
     <div class="col-3">
-      <rk-card [config]="cardConfig" ></rk-card>
+      <rk-card [config]="cardConfig"></rk-card>
     </div>
   </div>
+
+
+  <div class="row mt-3">
+    <div class="col-3">
+      <rk-accordion >
+         <rk-accordion-panel *ngFor="let item of listConfig.items; let i = index" >
+           <rk-accordion-header-content>
+            {{ item.content }}
+           </rk-accordion-header-content>
+           <rk-accordion-header-sub-content>
+            {{ item.subContent }}
+           </rk-accordion-header-sub-content>
+
+           panel body {{ i + 1 }}
+         </rk-accordion-panel>
+      </rk-accordion>
+    </div>
+  </div>
+  
 </div>

@@ -72,6 +72,9 @@ export class AppComponent {
     }, {
       content: "Lorem ipsum is placeholder text commonly used in the graphic",
       subContent: "20 minutes ago"
+    }, {
+      content: "Lorem ipsum is placeholder text commonly used in the graphic",
+      subContent: "20 minutes ago"
     }]
   }
 
