@@ -3,6 +3,7 @@ import { IconsModule } from '../icons/icons.module';
 import { CommonModule } from '@angular/common';
 import { RkLayoutService } from './rk-layout.service';
 import { RkListComponent } from './rk-list/rk-list.component';
+import { RkCardComponent } from './rk-card/rk-card.component';
  
 
 @NgModule({
@@ -11,10 +12,12 @@ import { RkListComponent } from './rk-list/rk-list.component';
         IconsModule
     ],
     exports: [
-        RkListComponent
+        RkListComponent,
+        RkCardComponent
     ],
     declarations: [
-        RkListComponent
+        RkListComponent,
+        RkCardComponent
     ],
     providers: [
         RkLayoutService 
