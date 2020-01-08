@@ -258,9 +258,9 @@
 
   <div class="row mt-3">
     <div class="col-6">
-      <rk-table [hTemp]="header" [bTemp]="body" (pageChange)="onPageChange($event)"
+      <rk-table  (pageChange)="onPageChange($event)"
         (pageViewCountChange)="onPageViewCountChange($event)">
-        <ng-template #header>
+        <ng-template #header >
           <tr>
             <th scope="col">#</th>
             <th scope="col">Country</th>
