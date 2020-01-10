@@ -79,14 +79,14 @@ export class AppComponent {
   }
 
   cardConfig: RkCardConfigModel = {
-    header : {
-      avatarUrl : "https://material.angular.io/assets/img/examples/shiba1.jpg",
-      subTitle : "Dog Breed",
-      title : "Shiba Inu"
+    header: {
+      avatarUrl: "https://material.angular.io/assets/img/examples/shiba1.jpg",
+      subTitle: "Dog Breed",
+      title: "Shiba Inu"
     },
-    body : {
-      imageUrl : "https://material.angular.io/assets/img/examples/shiba2.jpg",
-      content : `The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small,
+    body: {
+      imageUrl: "https://material.angular.io/assets/img/examples/shiba2.jpg",
+      content: `The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small,
       agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.`
     }
   }
@@ -114,5 +114,9 @@ export class AppComponent {
       [a[i], a[j]] = [a[j], a[i]];
     }
     return a;
+  }
+
+  selectedChanged() {
+    console.log('selected changed !!!!');
   }
 }

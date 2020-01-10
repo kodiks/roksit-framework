@@ -1,127 +1,97 @@
-// /*the container must be positioned relative:*/
-// .rk-select {
-//   position: relative;
-//   display: inline-block;
-//   min-width: 75px;
-//   font-size: 16px !important;
-//   font-weight: normal !important;
-//   text-align: left !important;
-// }
+.rk-select {
+  position: relative;
+  font-size: 12px;
+  width: 100%;
+}
 
-// .rk-select select {
-//   display: none;
-//   /*hide original SELECT element:*/
-// }
+.rk-select select {
+  display: none;
+}
 
-// .select-selected {
-//   position: relative;
-//   background: $white;
-//   border: 1px solid $light-blue-grey;
-//   // border-radius: 5px;
-// }
+.select-selected {
+  color: $gray !important;
+  height: 36px;
+  border: 1px solid $light-blue-grey;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  user-select: none;
+  justify-content: space-between;
+}
 
-// /*style the arrow inside the select element:*/
-// .select-selected:after {
-//   position: absolute;
-//   // font-family: "Entypo";
-//   content: "";
-//   // top: 50%;
-//   transform: translateY(-50%);
-//   right: 10px;
-// }
+.select-selected.select-arrow-active {
+  background: $primary;
+  color: $white !important;
+  border-color: $primary;
+}
 
-// /*point the arrow upwards when the select box is open (active):*/
-// .select-selected.select-arrow-active:after {
-//   transform: rotate(180deg);
-//   top: 10px;
-// }
+.select-selected.select-arrow-active svg {
+  position: relative;
+  transform: rotate(180deg);
+}
 
-// /*style the items (options), including the selected item:*/
-// .select-items div {
-//   min-width: 200px;
-//   cursor: pointer;
-//   user-select: none;
-//   background: $white;
-//   height: 36px;
-//   padding: 0 14px;
-//   line-height: 36px;
-//   font-size: 12px;
-//   color: $gray;
-// }
+.select-items div {
+  color: $gray;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  cursor: pointer;
+  user-select: none;
+}
 
-// .select-selected {
-//   border: 1px solid $light-blue-grey;
-//   border-radius: 5px;
-//   min-width: 200px;
-//   cursor: pointer;
-//   user-select: none;
-//   background: $white;
-//   height: 36px;
-//   padding: 0 14px;
-//   line-height: 36px;
-//   font-size: 12px;
-//   color: $gray;
-// }
+.select-items {
+  position: absolute;
+  background-color: $white;
+  box-shadow: 0 2px 10px 0 rgba(51, 151, 197, 0.3);
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  z-index: 99;
+  max-height: 300px;
+  overflow: auto;
+  border-radius: 5px;
+}
 
-// /*style items (options):*/
-// .select-items {
-//   position: absolute;
-//   top: 100%;
-//   left: 0;
-//   right: 0;
-//   z-index: 99;
-//   border-radius: 8px;
-//   overflow: hidden;
-//   width: auto;
-//   max-height: 400px;
-//   overflow: auto;
-//   margin-top: 4px;
-//   box-shadow: 0 2px 10px 0 rgba(51, 151, 197, 0.3);
-// }
+.select-items .same-as-selected {
+}
 
-// /*hide the items when the select box is closed:*/
-// .select-hide {
-//   display: none;
-// }
+/* width */
 
-// .select-items div:hover,
-// .same-as-selected {
-//   background: $primary;
-//   color: $white;
-//   transition: 0.15s;
-// }
+.select-items::-webkit-scrollbar {
+  width: 5px;
+}
 
-// .rk-select.light-select .select-selected {
-//   background: #f5f5f5 !important;
-// }
+/* Track */
 
-// .rk-select.light-select .select-items div,
-// .rk-select.light-select .select-selected {
-//   color: #4a4a4a;
-//   background: #f5f5f5;
-// }
+::-webkit-scrollbar-track {
+  background: #e6e6e6;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
 
-// .rk-select.light-select .select-selected:after {
-//   color: #4b4b4b;
-// }
+/* Handle */
 
-// .rk-select.light-select .select-items {
-//   background: #f5f5f5;
-// }
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+}
 
-// .rk-select.light-select .select-items div:hover,
-// .rk-select.light-select .same-as-selected {
-//   background-color: rgba(208, 208, 208, 0.5);
-// }
+/* Handle on hover */
 
-// .rk-select.icon-left-select .select-selected {
-//   padding-left: 40px;
-// }
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
 
-// .rk-select.icon-left-select .icon {
-//   z-index: 99;
-// }
+.select-hide {
+  display: none;
+}
 
-// .selected-arrow-active {
-//   background: url(/projects/roksit-lib/src/lib/assets/images/icons/feather-icon/circle_up_down.svg) no-repeat 10px 0px;
-// }
+.select-items div:hover,
+.same-as-selected {
+  background: $primary;
+  color: $white !important;
+}

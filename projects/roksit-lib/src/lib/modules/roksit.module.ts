@@ -6,6 +6,7 @@ import { RkTableModule } from './rk-table/rk-table.module';
 import { NgSelect2Module } from 'ng-select2';
 import { SharedModule } from './shared/shared.module';
 import { RkLayoutModule } from './rk-layout/rk-layout.module';
+import { RkSelectModule } from './rk-select/rk-select.module';
 
 
 
@@ -16,18 +17,19 @@ import { RkLayoutModule } from './rk-layout/rk-layout.module';
         RkMenuModule,
         RkFilterBadgeModule,
         RkTableModule,
-        NgSelect2Module,
-        RkLayoutModule
+        RkLayoutModule,
+        RkSelectModule
     ],
-    exports: [ 
+    exports: [
         IconsModule,
         RkMenuModule,
         RkFilterBadgeModule,
         RkTableModule,
-        NgSelect2Module,
-        RkLayoutModule
+        RkLayoutModule,
+        RkSelectModule
     ],
     declarations: [],
+    entryComponents: [],
     bootstrap: [],
 })
 export class RoksitModule { }
