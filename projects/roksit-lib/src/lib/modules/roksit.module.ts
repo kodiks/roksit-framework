@@ -7,6 +7,9 @@ import { SharedModule } from './shared/shared.module';
 import { RkLayoutModule } from './rk-layout/rk-layout.module';
 import { RkSelectModule } from './rk-select/rk-select.module';
 import { RkAutoCompleteModule } from './rk-autocomplete/rk-autocomplete.module';
+import { RkDateModule } from './rk-date/rk-date.module';
+import { FormsModule } from '@angular/forms';
+import { FlatpickrModule } from 'angularx-flatpickr';
 
 @NgModule({
     imports: [
@@ -17,7 +20,9 @@ import { RkAutoCompleteModule } from './rk-autocomplete/rk-autocomplete.module';
         RkTableModule,
         RkLayoutModule,
         RkSelectModule,
-        RkAutoCompleteModule
+        RkAutoCompleteModule,
+        FormsModule,
+        RkDateModule
     ],
     exports: [
         IconsModule,
@@ -26,7 +31,8 @@ import { RkAutoCompleteModule } from './rk-autocomplete/rk-autocomplete.module';
         RkTableModule,
         RkLayoutModule,
         RkSelectModule,
-        RkAutoCompleteModule
+        RkAutoCompleteModule,
+        RkDateModule
     ],
     declarations: [],
     entryComponents: [],
