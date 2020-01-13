@@ -65,7 +65,6 @@
             "styles": [
               // "node_modules/roksit-lib/assets/scss/roksit.core.scss",
               // "dist/roksit-lib/assets/scss/roksit.core.scss",
-              "node_modules/select2/dist/css/select2.min.css",
               "projects/roksit-lib/src/lib/assets/scss/roksit.core.scss",
               "projects/roksit-tester/src/styles.scss"
             ],
