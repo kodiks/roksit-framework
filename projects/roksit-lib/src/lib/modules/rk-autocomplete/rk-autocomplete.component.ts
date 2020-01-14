@@ -14,7 +14,10 @@ export class RkAutoCompleteComponent implements OnInit {
 
     @Input() items: RkAutoCompleteModel[] = [];
 
-    // tslint:disable-next-line: no-output-native
+    @Input() value;
+
+    @Output() valueChange = new EventEmitter();
+
     @Output() change = new EventEmitter();
 
     ngOnInit() { }
@@ -23,13 +26,16 @@ export class RkAutoCompleteComponent implements OnInit {
         const obj = Object.assign({}, item);
 
         this.term = obj;
+
         this.change.emit(obj);
+
+        this.valueChange.emit(obj.value);
     }
 
     setShowDropdown(isShow) {
         setTimeout(() => {
             this.showDropdown = isShow;
-        }, 200);
+        }, 100);
     }
 }
 

@@ -1,17 +1,20 @@
-import { NgModule, ModuleWithProviders, APP_INITIALIZER } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RkSelectDirective } from './rk-select.directive';
-import { RkSelectInitializer } from './rk-select-initializer';
+import { RkSelectComponent } from './rk-select.component';
+import { FormsModule } from '@angular/forms';
+import { IconsModule } from '../icons/icons.module';
 
 @NgModule({
     imports: [
-        CommonModule
+        CommonModule,
+        FormsModule,
+        IconsModule
     ],
     exports: [
-        RkSelectDirective
+        RkSelectComponent,
     ],
     declarations: [
-        RkSelectDirective
+        RkSelectComponent,
     ],
     providers: [
         // { provide: APP_INITIALIZER, useFactory: RkSelectInitializer, deps: [], multi: false }

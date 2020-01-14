@@ -1,4 +1,12 @@
-<div class="rk-date-container">
+<button class="btn btn-primary btn-icon btn-small rk-date-btn" (click)="setShowContainer(true)">
+    <i-feather name="calendar"></i-feather>
+    <span>{{ startDate | date: 'dd/MM/yyyy' }} - {{ endDate | date: 'dd/MM/yyyy' }}</span>
+    <i-feather class="arrow-icon" [ngClass]="{'transformed': showContainer}" name="chevron-down"></i-feather>
+</button>
+
+<div class="rk-date-backdrop" *ngIf="showContainer" (click)="setShowContainer(false)"></div>
+
+<div class="rk-date-container mt-1" *ngIf="showContainer">
     <div class="rk-date-picker">
         <div class="rk-dp-header">
             <h4>Start hour</h4>
@@ -82,7 +90,7 @@
     </div>
 
     <div class="rk-date-actions">
-        <button class="btn w-100 btn-small">Apply</button>
-        <button class="btn w-100 btn-default btn-small mt-2">Cancel</button>
+        <button class="btn w-100 btn-small" (click)="compelete()">Apply</button>
+        <button class="btn w-100 btn-default btn-small mt-2" (click)="setShowContainer(false)">Cancel</button>
     </div>
 </div>

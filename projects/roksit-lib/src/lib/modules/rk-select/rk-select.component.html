@@ -1,0 +1,18 @@
+<div class="rk-select-backdrop" *ngIf="show" (click)="setShow(false)"></div>
+
+<div class="rk-select">
+    <div class="rk-select-value" (click)="setShow(true)">
+        {{ selectedOption ? selectedOption.displayText : chooseText }}
+    </div>
+
+    <i-feather name="chevron-down" class="rk-select-icon" [ngClass]="{'transformed': show}"></i-feather>
+
+    <div class="rk-select-items-container" *ngIf="show">
+        <div class="rk-select-items">
+            <div class="rk-select-item" [ngClass]="{'active': index == selectedIndex}"
+                *ngFor="let option of options; let index = index" (click)="selectOption(option, index)">
+                {{ option.displayText }}
+            </div>
+        </div>
+    </div>
+</div>

@@ -69,6 +69,43 @@
 
   /* #Button Size */
 
+  &.btn-primary {
+    background: $primary;
+    color: $white !important;
+    border-color: $primary;
+    display: flex;
+    align-items: center;
+
+    i-feather svg {
+      color: $white !important;
+    }
+
+    .arrow-icon {
+      position: relative;
+      width: 25px !important;
+      height: 25px !important;
+      margin-left: 7px;
+      margin-right: 0 !important;
+
+      svg {
+        width: 25px !important;
+        height: 25px !important;
+      }
+
+      &.transformed {
+        transform: rotate(180deg);
+      }
+    }
+
+    &:hover {
+      background: rgba($color: $primary, $alpha: 0.9) !important;
+    }
+
+    &:focus {
+      background: rgba($color: $primary, $alpha: 0.9) !important;
+    }
+  }
+
   &.btn-default {
     color: $blue-grey;
   }
