@@ -24,7 +24,7 @@ export class RkTableTemplate {
 
     ],
     declarations: [RkTableTemplate],
-    exports: [RkTableTemplate,RkUtilityService],
-    providers: [RkUtilityService]
+    providers: [RkUtilityService],
+    exports: [RkTableTemplate]
 })
 export class SharedModule { }
