@@ -1,6 +1,6 @@
 <button class="btn btn-primary btn-icon btn-small rk-date-btn" (click)="setShowContainer(true)">
     <i-feather name="calendar"></i-feather>
-    <span>06/12/2018 - 06/12/2019</span>
+    <span>{{ startDate | date: 'dd/MM/yyyy' }} - {{ endDate | date: 'dd/MM/yyyy' }}</span>
     <i-feather class="arrow-icon" [ngClass]="{'transformed': showContainer}" name="chevron-down"></i-feather>
 </button>
 
