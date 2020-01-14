@@ -817,6 +817,7 @@ span.flatpickr-weekday {
   margin: 2px 5px;
   display: flex;
   align-items: center;
+  font-weight: 500;
 }
 
 .flatpickr-calendar.arrowTop:before,
@@ -829,8 +830,7 @@ span.flatpickr-weekday {
   display: flex;
   align-items: center;
   line-height: 1;
-  margin: 4px;
-  margin-bottom: 0;
+  margin: 0 4px;
   padding: 0 !important;
 }
 
@@ -843,6 +843,48 @@ span.flatpickr-weekday {
 .flatpickr-months .flatpickr-prev-month:hover,
 .flatpickr-months .flatpickr-next-month:hover {
   svg g {
-    fill: rgba($color: $light-blue-grey, $alpha: 0.8);
+    fill: rgba($color: $gray, $alpha: 0.8);
   }
+}
+
+span.flatpickr-weekday {
+  font-size: 14px;
+  color: $blue-grey;
+  font-weight: 400;
+}
+
+.flatpickr-rContainer {
+  margin-top: 15px;
+}
+
+.flatpickr-current-month .flatpickr-monthDropdown-months {
+  pointer-events: none;
+  font-weight: 500;
+  color: $gray;
+  -webkit-appearance: none;
+  font-size: 14px;
+  text-align-last: right;
+}
+
+.flatpickr-current-month input.cur-year {
+  font-size: 14px;
+  font-weight: 500;
+  color: $gray;
+  position: relative;
+  top: -1px;
+}
+
+.numInputWrapper:hover {
+  background: white;
+}
+
+.numInputWrapper span.arrowUp,
+.numInputWrapper span.arrowDown {
+  display: none;
+}
+
+.flatpickr-current-month {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

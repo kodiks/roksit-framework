@@ -1,10 +1,12 @@
+<div rk-select></div>
+
 <div class="container-fluid mt-2" style="padding-bottom: 50px;">
   <div class="row mt-4">
     <div class="col-12">
       <rk-date></rk-date>
     </div>
   </div>
-  
+
   <div class="row mt-4">
     <div class="col-4">
       <rk-autocomplete [items]="autocompleteItems"></rk-autocomplete>
@@ -13,19 +15,17 @@
 
   <div class="row mt-4">
     <div class="col-4">
-      <div rk-select>
-        <div class="rk-select">
-          <select [(ngModel)]="zz" (change)="selectedChanged()" (ngModelChanged)="selectedChanged()">
-            <option [value]="0">Please choose</option>
-            <option [value]="1">Option 1</option>
-            <option [value]="2">Option 2</option>
-            <option value="3">Option 3</option>
-            <option value="4">Option 4</option>
-            <option value="5">Option 5</option>
-            <option value="6">Option 6</option>
-            <option value="7">Option 7</option>
-          </select>
-        </div>
+      <div class="rk-select">
+        <select [(ngModel)]="zz" (change)="selectedChanged()" (ngModelChanged)="selectedChanged()">
+          <option [value]="0">Please choose</option>
+          <option [value]="1">Option 1</option>
+          <option [value]="2">Option 2</option>
+          <option value="3">Option 3</option>
+          <option value="4">Option 4</option>
+          <option value="5">Option 5</option>
+          <option value="6">Option 6</option>
+          <option value="7">Option 7</option>
+        </select>
       </div>
     </div>
   </div>
