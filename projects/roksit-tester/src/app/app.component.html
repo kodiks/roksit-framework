@@ -1,6 +1,12 @@
 <div rk-select></div>
 
-<div class="container-fluid mt-2" style="padding-bottom: 50px;">
+<div class="row">
+  <div class="col-12">
+    <rk-switch [(value)]="zz"></rk-switch>
+  </div>
+</div>
+
+<div class="container-fluid mt-4" style="padding-bottom: 50px;">
   <div class="row mt-4">
     <div class="col-12">
       <rk-date (complete)="completed($event)"></rk-date>
@@ -9,9 +15,11 @@
 
   <div class="row mt-4">
     <div class="col-4">
-      <rk-autocomplete [items]="autocompleteItems"></rk-autocomplete>
+      <rk-autocomplete [(value)]="auto" [items]="autocompleteItems"></rk-autocomplete>
     </div>
   </div>
+
+  {{auto}}
 
   <div class="row mt-4">
     <div class="col-4">
