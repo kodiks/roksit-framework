@@ -144,4 +144,8 @@ export class AppComponent {
   selectedChanged() {
     console.log('selected changed !!!!');
   }
+
+  completed($event) {
+    console.log($event);
+  }
 }

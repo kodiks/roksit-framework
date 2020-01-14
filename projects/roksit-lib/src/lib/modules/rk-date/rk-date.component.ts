@@ -10,6 +10,8 @@ export class RkDateComponent implements OnInit, AfterViewInit {
 
     constructor() { }
 
+    showContainer = false;
+
     @Input() startDate = new Date();
     startMinute = 0;
     startHour = 0;
@@ -113,11 +115,17 @@ export class RkDateComponent implements OnInit, AfterViewInit {
         this.setParametersByDates();
     }
 
+    setShowContainer(show: boolean) {
+        this.showContainer = show;
+    }
+
     compelete() {
         this.complete.emit({
             startDate: this.startDate,
             endDate: this.endDate
         });
+
+        this.setShowContainer(false);
     }
 
     ngAfterViewInit() {
