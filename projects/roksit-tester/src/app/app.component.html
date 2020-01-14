@@ -1,4 +1,56 @@
-<div rk-select></div>
+<div class="row mt-3">
+  <div class="col-6">
+    <label for="chk" class="rk-chk-label">
+      <div class="rk-form-switch">
+        <input type="checkbox" (change)="toggleDarkModel()" id="chk">
+        <i></i>
+        <span></span>
+      </div>
+    </label>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-6">
+    <div class="dns-base-card">
+      <div class="card-item">
+        <div class="dns-grow dns-v-center card-item-title ">
+          Public IP
+        </div>
+        <div class="dns-row">
+          <div class="dns-data-row active">
+            <span class="name">Active</span>
+            <span class="value">8</span>
+          </div>
+
+          <div class="dns-data-row   m-l-15">
+            <span class="name">Passive</span>
+            <span class="value">2</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="col-6">
+  <div class="dns-col">
+    <div class="dns-base-card" style="padding:0;">
+      <div class="card-item">
+        <div class="dns-panel">
+          <div class="dns-panel-header">
+            Traffic Based Anomaly
+          </div>
+          <div class="dns-panel-item" style="background-color: white;">
+            Test
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="container-fluid mt-2" style="padding-bottom: 50px;">
   <div class="row mt-4">

@@ -10,6 +10,7 @@ import { RkAutoCompleteModule } from './rk-autocomplete/rk-autocomplete.module';
 import { RkDateModule } from './rk-date/rk-date.module';
 import { FormsModule } from '@angular/forms';
 import { RkSelectInitializer } from './rk-select/rk-select-initializer';
+import { RkUtilityService } from '../services/rk-utility.service';
 
 @NgModule({
     imports: [
@@ -32,7 +33,8 @@ import { RkSelectInitializer } from './rk-select/rk-select-initializer';
         RkLayoutModule,
         RkSelectModule,
         RkAutoCompleteModule,
-        RkDateModule
+        RkDateModule 
+        
     ],
     declarations: [],
     entryComponents: [],

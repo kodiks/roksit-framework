@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RkListConfigModel } from 'projects/roksit-lib/src/lib/modules/rk-layout/rk-list/rk-list.component';
 import { RkCardConfigModel } from 'projects/roksit-lib/src/lib/modules/rk-layout/rk-card/rk-card.component';
+import { RkUtilityService } from 'projects/roksit-lib/src/lib/services/rk-utility.service';
 // import { RkAutoCompleteModel } from 'roksit-lib/lib/modules/rk-autocomplete/rk-autocomplete.component';
 
 interface Country {
@@ -40,9 +41,25 @@ const COUNTRIES: Country[] = [
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  providers : [RkUtilityService]
 })
 export class AppComponent {
+  /**
+   *
+   */
+  constructor(public utilityServie : RkUtilityService) {
+    
+  }
+
+  darkMode : boolean = false;
+
+  toggleDarkModel() {
+    this.darkMode = !this.darkMode;
+
+    this.utilityServie.changeTheme(this.darkMode);
+  }
+
   title = 'roksit-tester';
 
   countries = COUNTRIES;

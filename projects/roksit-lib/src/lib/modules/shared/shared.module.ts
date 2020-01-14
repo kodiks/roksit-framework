@@ -1,4 +1,5 @@
 import { NgModule, Directive, Input, TemplateRef } from '@angular/core';
+import { RkUtilityService } from '../../services/rk-utility.service';
 
 @Directive({
     selector: '[rkTableTemplate]',
@@ -23,7 +24,7 @@ export class RkTableTemplate {
 
     ],
     declarations: [RkTableTemplate],
-    exports: [RkTableTemplate],
-    providers: []
+    exports: [RkTableTemplate,RkUtilityService],
+    providers: [RkUtilityService]
 })
 export class SharedModule { }
