@@ -1,4 +1,3 @@
-import { Turkish } from 'flatpickr/dist/l10n/tr';
 
 
 import { NgModule } from '@angular/core';
@@ -40,8 +39,7 @@ const DATE_NEXT_ICON = `
             ariaDateFormat: 'F',
             inline: true,
             prevArrow: DATE_PREV_ICON,
-            nextArrow: DATE_NEXT_ICON,
-            locale: Turkish
+            nextArrow: DATE_NEXT_ICON
         })
     ],
     exports: [
