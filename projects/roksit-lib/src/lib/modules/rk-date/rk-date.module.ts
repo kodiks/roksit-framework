@@ -1,11 +1,22 @@
 
 
-import { NgModule } from '@angular/core';
+import { NgModule, AfterViewInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RkDateComponent } from './rk-date.component';
 import { FormsModule } from '@angular/forms';
-import { FlatpickrModule } from 'angularx-flatpickr';
+import { IconsModule } from '../icons/icons.module';
 
+declare const $: any;
+
+import flatpickr from 'flatpickr';
+import { Turkish } from 'flatpickr/dist/l10n/tr';
+
+Turkish.weekdays.shorthand = ['P', 'P', 'S', 'Ç', 'P', 'C', 'C'];
+
+flatpickr.localize(Turkish);
+
+import { FlatpickrModule } from 'angularx-flatpickr';
+import { RkSelectModule } from '../rk-select/rk-select.module';
 
 const DATE_PREV_ICON = `
     <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" 
@@ -35,8 +46,9 @@ const DATE_NEXT_ICON = `
     imports: [
         CommonModule,
         FormsModule,
+        IconsModule,
+        RkSelectModule,
         FlatpickrModule.forRoot({
-            ariaDateFormat: 'F',
             inline: true,
             prevArrow: DATE_PREV_ICON,
             nextArrow: DATE_NEXT_ICON

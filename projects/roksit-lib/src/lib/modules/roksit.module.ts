@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, AfterViewInit, APP_INITIALIZER } from '@angular/core';
 import { IconsModule } from './icons/icons.module';
 import { RkMenuModule } from './rk-menu/rk-menu.module';
 import { RkFilterBadgeModule } from './rk-filter-badge/rk-filter-badge.module';
@@ -9,7 +9,7 @@ import { RkSelectModule } from './rk-select/rk-select.module';
 import { RkAutoCompleteModule } from './rk-autocomplete/rk-autocomplete.module';
 import { RkDateModule } from './rk-date/rk-date.module';
 import { FormsModule } from '@angular/forms';
-import { FlatpickrModule } from 'angularx-flatpickr';
+import { RkSelectInitializer } from './rk-select/rk-select-initializer';
 
 @NgModule({
     imports: [
@@ -37,5 +37,7 @@ import { FlatpickrModule } from 'angularx-flatpickr';
     declarations: [],
     entryComponents: [],
     bootstrap: [],
+    providers: []
 })
 export class RoksitModule { }
+

@@ -1,4 +1,66 @@
-.rk-date {
+.rk-date-container {
+  display: flex;
+  justify-content: space-between;
+  background: $white;
+  box-shadow: 0 2px 10px 0 rgba(51, 151, 197, 0.3);
+  width: 690px;
+  height: 380px;
+  border-radius: 6px;
+  overflow: hidden;
 
-    
+  .rk-date-picker {
+    flex: 1;
+    margin: 20px 0;
+    padding-right: 16px;
+    padding-left: 16px;
+    border-right: 1px solid $light-blue-grey;
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    .rk-dp-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      h4 {
+        font-size: 15px;
+        font-weight: 500;
+        color: $gray;
+        margin-bottom: 0;
+      }
+    }
+
+    .rk-dp-time {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 10px 0;
+
+      .time-icon {
+        color: $blue-grey;
+      }
+
+      .hour,
+      .minute {
+        margin-left: 10px;
+        flex: 1;
+
+        .rk-input {
+          width: 100%;
+        }
+      }
+
+      .rk-select {
+        flex: 1;
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .rk-date-actions {
+    width: 108px;
+    padding: 20px 12px;
+  }
 }
