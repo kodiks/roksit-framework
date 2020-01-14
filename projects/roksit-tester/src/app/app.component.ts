@@ -115,6 +115,8 @@ export class AppComponent {
     { text: 'Search Text 3', value: 'Search Text 3' },
   ];
 
+  ss;
+  
   onPageChange(page: number) {
     this.countries = this.shuffle(this.countries);
   }

@@ -9,7 +9,6 @@ import { RkSelectModule } from './rk-select/rk-select.module';
 import { RkAutoCompleteModule } from './rk-autocomplete/rk-autocomplete.module';
 import { RkDateModule } from './rk-date/rk-date.module';
 import { FormsModule } from '@angular/forms';
-import { RkSelectInitializer } from './rk-select/rk-select-initializer';
 import { RkSwitchModule } from './rk-switch/rk-switch.module';
 
 @NgModule({
