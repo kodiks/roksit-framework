@@ -28,10 +28,4 @@ export class RkTableTemplate {
     exports: [RkTableTemplate]
 })
 export class SharedModule {
-    static forRoot(): ModuleWithProviders {
-        return {
-            ngModule: SharedModule,
-            providers: [RkUtilityService]
-        };
-    }
 }
