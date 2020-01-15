@@ -10,7 +10,7 @@ export class RkSelectComponent implements OnInit {
 
     @Input() options: RkSelectModel[];
 
-    @Input() chooseText = 'Lütfen seçiniz';
+    @Input() placeholder = 'Lütfen seçiniz';
 
     @Input() value;
     @Output() valueChange = new EventEmitter();
@@ -21,7 +21,13 @@ export class RkSelectComponent implements OnInit {
 
     show = false;
 
-    ngOnInit() { }
+    ngOnInit() {
+        const selected = this.options.find(x => x.selected);
+
+        if (selected) {
+            this.selectedOption = selected;
+        }
+    }
 
     public selectOption(option: RkSelectModel, index: number) {
         this.selectedOption = option;

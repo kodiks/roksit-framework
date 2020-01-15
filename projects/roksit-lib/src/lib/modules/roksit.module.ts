@@ -10,6 +10,7 @@ import { RkAutoCompleteModule } from './rk-autocomplete/rk-autocomplete.module';
 import { RkDateModule } from './rk-date/rk-date.module';
 import { FormsModule } from '@angular/forms';
 import { RkSwitchModule } from './rk-switch/rk-switch.module';
+import { RkRadioModule } from './rk-radio/rk-radio.module';
 
 @NgModule({
     imports: [
@@ -23,7 +24,8 @@ import { RkSwitchModule } from './rk-switch/rk-switch.module';
         RkAutoCompleteModule,
         FormsModule,
         RkDateModule,
-        RkSwitchModule
+        RkSwitchModule,
+        RkRadioModule
     ],
     exports: [
         IconsModule,
@@ -34,7 +36,8 @@ import { RkSwitchModule } from './rk-switch/rk-switch.module';
         RkSelectModule,
         RkAutoCompleteModule,
         RkDateModule,
-        RkSwitchModule
+        RkSwitchModule,
+        RkRadioModule
     ],
     declarations: [],
     entryComponents: [],
