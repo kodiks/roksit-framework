@@ -10,7 +10,7 @@
     <div class="rk-pagination">
 
         <ngb-pagination style="text-align: center;" (pageChange)="onPageChange($event)" [collectionSize]="totalCount"
-            [(page)]="currentPage" [pageSize]="pageViewCount" [boundaryLinks]="true">
+            [(page)]="currentPage" [pageSize]="pageViewCount" [boundaryLinks]="true" [maxSize]="maxSize" [rotate]="false">
             <ng-template ngbPaginationPrevious>
                 <i-feather name="chevron-left"></i-feather>
             </ng-template>
