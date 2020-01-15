@@ -23,7 +23,7 @@ import { RkTableComponent } from './rk-table/rk-table.component';
     ],
     providers: [
         RkTableService 
-    ],
+    ]
 })
 export class RkTableModule {
     public static forRoot(): ModuleWithProviders {

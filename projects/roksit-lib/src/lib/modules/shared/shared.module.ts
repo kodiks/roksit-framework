@@ -1,4 +1,4 @@
-import { NgModule, Directive, Input, TemplateRef } from '@angular/core';
+import { NgModule, Directive, Input, TemplateRef, ModuleWithProviders } from '@angular/core';
 import { RkUtilityService } from '../../services/rk-utility.service';
 
 @Directive({
@@ -24,7 +24,14 @@ export class RkTableTemplate {
 
     ],
     declarations: [RkTableTemplate],
-    providers: [RkUtilityService],
+    providers: [],
     exports: [RkTableTemplate]
 })
-export class SharedModule { }
+export class SharedModule {
+    static forRoot(): ModuleWithProviders {
+        return {
+            ngModule: SharedModule,
+            providers: [RkUtilityService]
+        };
+    }
+}
