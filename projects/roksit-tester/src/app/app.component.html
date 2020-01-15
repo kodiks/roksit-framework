@@ -1,6 +1,9 @@
 <div class="row mt-3">
   <div class="col-6">
     <label for="chk" class="rk-chk-label">
+      <span>
+        Gece Modu
+      </span>
       <div class="rk-form-switch">
         <input type="checkbox" (change)="toggleDarkModel()" id="chk">
         <i></i>
@@ -50,15 +53,18 @@
       </div>
     </div>
   </div>
-</div>
 
-<div class="row">
-  <div class="col-12">
-    <rk-switch [(value)]="zz"></rk-switch>
+  <div class="row">
+    <div class="col-12">
+      <rk-radio name="ss" checked="true">Option 1</rk-radio>
+      <rk-radio name="ss" disabled="true">Option 2</rk-radio>
+      <rk-radio name="ss">Option 3</rk-radio>
+      <rk-radio name="ss">Option 4</rk-radio>
+    </div>
   </div>
-</div>
 
-<div class="container-fluid mt-4" style="padding-bottom: 50px;">
+  {{chk}}
+  
   <div class="row mt-4">
     <div class="col-12">
       <rk-date (complete)="completed($event)"></rk-date>
@@ -210,16 +216,6 @@
     <div class="col-12 mt-2">
       <button class="badge mr-2">Domain</button>
       <button class="badge active">Domain</button>
-    </div>
-
-    <div class="col-12 mt-2">
-      <label for="chk" class="rk-chk-label">
-        <div class="rk-form-switch">
-          <input type="checkbox" id="chk" checked>
-          <i></i>
-          <span></span>
-        </div>
-      </label>
     </div>
 
     <div class="col-12 mt-2">

@@ -1,4 +1,5 @@
 import { Component, OnInit, AfterViewInit, Input, Output, EventEmitter } from '@angular/core';
+import { RkSelectModel } from '../rk-select/rk-select.component';
 
 declare const $: any;
 
@@ -22,6 +23,11 @@ export class RkDateComponent implements OnInit, AfterViewInit {
 
     // tslint:disable-next-line: no-output-native
     @Output() complete = new EventEmitter();
+
+    timeTypes = [
+        { displayText: 'AM', value: 'AM', selected: true },
+        { displayText: 'PM', value: 'PM' }
+    ] as RkSelectModel[];
 
     ngOnInit() {
         this.setParametersByDates();
