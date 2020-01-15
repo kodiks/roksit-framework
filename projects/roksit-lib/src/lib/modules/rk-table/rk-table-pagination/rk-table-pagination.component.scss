@@ -1,6 +1,6 @@
 .pagination-row {
   display: flex;
-
+font-size: 15px;
   .page-info {
     display: flex;
     flex-grow: 1;
@@ -71,7 +71,7 @@
 
       &:nth-child(2) {
         .page-link {
-          width: 42px;
+          
           color: rgb(172, 170, 170);
         }
       }
@@ -94,7 +94,7 @@
       &:nth-last-child(2) {
         margin-left: 6px;
         border: none !important;
-        width: 42px;
+        
         .page-link {
           border-radius: 7px;
           border: 1px solid lightgray;
