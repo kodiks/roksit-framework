@@ -13,7 +13,7 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-    RoksitModule,
+    RoksitModule.forRoot(),
     CommonModule,
     FormsModule
   ],

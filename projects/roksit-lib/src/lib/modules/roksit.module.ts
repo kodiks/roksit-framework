@@ -13,12 +13,12 @@ import { RkAutoCompleteModule } from './rk-autocomplete/rk-autocomplete.module';
 import { RkDateModule } from './rk-date/rk-date.module';
 import { FormsModule } from '@angular/forms';
 import { RkSwitchModule } from './rk-switch/rk-switch.module';
-import { RkUtilityService } from '../services/rk-utility.service';
 import { RkRadioModule } from './rk-radio/rk-radio.module';
+import { RkUtilityService } from '../../public-api';
 
 @NgModule({
     imports: [
-        SharedModule.forRoot(),
+        SharedModule,
         IconsModule,
         RkMenuModule,
         RkFilterBadgeModule,
@@ -52,4 +52,11 @@ import { RkRadioModule } from './rk-radio/rk-radio.module';
     bootstrap: [],
     providers: []
 })
-export class RoksitModule { }
+export class RoksitModule {
+    static forRoot(): ModuleWithProviders {
+        return {
+            ngModule: RoksitModule,
+            providers: [RkUtilityService]
+        };
+    }
+}
