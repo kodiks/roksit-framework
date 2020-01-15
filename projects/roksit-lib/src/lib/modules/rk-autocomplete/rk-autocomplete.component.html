@@ -1,0 +1,11 @@
+<div class="rk-autocomplete-container">
+    <input type="text" placeholder="Search" [(ngModel)]="term.text" class="rk-input rk-autocomplete"
+        (focus)="setShowDropdown(true)" (focusout)="setShowDropdown(false)">
+    <i-feather class="search-icon" name="search"></i-feather>
+
+    <div class="rk-autocomplete-dropdown" [hidden]="!showDropdown">
+        <div class="rk-ac-dropdown-item" *ngFor="let item of items | filter: term.text" (click)="selectOption(item)">
+            <span [innerHTML]="item.text | highlight: term.text"></span>
+        </div>
+    </div>
+</div>

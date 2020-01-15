@@ -1,18 +1,18 @@
 import { NgModule, Directive, Input, TemplateRef } from '@angular/core';
+import { RkUtilityService } from '../../services/rk-utility.service';
 
 @Directive({
     selector: '[rkTableTemplate]',
-    host: {
-    }
+    host: {}
 })
 export class RkTableTemplate {
-    
+
     @Input() type: string;
-    
+
     @Input('rkTableTemplate') name: string;
-    
-    constructor(public template: TemplateRef<any>) {}
-    
+
+    constructor(public template: TemplateRef<any>) { }
+
     getType(): string {
         return this.name;
     }
@@ -20,11 +20,11 @@ export class RkTableTemplate {
 
 
 @NgModule({
-    imports: [  
-        
+    imports: [
+
     ],
     declarations: [RkTableTemplate],
-    exports: [RkTableTemplate],
-    providers: []
-  })
-  export class SharedModule {}
+    providers: [RkUtilityService],
+    exports: [RkTableTemplate]
+})
+export class SharedModule { }

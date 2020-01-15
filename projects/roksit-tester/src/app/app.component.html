@@ -1,4 +1,86 @@
-<div class="container-fluid mt-2" style="padding-bottom: 50px;">
+<div class="row mt-3">
+  <div class="col-6">
+    <label for="chk" class="rk-chk-label">
+      <div class="rk-form-switch">
+        <input type="checkbox" (change)="toggleDarkModel()" id="chk">
+        <i></i>
+        <span></span>
+      </div>
+    </label>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-6">
+    <div class="dns-base-card">
+      <div class="card-item">
+        <div class="dns-grow dns-v-center card-item-title ">
+          Public IP
+        </div>
+        <div class="dns-row">
+          <div class="dns-data-row active">
+            <span class="name">Active</span>
+            <span class="value">8</span>
+          </div>
+
+          <div class="dns-data-row   m-l-15">
+            <span class="name">Passive</span>
+            <span class="value">2</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="col-6">
+  <div class="dns-col">
+    <div class="dns-base-card" style="padding:0;">
+      <div class="card-item">
+        <div class="dns-panel">
+          <div class="dns-panel-header">
+            Traffic Based Anomaly
+          </div>
+          <div class="dns-panel-item" style="background-color: white;">
+            Test
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <rk-switch [(value)]="zz"></rk-switch>
+  </div>
+</div>
+
+<div class="container-fluid mt-4" style="padding-bottom: 50px;">
+  <div class="row mt-4">
+    <div class="col-12">
+      <rk-date (complete)="completed($event)"></rk-date>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-4">
+      <rk-autocomplete [(value)]="auto" [items]="autocompleteItems"></rk-autocomplete>
+    </div>
+  </div>
+
+  {{auto}}
+
+  <div class="row mt-2">
+    <div class="col-4">
+      <rk-select [(value)]="ss" [options]="options"></rk-select>
+    </div>
+  </div>
+
+  {{ss}}
+
   <div class="row">
     <!-- <div class="col-6">
       <rk-select [(ngModel)]="name" [options]="options"></rk-select>
@@ -11,7 +93,7 @@
   <div class="row">
     <div class="col-12">
 
-      <ng-select2 [data]="options" [options]="{width: 300}"></ng-select2>
+      <!-- <ng-select2 [data]="options" [options]="{width: 300}"></ng-select2> -->
     </div>
   </div>
 
@@ -258,8 +340,7 @@
 
   <div class="row mt-3">
     <div class="col-6">
-      <rk-table [hTemp]="header" [bTemp]="body" (pageChange)="onPageChange($event)"
-        (pageViewCountChange)="onPageViewCountChange($event)">
+      <rk-table (pageChange)="onPageChange($event)" (pageViewCountChange)="onPageViewCountChange($event)">
         <ng-template #header>
           <tr>
             <th scope="col">#</th>
@@ -286,7 +367,7 @@
 
 
   <div class="row mt-3">
-    <div class="col-6">
+    <div class="col-3">
       <rk-list [config]="listConfig"></rk-list>
     </div>
   </div>
@@ -308,4 +389,23 @@
       <rk-card [config]="cardConfig"></rk-card>
     </div>
   </div>
+
+
+  <div class="row mt-3">
+    <div class="col-3">
+      <rk-accordion>
+        <rk-accordion-panel *ngFor="let item of listConfig.items; let i = index">
+          <rk-accordion-header-content>
+            {{ item.content }}
+          </rk-accordion-header-content>
+          <rk-accordion-header-sub-content>
+            {{ item.subContent }}
+          </rk-accordion-header-sub-content>
+
+          panel body {{ i + 1 }}
+        </rk-accordion-panel>
+      </rk-accordion>
+    </div>
+  </div>
+
 </div>

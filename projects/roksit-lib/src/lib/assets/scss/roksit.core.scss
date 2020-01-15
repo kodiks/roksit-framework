@@ -12,7 +12,7 @@
 @import "./core/variables.scss";
 
 @import "./core/colors.scss";
-@import "./core/helper.scss";
+@import "./core/helpers/helper.scss";
 
 @import "./core/components/rk-button.scss";
 @import "./core/components/rk-menu.scss";
@@ -23,3 +23,17 @@
 @import "./core/components/rk-wizard.scss";
 @import "./core/components/rk-input.scss";
 @import "./core/components/rk-select.scss";
+@import "./core/components/rk-autocomplete.scss";
+@import "./core/components/rk-num.scss";
+
+@import "./core/external/flatpickr/flatpickr.scss";
+@import "./core/components/rk-date.scss";
+
+:root {
+    --bodyColor : white;
+}
+
+body {
+    font-family: Roboto;
+    background-color: var(--bodyColor);
+}

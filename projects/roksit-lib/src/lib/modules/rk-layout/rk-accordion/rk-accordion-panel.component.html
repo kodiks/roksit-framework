@@ -1,0 +1,16 @@
+<div class="rk-accordion-item"  >
+    <div class="rk-accordion-header" #panelHeader (click)="onPanelClick()">
+        <ul>
+            <li class="content">
+                <ng-content select="rk-accordion-header-content" ></ng-content> 
+            </li>
+            <li class="time">
+                <ng-content select="rk-accordion-header-sub-content" ></ng-content>
+            </li>
+        </ul>
+    </div>
+
+    <div [ngClass]="{'show-body' : showAccordion}" class="rk-accordion-content">
+        <ng-content></ng-content>
+    </div>
+</div>

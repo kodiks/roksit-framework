@@ -1,5 +1,6 @@
-import { Component, OnInit, Input, ContentChildren, QueryList, AfterContentInit, AfterViewChecked, TemplateRef, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, ContentChildren, QueryList, AfterContentInit, AfterViewChecked, TemplateRef, Output, EventEmitter, ViewChildren, ViewChild, ElementRef, ContentChild } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { RkTableTemplate } from '../../shared/shared.module';
 
 
 @Component({
@@ -9,12 +10,12 @@ import { Subscription } from 'rxjs';
 })
 
 export class RkTableComponent implements OnInit, AfterContentInit, AfterViewChecked {
-  @Input("hTemp") headerTemplate: TemplateRef<any>;
-  @Input("bTemp") bodyTemplate: TemplateRef<any>;
   @Input() showPagination: boolean = true;
   @Output() pageChange: EventEmitter<number> = new EventEmitter();
   @Output() pageViewCountChange: EventEmitter<number> = new EventEmitter();
 
+  @ContentChild("header", { static: false }) header: TemplateRef<ElementRef>;
+  @ContentChild("body", { static: true }) body: TemplateRef<ElementRef>;
   pageChangeSub: Subscription;
 
   constructor() {
@@ -24,7 +25,6 @@ export class RkTableComponent implements OnInit, AfterContentInit, AfterViewChec
   ngOnInit() { }
 
   ngAfterContentInit() {
-
   }
 
   ngAfterViewChecked() {

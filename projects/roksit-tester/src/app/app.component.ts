@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { RkListConfigModel } from 'projects/roksit-lib/src/lib/modules/rk-layout/rk-list/rk-list.component';
 import { RkCardConfigModel } from 'projects/roksit-lib/src/lib/modules/rk-layout/rk-card/rk-card.component';
+import { RkUtilityService } from 'projects/roksit-lib/src/lib/services/rk-utility.service';
+// import { RkAutoCompleteModel } from 'roksit-lib/lib/modules/rk-autocomplete/rk-autocomplete.component';
 
 interface Country {
   name: string;
@@ -39,9 +41,25 @@ const COUNTRIES: Country[] = [
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  providers : [RkUtilityService]
 })
 export class AppComponent {
+  /**
+   *
+   */
+  constructor(public utilityServie : RkUtilityService) {
+    
+  }
+
+  darkMode : boolean = false;
+
+  toggleDarkModel() {
+    this.darkMode = !this.darkMode;
+
+    this.utilityServie.changeTheme(this.darkMode);
+  }
+
   title = 'roksit-tester';
 
   countries = COUNTRIES;
@@ -65,29 +83,57 @@ export class AppComponent {
   ];
 
   listConfig: RkListConfigModel = {
-    title: "Title",
+    title: 'Title',
     items: [{
-      content: "Lorem ipsum is placeholder text commonly used in the graphic",
-      subContent: "20 minutes ago"
+      content: 'Lorem ipsum is placeholder text commonly used in the graphic',
+      subContent: '20 minutes ago'
     }, {
-      content: "Lorem ipsum is placeholder text commonly used in the graphic",
-      subContent: "20 minutes ago"
+      content: 'Lorem ipsum is placeholder text commonly used in the graphic',
+      subContent: '20 minutes ago'
+    }, {
+      content: 'Lorem ipsum is placeholder text commonly used in the graphic',
+      subContent: '20 minutes ago'
     }]
-  }
+  };
 
   cardConfig: RkCardConfigModel = {
-    header : {
-      avatarUrl : "https://material.angular.io/assets/img/examples/shiba1.jpg",
-      subTitle : "Dog Breed",
-      title : "Shiba Inu"
+    header: {
+      avatarUrl: 'https://material.angular.io/assets/img/examples/shiba1.jpg',
+      subTitle: 'Dog Breed',
+      title: 'Shiba Inu'
     },
-    body : {
-      imageUrl : "https://material.angular.io/assets/img/examples/shiba2.jpg",
-      content : `The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small,
+    body: {
+      imageUrl: 'https://material.angular.io/assets/img/examples/shiba2.jpg',
+      content: `The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan. A small,
       agile dog that copes very well with mountainous terrain, the Shiba Inu was originally bred for hunting.`
     }
-  }
+  };
 
+  autocompleteItems: any[] = [
+    { text: 'Search Text 0', value: 'Search Text 0' },
+    { text: 'Search Text 1', value: 'Search Text 1' },
+    { text: 'Search Text 2', value: 'Search Text 2' },
+    { text: 'Text 3 Search', value: 'Text 3 Search' },
+    { text: 'Search 3 Text ', value: 'Search 3 Text' },
+    { text: 'Text Search 3', value: 'Text Search 3' },
+    { text: 'Search Text 4', value: 'Search Text 4' },
+    { text: 'Search Text 6', value: 'Search Text 6' },
+    { text: 'Search 1 Text', value: 'Search 1 Text' },
+    { text: 'Search Text 3', value: 'Search Text 3' },
+    { text: 'Search Text 0', value: 'Search Text 0' },
+    { text: 'Search Text 1', value: 'Search Text 1' },
+    { text: 'Search Text 2', value: 'Search Text 2' },
+    { text: 'Text 3 Search', value: 'Text 3 Search' },
+    { text: 'Search 3 Text ', value: 'Search 3 Text' },
+    { text: 'Text Search 3', value: 'Text Search 3' },
+    { text: 'Search Text 4', value: 'Search Text 4' },
+    { text: 'Search Text 6', value: 'Search Text 6' },
+    { text: 'Search 1 Text', value: 'Search 1 Text' },
+    { text: 'Search Text 3', value: 'Search Text 3' },
+  ];
+
+  ss;
+  
   onPageChange(page: number) {
     this.countries = this.shuffle(this.countries);
   }
@@ -97,8 +143,9 @@ export class AppComponent {
 
     let i = 0;
     for (let index = 0; index < pageViewCount; index++) {
-      if (index % 3 == 0)
+      if (index % 3 === 0) {
         i = 0;
+      }
 
       this.countries.push(COUNTRIES[i]);
       i++;
@@ -111,5 +158,13 @@ export class AppComponent {
       [a[i], a[j]] = [a[j], a[i]];
     }
     return a;
+  }
+
+  selectedChanged() {
+    console.log('selected changed !!!!');
+  }
+
+  completed($event) {
+    console.log($event);
   }
 }

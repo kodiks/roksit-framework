@@ -1,0 +1,96 @@
+<button class="btn btn-primary btn-icon btn-small rk-date-btn" (click)="setShowContainer(true)">
+    <i-feather name="calendar"></i-feather>
+    <span>{{ startDate | date: 'dd/MM/yyyy' }} - {{ endDate | date: 'dd/MM/yyyy' }}</span>
+    <i-feather class="arrow-icon" [ngClass]="{'transformed': showContainer}" name="chevron-down"></i-feather>
+</button>
+
+<div class="rk-date-backdrop" *ngIf="showContainer" (click)="setShowContainer(false)"></div>
+
+<div class="rk-date-container mt-1" *ngIf="showContainer">
+    <div class="rk-date-picker">
+        <div class="rk-dp-header">
+            <h4>Start hour</h4>
+
+            <div class="rk-input-container">
+                <input type="text" class="rk-input" readonly [ngModel]="startDate | date: 'dd/MM/yyyy HH:mm'">
+            </div>
+        </div>
+
+        <div class="rk-dp-time">
+            <div class="time-icon">
+                <i-feather name="clock"></i-feather>
+            </div>
+
+            <div class="rk-num hour">
+                <input type="number" [(ngModel)]="startHour" class="rk-input" value="00">
+                <button class="inc" (click)="setStartHour(startHour - 1)"></button>
+                <button class="dec" (click)="setStartHour(startHour + 1)"></button>
+            </div>
+
+            <div class="rk-num minute">
+                <input type="number" [(ngModel)]="startMinute" class="rk-input" value="00">
+                <button class="inc" (click)="setStartMinute(startMinute - 1)"></button>
+                <button class="dec" (click)="setStartMinute(startMinute + 1)"></button>
+            </div>
+
+            <div class="rk-select">
+                <select>
+                    <option [value]="0">AM</option>
+                    <option [value]="1">AM</option>
+                    <option [value]="2">PM</option>
+                </select>
+            </div>
+        </div>
+
+        <div>
+            <input class="rk-input" type="text" mwlFlatpickr [(ngModel)]="startDate" (change)="changeStartDate()"
+                [convertModelValue]="true" [hidden]="true">
+        </div>
+    </div>
+
+    <div class="rk-date-picker">
+        <div class="rk-dp-header">
+            <h4>End hour</h4>
+
+            <div class="rk-input-container">
+                <input type="text" class="rk-input" readonly [ngModel]="endDate | date: 'dd/MM/yyyy HH:mm'">
+            </div>
+        </div>
+
+        <div class="rk-dp-time">
+            <div class="time-icon">
+                <i-feather name="clock"></i-feather>
+            </div>
+
+            <div class="rk-num hour">
+                <input type="number" [(ngModel)]="endHour" class="rk-input" value="00">
+                <button class="inc" (click)="setEndHour(endHour - 1)"></button>
+                <button class="dec" (click)="setEndHour(endHour + 1)"></button>
+            </div>
+
+            <div class="rk-num minute">
+                <input type="number" [(ngModel)]="endMinute" class="rk-input" value="00">
+                <button class="inc" (click)="setEndMinute(endMinute - 1)"></button>
+                <button class="dec" (click)="setEndMinute(endMinute + 1)"></button>
+            </div>
+
+            <div class="rk-select">
+                <select>
+                    <option [value]="0">AM</option>
+                    <option [value]="1">AM</option>
+                    <option [value]="2">PM</option>
+                </select>
+            </div>
+        </div>
+
+        <div>
+            <input class="rk-input" type="text" mwlFlatpickr [(ngModel)]="endDate" (change)="changeEndDate()"
+                [convertModelValue]="true" [hidden]="true">
+        </div>
+    </div>
+
+    <div class="rk-date-actions">
+        <button class="btn w-100 btn-small" (click)="compelete()">Apply</button>
+        <button class="btn w-100 btn-default btn-small mt-2" (click)="setShowContainer(false)">Cancel</button>
+    </div>
+</div>
