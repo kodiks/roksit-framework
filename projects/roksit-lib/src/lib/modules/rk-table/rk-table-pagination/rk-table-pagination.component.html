@@ -1,32 +1,33 @@
-<div class="pagination-row">
-    <div class="page-info">
-        <div class="pageview-count">
-            <!-- <rk-select [options]="pageViewCounts"></rk-select> -->
-        </div>
+<div class="rk-pagination-contianer">
+    <div class="rk-pagination-actions">
+        <rk-select [options]="options" [(value)]="pageViewCount"></rk-select>
 
-
+        <span class="page">
+            {{ (currentPage - 1) * pageViewCount  }} - {{  currentPage  * pageViewCount }} / {{ totalCount }}
+        </span>
     </div>
 
-    <div class="pagination-div col-sm-12 col-md-12 col-lg-12" style="width: 100%;margin-bottom: 15px;">
-        <ngb-pagination style="text-align: center;" (pageChange)="onPageChange($event)"
-            [collectionSize]="totalCount" [(page)]="currentPage" [pageSize]="pageViewCount" [boundaryLinks]="true">
+    <div class="rk-pagination">
 
-            <!-- <i  style="font-size: 11px;" class="fa fa-chevron-left"></i><i  style="font-size: 11px" class="fa fa-chevron-left"> -->
+        <ngb-pagination style="text-align: center;" (pageChange)="onPageChange($event)" [collectionSize]="totalCount"
+            [(page)]="currentPage" [pageSize]="pageViewCount" [boundaryLinks]="true">
+            <ng-template ngbPaginationPrevious>
+                <i-feather name="chevron-left"></i-feather>
+            </ng-template>
             <ng-template ngbPaginationFirst>
                 <i-feather name="chevrons-left"></i-feather>
             </ng-template>
-            <ng-template ngbPaginationLast><i-feather name="chevrons-right"></i-feather>
+            <ng-template ngbPaginationNext>
+                <i-feather name="chevron-right"></i-feather>
             </ng-template>
-            <ng-template ngbPaginationPrevious><i-feather name="chevron-left"></i-feather></ng-template>
-            <ng-template  ngbPaginationNext><i-feather  name="chevron-right"></i-feather></ng-template>
+            <ng-template ngbPaginationLast>
+                <i-feather name="chevrons-right"></i-feather>
+            </ng-template>
             <ng-template ngbPaginationEllipsis>...</ng-template>
-            <ng-template ngbPaginationNumber let-page>{{ page }}</ng-template>
-
-
+            <ng-template ngbPaginationNumber let-page>
+                {{ page }}
+            </ng-template>
         </ngb-pagination>
+
     </div>
-   
 </div>
-<span style="font-size: 15px;float: left;margin-bottom: 4px;line-height: 37px;padding-left: 30px;">Gösterilen
-    {{ (currentPage - 1) * pageViewCount  }} - {{  currentPage  * pageViewCount }} /
-    {{ totalCount }}</span>
