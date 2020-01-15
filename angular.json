@@ -67,7 +67,8 @@
               // "dist/roksit-lib/assets/scss/roksit.core.scss",
               "node_modules/flatpickr/dist/flatpickr.css",
               "projects/roksit-lib/src/lib/assets/scss/roksit.core.scss",
-              "projects/roksit-tester/src/styles.scss"
+              "projects/roksit-tester/src/styles.scss",
+              "node_modules/font-awesome/css/font-awesome.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js"

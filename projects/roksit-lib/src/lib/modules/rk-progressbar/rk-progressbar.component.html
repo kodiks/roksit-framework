@@ -1,0 +1,10 @@
+<div class="progressbar" [ngClass]="{'medium-size': sizeType == 'medium', 'small-size': sizeType=='small'}">
+
+    <div>
+      
+        <p>
+            <span class="percentage"  *ngIf="showType == 'outside'"  >{{value}}%</span>
+            <ngb-progressbar [showValue]="showType == 'inside'" [type]="type" [value]="value"></ngb-progressbar>
+        </p>
+    </div>
+</div>

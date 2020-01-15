@@ -33,7 +33,13 @@
                 <button class="dec" (click)="setStartMinute(startMinute + 1)"></button>
             </div>
 
-            <rk-select [options]="timeTypes"></rk-select>
+            <div class="rk-select" >
+                <select >
+                    <option [value]="0">AM</option>
+                    <option [value]="1">AM</option>
+                    <option [value]="2">PM</option>
+                </select>
+            </div>
         </div>
 
         <div>
@@ -68,7 +74,13 @@
                 <button class="dec" (click)="setEndMinute(endMinute + 1)"></button>
             </div>
 
-            <rk-select [options]="timeTypes"></rk-select>
+            <div class="rk-select">
+                <select>
+                    <option [value]="0">AM</option>
+                    <option [value]="1">AM</option>
+                    <option [value]="2">PM</option>
+                </select>
+            </div>
         </div>
 
         <div>
