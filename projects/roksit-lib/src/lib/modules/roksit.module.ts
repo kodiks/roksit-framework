@@ -11,6 +11,7 @@ import { RkDateModule } from './rk-date/rk-date.module';
 import { FormsModule } from '@angular/forms';
 import { RkSwitchModule } from './rk-switch/rk-switch.module';
 import { RkUtilityService } from '../services/rk-utility.service';
+import { RkRadioModule } from './rk-radio/rk-radio.module';
 
 @NgModule({
     imports: [
@@ -24,7 +25,8 @@ import { RkUtilityService } from '../services/rk-utility.service';
         RkAutoCompleteModule,
         FormsModule,
         RkDateModule,
-        RkSwitchModule
+        RkSwitchModule,
+        RkRadioModule
     ],
     exports: [
         IconsModule,
@@ -35,7 +37,8 @@ import { RkUtilityService } from '../services/rk-utility.service';
         RkSelectModule,
         RkAutoCompleteModule,
         RkDateModule,
-        RkSwitchModule
+        RkSwitchModule,
+        RkRadioModule
     ],
     declarations: [],
     entryComponents: [],
