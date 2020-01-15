@@ -7,8 +7,8 @@ import { NgSelect2Module } from 'ng-select2';
 import { SharedModule } from './shared/shared.module';
 import { RkLayoutModule } from './rk-layout/rk-layout.module';
 import { RkProgressBarModule } from './rk-progressbar/rk-progressbar.module';
-
-
+// import { NgbdDropdownBasic } from './rk-avatar/rk-table.module';
+import { RkAvatarModule } from './rk-avatar/rk-avatar.module';
 
 @NgModule({
     imports: [
@@ -19,7 +19,8 @@ import { RkProgressBarModule } from './rk-progressbar/rk-progressbar.module';
         RkTableModule,
         NgSelect2Module,
         RkLayoutModule,
-        RkProgressBarModule
+        RkProgressBarModule,
+        RkAvatarModule
     ],
     exports: [ 
         IconsModule,
@@ -28,7 +29,8 @@ import { RkProgressBarModule } from './rk-progressbar/rk-progressbar.module';
         RkTableModule,
         NgSelect2Module,
         RkLayoutModule,
-        RkProgressBarModule
+        RkProgressBarModule,
+        RkAvatarModule
     ],
     declarations: [],
     bootstrap: [],
