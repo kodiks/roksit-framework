@@ -11,6 +11,9 @@ import { RkTableTemplate } from '../../shared/shared.module';
 
 export class RkTableComponent implements OnInit, AfterContentInit, AfterViewChecked {
   @Input() showPagination: boolean = true;
+  @Input() info: boolean = false; 
+  @Input() config: RkTableConfigModel;
+
   @Output() pageChange: EventEmitter<number> = new EventEmitter();
   @Output() pageViewCountChange: EventEmitter<number> = new EventEmitter();
 
@@ -20,9 +23,10 @@ export class RkTableComponent implements OnInit, AfterContentInit, AfterViewChec
 
   constructor() {
 
-  }
+  }  
 
-  ngOnInit() { }
+  ngOnInit() {
+  }
 
   ngAfterContentInit() {
   }
@@ -39,3 +43,10 @@ export class RkTableComponent implements OnInit, AfterContentInit, AfterViewChec
     this.pageViewCountChange.emit(count);
   }
 }
+
+export class RkTableConfigModel {
+  rows: any[]
+  columns: string[]
+}
+
+

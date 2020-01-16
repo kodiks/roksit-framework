@@ -4,6 +4,25 @@ $table-header-background-color: #f9f9fa;
 .rk-table-base {
   padding: 0;
 
+  &.info {
+    table {
+      border: none !important;
+
+      th {
+        background-color: var(--whiteColor) !important ;
+        background: var(--whiteColor) !important;
+        border-bottom: 1px solid #eeeff2;
+        border-top: none !important;
+        border-left: none !important;
+        border-right: none !important;
+      }
+ 
+      td {
+        border: none !important;
+      }
+    }
+  }
+
   table {
     border: 1px solid $table-border-color;
 
