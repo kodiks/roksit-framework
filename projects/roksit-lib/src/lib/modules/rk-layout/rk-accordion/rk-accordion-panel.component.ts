@@ -10,6 +10,8 @@ import { Subscription } from 'rxjs';
 })
 
 export class RkAccordionPanelComponent implements OnInit {
+  @Input() index : number = 0;
+
   showAccordion: boolean = false;
   panelClickEvent: EventEmitter<RkAccordionPanelComponent> = new EventEmitter();
 
