@@ -15,7 +15,6 @@ import { RkProgressBarModule } from 'roksit-lib/lib/modules/rk-progressbar/rk-pr
   imports: [
     BrowserModule,
     RoksitModule.forRoot(),
-    RkProgressBarModule,
     CommonModule,
     FormsModule
   ],
