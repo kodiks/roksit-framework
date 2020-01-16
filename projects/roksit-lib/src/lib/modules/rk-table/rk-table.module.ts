@@ -3,26 +3,28 @@ import { IconsModule } from '../icons/icons.module';
 import { CommonModule } from '@angular/common';
 import { RkTableService } from './rk-table.service';
 import { RkTablePaginationComponent } from './rk-table-pagination/rk-table-pagination.component';
-import {NgbPaginationModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { RkTableComponent } from './rk-table/rk-table.component';
- 
+import { RkSelectModule } from '../rk-select/rk-select.module';
+
 
 @NgModule({
     imports: [
         CommonModule,
         IconsModule,
         NgbPaginationModule,
+        RkSelectModule
     ],
     exports: [
         RkTablePaginationComponent,
-        RkTableComponent 
+        RkTableComponent
     ],
     declarations: [
         RkTablePaginationComponent,
-        RkTableComponent 
+        RkTableComponent
     ],
     providers: [
-        RkTableService 
+        RkTableService
     ]
 })
 export class RkTableModule {

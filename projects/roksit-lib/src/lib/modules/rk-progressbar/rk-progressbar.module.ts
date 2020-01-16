@@ -15,5 +15,6 @@ import { CommonModule } from '@angular/common';
         RkProgressbarComponent
     ],
     providers: [],
+    entryComponents : [RkProgressbarComponent]
 })
 export class RkProgressBarModule { }
