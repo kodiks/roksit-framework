@@ -10,12 +10,12 @@ import { RkTableTemplate } from '../../shared/shared.module';
 })
 
 export class RkTableComponent implements OnInit, AfterContentInit, AfterViewChecked {
-  @Input() showPagination: boolean = true;
+  @Input() showPagination = true;
   @Output() pageChange: EventEmitter<number> = new EventEmitter();
   @Output() pageViewCountChange: EventEmitter<number> = new EventEmitter();
 
-  @ContentChild("header", { static: false }) header: TemplateRef<ElementRef>;
-  @ContentChild("body", { static: true }) body: TemplateRef<ElementRef>;
+  @ContentChild('header', { static: false }) header: TemplateRef<ElementRef>;
+  @ContentChild('body', { static: true }) body: TemplateRef<ElementRef>;
   pageChangeSub: Subscription;
 
   constructor() {
