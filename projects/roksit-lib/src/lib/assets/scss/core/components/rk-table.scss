@@ -7,6 +7,10 @@ rk-table-container {
   width: 100%;
   background: white;
   border-radius: 13px;
+  margin-bottom: 55px;
+  position: relative;
+  border: 1px solid $table-border-color;
+  overflow: hidden;
 
   .rk-table-container-header {
     padding: 11px 19px 7px;
@@ -42,6 +46,42 @@ rk-table-container {
 
   rk-table {
     width: 100%;
+
+    .table {
+      margin-bottom: 0;
+      border: none !important;
+
+      th,
+      td {
+        border: none !important;
+      }
+
+      thead,
+      tbody {
+        tr:last-child {
+          td {
+            border-bottom: none !important;
+          }
+        }
+
+        th,
+        td {
+          border: 1px solid $table-border-color !important;
+          &:first-child {
+            border-left: none !important;
+          }
+
+          &:last-child {
+            border-right: none !important;
+          }
+        }
+      }
+    }
+
+    .table-pagination {
+      position: absolute;
+      width: 100%;
+    }
   }
 }
 
