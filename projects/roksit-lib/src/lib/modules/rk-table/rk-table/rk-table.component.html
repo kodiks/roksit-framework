@@ -1,5 +1,5 @@
 <div class="table" [ngClass]="{ 'info' : info }">
-  <div class="table-content">
+  <div class="table-content table-repsonsive">
     <table class="table table-bordered">
       <thead>
         <ng-container *ngIf="!config">
@@ -9,8 +9,15 @@
 
         <ng-container *ngIf="config">
           <tr>
+            <th *ngIf="config.selectableRows"></th>
             <th *ngFor="let col of config.columns">
-              {{ col }}
+              <div class="d-flex align-items-center justify-content-between">
+                {{ col.displayText }}
+
+                <button class="table-btn ripple">
+                  <i-feather name="more-vertical"></i-feather>
+                </button>
+              </div>
             </th>
           </tr>
         </ng-container>
@@ -22,9 +29,12 @@
 
 
         <ng-container *ngIf="config">
-          <tr *ngFor="let data of config.rows">
-            <td *ngFor="let col of config.columns">
-              {{ data[col] }}
+          <tr *ngFor="let row of config.rows">
+            <td *ngIf="config.selectableRows">
+              <rk-switch></rk-switch>
+            </td>
+            <td *ngFor="let col of config.columns;">
+              {{ row[getColumnNameByIndex(col)] }}
             </td>
           </tr>
         </ng-container>

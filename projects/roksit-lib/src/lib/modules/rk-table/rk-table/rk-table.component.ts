@@ -1,17 +1,16 @@
-import {
-  Component, OnInit, Input, AfterContentInit, AfterViewChecked,
-  TemplateRef, Output, EventEmitter, ElementRef, ContentChild
-} from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Component, OnInit, Input, TemplateRef, Output, EventEmitter, ElementRef, ContentChild } from '@angular/core';
 
 @Component({
   selector: 'rk-table',
   templateUrl: 'rk-table.component.html',
   styleUrls: ['rk-table.component.scss']
 })
-export class RkTableComponent implements OnInit, AfterContentInit, AfterViewChecked {
-  @Input() showPagination: boolean = true;
-  @Input() info: boolean = false;
+export class RkTableComponent implements OnInit {
+
+  @Input() showPagination = true;
+
+  @Input() info = false;
+
   @Input() config: RkTableConfigModel;
 
   @Output() pageChange: EventEmitter<number> = new EventEmitter();
@@ -22,19 +21,7 @@ export class RkTableComponent implements OnInit, AfterContentInit, AfterViewChec
 
   @ContentChild('body', { static: true }) body: TemplateRef<ElementRef>;
 
-
-  ngOnInit() {
-    this.config = new RkTableConfigModel();
-    this.config.rows = [{ a: 1, b: 2, c: 3 }];
-    this.config.columns = ["a", "b", "c"];
-  }
-
-  ngAfterContentInit() {
-  }
-
-  ngAfterViewChecked() {
-
-  }
+  ngOnInit() { }
 
   onPageChange(pageNumber: number) {
     this.pageChange.emit(pageNumber);
@@ -43,11 +30,22 @@ export class RkTableComponent implements OnInit, AfterContentInit, AfterViewChec
   onPageViewCountChange(count: number) {
     this.pageViewCountChange.emit(count);
   }
+
+  getColumnNameByIndex(col: RkTableColumnModel): string {
+    const column = this.config.columns.find(x => x.name === col.name);
+
+    return column.name;
+  }
 }
 
 export class RkTableConfigModel {
-  rows: any[]
-  columns: string[]
+  rows: any[];
+  columns: RkTableColumnModel[];
+  selectableRows = false;
 }
 
-
+export interface RkTableColumnModel {
+  id?: number;
+  name: string;
+  displayText: string;
+}

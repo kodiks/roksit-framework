@@ -12,7 +12,8 @@
     <div class="bottom-content">
         <span class="text mr-2">Column;</span>
 
-        <rk-badge *ngFor="let col of config.columns" >{{ col }}</rk-badge>
+        <rk-badge *ngFor="let col of columns; let index = index" [name]="col.name" [value]="hasChecked(col)"
+            (valueChange)="changeBadge($event)">{{ col.displayText }}</rk-badge>
     </div>
 </div>
 <ng-content class="rk-table-contianer" select="rk-table"></ng-content>

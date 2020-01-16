@@ -8,6 +8,7 @@ import { RkTableComponent } from './rk-table/rk-table.component';
 import { RkSelectModule } from '../rk-select/rk-select.module';
 import { RkTableContainerComponent } from './rk-table-container/rk-table-container.component';
 import { RkBadgeModule } from '../rk-badge/rk-badge.module';
+import { RkSwitchModule } from '../rk-switch/rk-switch.module';
 
 @NgModule({
     imports: [
@@ -15,7 +16,8 @@ import { RkBadgeModule } from '../rk-badge/rk-badge.module';
         IconsModule,
         NgbPaginationModule,
         RkSelectModule,
-        RkBadgeModule
+        RkBadgeModule,
+        RkSwitchModule
     ],
     exports: [
         RkTablePaginationComponent,

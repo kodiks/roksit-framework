@@ -56,15 +56,44 @@ export class AppComponent {
 
   darkMode: boolean = false;
 
-  toggleDarkModel() {
-    this.darkMode = !this.darkMode;
-
-    this.utilityServie.changeTheme(this.darkMode);
-  }
-
   tableConfig: RkTableConfigModel = {
-    rows: [{ a: 1, b: 2, c: 3 }],
-    columns: ["a", "b", "c"]
+    columns: [
+      { id: 0, name: 'time', displayText: 'Time', },
+      { id: 1, name: 'domain', displayText: 'Domain' },
+      { id: 2, name: 'subdomain', displayText: 'Subdomain' },
+      { id: 3, name: 'srcip', displayText: 'Src.Ip' },
+      { id: 4, name: 'srccountry', displayText: 'Src. Country' },
+      { id: 5, name: 'dstip', displayText: 'Dst.Ip' },
+      { id: 6, name: 'dstcountry', displayText: 'Dst.Country' },
+      { id: 7, name: 'location', displayText: 'Location/Agent' },
+      { id: 8, name: 'userid', displayText: 'User Id' },
+      { id: 9, name: 'action', displayText: 'Action' },
+      { id: 10, name: 'app', displayText: 'Application' },
+      { id: 11, name: 'cat', displayText: 'Category' }
+    ],
+    rows: [
+      {
+        time: '20:04', domain: 'trafficmanager.net', subdomain: 'app.trafficmanager.net', srcip: '176.23.4.52', srccountry: 'Turkey',
+        dstip: '142.45.23.231', dstcountry: 'England', location: 'X Agent', userid: 23, action: '-', app: 'TraManager', cat: 'Network'
+      },
+      {
+        time: '20:04', domain: 'trafficmanager.net', subdomain: 'app.trafficmanager.net', srcip: '176.23.4.52', srccountry: 'Turkey',
+        dstip: '142.45.23.231', dstcountry: 'England', location: 'X Agent', userid: 23, action: '-', app: 'TraManager', cat: 'Network'
+      },
+      {
+        time: '20:04', domain: 'trafficmanager.net', subdomain: 'app.trafficmanager.net', srcip: '176.23.4.52', srccountry: 'Turkey',
+        dstip: '142.45.23.231', dstcountry: 'England', location: 'X Agent', userid: 23, action: '-', app: 'TraManager', cat: 'Network'
+      },
+      {
+        time: '20:04', domain: 'trafficmanager.net', subdomain: 'app.trafficmanager.net', srcip: '176.23.4.52', srccountry: 'Turkey',
+        dstip: '142.45.23.231', dstcountry: 'England', location: 'X Agent', userid: 23, action: '-', app: 'TraManager', cat: 'Network'
+      },
+      {
+        time: '20:04', domain: 'trafficmanager.net', subdomain: 'app.trafficmanager.net', srcip: '176.23.4.52', srccountry: 'Turkey',
+        dstip: '142.45.23.231', dstcountry: 'England', location: 'X Agent', userid: 23, action: '-', app: 'TraManager', cat: 'Network'
+      },
+    ],
+    selectableRows: true
   };
 
   title = 'roksit-tester';
@@ -157,6 +186,13 @@ export class AppComponent {
       this.countries.push(COUNTRIES[i]);
       i++;
     }
+  }
+
+
+  toggleDarkModel() {
+    this.darkMode = !this.darkMode;
+
+    this.utilityServie.changeTheme(this.darkMode);
   }
 
   shuffle(a) {

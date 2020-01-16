@@ -12,12 +12,17 @@ export class RkBadgeComponent implements OnInit {
     @Input() value: boolean;
     @Output() valueChange = new EventEmitter();
 
+    @Input() name?: string;
+
     ngOnInit() { }
 
     valueChanged() {
         this.value = !this.value;
 
-        this.valueChange.emit(this.value);
+        this.valueChange.emit({
+            name: this.name,
+            value: this.value
+        });
     }
 
 }
