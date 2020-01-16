@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RkListConfigModel } from 'projects/roksit-lib/src/lib/modules/rk-layout/rk-list/rk-list.component';
 import { RkCardConfigModel } from 'projects/roksit-lib/src/lib/modules/rk-layout/rk-card/rk-card.component';
 import { RkUtilityService } from 'projects/roksit-lib/src/public-api';
+import { RkTableConfigModel } from 'projects/roksit-lib/src/lib/modules/rk-table/rk-table/rk-table.component';
 // import { RkAutoCompleteModel } from 'roksit-lib/lib/modules/rk-autocomplete/rk-autocomplete.component';
 
 interface Country {
@@ -18,7 +19,7 @@ const COUNTRIES: Country[] = [
     area: 17075200,
     population: 146989754
   },
-  
+
   {
     name: 'Canada',
     flag: 'c/cf/Flag_of_Canada.svg',
@@ -60,6 +61,11 @@ export class AppComponent {
 
     this.utilityServie.changeTheme(this.darkMode);
   }
+
+  tableConfig: RkTableConfigModel = {
+    rows: [{ a: 1, b: 2, c: 3 }],
+    columns: ["a", "b", "c"]
+  };
 
   title = 'roksit-tester';
 

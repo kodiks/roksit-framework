@@ -1,4 +1,5 @@
-import { Component, OnInit, ElementRef } from '@angular/core';
+import { Component, OnInit, ElementRef, Input } from '@angular/core';
+import { RkTableConfigModel } from '../rk-table/rk-table.component';
 
 @Component({
     selector: 'rk-table-container',
@@ -6,6 +7,7 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 })
 
 export class RkTableContainerComponent implements OnInit {
+    @Input() config: RkTableConfigModel;
 
     constructor(
         private el: ElementRef

@@ -12,11 +12,7 @@
     <div class="bottom-content">
         <span class="text mr-2">Column;</span>
 
-        <rk-badge>Time</rk-badge>
-        <rk-badge>Domain</rk-badge>
-        <rk-badge>Subdomain</rk-badge>
-        <rk-badge>Src.Ip</rk-badge>
-        <rk-badge>Src.Country</rk-badge>
+        <rk-badge *ngFor="let col of config.columns" >{{ col }}</rk-badge>
     </div>
 </div>
 <ng-content class="rk-table-contianer" select="rk-table"></ng-content>

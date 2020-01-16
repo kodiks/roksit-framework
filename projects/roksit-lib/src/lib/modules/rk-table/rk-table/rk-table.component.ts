@@ -24,6 +24,9 @@ export class RkTableComponent implements OnInit, AfterContentInit, AfterViewChec
 
 
   ngOnInit() {
+    this.config = new RkTableConfigModel();
+    this.config.rows = [{ a: 1, b: 2, c: 3 }];
+    this.config.columns = ["a", "b", "c"];
   }
 
   ngAfterContentInit() {

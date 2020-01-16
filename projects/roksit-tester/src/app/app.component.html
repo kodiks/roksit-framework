@@ -7,8 +7,8 @@
 
   <div class="row mt-3">
     <div class="col-12">
-      <rk-table-container>
-        <rk-table (pageChange)="onPageChange($event)" (pageViewCountChange)="onPageViewCountChange($event)" [info]="true" >
+      <rk-table-container [config]="tableConfig" >
+        <rk-table [config]="tableConfig" (pageChange)="onPageChange($event)" (pageViewCountChange)="onPageViewCountChange($event)" [info]="true" >
           <ng-template #header>
             <tr>
               <th class="index">#</th>
