@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
 import { RkSwitchModule } from './rk-switch/rk-switch.module';
 import { RkRadioModule } from './rk-radio/rk-radio.module';
 import { RkUtilityService } from '../../public-api';
+import { RkBadgeModule } from './rk-badge/rk-badge.module';
 
 @NgModule({
     imports: [
@@ -31,7 +32,8 @@ import { RkUtilityService } from '../../public-api';
         FormsModule,
         RkDateModule,
         RkSwitchModule,
-        RkRadioModule
+        RkRadioModule,
+        RkBadgeModule
     ],
     exports: [
         IconsModule,
@@ -45,7 +47,8 @@ import { RkUtilityService } from '../../public-api';
         RkAutoCompleteModule,
         RkDateModule,
         RkSwitchModule,
-        RkRadioModule
+        RkRadioModule,
+        RkBadgeModule
     ],
     declarations: [],
     entryComponents: [],
@@ -56,7 +59,9 @@ export class RoksitModule {
     static forRoot(): ModuleWithProviders {
         return {
             ngModule: RoksitModule,
-            providers: [RkUtilityService]
+            providers: [
+                RkUtilityService
+            ]
         };
     }
 }

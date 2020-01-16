@@ -6,22 +6,26 @@ import { RkTablePaginationComponent } from './rk-table-pagination/rk-table-pagin
 import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 import { RkTableComponent } from './rk-table/rk-table.component';
 import { RkSelectModule } from '../rk-select/rk-select.module';
-
+import { RkTableContainerComponent } from './rk-table-container/rk-table-container.component';
+import { RkBadgeModule } from '../rk-badge/rk-badge.module';
 
 @NgModule({
     imports: [
         CommonModule,
         IconsModule,
         NgbPaginationModule,
-        RkSelectModule
+        RkSelectModule,
+        RkBadgeModule
     ],
     exports: [
         RkTablePaginationComponent,
-        RkTableComponent
+        RkTableComponent,
+        RkTableContainerComponent
     ],
     declarations: [
         RkTablePaginationComponent,
-        RkTableComponent
+        RkTableComponent,
+        RkTableContainerComponent
     ],
     providers: [
         RkTableService
