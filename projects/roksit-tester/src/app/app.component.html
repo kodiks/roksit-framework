@@ -1,337 +1,56 @@
-<div class="row mt-3">
-  <div class="col-6">
-    <label for="chk" class="rk-chk-label">
-      <span>
-        Gece Modu
-      </span>
-      <div class="rk-form-switch">
-        <input type="checkbox" (change)="toggleDarkModel()" id="chk">
-        <i></i>
-        <span></span>
-      </div>
-    </label>
-  </div>
-</div>
-
-
-<div class="row">
-  <div class="col-6">
-    <div class="dns-base-card">
-      <div class="card-item">
-        <div class="dns-grow dns-v-center card-item-title ">
-          Public IP
-        </div>
-        <div class="dns-row">
-          <div class="dns-data-row active">
-            <span class="name">Active</span>
-            <span class="value">8</span>
-          </div>
-
-          <div class="dns-data-row   m-l-15">
-            <span class="name">Passive</span>
-            <span class="value">2</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</div>
-
-<div class="col-6">
-  <div class="dns-col">
-    <div class="dns-base-card" style="padding:0;">
-      <div class="card-item">
-        <div class="dns-panel">
-          <div class="dns-panel-header">
-            Traffic Based Anomaly
-          </div>
-          <div class="dns-panel-item" style="background-color: white;">
-            Test
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-12">
-      <rk-radio name="ss" checked="true">Option 1</rk-radio>
-      <rk-radio name="ss" disabled="true">Option 2</rk-radio>
-      <rk-radio name="ss">Option 3</rk-radio>
-      <rk-radio name="ss">Option 4</rk-radio>
-    </div>
-  </div>
-
-  {{chk}}
-  
-  <div class="row mt-4">
-    <div class="col-12">
-      <rk-date (complete)="completed($event)"></rk-date>
-    </div>
-  </div>
-
-  <div class="row mt-4">
-    <div class="col-4">
-      <rk-autocomplete [(value)]="auto" [items]="autocompleteItems"></rk-autocomplete>
-    </div>
-  </div>
-
-  {{auto}}
-
-  <div class="row mt-2">
-    <div class="col-4">
-      <rk-select [(value)]="ss" [options]="options"></rk-select>
-    </div>
-  </div>
-
-  {{ss}}
-
-  <div class="row">
-    <!-- <div class="col-6">
-      <rk-select [(ngModel)]="name" [options]="options"></rk-select>
-    </div>
-    <div class="col-6">
-      <rk-select class="d-block" [(ngModel)]="name1" icon="calendar" [options]="options"></rk-select>
-    </div> -->
-  </div>
-
-  <div class="row">
-    <div class="col-12">
-
-      <!-- <ng-select2 [data]="options" [options]="{width: 300}"></ng-select2> -->
-    </div>
-  </div>
-
+<div class="container-fluid">
   <div class="row mt-3">
     <div class="col-12">
-      <button class="btn">Text</button>
-      <button class="btn btn-default ml-2">Text</button>
-      <button class="btn btn-icon ml-2">
-        <i-feather name="shopping-cart"></i-feather>
-        Text
-      </button>
-
+      <rk-table (pageChange)="onPageChange($event)" (pageViewCountChange)="onPageViewCountChange($event)">
+        <ng-template #header>
+          <tr>
+            <th class="index">#</th>
+            <th scope="col">
+              Time
+              <button class="table-btn ripple">
+                <i-feather name="more-vertical"></i-feather>
+              </button>
+            </th>
+            <th scope="col">
+              Subdomain
+              <button class="table-btn ripple">
+                <i-feather name="more-vertical"></i-feather>
+              </button>
+            </th>
+            <th scope="col">
+              Src.Ip
+              <button class="table-btn ripple">
+                <i-feather name="more-vertical"></i-feather>
+              </button>
+            </th>
+            <th scope="col">
+              Dst.Ip
+              <button class="table-btn ripple">
+                <i-feather name="more-vertical"></i-feather>
+              </button>
+            </th>
+            <th scope="col">
+              Action
+              <button class="table-btn ripple">
+                <i-feather name="more-vertical"></i-feather>
+              </button>
+            </th>
+          </tr>
+        </ng-template>
+        <ng-template #body>
+          <tr *ngFor="let country of countries; index as i">
+            <td class="index">{{ i + 1 }}</td>
+            <td>2019.11.27 11:15:51</td>
+            <td>
+              bal-edf-pcs-app-vmss-02.westus.cloudapp.azure.com
+            </td>
+            <td>12.244.23.112</td>
+            <td>198.222.165.78</td>
+            <td>Allow</td>
+          </tr>
+        </ng-template>
+      </rk-table>
     </div>
-    <div class="col-12 mt-2">
-      <button disabled class="btn">Text</button>
-      <button disabled class="btn btn-default ml-2">Text</button>
-      <button disabled class="btn btn-icon ml-2">
-        <i-feather name="shopping-cart"></i-feather>
-        Text
-      </button>
-
-    </div>
-    <div class="col-12 mt-2">
-      <button class="btn btn-link">Text</button>
-      <button class="btn btn-link btn-default ml-2">Text</button>
-      <button class="btn btn-link btn-icon ml-2">
-        <i-feather name="shopping-cart"></i-feather>
-        Text
-      </button>
-
-    </div>
-    <div class="col-12 mt-2">
-      <button disabled class="btn btn-link">Text</button>
-      <button disabled class="btn btn-link btn-default ml-2">Text</button>
-      <button disabled class="btn btn-link btn-icon ml-2">
-        <i-feather name="shopping-cart"></i-feather>
-        Text
-      </button>
-    </div>
-
-    <div class="col-12 mt-2">
-      <button class="btn btn-xl">Text</button>
-      <button class="btn btn-xl btn-default ml-2">Text</button>
-      <button class="btn btn-xl btn-icon ml-2">
-        <i-feather name="shopping-cart"></i-feather>
-        Text
-      </button>
-    </div>
-    <div class="col-12 mt-2">
-      <button class="btn btn-large">Text</button>
-      <button class="btn btn-large btn-default ml-2">Text</button>
-      <button class="btn btn-large btn-icon ml-2">
-        <i-feather name="shopping-cart"></i-feather>
-        Text
-      </button>
-    </div>
-    <div class="col-12 mt-2">
-      <button class="btn btn-medium">Text</button>
-      <button class="btn btn-medium btn-default ml-2">Text</button>
-      <button class="btn btn-medium btn-icon ml-2">
-        <i-feather name="shopping-cart"></i-feather>
-        Text
-      </button>
-    </div>
-    <div class="col-12 mt-2">
-      <button class="btn btn-small">Text</button>
-      <button class="btn btn-small btn-default ml-2">Text</button>
-      <button class="btn btn-small btn-icon ml-2">
-        <i-feather name="shopping-cart"></i-feather>
-        Text
-      </button>
-    </div>
-    <div class="col-12 mt-2">
-      <button class="btn btn-xs">Text</button>
-      <button class="btn btn-xs btn-default ml-2">Text</button>
-      <button class="btn btn-xs btn-icon ml-2">
-        <i-feather name="shopping-cart"></i-feather>
-        Text
-      </button>
-    </div>
-
-    <div class="col-12 my-3">
-      <ng-template>zz</ng-template>
-
-    </div>
-
-    <div class="col-12 text-center">text center</div>
-
-    <div class="col-12 text-center">
-      <input type="text" class="rk-input mr-3" placeholder="Search">
-      <input type="text" class="rk-input mr-3" placeholder="Search" required>
-      <input type="text" disabled class="rk-input mr-3" placeholder="Search">
-
-      <textarea class="rk-input textarea" rows="5" style="resize: none;"></textarea>
-    </div>
-
-    <div class="col-3 mt-2">
-      <div class="rk-wizard">
-        <div class="rk-wizard-item active">
-          <div class="step-name">1. Step</div>
-          <div class="step-text">Text Label</div>
-        </div>
-        <div class="rk-wizard-item">
-          <div class="step-name">1. Step</div>
-          <div class="step-text">Text Label</div>
-        </div>
-        <div class="rk-wizard-item">
-          <div class="step-name">1. Step</div>
-          <div class="step-text">Text Label</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-12 mt-2">
-      <button class="badge mr-2">Domain</button>
-      <button class="badge active">Domain</button>
-    </div>
-
-    <div class="col-12 mt-2">
-      <div class="rk-radio">
-        <input type="radio" id="rd" name="rdName" checked>
-        <label for="rd">Option 1</label>
-      </div>
-      <div class="rk-radio">
-        <input type="radio" id="rd1" name="rdName" disabled>
-        <label for="rd1">Option 2</label>
-      </div>
-      <div class="rk-radio">
-        <input type="radio" id="rd2" name="rdName">
-        <label for="rd2">Option 2</label>
-      </div>
-    </div>
-
-    <div class="col-12 mt-2">
-      <div class="rk-filter-badge primary mb-2">
-        <div class="unhover">
-          <div class="filter-name">Action</div>
-
-          <div class="equals">
-            <icon-equal></icon-equal>
-          </div>
-
-          <div class="values">
-            google.com<span class="seperator"></span>yahoo.com
-          </div>
-        </div>
-
-        <div class="hover">
-          <button class="ripple">
-            <i-feather name="edit-3"></i-feather>
-          </button>
-          <button class="ripple equal">
-            <icon-not-equal></icon-not-equal>
-          </button>
-          <button class="ripple">
-            <i-feather name="trash-2"></i-feather>
-          </button>
-        </div>
-      </div>
-      <div class="rk-filter-badge security">
-        <div class="unhover">
-          <div class="filter-name">Action</div>
-
-          <div class="equals">
-            <icon-not-equal></icon-not-equal>
-          </div>
-
-          <div class="values">
-            google.com
-            <span class="seperator"></span>yahoo.com
-            <span class="seperator"></span>yahoo.com
-          </div>
-        </div>
-
-        <div class="hover">
-          <button class="ripple">
-            <i-feather name="edit-3"></i-feather>
-          </button>
-          <button class="ripple equal">
-            <icon-equal></icon-equal>
-          </button>
-          <button class="ripple">
-            <i-feather name="trash-2"></i-feather>
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-6 mt-2">
-      <div class="menu" style="width: 200px;">
-        <button class="menu-item active">
-          <div class="icon">
-            <i-feather name="home"></i-feather>
-          </div>
-          <div class="text">
-            Text
-          </div>
-          <div class="icon arrow">
-            <i-feather name="chevron-down"></i-feather>
-          </div>
-        </button>
-        <button class="menu-item">
-          <div class="icon">
-            <i-feather name="home"></i-feather>
-          </div>
-          <div class="text">
-            Text
-          </div>
-          <div class="icon arrow">
-            <i-feather name="chevron-down" class="text-blue-grey"></i-feather>
-          </div>
-        </button>
-        <button class="menu-item">
-          <div class="icon">
-            <i-feather name="home"></i-feather>
-          </div>
-          <div class="text">
-            Text
-          </div>
-        </button>
-      </div>
-    </div>
-
-    <div class="col-3 mt-2">
-      <rk-menu-container>
-        <rk-menu-item text="Anasayfa" icon="home"></rk-menu-item>
-        <rk-menu-item text="Anasayfa" icon="edit"></rk-menu-item>
-      </rk-menu-container>
-    </div>
-
-
-
   </div>
 
   <div class="row mt-3">
@@ -339,15 +58,24 @@
       <rk-table (pageChange)="onPageChange($event)" (pageViewCountChange)="onPageViewCountChange($event)">
         <ng-template #header>
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">Country</th>
-            <th scope="col">Area</th>
-            <th scope="col">Population</th>
+            <th>#</th>
+            <th scope="col">
+              Country
+              <button class="table-btn ripple">
+                <i-feather name="more-vertical"></i-feather>
+              </button>
+            </th>
+            <th scope="col">
+              Area
+            </th>
+            <th scope="col">
+              Population
+            </th>
           </tr>
         </ng-template>
         <ng-template #body>
           <tr *ngFor="let country of countries; index as i">
-            <th scope="row">{{ i + 1 }}</th>
+            <td>{{ i + 1 }}</td>
             <td>
               <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag" class="mr-2"
                 style="width: 20px">
@@ -361,47 +89,383 @@
     </div>
   </div>
 
-
-  <div class="row mt-3">
-    <div class="col-3">
-      <rk-list [config]="listConfig"></rk-list>
-    </div>
-  </div>
-
-
   <div class="row mt-3">
     <div class="col-6">
-      <rk-progressbar [value]="75" [showType]="'outside'" [type]="'warning'" [sizeType]="'medium'"></rk-progressbar>
-    </div>
-  </div>
-  <!-- <div class="row mt-3">
-    <div class="col-3">
-      <rk-avatar ></rk-avatar>
-    </div>
-  </div> -->
-
-  <div class="row mt-3">
-    <div class="col-3">
-      <rk-card [config]="cardConfig"></rk-card>
-    </div>
-  </div>
-
-
-  <div class="row mt-3">
-    <div class="col-3">
-      <rk-accordion>
-        <rk-accordion-panel *ngFor="let item of listConfig.items; let i = index">
-          <rk-accordion-header-content>
-            {{ item.content }}
-          </rk-accordion-header-content>
-          <rk-accordion-header-sub-content>
-            {{ item.subContent }}
-          </rk-accordion-header-sub-content>
-
-          panel body {{ i + 1 }}
-        </rk-accordion-panel>
-      </rk-accordion>
+      <label for="chk" class="rk-chk-label">
+        <span>
+          Gece Modu
+        </span>
+        <div class="rk-form-switch">
+          <input type="checkbox" (change)="toggleDarkModel()" id="chk">
+          <i></i>
+          <span></span>
+        </div>
+      </label>
     </div>
   </div>
 
+
+  <div class="row">
+    <div class="col-6">
+      <div class="dns-base-card">
+        <div class="card-item">
+          <div class="dns-grow dns-v-center card-item-title ">
+            Public IP
+          </div>
+          <div class="dns-row">
+            <div class="dns-data-row active">
+              <span class="name">Active</span>
+              <span class="value">8</span>
+            </div>
+
+            <div class="dns-data-row   m-l-15">
+              <span class="name">Passive</span>
+              <span class="value">2</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="col-6">
+    <div class="dns-col">
+      <div class="dns-base-card" style="padding:0;">
+        <div class="card-item">
+          <div class="dns-panel">
+            <div class="dns-panel-header">
+              Traffic Based Anomaly
+            </div>
+            <div class="dns-panel-item" style="background-color: white;">
+              Test
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <rk-radio name="ss" checked="true">Option 1</rk-radio>
+        <rk-radio name="ss" disabled="true">Option 2</rk-radio>
+        <rk-radio name="ss">Option 3</rk-radio>
+        <rk-radio name="ss">Option 4</rk-radio>
+      </div>
+    </div>
+
+    {{chk}}
+
+    <div class="row mt-4">
+      <div class="col-12">
+        <rk-date (complete)="completed($event)"></rk-date>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-4">
+        <rk-autocomplete [(value)]="auto" [items]="autocompleteItems"></rk-autocomplete>
+      </div>
+    </div>
+
+    {{auto}}
+
+    <div class="row mt-2">
+      <div class="col-4">
+        <rk-select [(value)]="ss" [options]="options"></rk-select>
+      </div>
+    </div>
+
+    {{ss}}
+
+    <div class="row">
+      <!-- <div class="col-6">
+        <rk-select [(ngModel)]="name" [options]="options"></rk-select>
+      </div>
+      <div class="col-6">
+        <rk-select class="d-block" [(ngModel)]="name1" icon="calendar" [options]="options"></rk-select>
+      </div> -->
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+
+        <!-- <ng-select2 [data]="options" [options]="{width: 300}"></ng-select2> -->
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-12">
+        <button class="btn">Text</button>
+        <button class="btn btn-default ml-2">Text</button>
+        <button class="btn btn-icon ml-2">
+          <i-feather name="shopping-cart"></i-feather>
+          Text
+        </button>
+
+      </div>
+      <div class="col-12 mt-2">
+        <button disabled class="btn">Text</button>
+        <button disabled class="btn btn-default ml-2">Text</button>
+        <button disabled class="btn btn-icon ml-2">
+          <i-feather name="shopping-cart"></i-feather>
+          Text
+        </button>
+
+      </div>
+      <div class="col-12 mt-2">
+        <button class="btn btn-link">Text</button>
+        <button class="btn btn-link btn-default ml-2">Text</button>
+        <button class="btn btn-link btn-icon ml-2">
+          <i-feather name="shopping-cart"></i-feather>
+          Text
+        </button>
+
+      </div>
+      <div class="col-12 mt-2">
+        <button disabled class="btn btn-link">Text</button>
+        <button disabled class="btn btn-link btn-default ml-2">Text</button>
+        <button disabled class="btn btn-link btn-icon ml-2">
+          <i-feather name="shopping-cart"></i-feather>
+          Text
+        </button>
+      </div>
+
+      <div class="col-12 mt-2">
+        <button class="btn btn-xl">Text</button>
+        <button class="btn btn-xl btn-default ml-2">Text</button>
+        <button class="btn btn-xl btn-icon ml-2">
+          <i-feather name="shopping-cart"></i-feather>
+          Text
+        </button>
+      </div>
+      <div class="col-12 mt-2">
+        <button class="btn btn-large">Text</button>
+        <button class="btn btn-large btn-default ml-2">Text</button>
+        <button class="btn btn-large btn-icon ml-2">
+          <i-feather name="shopping-cart"></i-feather>
+          Text
+        </button>
+      </div>
+      <div class="col-12 mt-2">
+        <button class="btn btn-medium">Text</button>
+        <button class="btn btn-medium btn-default ml-2">Text</button>
+        <button class="btn btn-medium btn-icon ml-2">
+          <i-feather name="shopping-cart"></i-feather>
+          Text
+        </button>
+      </div>
+      <div class="col-12 mt-2">
+        <button class="btn btn-small">Text</button>
+        <button class="btn btn-small btn-default ml-2">Text</button>
+        <button class="btn btn-small btn-icon ml-2">
+          <i-feather name="shopping-cart"></i-feather>
+          Text
+        </button>
+      </div>
+      <div class="col-12 mt-2">
+        <button class="btn btn-xs">Text</button>
+        <button class="btn btn-xs btn-default ml-2">Text</button>
+        <button class="btn btn-xs btn-icon ml-2">
+          <i-feather name="shopping-cart"></i-feather>
+          Text
+        </button>
+      </div>
+
+      <div class="col-12 my-3">
+        <ng-template>zz</ng-template>
+
+      </div>
+
+      <div class="col-12 text-center">text center</div>
+
+      <div class="col-12 text-center">
+        <input type="text" class="rk-input mr-3" placeholder="Search">
+        <input type="text" class="rk-input mr-3" placeholder="Search" required>
+        <input type="text" disabled class="rk-input mr-3" placeholder="Search">
+
+        <textarea class="rk-input textarea" rows="5" style="resize: none;"></textarea>
+      </div>
+
+      <div class="col-3 mt-2">
+        <div class="rk-wizard">
+          <div class="rk-wizard-item active">
+            <div class="step-name">1. Step</div>
+            <div class="step-text">Text Label</div>
+          </div>
+          <div class="rk-wizard-item">
+            <div class="step-name">1. Step</div>
+            <div class="step-text">Text Label</div>
+          </div>
+          <div class="rk-wizard-item">
+            <div class="step-name">1. Step</div>
+            <div class="step-text">Text Label</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 mt-2">
+        <button class="badge mr-2">Domain</button>
+        <button class="badge active">Domain</button>
+      </div>
+
+      <div class="col-12 mt-2">
+        <div class="rk-radio">
+          <input type="radio" id="rd" name="rdName" checked>
+          <label for="rd">Option 1</label>
+        </div>
+        <div class="rk-radio">
+          <input type="radio" id="rd1" name="rdName" disabled>
+          <label for="rd1">Option 2</label>
+        </div>
+        <div class="rk-radio">
+          <input type="radio" id="rd2" name="rdName">
+          <label for="rd2">Option 2</label>
+        </div>
+      </div>
+
+      <div class="col-12 mt-2">
+        <div class="rk-filter-badge primary mb-2">
+          <div class="unhover">
+            <div class="filter-name">Action</div>
+
+            <div class="equals">
+              <icon-equal></icon-equal>
+            </div>
+
+            <div class="values">
+              google.com<span class="seperator"></span>yahoo.com
+            </div>
+          </div>
+
+          <div class="hover">
+            <button class="ripple">
+              <i-feather name="edit-3"></i-feather>
+            </button>
+            <button class="ripple equal">
+              <icon-not-equal></icon-not-equal>
+            </button>
+            <button class="ripple">
+              <i-feather name="trash-2"></i-feather>
+            </button>
+          </div>
+        </div>
+        <div class="rk-filter-badge security">
+          <div class="unhover">
+            <div class="filter-name">Action</div>
+
+            <div class="equals">
+              <icon-not-equal></icon-not-equal>
+            </div>
+
+            <div class="values">
+              google.com
+              <span class="seperator"></span>yahoo.com
+              <span class="seperator"></span>yahoo.com
+            </div>
+          </div>
+
+          <div class="hover">
+            <button class="ripple">
+              <i-feather name="edit-3"></i-feather>
+            </button>
+            <button class="ripple equal">
+              <icon-equal></icon-equal>
+            </button>
+            <button class="ripple">
+              <i-feather name="trash-2"></i-feather>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 mt-2">
+        <div class="menu" style="width: 200px;">
+          <button class="menu-item active">
+            <div class="icon">
+              <i-feather name="home"></i-feather>
+            </div>
+            <div class="text">
+              Text
+            </div>
+            <div class="icon arrow">
+              <i-feather name="chevron-down"></i-feather>
+            </div>
+          </button>
+          <button class="menu-item">
+            <div class="icon">
+              <i-feather name="home"></i-feather>
+            </div>
+            <div class="text">
+              Text
+            </div>
+            <div class="icon arrow">
+              <i-feather name="chevron-down" class="text-blue-grey"></i-feather>
+            </div>
+          </button>
+          <button class="menu-item">
+            <div class="icon">
+              <i-feather name="home"></i-feather>
+            </div>
+            <div class="text">
+              Text
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <div class="col-3 mt-2">
+        <rk-menu-container>
+          <rk-menu-item text="Anasayfa" icon="home"></rk-menu-item>
+          <rk-menu-item text="Anasayfa" icon="edit"></rk-menu-item>
+        </rk-menu-container>
+      </div>
+
+
+
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-3">
+        <rk-list [config]="listConfig"></rk-list>
+      </div>
+    </div>
+
+
+    <div class="row mt-3">
+      <div class="col-6">
+        <rk-progressbar [value]="75" [showType]="'outside'" [type]="'warning'" [sizeType]="'medium'"></rk-progressbar>
+      </div>
+    </div>
+    <!-- <div class="row mt-3">
+      <div class="col-3">
+        <rk-avatar ></rk-avatar>
+      </div>
+    </div> -->
+
+    <div class="row mt-3">
+      <div class="col-3">
+        <rk-card [config]="cardConfig"></rk-card>
+      </div>
+    </div>
+
+
+    <div class="row mt-3">
+      <div class="col-3">
+        <rk-accordion>
+          <rk-accordion-panel *ngFor="let item of listConfig.items; let i = index">
+            <rk-accordion-header-content>
+              {{ item.content }}
+            </rk-accordion-header-content>
+            <rk-accordion-header-sub-content>
+              {{ item.subContent }}
+            </rk-accordion-header-sub-content>
+
+            panel body {{ i + 1 }}
+          </rk-accordion-panel>
+        </rk-accordion>
+      </div>
+    </div>
+
+  </div>
 </div>
