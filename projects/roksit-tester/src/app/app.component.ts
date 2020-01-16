@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RkListConfigModel } from 'projects/roksit-lib/src/lib/modules/rk-layout/rk-list/rk-list.component';
 import { RkCardConfigModel } from 'projects/roksit-lib/src/lib/modules/rk-layout/rk-card/rk-card.component';
 import { RkUtilityService } from 'roksit-lib';
+
 // import { RkAutoCompleteModel } from 'roksit-lib/lib/modules/rk-autocomplete/rk-autocomplete.component';
 
 interface Country {
@@ -18,6 +19,7 @@ const COUNTRIES: Country[] = [
     area: 17075200,
     population: 146989754
   },
+  
   {
     name: 'Canada',
     flag: 'c/cf/Flag_of_Canada.svg',

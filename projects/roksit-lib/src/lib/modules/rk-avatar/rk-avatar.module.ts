@@ -21,6 +21,7 @@ import { BrowserModule } from '@angular/platform-browser';
     ],
     bootstrap:[
         RkAvatarComponent
+        
     ],
 })
 export class RkAvatarModule  {
