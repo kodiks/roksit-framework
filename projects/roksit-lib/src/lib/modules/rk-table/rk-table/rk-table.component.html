@@ -1,41 +1,39 @@
-<div class="rk-table-base" [ngClass]="{ 'info' : info }" >
-  <div class="table">
-    <div class="table-content">
-      <table class="table table-bordered">
-        <thead>
-          <ng-container *ngIf="!config" >
-            <ng-container *ngTemplateOutlet="header"></ng-container>
-          </ng-container>
+<div class="table" [ngClass]="{ 'info' : info }">
+  <div class="table-content">
+    <table class="table table-bordered">
+      <thead>
+        <ng-container *ngIf="!config">
+          <ng-container *ngTemplateOutlet="header"></ng-container>
+        </ng-container>
 
-          
-          <ng-container *ngIf="config" >
-            <tr>
-              <th *ngFor="let col of config.columns" >  
-                {{ col }}
-              </th>  
-            </tr>
-          </ng-container>
-        </thead>
-        <tbody>
-          <ng-container *ngIf="!config" >
-            <ng-container *ngTemplateOutlet="body"></ng-container>
-          </ng-container>
 
-          
-          <ng-container *ngIf="config" >
-            <tr *ngFor="let data of config.rows" >
-              <td *ngFor="let col of config.columns" >  
-                {{ data[col] }}
-              </td>  
-            </tr>
-          </ng-container>
-        </tbody>
-      </table>
-    </div>
+        <ng-container *ngIf="config">
+          <tr>
+            <th *ngFor="let col of config.columns">
+              {{ col }}
+            </th>
+          </tr>
+        </ng-container>
+      </thead>
+      <tbody>
+        <ng-container *ngIf="!config">
+          <ng-container *ngTemplateOutlet="body"></ng-container>
+        </ng-container>
 
-    <div class="table-pagination" *ngIf="showPagination">
-      <rk-table-pagination (pageChange)="onPageChange($event)" (pageViewCountChange)="onPageViewCountChange($event)">
-      </rk-table-pagination>
-    </div>
+
+        <ng-container *ngIf="config">
+          <tr *ngFor="let data of config.rows">
+            <td *ngFor="let col of config.columns">
+              {{ data[col] }}
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
   </div>
-</div>      
+
+  <div class="table-pagination" *ngIf="showPagination">
+    <rk-table-pagination (pageChange)="onPageChange($event)" (pageViewCountChange)="onPageViewCountChange($event)">
+    </rk-table-pagination>
+  </div>
+</div>

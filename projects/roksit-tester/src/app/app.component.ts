@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { RkListConfigModel } from 'projects/roksit-lib/src/lib/modules/rk-layout/rk-list/rk-list.component';
 import { RkCardConfigModel } from 'projects/roksit-lib/src/lib/modules/rk-layout/rk-card/rk-card.component';
+import { RkUtilityService } from 'projects/roksit-lib/src/public-api';
 // import { RkAutoCompleteModel } from 'roksit-lib/lib/modules/rk-autocomplete/rk-autocomplete.component';
-import { RkUtilityService } from 'roksit-lib';
 
 interface Country {
   name: string;
@@ -18,6 +18,7 @@ const COUNTRIES: Country[] = [
     area: 17075200,
     population: 146989754
   },
+  
   {
     name: 'Canada',
     flag: 'c/cf/Flag_of_Canada.svg',
@@ -42,17 +43,17 @@ const COUNTRIES: Country[] = [
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  providers : []
+  providers: []
 })
 export class AppComponent {
   /**  
    *
    */
-  constructor(public utilityServie : RkUtilityService) {
-    
+  constructor(public utilityServie: RkUtilityService) {
+
   }
 
-  darkMode : boolean = false;
+  darkMode: boolean = false;
 
   toggleDarkModel() {
     this.darkMode = !this.darkMode;
@@ -133,7 +134,7 @@ export class AppComponent {
   ];
 
   ss;
-  
+
   onPageChange(page: number) {
     this.countries = this.shuffle(this.countries);
   }
