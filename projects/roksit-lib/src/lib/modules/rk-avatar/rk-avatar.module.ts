@@ -20,6 +20,7 @@ import { RkAvatarComponent } from './rk-avatar.component';
     ],
     bootstrap:[
         RkAvatarComponent
+        
     ],
 })
 export class RkAvatarModule  {

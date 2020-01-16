@@ -1,0 +1,26 @@
+.rk-title  {
+
+    &-1 {
+        color: var(--titleColor);
+        font-family: Roboto;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    &-2 {
+        color: var(--titleColor);
+        font-family: Roboto;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        font-weight: bold;
+        font-size: 16px;
+    }
+}

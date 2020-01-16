@@ -18,6 +18,7 @@ const COUNTRIES: Country[] = [
     area: 17075200,
     population: 146989754
   },
+  
   {
     name: 'Canada',
     flag: 'c/cf/Flag_of_Canada.svg',
