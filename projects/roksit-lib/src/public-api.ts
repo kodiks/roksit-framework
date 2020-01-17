@@ -15,5 +15,6 @@ export * from './lib/modules/rk-radio/rk-radio.module';
 export * from './lib/modules/rk-select/rk-select.module';
 export * from './lib/modules/rk-switch/rk-switch.module';
 export * from './lib/modules/rk-table/rk-table.module';
+export * from './lib/modules/rk-checkbox/rk-checkbox.module';
 
 export * from './lib/modules/roksit.module';

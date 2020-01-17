@@ -1,0 +1,7 @@
+<label class="rk-checkbox">
+    <span class="d-inline-block mr-2">
+        <ng-content></ng-content>
+    </span>
+    <input type="checkbox" [checked]="value" (change)="valueChanged()">
+    <span class="checkmark"></span>
+</label>
