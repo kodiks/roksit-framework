@@ -29,9 +29,9 @@
 
 
         <ng-container *ngIf="config">
-          <tr *ngFor="let row of config.rows">
+          <tr *ngFor="let row of config.rows" [ngClass]="{'selected': row?.selected}">
             <td *ngIf="config.selectableRows">
-              <rk-switch></rk-switch>
+              <rk-switch [(value)]="row.selected"></rk-switch>
             </td>
             <td *ngFor="let col of config.columns;">
               {{ row[getColumnNameByIndex(col)] }}

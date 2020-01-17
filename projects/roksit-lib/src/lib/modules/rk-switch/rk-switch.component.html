@@ -1,6 +1,6 @@
-<label for="chk" class="rk-chk-label">
+<label for="chk-{{ guid }}" class="rk-chk-label">
     <div class="rk-form-switch">
-        <input type="checkbox" id="chk" [(ngModel)]="switch" (change)="changed()">
+        <input type="checkbox" id="chk-{{ guid }}" [checked]="value" (change)="changed()">
         <i></i>
         <span></span>
     </div>

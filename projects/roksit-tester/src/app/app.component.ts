@@ -73,24 +73,29 @@ export class AppComponent {
     ],
     rows: [
       {
-        time: '20:04', domain: 'trafficmanager.net', subdomain: 'app.trafficmanager.net', srcip: '176.23.4.52', srccountry: 'Turkey',
-        dstip: '142.45.23.231', dstcountry: 'England', location: 'X Agent', userid: 23, action: '-', app: 'TraManager', cat: 'Network'
+        selected: true, time: '20:04', domain: 'trafficmanager.net', subdomain: 'app.trafficmanager.net', srcip: '176.23.4.52',
+        srccountry: 'Turkey', dstip: '142.45.23.231', dstcountry: 'England', location: 'X Agent', userid: 23, action: '-',
+        app: 'TraManager', cat: 'Network'
       },
       {
-        time: '20:04', domain: 'trafficmanager.net', subdomain: 'app.trafficmanager.net', srcip: '176.23.4.52', srccountry: 'Turkey',
-        dstip: '142.45.23.231', dstcountry: 'England', location: 'X Agent', userid: 23, action: '-', app: 'TraManager', cat: 'Network'
+        selected: false, time: '20:04', domain: 'trafficmanager.net', subdomain: 'app.trafficmanager.net', srcip: '176.23.4.52',
+        srccountry: 'Turkey', dstip: '142.45.23.231', dstcountry: 'England', location: 'X Agent', userid: 23, action: '-',
+        app: 'TraManager', cat: 'Network'
       },
       {
-        time: '20:04', domain: 'trafficmanager.net', subdomain: 'app.trafficmanager.net', srcip: '176.23.4.52', srccountry: 'Turkey',
-        dstip: '142.45.23.231', dstcountry: 'England', location: 'X Agent', userid: 23, action: '-', app: 'TraManager', cat: 'Network'
+        selected: true, time: '20:04', domain: 'trafficmanager.net', subdomain: 'app.trafficmanager.net', srcip: '176.23.4.52',
+        srccountry: 'Turkey', dstip: '142.45.23.231', dstcountry: 'England', location: 'X Agent', userid: 23, action: '-',
+        app: 'TraManager', cat: 'Network'
       },
       {
-        time: '20:04', domain: 'trafficmanager.net', subdomain: 'app.trafficmanager.net', srcip: '176.23.4.52', srccountry: 'Turkey',
-        dstip: '142.45.23.231', dstcountry: 'England', location: 'X Agent', userid: 23, action: '-', app: 'TraManager', cat: 'Network'
+        selected: true, time: '20:04', domain: 'trafficmanager.net', subdomain: 'app.trafficmanager.net', srcip: '176.23.4.52',
+        srccountry: 'Turkey', dstip: '142.45.23.231', dstcountry: 'England', location: 'X Agent', userid: 23, action: '-',
+        app: 'TraManager', cat: 'Network'
       },
       {
-        time: '20:04', domain: 'trafficmanager.net', subdomain: 'app.trafficmanager.net', srcip: '176.23.4.52', srccountry: 'Turkey',
-        dstip: '142.45.23.231', dstcountry: 'England', location: 'X Agent', userid: 23, action: '-', app: 'TraManager', cat: 'Network'
+        selected: false, time: '20:04', domain: 'trafficmanager.net', subdomain: 'app.trafficmanager.net', srcip: '176.23.4.52',
+        srccountry: 'Turkey', dstip: '142.45.23.231', dstcountry: 'England', location: 'X Agent', userid: 23, action: '-',
+        app: 'TraManager', cat: 'Network'
       },
     ],
     selectableRows: true

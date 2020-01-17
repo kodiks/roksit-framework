@@ -19,7 +19,6 @@ rk-table-container {
     border-top-right-radius: 13px;
     display: flex;
     flex-direction: column;
- 
 
     .top-content {
       flex: 1;
@@ -55,7 +54,7 @@ rk-table-container {
       &.info {
         table {
           border: none !important;
-  
+
           th {
             background-color: var(--whiteColor) !important ;
             background: var(--whiteColor) !important;
@@ -64,7 +63,7 @@ rk-table-container {
             border-left: none !important;
             border-right: none !important;
           }
-  
+
           td {
             border: none !important;
           }
@@ -73,15 +72,22 @@ rk-table-container {
 
       th,
       td {
-        border: none !important;
+        // border: none !important;
         vertical-align: middle;
       }
 
       thead,
       tbody {
-        tr:last-child {
-          td {
-            border-bottom: none !important;
+        tr {
+          &.selected {
+            td {
+              background: rgba($color: $primary, $alpha: 0.1);
+            }
+          }
+          &:last-child {
+            td {
+              border-bottom: none !important;
+            }
           }
         }
 
