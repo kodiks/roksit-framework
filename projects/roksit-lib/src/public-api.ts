@@ -3,6 +3,8 @@
  */
 export * from './lib/services/rk-utility.service';
 
+export * from './lib/helpers/rk-apex-helper';
+
 export * from './lib/modules/rk-progressbar/rk-progressbar.module';
 export * from './lib/modules/rk-badge/rk-badge.module';
 export * from './lib/modules/rk-date/rk-date.module';
