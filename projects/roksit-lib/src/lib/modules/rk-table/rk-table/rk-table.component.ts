@@ -39,7 +39,7 @@ export class RkTableComponent implements OnInit {
 }
 
 export class RkTableConfigModel {
-  rows: any[];
+  rows: RkTableRowModel[] | any[];
   columns: RkTableColumnModel[];
   selectableRows = false;
 }
@@ -48,4 +48,8 @@ export interface RkTableColumnModel {
   id?: number;
   name: string;
   displayText: string;
+}
+
+export interface RkTableRowModel {
+  selected: false;
 }

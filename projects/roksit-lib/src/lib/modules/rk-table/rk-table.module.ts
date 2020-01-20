@@ -1,4 +1,4 @@
-import { NgModule, ModuleWithProviders, Directive, Input, TemplateRef } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { IconsModule } from '../icons/icons.module';
 import { CommonModule } from '@angular/common';
 import { RkTableService } from './rk-table.service';
@@ -8,7 +8,7 @@ import { RkTableComponent } from './rk-table/rk-table.component';
 import { RkSelectModule } from '../rk-select/rk-select.module';
 import { RkTableContainerComponent } from './rk-table-container/rk-table-container.component';
 import { RkBadgeModule } from '../rk-badge/rk-badge.module';
-import { RkSwitchModule } from '../rk-switch/rk-switch.module';
+import { RkCheckboxModule } from '../rk-checkbox/rk-checkbox.module';
 
 @NgModule({
     imports: [
@@ -17,7 +17,7 @@ import { RkSwitchModule } from '../rk-switch/rk-switch.module';
         NgbPaginationModule,
         RkSelectModule,
         RkBadgeModule,
-        RkSwitchModule
+        RkCheckboxModule
     ],
     exports: [
         RkTablePaginationComponent,

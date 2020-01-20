@@ -1,3 +1,19 @@
+rk-date {
+  position: relative;
+  display: block;
+
+  > div {
+    display: flex;
+    &.left {
+      justify-content: flex-start;
+    }
+
+    &.right {
+      justify-content: flex-end;
+    }
+  }
+}
+
 .rk-date-backdrop {
   position: fixed;
   top: 0;
@@ -23,8 +39,17 @@
   height: 380px;
   border-radius: 6px;
   overflow: hidden;
-  position: relative;
-  z-index: 101;
+  position: absolute;
+  z-index: 1001;
+  top: 50px;
+
+  &.left {
+    left: 0;
+  }
+
+  &.right {
+    right: 0;
+  }
 
   .rk-date-picker {
     flex: 1;

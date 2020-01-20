@@ -21,6 +21,8 @@ export class RkDateComponent implements OnInit, AfterViewInit {
     endMinute = 0;
     endHour = 0;
 
+    @Input() alignment: 'left' | 'right' = 'left';
+
     // tslint:disable-next-line: no-output-native
     @Output() complete = new EventEmitter();
 

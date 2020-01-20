@@ -1,11 +1,11 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 
 @Component({
-    selector: 'rk-switch',
-    templateUrl: 'rk-switch.component.html'
+    selector: 'rk-checkbox',
+    templateUrl: 'rk-checkbox.component.html'
 })
 
-export class RkSwitchComponent implements OnInit {
+export class RkCheckboxComponent implements OnInit {
 
     constructor() { }
 
@@ -21,8 +21,9 @@ export class RkSwitchComponent implements OnInit {
         });
     }
 
-    changed() {
+    valueChanged() {
         this.value = !this.value;
         this.valueChange.emit(this.value);
     }
+
 }

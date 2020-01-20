@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RkListConfigModel } from 'projects/roksit-lib/src/lib/modules/rk-layout/rk-list/rk-list.component';
 import { RkCardConfigModel } from 'projects/roksit-lib/src/lib/modules/rk-layout/rk-card/rk-card.component';
-import { RkUtilityService } from 'projects/roksit-lib/src/public-api';
+import { RkUtilityService, RkApexHelper } from 'projects/roksit-lib/src/public-api';
 import { RkTableConfigModel } from 'projects/roksit-lib/src/lib/modules/rk-table/rk-table/rk-table.component';
 // import { RkAutoCompleteModel } from 'roksit-lib/lib/modules/rk-autocomplete/rk-autocomplete.component';
 
@@ -46,15 +46,16 @@ const COUNTRIES: Country[] = [
   styleUrls: ['./app.component.scss'],
   providers: []
 })
-export class AppComponent {
-  /**  
+export class AppComponent implements OnInit {
+
+  /**
    *
    */
   constructor(public utilityServie: RkUtilityService) {
 
   }
 
-  darkMode: boolean = false;
+  darkMode = false;
 
   tableConfig: RkTableConfigModel = {
     columns: [
@@ -73,24 +74,29 @@ export class AppComponent {
     ],
     rows: [
       {
-        time: '20:04', domain: 'trafficmanager.net', subdomain: 'app.trafficmanager.net', srcip: '176.23.4.52', srccountry: 'Turkey',
-        dstip: '142.45.23.231', dstcountry: 'England', location: 'X Agent', userid: 23, action: '-', app: 'TraManager', cat: 'Network'
+        selected: true, time: '20:04', domain: 'trafficmanager.net', subdomain: 'app.trafficmanager.net', srcip: '176.23.4.52',
+        srccountry: 'Turkey', dstip: '142.45.23.231', dstcountry: 'England', location: 'X Agent', userid: 23, action: '-',
+        app: 'TraManager', cat: 'Network'
       },
       {
-        time: '20:04', domain: 'trafficmanager.net', subdomain: 'app.trafficmanager.net', srcip: '176.23.4.52', srccountry: 'Turkey',
-        dstip: '142.45.23.231', dstcountry: 'England', location: 'X Agent', userid: 23, action: '-', app: 'TraManager', cat: 'Network'
+        selected: false, time: '20:04', domain: 'trafficmanager.net', subdomain: 'app.trafficmanager.net', srcip: '176.23.4.52',
+        srccountry: 'Turkey', dstip: '142.45.23.231', dstcountry: 'England', location: 'X Agent', userid: 23, action: '-',
+        app: 'TraManager', cat: 'Network'
       },
       {
-        time: '20:04', domain: 'trafficmanager.net', subdomain: 'app.trafficmanager.net', srcip: '176.23.4.52', srccountry: 'Turkey',
-        dstip: '142.45.23.231', dstcountry: 'England', location: 'X Agent', userid: 23, action: '-', app: 'TraManager', cat: 'Network'
+        selected: true, time: '20:04', domain: 'trafficmanager.net', subdomain: 'app.trafficmanager.net', srcip: '176.23.4.52',
+        srccountry: 'Turkey', dstip: '142.45.23.231', dstcountry: 'England', location: 'X Agent', userid: 23, action: '-',
+        app: 'TraManager', cat: 'Network'
       },
       {
-        time: '20:04', domain: 'trafficmanager.net', subdomain: 'app.trafficmanager.net', srcip: '176.23.4.52', srccountry: 'Turkey',
-        dstip: '142.45.23.231', dstcountry: 'England', location: 'X Agent', userid: 23, action: '-', app: 'TraManager', cat: 'Network'
+        selected: true, time: '20:04', domain: 'trafficmanager.net', subdomain: 'app.trafficmanager.net', srcip: '176.23.4.52',
+        srccountry: 'Turkey', dstip: '142.45.23.231', dstcountry: 'England', location: 'X Agent', userid: 23, action: '-',
+        app: 'TraManager', cat: 'Network'
       },
       {
-        time: '20:04', domain: 'trafficmanager.net', subdomain: 'app.trafficmanager.net', srcip: '176.23.4.52', srccountry: 'Turkey',
-        dstip: '142.45.23.231', dstcountry: 'England', location: 'X Agent', userid: 23, action: '-', app: 'TraManager', cat: 'Network'
+        selected: false, time: '20:04', domain: 'trafficmanager.net', subdomain: 'app.trafficmanager.net', srcip: '176.23.4.52',
+        srccountry: 'Turkey', dstip: '142.45.23.231', dstcountry: 'England', location: 'X Agent', userid: 23, action: '-',
+        app: 'TraManager', cat: 'Network'
       },
     ],
     selectableRows: true
@@ -169,6 +175,194 @@ export class AppComponent {
   ];
 
   ss;
+
+  private prepareTimelineChart() {
+    function generateDayWiseTimeSeries(baseval, count, yrange) {
+      let i = 0;
+      const series = [];
+      while (i < count) {
+        const x = baseval;
+        const y = Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min;
+
+        series.push([x, y]);
+        baseval += 86400000;
+        i++;
+      }
+      return series;
+    }
+
+    const data = generateDayWiseTimeSeries(new Date('11 Feb 2017').getTime(), 185, {
+      min: 10,
+      max: 500
+    });
+
+    RkApexHelper.render('#timeline', {
+      series: [{
+        data
+      }],
+      chart: {
+        id: 'chart2',
+        type: 'line',
+        height: 350,
+        toolbar: {
+          autoSelected: 'pan',
+          show: false
+        }
+      },
+      markers: {
+        size: 4,
+        colors: ['#FFA41B'],
+        strokeColors: '#FFA41B',
+        strokeWidth: 2,
+        hover: {
+          size: 7,
+        }
+      },
+      colors: ['#0084ff'],
+      stroke: {
+        width: 3
+      },
+      dataLabels: {
+        enabled: false
+      },
+      fill: {
+        opacity: 1,
+      },
+      xaxis: {
+        type: 'datetime'
+      }
+    });
+
+
+    RkApexHelper.render('#timeline-chart', {
+      series: [{
+        data
+      }],
+      chart: {
+        id: 'chart1',
+        height: 120,
+        type: 'bar',
+        brush: {
+          target: 'chart2',
+          enabled: true
+        },
+        selection: {
+          enabled: true,
+          type: 'x',
+          fill: {
+            color: 'transparent',
+            opacity: 0.1
+          },
+          stroke: {
+            width: 4,
+            color: '#97a5bb',
+            opacity: 1,
+            dashArray: 0,
+            radius: 10
+          },
+          xaxis: {
+            min: new Date('19 Jun 2017').getTime(),
+            max: new Date('14 Aug 2017').getTime()
+          },
+        }
+      },
+      colors: [function ({ value, seriesIndex, w }) {
+        if (value < 55) {
+          return '#f95656';
+        } else if (value >= 55 && value < 80) {
+          return '#3dd49a';
+        } else {
+          return '#f99256';
+        }
+      }],
+      // colors: ['#f95656', '#3dd49a', '#f99256', '#f9df56', '#d8d8d8'],
+      // fill: {
+      //   type: 'gradient',
+      //   gradient: {
+      //     opacityFrom: 0.91,
+      //     opacityTo: 0.1,
+      //   }
+      // },
+      xaxis: {
+        type: 'datetime',
+        tooltip: {
+          enabled: false
+        }
+      },
+      yaxis: {
+        tickAmount: 2
+      }
+    });
+  }
+
+  ngOnInit(): void {
+    this.prepareTimelineChart();
+
+    RkApexHelper.render('#line-chart', {
+      chart: {
+        height: 250,
+        type: 'line',
+        zoom: {
+          enabled: false
+        },
+        foreColor: '#9b9b9b',
+        toolbar: {
+          show: false,
+          tools: {
+            download: false
+          }
+        },
+      },
+      dataLabels: {
+        enabled: false
+      },
+      stroke: {
+        width: [4, 4],
+        curve: 'smooth'
+      },
+      colors: ['#f95656'],
+      series: [{
+        name: 'Session Duration',
+        data: [150, 100, 180, 400, 380, 550, 400]
+      }
+      ],
+      markers: {
+        size: 0,
+
+        hover: {
+          sizeOffset: 6
+        }
+      },
+      xaxis: {
+        categories: ['7/12', '8/12', '9/12', '10/12', '11/12', '12/12', '13/12'],
+        labels: {
+          minHeight: 20
+        }
+      },
+      tooltip: {
+        y: [{
+          title: {
+            formatter(val) {
+              return val + ' (mins)';
+            }
+          }
+        }]
+      },
+      grid: {
+        borderColor: '#e9ebf1'
+      },
+      legend: {
+        show: false
+      },
+      annotations: {
+        yaxis: [{
+          label: {
+            fontSize: '20px'
+          }
+        }]
+      }
+    });
+  }
 
   onPageChange(page: number) {
     this.countries = this.shuffle(this.countries);
