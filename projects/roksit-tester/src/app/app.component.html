@@ -1,57 +1,31 @@
-<div class="container-fluid">
-  <div class="row col-6 m-t-10" >
-    <div class="rk-info-box info-total" >
-      <div class="info-header" >
-        Total
-      </div>
-      <div class="info-content" >
-        
-      </div>
+<div class="container-fluid" style="margin-top: 10px;">
+  <div class="row ">
+    <rk-infobox [active]="true" [title]="'Total'" [color]="'#4353ff'" [type]="1" [valueOne]="345" [valueTwo]="345" >
+    </rk-infobox>
+
+    <div style="margin-left: 15px;">
+      <rk-infobox [active]="false" [type]="2" [title]="'Safe'" [color]="'#3dd49a'" [valueOne]="'35.000'" [valueTwo]="'32.000'">
+      </rk-infobox>
     </div>
+
+    <div style="margin-left: 15px;">
+      <rk-infobox [active]="false" [type]="2" [title]="'Malicious'" [color]="'#f95656'" [valueOne]="'35.000'" [valueTwo]="'32.000'">
+      </rk-infobox>
+    </div>
+
+    <div style="margin-left: 15px;">
+      <rk-infobox [active]="false" [type]="2" [title]="'Variable'" [color]="'#d8d8d8'" [valueOne]="'35.000'" [valueTwo]="'32.000'">
+      </rk-infobox>
+    </div>
+
+    <div style="margin-left: 15px;">
+      <rk-infobox [active]="false" [type]="2" [title]="'Harmful Content'" [color]="'#f9df56'" [valueOne]="'35.000'" [valueTwo]="'32.000'">
+      </rk-infobox>
+    </div>
+
   </div>
 
   <div class="row mt-3">
-    <div class="col-12">
-      <div class="rk-base-card p-0 bg-white">
-        <div id="timeline-chart" class="w-100"></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="row mt-3">
-    <div class="col-12">
-
-      <div class="rk-base-card bg-white">
-        <div id="timeline" class="w-100"></div>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="row my-4">
-    <div class="col-12">
-      <div class="rk-base-card bg-white">
-        <div id="line-chart" class="w-100"></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="row mt-4">
-    <div class="col-12">
-      <rk-checkbox [value]="true">Option</rk-checkbox>
-    </div>
-  </div>
-
-  <div class="row mt-4">
-    <div class="col-12">
-      <label class="rk-checkbox">One
-        <input type="checkbox" checked="checked">
-        <span class="checkmark"></span>
-      </label>
-    </div>
-  </div>
-
-  <div class="row mt-5">
     <div class="col-12">
       <rk-badge>Text</rk-badge>
     </div>
@@ -61,7 +35,7 @@
     <div class="col-12">
       <rk-table-container [config]="tableConfig">
         <rk-table [config]="tableConfig" (pageChange)="onPageChange($event)"
-          (pageViewCountChange)="onPageViewCountChange($event)" [info]="false">
+          (pageViewCountChange)="onPageViewCountChange($event)" [info]="true">
           <ng-template #header>
             <tr>
               <th class="index">#</th>
@@ -244,7 +218,7 @@
     </div>
   </div>
 
-  <div class="col-12">
+  <div class="col-6">
     <div class="rk-col">
       <div class="rk-base-card" style="padding:0;">
         <div class="card-item">
@@ -273,7 +247,7 @@
 
     <div class="row mt-4">
       <div class="col-12">
-        <rk-date [alignment]="'right'" (complete)="completed($event)"></rk-date>
+        <rk-date (complete)="completed($event)"></rk-date>
       </div>
     </div>
 

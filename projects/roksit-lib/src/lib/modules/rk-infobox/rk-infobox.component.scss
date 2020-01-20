@@ -1,0 +1,147 @@
+.rk-info-box {
+  border-radius: 6px;
+  border: solid 1px #e4e9f1;
+  padding: 5px;
+  background-color: white;
+  cursor: pointer;
+  width: 230px;
+
+
+  .info-header {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: var(--slate);
+
+    .l-border {
+      margin-right: 10px;
+      display: inline-block;
+      width: 5px;
+      height: 20px;
+      border-radius: 4.5px;
+    }
+  }
+
+  .info-content {
+    padding-left: 22px;
+
+    .info-allow-block {
+      display: flex;
+
+      .info-allow,
+      .info-block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 4px 12px;
+
+        span {
+          &:first-of-type {
+            font-family: Roboto;
+            font-size: 9px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            text-align: center;
+            color: var(--blue-gray);
+          }
+
+          &:last-of-type {
+            font-family: Roboto;
+            font-size: 11px;
+            font-weight: bold;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: var(--slate);
+            padding-top: 3px;
+          }
+        }
+      }
+
+      .info-allow {
+        padding-left: 0;
+      }
+
+      .info-block {
+        border-left: solid 2px var(--light-blue-grey);
+      }
+    }
+
+    .info-hit-domain {
+      height: 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .info-hit,
+      .info-domain {
+        display: flex;
+
+        span {
+          &:first-of-type {
+            font-family: Roboto;
+            font-size: 10px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: var(--blue-gray);
+          }
+
+          &:last-of-type {
+            font-family: Roboto;
+            font-size: 10px;
+            font-weight: bold;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: normal;
+            color: var(--slate);
+            padding-left: 10px;
+          }
+        }
+      }
+
+      .info-hit {
+      }
+
+      .info-domain {
+        margin-top: 3px;
+      }
+    }
+  }
+
+  &.active {
+    .info-header {
+      color: white;
+    }
+
+    .info-allow,
+    .info-block {
+      span {
+        color: white !important;
+      }
+    }
+
+    
+    .info-hit,
+    .info-domain {
+      span {
+        color: white !important;
+      }
+    }
+  }
+}

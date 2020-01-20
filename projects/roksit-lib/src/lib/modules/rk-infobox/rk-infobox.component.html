@@ -1,0 +1,31 @@
+<div class="rk-info-box " [ngClass]="{ 'active' : isActive }"
+    [ngStyle]="{ 'background-color' : isActive ? color: 'white' }" (click)="toggleActive()">
+    <div class="info-header">
+        <span class="l-border" [ngStyle]="{ 'background-color' : !isActive ? color: 'white' }"></span>
+        {{ title }}
+    </div>
+    <div class="info-content">
+        <div class="info-allow-block" *ngIf="type == 1">
+            <div class="info-allow">
+                <span>Allow Count</span>
+                <span>{{ valueOne }}</span>
+            </div>
+            <div class="info-block">
+                <span>Block Count</span>
+                <span>{{ valueTwo }}</span>
+            </div>
+        </div>
+
+        <div class="info-hit-domain" *ngIf="type == 2">
+            <div class="info-hit">
+                <span>Hit Count</span>
+                <span>{{ valueOne }}</span>
+            </div>
+
+            <div class="info-domain">
+                <span>Unique Domain</span>
+                <span>{{ valueTwo }}</span>
+            </div>
+        </div>
+    </div>
+</div>
