@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, Input } from '@angular/core';
+import { Component, OnInit, ElementRef, Input, ViewChild, AfterViewInit } from '@angular/core';
 import { RkTableConfigModel, RkTableColumnModel } from '../rk-table/rk-table.component';
 
 @Component({
@@ -15,6 +15,11 @@ export class RkTableContainerComponent implements OnInit {
     @Input() config: RkTableConfigModel;
 
     columns = [] as RkTableColumnModel[];
+
+    @ViewChild('badges', { static: false }) badges;
+
+    leftButton = true;
+    rightButton = true;
 
     ngOnInit() {
         this.columns = Object.assign([], this.config.columns);
@@ -38,6 +43,14 @@ export class RkTableContainerComponent implements OnInit {
 
     hasChecked(col: RkTableColumnModel) {
         return this.config.columns.some(x => x.name === col.name);
+    }
+
+    scroll(rotation: 'left' | 'right') {
+        if (rotation === 'left') {
+            this.badges.nativeElement.scrollLeft -= 100;
+        } else {
+            this.badges.nativeElement.scrollLeft += 100;
+        }
     }
 
 }

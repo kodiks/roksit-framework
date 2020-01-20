@@ -12,8 +12,18 @@
     <div class="bottom-content">
         <span class="text mr-2">Column;</span>
 
-        <rk-badge *ngFor="let col of columns; let index = index" [name]="col.name" [value]="hasChecked(col)"
-            (valueChange)="changeBadge($event)">{{ col.displayText }}</rk-badge>
+        <div class="badges-container">
+            <button class="x-scroll-left-button" *ngIf="leftButton" (click)="scroll('left')">
+                <i-feather name="chevrons-left"></i-feather>
+            </button>
+            <div class="badges" id="badges" #badges>
+                <rk-badge *ngFor="let col of columns; let index = index" [name]="col.name" [value]="hasChecked(col)"
+                    (valueChange)="changeBadge($event)">{{ col.displayText }}</rk-badge>
+            </div>
+            <button class="x-scroll-right-button" *ngIf="rightButton" (click)="scroll('right')">
+                <i-feather name="chevrons-right"></i-feather>
+            </button>
+        </div>
     </div>
 </div>
 <ng-content class="rk-table-contianer" select="rk-table"></ng-content>
