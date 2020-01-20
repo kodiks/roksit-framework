@@ -17,6 +17,7 @@ import { RkRadioModule } from './rk-radio/rk-radio.module';
 import { RkUtilityService } from '../../public-api';
 import { RkBadgeModule } from './rk-badge/rk-badge.module';
 import { RkCheckboxModule } from './rk-checkbox/rk-checkbox.module';
+import { RkInfoBoxModule } from './rk-infobox/rk-infobox.module';
 
 @NgModule({
     imports: [
@@ -35,7 +36,8 @@ import { RkCheckboxModule } from './rk-checkbox/rk-checkbox.module';
         RkSwitchModule,
         RkRadioModule,
         RkBadgeModule,
-        RkCheckboxModule
+        RkCheckboxModule,
+        RkInfoBoxModule
     ],
     exports: [
         IconsModule,
@@ -51,7 +53,8 @@ import { RkCheckboxModule } from './rk-checkbox/rk-checkbox.module';
         RkSwitchModule,
         RkRadioModule,
         RkBadgeModule,
-        RkCheckboxModule
+        RkCheckboxModule,
+        RkInfoBoxModule
     ],
     declarations: [],
     entryComponents: [],
