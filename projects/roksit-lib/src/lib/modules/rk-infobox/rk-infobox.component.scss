@@ -4,15 +4,16 @@
   padding: 5px;
   background-color: white;
   cursor: pointer;
-  width: 230px;
-
+  width: 100%;
+  transition: 0.2s all;
+  user-select: none;
+  margin-top: 20px;
 
   .info-header {
     padding: 5px;
     display: flex;
     align-items: center;
 
-    font-family: Roboto;
     font-size: 16px;
     font-weight: 500;
     font-stretch: normal;
@@ -45,7 +46,6 @@
 
         span {
           &:first-of-type {
-            font-family: Roboto;
             font-size: 9px;
             font-weight: normal;
             font-stretch: normal;
@@ -57,7 +57,6 @@
           }
 
           &:last-of-type {
-            font-family: Roboto;
             font-size: 11px;
             font-weight: bold;
             font-stretch: normal;
@@ -91,7 +90,6 @@
 
         span {
           &:first-of-type {
-            font-family: Roboto;
             font-size: 10px;
             font-weight: normal;
             font-stretch: normal;
@@ -102,7 +100,6 @@
           }
 
           &:last-of-type {
-            font-family: Roboto;
             font-size: 10px;
             font-weight: bold;
             font-stretch: normal;
@@ -125,6 +122,9 @@
   }
 
   &.active {
+    margin-top: -20px;
+    transition: 0.2s all;
+
     .info-header {
       color: white;
     }
@@ -136,7 +136,6 @@
       }
     }
 
-    
     .info-hit,
     .info-domain {
       span {

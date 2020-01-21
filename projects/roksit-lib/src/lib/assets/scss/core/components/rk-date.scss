@@ -1,3 +1,5 @@
+$base-border-color: #e4e9f1;
+
 rk-date {
   position: relative;
   display: block;
@@ -32,11 +34,12 @@ rk-date {
 
 .rk-date-container {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   background: $white;
   box-shadow: 0 2px 10px 0 rgba(51, 151, 197, 0.3);
-  width: 690px;
-  height: 380px;
+  width: 720px;
+  height: 415px;
   border-radius: 6px;
   overflow: hidden;
   position: absolute;
@@ -49,6 +52,136 @@ rk-date {
 
   &.right {
     right: 0;
+  }
+
+  .rk-date-header {
+    background: $pale-grey;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    height: 66px;
+    box-sizing: border-box;
+    border-bottom: 1px solid $base-border-color;
+    justify-content: space-between;
+
+    h4 {
+      font-size: 12px;
+      font-weight: 500;
+      color: $gray;
+      margin-bottom: 0;
+    }
+
+    i-feather {
+      svg {
+        color: $primary;
+      }
+    }
+
+    .rk-date-buttons {
+      .btn {
+        width: 65px;
+      }
+    }
+  }
+
+  .rk-date-content {
+    display: flex;
+    height: calc(100% - 66px);
+
+    h6.rk-date-head {
+      height: 38px;
+      margin-bottom: 0;
+      color: $blue-grey;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 38px;
+      padding-left: 20px;
+    }
+
+    .rk-select-dates {
+      display: flex;
+      flex-direction: column;
+      border-right: 1px solid $base-border-color;
+      width: 158px;
+      height: 100%;
+
+      ul.rk-date-select {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        overflow: auto;
+
+        li {
+          display: flex;
+          height: 44px;
+          align-items: center;
+          color: $gray;
+          padding: 0 12px;
+
+          &:hover {
+            background: rgba($color: $primary, $alpha: 0.8);
+            color: $white;
+            cursor: pointer;
+          }
+
+          &.active {
+            background: $primary;
+            color: $white;
+          }
+        }
+      }
+    }
+
+    .rk-datepickers {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      
+      .rk-pickers {
+        display: flex;
+        flex-direction: column;
+        border-right: 1px solid $base-border-color;
+        padding-bottom: 10px;
+
+        &:last-child {
+          border-right: none;
+        }
+
+        .rk-datepicker-input {
+          margin-top: 10px;
+          margin-left: 13px;
+        }
+
+        .rk-dp-time {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0 16px;
+
+          .time-icon {
+            color: $blue-grey;
+          }
+
+          .hour,
+          .minute {
+            margin-left: 10px;
+            flex: 1;
+            width: 60px;
+
+            .rk-input {
+              width: 100%;
+            }
+          }
+
+          .rk-select {
+            flex: 1;
+            margin-left: 10px;
+            width: 60px;
+          }
+        }
+      }
+    }
   }
 
   .rk-date-picker {
@@ -75,31 +208,32 @@ rk-date {
       }
     }
 
-    .rk-dp-time {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin: 10px 0;
+    // .rk-dp-time {
+    //   display: flex;
+    //   flex-direction: row;
+    //   align-items: center;
+    //   justify-content: space-between;
+    //   margin: 10px 0;
 
-      .time-icon {
-        color: $blue-grey;
-      }
+    //   .time-icon {
+    //     color: $blue-grey;
+    //   }
 
-      .hour,
-      .minute {
-        margin-left: 10px;
-        flex: 1;
+    //   .hour,
+    //   .minute {
+    //     margin-left: 10px;
+    //     flex: 1;
 
-        .rk-input {
-          width: 100%;
-        }
-      }
+    //     .rk-input {
+    //       width: 100%;
+    //     }
+    //   }
 
-      .rk-select {
-        flex: 1;
-        margin-left: 10px;
-      }
-    }
+    //   .rk-select {
+    //     flex: 1;
+    //     margin-left: 10px;
+    //   }
+    // }
   }
 
   .rk-date-actions {

@@ -1,25 +1,31 @@
 <div class="container-fluid" style="margin-top: 10px;">
-  <div class="row ">
-    <rk-infobox [active]="true" [title]="'Total'" [color]="'#4353ff'" [type]="1" [valueOne]="345" [valueTwo]="345" >
-    </rk-infobox>
-
-    <div style="margin-left: 15px;">
-      <rk-infobox [active]="false" [type]="2" [title]="'Safe'" [color]="'#3dd49a'" [valueOne]="'35.000'" [valueTwo]="'32.000'">
+  <div class="row gutters-sm">
+    <div class="col">
+      <rk-infobox [active]="true" [title]="'Total'" [color]="'#4353ff'" [type]="1" [valueOne]="345" [valueTwo]="345">
       </rk-infobox>
     </div>
 
-    <div style="margin-left: 15px;">
-      <rk-infobox [active]="false" [type]="2" [title]="'Malicious'" [color]="'#f95656'" [valueOne]="'35.000'" [valueTwo]="'32.000'">
+    <div class="col">
+      <rk-infobox [active]="false" [type]="2" [title]="'Safe'" [color]="'#3dd49a'" [valueOne]="'35.000'"
+        [valueTwo]="'32.000'">
       </rk-infobox>
     </div>
 
-    <div style="margin-left: 15px;">
-      <rk-infobox [active]="false" [type]="2" [title]="'Variable'" [color]="'#d8d8d8'" [valueOne]="'35.000'" [valueTwo]="'32.000'">
+    <div class="col">
+      <rk-infobox [active]="false" [type]="2" [title]="'Malicious'" [color]="'#f95656'" [valueOne]="'35.000'"
+        [valueTwo]="'32.000'">
       </rk-infobox>
     </div>
 
-    <div style="margin-left: 15px;">
-      <rk-infobox [active]="false" [type]="2" [title]="'Harmful Content'" [color]="'#f9df56'" [valueOne]="'35.000'" [valueTwo]="'32.000'">
+    <div class="col">
+      <rk-infobox [active]="false" [type]="2" [title]="'Variable'" [color]="'#d8d8d8'" [valueOne]="'35.000'"
+        [valueTwo]="'32.000'">
+      </rk-infobox>
+    </div>
+
+    <div class="col">
+      <rk-infobox [active]="false" [type]="2" [title]="'Harmful Content'" [color]="'#f9df56'" [valueOne]="'35.000'"
+        [valueTwo]="'32.000'">
       </rk-infobox>
     </div>
 
