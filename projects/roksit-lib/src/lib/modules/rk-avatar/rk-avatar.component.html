@@ -1,19 +1,12 @@
-<div class="avatar-row">
-  <!-- <div class="page-info">
-        <div class="pageview-count">  
-        </div>
-    </div> -->
-  <div class="row">
-    <div class="col">
-      <div ngbDropdown class="d-inline-block">
-        <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>K❤️DİKS</button>
-        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-          <button ngbDropdownItem>Action - 1 </button>
-          <button ngbDropdownItem>Another Action</button>
-          <button ngbDropdownItem>Something else is here</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  
+<div class="btn-group" dropdown placement="bottom right">
+    <button dropdownToggle type="button" class="btn px-0 btn-link">
+        <ng-content select="rk-img"></ng-content>
+        <ng-content select="rk-text"></ng-content>
+        <i-feather name="chevron-down"></i-feather>
+    </button>
+    <ng-content select="rk-dropdown-title"></ng-content>
+    <ul *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu">
+        <ng-content select="rk-dropdown-title"></ng-content>
+        <ng-content select="rk-dropdown"></ng-content>
+    </ul>
 </div>

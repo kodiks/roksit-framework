@@ -1,5 +1,35 @@
 <div class="container-fluid" style="margin-top: 10px;">
-  <div class="row gutters-sm">
+  <div class="row mt-3">
+    <div class="col-12">
+      <rk-avatar>
+        <rk-img>
+          <img
+            src="https://s.ftcdn.net/v2013/pics/all/curated/RKyaEDwp8J7JKeZWQPuOVWvkUjGQfpCx_cover_580.jpg?r=1a0fc22192d0c808b8bb2b9bcfbf4a45b1793687"
+            alt="" />
+        </rk-img>
+        <rk-text>
+          Cihan
+        </rk-text>
+        <rk-dropdown>
+          <rk-dropdown-title>Account</rk-dropdown-title>
+          <li>
+            <a href="#" class="dropdown-item">
+              <i-feather name="settings"></i-feather>
+              Account Settings
+            </a>
+          </li>
+          <li>
+            <a href="#" class="dropdown-item">
+              <i-feather name="log-out"></i-feather>
+              Exit
+            </a>
+          </li>
+        </rk-dropdown>
+      </rk-avatar>
+    </div>
+  </div>
+
+  <div class="row mt-4 gutters-sm">
     <div class="col">
       <rk-infobox [active]="true" [title]="'Total'" [color]="'#4353ff'" [type]="1" [valueOne]="345" [valueTwo]="345">
       </rk-infobox>
@@ -532,11 +562,6 @@
         <rk-progressbar [value]="75" [showType]="'outside'" [type]="'warning'" [sizeType]="'medium'"></rk-progressbar>
       </div>
     </div>
-    <!-- <div class="row mt-3">
-      <div class="col-3">
-        <rk-avatar ></rk-avatar>
-      </div>
-    </div> -->
 
     <div class="row mt-3">
       <div class="col-3">

@@ -25,7 +25,7 @@ export class RkDateComponent implements OnInit, AfterViewInit {
 
     constructor() { }
 
-    showContainer = true;
+    showContainer = false;
 
     @Input() startDate = new Date();
     startMinute = 0;
