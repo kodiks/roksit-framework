@@ -1,30 +1,29 @@
-import { NgModule, ModuleWithProviders, Directive, Input, TemplateRef } from '@angular/core';
-import { IconsModule } from '../icons/icons.module';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RkAvatarService } from './rk-avatar.service';
-import { NgbDropdownModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { IconsModule } from '../icons/icons.module';
 import { RkAvatarComponent } from './rk-avatar.component';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
     imports: [
-        NgbModule, NgbDropdownModule
+        CommonModule,
+        BrowserAnimationsModule,
+        IconsModule,
+        NgbModule,
+        BsDropdownModule.forRoot(),
     ],
     exports: [
-        RkAvatarComponent  
+        RkAvatarComponent
     ],
     declarations: [
-        RkAvatarComponent 
-    ],
-    providers: [
-        RkAvatarService
-    ],
-    bootstrap:[
         RkAvatarComponent
-        
     ],
+    providers: [],
 })
-export class RkAvatarModule  {
+export class RkAvatarModule {
     public static forRoot(): ModuleWithProviders {
-        return { ngModule: RkAvatarModule , providers: [RkAvatarService] };
+        return { ngModule: RkAvatarModule, providers: [] };
     }
 }

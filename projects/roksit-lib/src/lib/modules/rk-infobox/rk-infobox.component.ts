@@ -9,14 +9,12 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class RkInfoBoxComponent implements OnInit {
     constructor() { }
 
-    @Input('active') isActive : boolean = false;
-    @Input('type') type : number = 1;
-    @Input() title : string = "";
-    @Input() color : string = "";
-    @Input() valueOne : number = 0;
-    @Input() valueTwo : number = 0;
-    
-
+    @Input('active') isActive = false;
+    @Input('type') type = 1;
+    @Input() title = '';
+    @Input() color = '';
+    @Input() valueOne = 0;
+    @Input() valueTwo = 0;
 
     ngOnInit() {
         this.statusChanged();

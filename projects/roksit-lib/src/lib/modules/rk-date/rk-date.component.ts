@@ -3,6 +3,20 @@ import { RkSelectModel } from '../rk-select/rk-select.component';
 
 declare const $: any;
 
+const DEFAULT_TIMES = [
+    { value: 1, displayText: '1 hour' },
+    { value: 3, displayText: '3 hour' },
+    { value: 6, displayText: '6 hour' },
+    { value: 12, displayText: '12 hour' },
+    { value: 24, displayText: 'Last 1 day' },
+    { value: 24 * 2, displayText: 'Last 2 day' },
+    { value: 24 * 3, displayText: 'Last 3 day' },
+    { value: 24 * 7, displayText: 'Last 1 week' },
+    { value: 24 * 7, displayText: 'Last 2 week' },
+    { value: 24 * 30, displayText: 'Last month' },
+    { value: 24 * 30 * 2, displayText: 'Last 2 month' }
+] as RkDateTime[];
+
 @Component({
     selector: 'rk-date',
     templateUrl: 'rk-date.component.html'
@@ -22,6 +36,8 @@ export class RkDateComponent implements OnInit, AfterViewInit {
     endHour = 0;
 
     @Input() alignment: 'left' | 'right' = 'left';
+
+    @Input() times: RkDateTime[] = DEFAULT_TIMES;
 
     // tslint:disable-next-line: no-output-native
     @Output() complete = new EventEmitter();
@@ -143,4 +159,35 @@ export class RkDateComponent implements OnInit, AfterViewInit {
         });
     }
 
+    selectTime(time: RkDateTime) {
+        this.times.forEach(_time => _time.selected = false);
+
+        time.selected = true;
+
+        const startDate = new Date();
+        const endDate = new Date();
+
+        startDate.setHours(startDate.getHours() - time.value);
+
+        this.startDate = startDate;
+        this.endDate = endDate;
+    }
+
+}
+
+export interface RkDateTime {
+    /**
+     * @description Hour | Example: Last week => value: 24 * 7
+     */
+    value: number;
+
+    /**
+     * @description Display on text param
+     */
+    displayText: string;
+
+    /**
+     * @description For UI
+     */
+    selected?: boolean;
 }

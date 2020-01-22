@@ -296,72 +296,72 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.prepareTimelineChart();
+    // this.prepareTimelineChart();
 
-    RkApexHelper.render('#line-chart', {
-      chart: {
-        height: 250,
-        type: 'line',
-        zoom: {
-          enabled: false
-        },
-        foreColor: '#9b9b9b',
-        toolbar: {
-          show: false,
-          tools: {
-            download: false
-          }
-        },
-      },
-      dataLabels: {
-        enabled: false
-      },
-      stroke: {
-        width: [4, 4],
-        curve: 'smooth'
-      },
-      colors: ['#f95656'],
-      series: [{
-        name: 'Session Duration',
-        data: [150, 100, 180, 400, 380, 550, 400]
-      }
-      ],
-      markers: {
-        size: 0,
+    // RkApexHelper.render('#line-chart', {
+    //   chart: {
+    //     height: 250,
+    //     type: 'line',
+    //     zoom: {
+    //       enabled: false
+    //     },
+    //     foreColor: '#9b9b9b',
+    //     toolbar: {
+    //       show: false,
+    //       tools: {
+    //         download: false
+    //       }
+    //     },
+    //   },
+    //   dataLabels: {
+    //     enabled: false
+    //   },
+    //   stroke: {
+    //     width: [4, 4],
+    //     curve: 'smooth'
+    //   },
+    //   colors: ['#f95656'],
+    //   series: [{
+    //     name: 'Session Duration',
+    //     data: [150, 100, 180, 400, 380, 550, 400]
+    //   }
+    //   ],
+    //   markers: {
+    //     size: 0,
 
-        hover: {
-          sizeOffset: 6
-        }
-      },
-      xaxis: {
-        categories: ['7/12', '8/12', '9/12', '10/12', '11/12', '12/12', '13/12'],
-        labels: {
-          minHeight: 20
-        }
-      },
-      tooltip: {
-        y: [{
-          title: {
-            formatter(val) {
-              return val + ' (mins)';
-            }
-          }
-        }]
-      },
-      grid: {
-        borderColor: '#e9ebf1'
-      },
-      legend: {
-        show: false
-      },
-      annotations: {
-        yaxis: [{
-          label: {
-            fontSize: '20px'
-          }
-        }]
-      }
-    });
+    //     hover: {
+    //       sizeOffset: 6
+    //     }
+    //   },
+    //   xaxis: {
+    //     categories: ['7/12', '8/12', '9/12', '10/12', '11/12', '12/12', '13/12'],
+    //     labels: {
+    //       minHeight: 20
+    //     }
+    //   },
+    //   tooltip: {
+    //     y: [{
+    //       title: {
+    //         formatter(val) {
+    //           return val + ' (mins)';
+    //         }
+    //       }
+    //     }]
+    //   },
+    //   grid: {
+    //     borderColor: '#e9ebf1'
+    //   },
+    //   legend: {
+    //     show: false
+    //   },
+    //   annotations: {
+    //     yaxis: [{
+    //       label: {
+    //         fontSize: '20px'
+    //       }
+    //     }]
+    //   }
+    // });
   }
 
   onPageChange(page: number) {

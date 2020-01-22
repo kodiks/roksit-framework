@@ -1,0 +1,10 @@
+.gutters-sm {
+  margin-right: 0;
+  margin-left: 0;
+
+  > .col,
+  > [class*="col-"] {
+    padding-right: 11px;
+    padding-left: 11px;
+  }
+}
