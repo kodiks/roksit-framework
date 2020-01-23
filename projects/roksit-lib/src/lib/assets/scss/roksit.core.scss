@@ -2,6 +2,10 @@
     Roksit Core SCSS Importing
 */
 
+body {
+    background-color: red;
+}
+
 @import "./bootstrap/bootstrap-reboot.scss";
 @import "./bootstrap/bootstrap-grid.scss";
 @import "./bootstrap/utilities";
@@ -36,3 +40,4 @@
 
 @import "./core/helpers/layout.scss";
 @import "./core/helpers/grids.scss";
+@import "./core/helpers/router-layout.scss";

@@ -1,0 +1,17 @@
+<div [ngSwitch]="type">
+    <icon-dashboard *ngSwitchCase="'dashboard'" class="item-icon"></icon-dashboard>
+    <icon-monitor *ngSwitchCase="'monitor'" class="item-icon"></icon-monitor>
+    <icon-custom-reports *ngSwitchCase="'custom-reports'" class="item-icon"></icon-custom-reports>
+    <icon-public-ip *ngSwitchCase="'public-ip'" class="item-icon"></icon-public-ip>
+    <icon-device *ngSwitchCase="'device'" class="item-icon"></icon-device>
+    <icon-roaming-clients *ngSwitchCase="'roaming-clients'" class="item-icon"></icon-roaming-clients>
+    <icon-settings *ngSwitchCase="'settings'" class="item-icon"></icon-settings>
+    <icon-help *ngSwitchCase="'help'" class="item-icon"></icon-help>
+    <icon-request-category *ngSwitchCase="'request-category'" class="item-icon"></icon-request-category>
+    <icon-theme-color *ngSwitchCase="'theme-mode'" class="item-icon"></icon-theme-color>
+    <icon-tools *ngSwitchCase="'tools'" class="item-icon"></icon-tools>
+    <i-feather name="user" *ngSwitchCase="'user'" class="item-icon"></i-feather>
+    <i-feather name="shield" *ngSwitchCase="'security-profiles'" class="item-icon"></i-feather>
+    <i-feather name="file" *ngSwitchCase="'saved-reports'" class="item-icon"></i-feather>
+    <div *ngSwitchDefault >.</div>
+</div>
