@@ -13,10 +13,11 @@ import { RkDateModule } from './rk-date/rk-date.module';
 import { FormsModule } from '@angular/forms';
 import { RkSwitchModule } from './rk-switch/rk-switch.module';
 import { RkRadioModule } from './rk-radio/rk-radio.module';
-import { RkUtilityService } from '../../public-api';
 import { RkBadgeModule } from './rk-badge/rk-badge.module';
 import { RkCheckboxModule } from './rk-checkbox/rk-checkbox.module';
 import { RkInfoBoxModule } from './rk-infobox/rk-infobox.module';
+import { RkSidebarModule } from './rk-sidebar/rk-sidebar.module';
+import { ServicesModule } from '../services/services.module';
 
 @NgModule({
     imports: [
@@ -36,7 +37,9 @@ import { RkInfoBoxModule } from './rk-infobox/rk-infobox.module';
         RkRadioModule,
         RkBadgeModule,
         RkCheckboxModule,
-        RkInfoBoxModule
+        RkInfoBoxModule,
+        RkSidebarModule,
+        ServicesModule
     ],
     exports: [
         IconsModule,
@@ -53,7 +56,9 @@ import { RkInfoBoxModule } from './rk-infobox/rk-infobox.module';
         RkRadioModule,
         RkBadgeModule,
         RkCheckboxModule,
-        RkInfoBoxModule
+        RkInfoBoxModule,
+        RkSidebarModule,
+        ServicesModule
     ],
     declarations: [],
     entryComponents: [],
@@ -64,9 +69,7 @@ export class RoksitModule {
     static forRoot(): ModuleWithProviders {
         return {
             ngModule: RoksitModule,
-            providers: [
-                RkUtilityService
-            ]
+            providers: []
         };
     }
 }

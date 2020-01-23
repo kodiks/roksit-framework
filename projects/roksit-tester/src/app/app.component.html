@@ -1,589 +1,660 @@
-<div class="container-fluid" style="margin-top: 10px;">
-  <div class="row mt-3">
-    <div class="col-12">
-      <rk-avatar>
-        <rk-img>
-          <img
-            src="https://s.ftcdn.net/v2013/pics/all/curated/RKyaEDwp8J7JKeZWQPuOVWvkUjGQfpCx_cover_580.jpg?r=1a0fc22192d0c808b8bb2b9bcfbf4a45b1793687"
-            alt="" />
-        </rk-img>
-        <rk-text>
-          Cihan
-        </rk-text>
-        <rk-dropdown>
-          <rk-dropdown-title>Account</rk-dropdown-title>
-          <li>
-            <a href="#" class="dropdown-item">
-              <i-feather name="settings"></i-feather>
-              Account Settings
+<div class="wrapper">
+  <div class="sidebar" [ngClass]="{'collapsed': collapsed}">
+    <ul class="sidebar-list">
+      <li class="sidebar-list-item collapse-btn">
+        <a href="#" class="ripple" (click)="toggleCollapse()">
+          <i-feather *ngIf="collapsed" name="bar-chart-2"></i-feather>
+          <i-feather *ngIf="!collapsed" name="chevron-down"></i-feather>
+        </a>
+      </li>
+
+      <li class="sidebar-list-item" [ngClass]="{'active': menuItem.selected}" *ngFor="let menuItem of menuItems">
+        <a href="#" class="ripple" (click)="setActive(menuItem)">
+          <icon-for-menu [type]="menuItem.icon"></icon-for-menu>
+          <span class="text">{{ menuItem.text }}</span>
+          <i-feather name="chevron-down" class="dropdown-icon" *ngIf="menuItem.subMenu"></i-feather>
+        </a>
+
+        <ul class="dropdown sidebar-list" *ngIf="menuItem.subMenu">
+          <li class="sidebar-list-item" [ngClass]="{'active': subMenuItem.selected}"
+            *ngFor="let subMenuItem of menuItem.subMenu">
+            <a href="#" (click)="setActive(menuItem,subMenuItem)">
+              <icon-for-menu [type]="subMenuItem.icon"></icon-for-menu>
+              <span class="text">{{ subMenuItem.text }}</span>
             </a>
           </li>
-          <li>
-            <a href="#" class="dropdown-item">
-              <i-feather name="log-out"></i-feather>
-              Exit
-            </a>
-          </li>
-        </rk-dropdown>
-      </rk-avatar>
-    </div>
+        </ul>
+      </li>
+    </ul>
   </div>
 
-  <div class="row mt-4 gutters-sm">
-    <div class="col">
-      <rk-infobox [active]="true" [title]="'Total'" [color]="'#4353ff'" [type]="1" [valueOne]="345" [valueTwo]="345">
-      </rk-infobox>
-    </div>
+  <div class="content">
 
-    <div class="col">
-      <rk-infobox [active]="false" [type]="2" [title]="'Safe'" [color]="'#3dd49a'" [valueOne]="'35.000'"
-        [valueTwo]="'32.000'">
-      </rk-infobox>
-    </div>
+    <div class="toolbar">
+      <h3 class="page">Dashboard</h3>
 
-    <div class="col">
-      <rk-infobox [active]="false" [type]="2" [title]="'Malicious'" [color]="'#f95656'" [valueOne]="'35.000'"
-        [valueTwo]="'32.000'">
-      </rk-infobox>
-    </div>
+      <div class="account">
+        <button class="notification-btn ripple">
+          <i-feather name="bell"></i-feather>
+          <div class="btn-badge">23</div>
+        </button>
 
-    <div class="col">
-      <rk-infobox [active]="false" [type]="2" [title]="'Variable'" [color]="'#d8d8d8'" [valueOne]="'35.000'"
-        [valueTwo]="'32.000'">
-      </rk-infobox>
-    </div>
+        <div class="border"></div>
 
-    <div class="col">
-      <rk-infobox [active]="false" [type]="2" [title]="'Harmful Content'" [color]="'#f9df56'" [valueOne]="'35.000'"
-        [valueTwo]="'32.000'">
-      </rk-infobox>
-    </div>
-
-  </div>
-
-  <div class="row mt-3">
-    <div class="col-12">
-      <rk-badge>Text</rk-badge>
-    </div>
-  </div>
-
-  <div class="row mt-3">
-    <div class="col-12">
-      <rk-table-container [config]="tableConfig">
-        <rk-table [config]="tableConfig" (pageChange)="onPageChange($event)"
-          (pageViewCountChange)="onPageViewCountChange($event)" [info]="true">
-          <ng-template #header>
-            <tr>
-              <th class="index">#</th>
-              <th scope="col">
-                Time
-                <button class="table-btn ripple">
-                  <i-feather name="more-vertical"></i-feather>
-                </button>
-              </th>
-              <th scope="col">
-                Subdomain
-                <button class="table-btn ripple">
-                  <i-feather name="more-vertical"></i-feather>
-                </button>
-              </th>
-              <th scope="col">
-                Src.Ip
-                <button class="table-btn ripple">
-                  <i-feather name="more-vertical"></i-feather>
-                </button>
-              </th>
-              <th scope="col">
-                Dst.Ip
-                <button class="table-btn ripple">
-                  <i-feather name="more-vertical"></i-feather>
-                </button>
-              </th>
-              <th scope="col">
-                Action
-                <button class="table-btn ripple">
-                  <i-feather name="more-vertical"></i-feather>
-                </button>
-              </th>
-            </tr>
-          </ng-template>
-          <ng-template #body>
-            <tr *ngFor="let country of countries; index as i">
-              <td class="index">{{ i + 1 }}</td>
-              <td>2019.11.27 11:15:51</td>
-              <td>
-                bal-edf-pcs-app-vmss-02.westus.cloudapp.azure.com
-              </td>
-              <td>12.244.23.112</td>
-              <td>198.222.165.78</td>
-              <td>Allow</td>
-            </tr>
-          </ng-template>
-        </rk-table>
-      </rk-table-container>
-    </div>
-  </div>
-
-  <div class="row mt-3">
-    <div class="col-12">
-      <rk-table (pageChange)="onPageChange($event)" (pageViewCountChange)="onPageViewCountChange($event)">
-        <ng-template #header>
-          <tr>
-            <th class="index">#</th>
-            <th scope="col">
-              Time
-              <button class="table-btn ripple">
-                <i-feather name="more-vertical"></i-feather>
-              </button>
-            </th>
-            <th scope="col">
-              Subdomain
-              <button class="table-btn ripple">
-                <i-feather name="more-vertical"></i-feather>
-              </button>
-            </th>
-            <th scope="col">
-              Src.Ip
-              <button class="table-btn ripple">
-                <i-feather name="more-vertical"></i-feather>
-              </button>
-            </th>
-            <th scope="col">
-              Dst.Ip
-              <button class="table-btn ripple">
-                <i-feather name="more-vertical"></i-feather>
-              </button>
-            </th>
-            <th scope="col">
-              Action
-              <button class="table-btn ripple">
-                <i-feather name="more-vertical"></i-feather>
-              </button>
-            </th>
-          </tr>
-        </ng-template>
-        <ng-template #body>
-          <tr *ngFor="let country of countries; index as i">
-            <td class="index">{{ i + 1 }}</td>
-            <td>2019.11.27 11:15:51</td>
-            <td>
-              bal-edf-pcs-app-vmss-02.westus.cloudapp.azure.com
-            </td>
-            <td>12.244.23.112</td>
-            <td>198.222.165.78</td>
-            <td>Allow</td>
-          </tr>
-        </ng-template>
-      </rk-table>
-    </div>
-  </div>
-
-  <div class="row mt-3">
-    <div class="col-6">
-      <rk-table (pageChange)="onPageChange($event)" (pageViewCountChange)="onPageViewCountChange($event)">
-        <ng-template #header>
-          <tr>
-            <th>#</th>
-            <th scope="col">
-              Country
-              <button class="table-btn ripple">
-                <i-feather name="more-vertical"></i-feather>
-              </button>
-            </th>
-            <th scope="col">
-              Area
-            </th>
-            <th scope="col">
-              Population
-            </th>
-          </tr>
-        </ng-template>
-        <ng-template #body>
-          <tr *ngFor="let country of countries; index as i">
-            <td>{{ i + 1 }}</td>
-            <td>
-              <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag" class="mr-2"
-                style="width: 20px">
-              {{ country.name }}
-            </td>
-            <td>{{ country.area | number }}</td>
-            <td>{{ country.population | number }}</td>
-          </tr>
-        </ng-template>
-      </rk-table>
-    </div>
-  </div>
-
-  <div class="row mt-3">
-    <div class="col-6">
-      <label for="chk" class="rk-chk-label">
-        <span>
-          Gece Modu
-        </span>
-        <div class="rk-form-switch">
-          <input type="checkbox" (change)="toggleDarkModel()" id="chk">
-          <i></i>
-          <span></span>
-        </div>
-      </label>
-    </div>
-  </div>
-
-
-  <div class="row">
-    <div class="col-6">
-      <div class="rk-base-card">
-        <div class="card-item">
-          <div class="rk-grow rk-v-center rk-title-1 ">
-            Public IP
-          </div>
-          <div class="rk-row">
-            <div class="rk-data-row active">
-              <span class="name">Active</span>
-              <span class="value">8</span>
-            </div>
-
-            <div class="rk-data-row   m-l-15">
-              <span class="name">Passive</span>
-              <span class="value">2</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <div class="col-6">
-    <div class="rk-col">
-      <div class="rk-base-card" style="padding:0;">
-        <div class="card-item">
-          <div class="rk-panel">
-            <div class="rk-panel-header rk-title-2">
-              Traffic Based Anomaly
-            </div>
-            <div class="rk-panel-item" style="background-color: white;">
-              Test
-            </div>
-          </div>
+        <div class="account-dropdown">
+          <rk-avatar>
+            <rk-img>
+              <img
+                src="https://s.ftcdn.net/v2013/pics/all/curated/RKyaEDwp8J7JKeZWQPuOVWvkUjGQfpCx_cover_580.jpg?r=1a0fc22192d0c808b8bb2b9bcfbf4a45b1793687"
+                alt="" />
+            </rk-img>
+            <rk-text>
+              Cihan
+            </rk-text>
+            <rk-dropdown>
+              <rk-dropdown-title>Account</rk-dropdown-title>
+              <li>
+                <a href="#" class="dropdown-item">
+                  <i-feather name="settings"></i-feather>
+                  Account Settings
+                </a>
+              </li>
+              <li>
+                <a href="#" class="dropdown-item">
+                  <i-feather name="log-out"></i-feather>
+                  Exit
+                </a>
+              </li>
+            </rk-dropdown>
+          </rk-avatar>
         </div>
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-12">
-        <rk-radio name="ss" checked="true">Option 1</rk-radio>
-        <rk-radio name="ss" disabled="true">Option 2</rk-radio>
-        <rk-radio name="ss">Option 3</rk-radio>
-        <rk-radio name="ss">Option 4</rk-radio>
+    <div class="container-fluid">
+      <div class="row mt-3">
+        <div class="col-12">
+          <rk-avatar>
+            <rk-img>
+              <img
+                src="https://s.ftcdn.net/v2013/pics/all/curated/RKyaEDwp8J7JKeZWQPuOVWvkUjGQfpCx_cover_580.jpg?r=1a0fc22192d0c808b8bb2b9bcfbf4a45b1793687"
+                alt="" />
+            </rk-img>
+            <rk-text>
+              Cihan
+            </rk-text>
+            <rk-dropdown>
+              <rk-dropdown-title>Account</rk-dropdown-title>
+              <li>
+                <a href="#" class="dropdown-item">
+                  <i-feather name="settings"></i-feather>
+                  Account Settings
+                </a>
+              </li>
+              <li>
+                <a href="#" class="dropdown-item">
+                  <i-feather name="log-out"></i-feather>
+                  Exit
+                </a>
+              </li>
+            </rk-dropdown>
+          </rk-avatar>
+        </div>
       </div>
-    </div>
 
-    {{chk}}
+      <div class="row mt-4 gutters-sm">
+        <div class="col-md">
+          <rk-infobox [active]="true" [title]="'Total'" [color]="'#4353ff'" [type]="1" [valueOne]="345"
+            [valueTwo]="345">
+          </rk-infobox>
+        </div>
 
-    <div class="row mt-4">
-      <div class="col-12">
-        <rk-date (complete)="completed($event)"></rk-date>
+        <div class="col-md">
+          <rk-infobox [active]="false" [type]="2" [title]="'Safe'" [color]="'#3dd49a'" [valueOne]="'35.000'"
+            [valueTwo]="'32.000'">
+          </rk-infobox>
+        </div>
+
+        <div class="col-md">
+          <rk-infobox [active]="false" [type]="2" [title]="'Malicious'" [color]="'#f95656'" [valueOne]="'35.000'"
+            [valueTwo]="'32.000'">
+          </rk-infobox>
+        </div>
+
+        <div class="col-md">
+          <rk-infobox [active]="false" [type]="2" [title]="'Variable'" [color]="'#d8d8d8'" [valueOne]="'35.000'"
+            [valueTwo]="'32.000'">
+          </rk-infobox>
+        </div>
+
+        <div class="col-md">
+          <rk-infobox [active]="false" [type]="2" [title]="'Harmful Content'" [color]="'#f9df56'" [valueOne]="'35.000'"
+            [valueTwo]="'32.000'">
+          </rk-infobox>
+        </div>
+
       </div>
-    </div>
 
-    <div class="row mt-4">
-      <div class="col-4">
-        <rk-autocomplete [(value)]="auto" [items]="autocompleteItems"></rk-autocomplete>
+      <div class="row mt-3">
+        <div class="col-12">
+          <rk-badge>Text</rk-badge>
+        </div>
       </div>
-    </div>
 
-    {{auto}}
-
-    <div class="row mt-2">
-      <div class="col-4">
-        <rk-select [(value)]="ss" [options]="options"></rk-select>
+      <div class="row mt-3">
+        <div class="col-12">
+          <rk-table-container [config]="tableConfig">
+            <rk-table [config]="tableConfig" (pageChange)="onPageChange($event)"
+              (pageViewCountChange)="onPageViewCountChange($event)" [info]="true">
+              <ng-template #header>
+                <tr>
+                  <th class="index">#</th>
+                  <th scope="col">
+                    Time
+                    <button class="table-btn ripple">
+                      <i-feather name="more-vertical"></i-feather>
+                    </button>
+                  </th>
+                  <th scope="col">
+                    Subdomain
+                    <button class="table-btn ripple">
+                      <i-feather name="more-vertical"></i-feather>
+                    </button>
+                  </th>
+                  <th scope="col">
+                    Src.Ip
+                    <button class="table-btn ripple">
+                      <i-feather name="more-vertical"></i-feather>
+                    </button>
+                  </th>
+                  <th scope="col">
+                    Dst.Ip
+                    <button class="table-btn ripple">
+                      <i-feather name="more-vertical"></i-feather>
+                    </button>
+                  </th>
+                  <th scope="col">
+                    Action
+                    <button class="table-btn ripple">
+                      <i-feather name="more-vertical"></i-feather>
+                    </button>
+                  </th>
+                </tr>
+              </ng-template>
+              <ng-template #body>
+                <tr *ngFor="let country of countries; index as i">
+                  <td class="index">{{ i + 1 }}</td>
+                  <td>2019.11.27 11:15:51</td>
+                  <td>
+                    bal-edf-pcs-app-vmss-02.westus.cloudapp.azure.com
+                  </td>
+                  <td>12.244.23.112</td>
+                  <td>198.222.165.78</td>
+                  <td>Allow</td>
+                </tr>
+              </ng-template>
+            </rk-table>
+          </rk-table-container>
+        </div>
       </div>
-    </div>
 
-    {{ss}}
-
-    <div class="row">
-      <!-- <div class="col-6">
-        <rk-select [(ngModel)]="name" [options]="options"></rk-select>
+      <div class="row mt-3">
+        <div class="col-12">
+          <rk-table (pageChange)="onPageChange($event)" (pageViewCountChange)="onPageViewCountChange($event)">
+            <ng-template #header>
+              <tr>
+                <th class="index">#</th>
+                <th scope="col">
+                  Time
+                  <button class="table-btn ripple">
+                    <i-feather name="more-vertical"></i-feather>
+                  </button>
+                </th>
+                <th scope="col">
+                  Subdomain
+                  <button class="table-btn ripple">
+                    <i-feather name="more-vertical"></i-feather>
+                  </button>
+                </th>
+                <th scope="col">
+                  Src.Ip
+                  <button class="table-btn ripple">
+                    <i-feather name="more-vertical"></i-feather>
+                  </button>
+                </th>
+                <th scope="col">
+                  Dst.Ip
+                  <button class="table-btn ripple">
+                    <i-feather name="more-vertical"></i-feather>
+                  </button>
+                </th>
+                <th scope="col">
+                  Action
+                  <button class="table-btn ripple">
+                    <i-feather name="more-vertical"></i-feather>
+                  </button>
+                </th>
+              </tr>
+            </ng-template>
+            <ng-template #body>
+              <tr *ngFor="let country of countries; index as i">
+                <td class="index">{{ i + 1 }}</td>
+                <td>2019.11.27 11:15:51</td>
+                <td>
+                  bal-edf-pcs-app-vmss-02.westus.cloudapp.azure.com
+                </td>
+                <td>12.244.23.112</td>
+                <td>198.222.165.78</td>
+                <td>Allow</td>
+              </tr>
+            </ng-template>
+          </rk-table>
+        </div>
       </div>
+
+      <div class="row mt-3">
+        <div class="col-6">
+          <rk-table (pageChange)="onPageChange($event)" (pageViewCountChange)="onPageViewCountChange($event)">
+            <ng-template #header>
+              <tr>
+                <th>#</th>
+                <th scope="col">
+                  Country
+                  <button class="table-btn ripple">
+                    <i-feather name="more-vertical"></i-feather>
+                  </button>
+                </th>
+                <th scope="col">
+                  Area
+                </th>
+                <th scope="col">
+                  Population
+                </th>
+              </tr>
+            </ng-template>
+            <ng-template #body>
+              <tr *ngFor="let country of countries; index as i">
+                <td>{{ i + 1 }}</td>
+                <td>
+                  <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag" class="mr-2"
+                    style="width: 20px">
+                  {{ country.name }}
+                </td>
+                <td>{{ country.area | number }}</td>
+                <td>{{ country.population | number }}</td>
+              </tr>
+            </ng-template>
+          </rk-table>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col-6">
+          <label for="chk" class="rk-chk-label">
+            <span>
+              Gece Modu
+            </span>
+            <div class="rk-form-switch">
+              <input type="checkbox" (change)="toggleDarkModel()" id="chk">
+              <i></i>
+              <span></span>
+            </div>
+          </label>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-6">
+          <div class="rk-base-card">
+            <div class="card-item">
+              <div class="rk-grow rk-v-center rk-title-1 ">
+                Public IP
+              </div>
+              <div class="rk-row">
+                <div class="rk-data-row active">
+                  <span class="name">Active</span>
+                  <span class="value">8</span>
+                </div>
+
+                <div class="rk-data-row   m-l-15">
+                  <span class="name">Passive</span>
+                  <span class="value">2</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
       <div class="col-6">
-        <rk-select class="d-block" [(ngModel)]="name1" icon="calendar" [options]="options"></rk-select>
-      </div> -->
-    </div>
-
-    <div class="row">
-      <div class="col-12">
-
-        <!-- <ng-select2 [data]="options" [options]="{width: 300}"></ng-select2> -->
-      </div>
-    </div>
-
-    <div class="row mt-3">
-      <div class="col-12">
-        <button class="btn">Text</button>
-        <button class="btn btn-default ml-2">Text</button>
-        <button class="btn btn-icon ml-2">
-          <i-feather name="shopping-cart"></i-feather>
-          Text
-        </button>
-
-      </div>
-      <div class="col-12 mt-2">
-        <button disabled class="btn">Text</button>
-        <button disabled class="btn btn-default ml-2">Text</button>
-        <button disabled class="btn btn-icon ml-2">
-          <i-feather name="shopping-cart"></i-feather>
-          Text
-        </button>
-
-      </div>
-      <div class="col-12 mt-2">
-        <button class="btn btn-link">Text</button>
-        <button class="btn btn-link btn-default ml-2">Text</button>
-        <button class="btn btn-link btn-icon ml-2">
-          <i-feather name="shopping-cart"></i-feather>
-          Text
-        </button>
-
-      </div>
-      <div class="col-12 mt-2">
-        <button disabled class="btn btn-link">Text</button>
-        <button disabled class="btn btn-link btn-default ml-2">Text</button>
-        <button disabled class="btn btn-link btn-icon ml-2">
-          <i-feather name="shopping-cart"></i-feather>
-          Text
-        </button>
-      </div>
-
-      <div class="col-12 mt-2">
-        <button class="btn btn-xl">Text</button>
-        <button class="btn btn-xl btn-default ml-2">Text</button>
-        <button class="btn btn-xl btn-icon ml-2">
-          <i-feather name="shopping-cart"></i-feather>
-          Text
-        </button>
-      </div>
-      <div class="col-12 mt-2">
-        <button class="btn btn-large">Text</button>
-        <button class="btn btn-large btn-default ml-2">Text</button>
-        <button class="btn btn-large btn-icon ml-2">
-          <i-feather name="shopping-cart"></i-feather>
-          Text
-        </button>
-      </div>
-      <div class="col-12 mt-2">
-        <button class="btn btn-medium">Text</button>
-        <button class="btn btn-medium btn-default ml-2">Text</button>
-        <button class="btn btn-medium btn-icon ml-2">
-          <i-feather name="shopping-cart"></i-feather>
-          Text
-        </button>
-      </div>
-      <div class="col-12 mt-2">
-        <button class="btn btn-small">Text</button>
-        <button class="btn btn-small btn-default ml-2">Text</button>
-        <button class="btn btn-small btn-icon ml-2">
-          <i-feather name="shopping-cart"></i-feather>
-          Text
-        </button>
-      </div>
-      <div class="col-12 mt-2">
-        <button class="btn btn-xs">Text</button>
-        <button class="btn btn-xs btn-default ml-2">Text</button>
-        <button class="btn btn-xs btn-icon ml-2">
-          <i-feather name="shopping-cart"></i-feather>
-          Text
-        </button>
-      </div>
-
-      <div class="col-12 my-3">
-        <ng-template>zz</ng-template>
-
-      </div>
-
-      <div class="col-12 text-center">text center</div>
-
-      <div class="col-12 text-center">
-        <input type="text" class="rk-input mr-3" placeholder="Search">
-        <input type="text" class="rk-input mr-3" placeholder="Search" required>
-        <input type="text" disabled class="rk-input mr-3" placeholder="Search">
-
-        <textarea class="rk-input textarea" rows="5" style="resize: none;"></textarea>
-      </div>
-
-      <div class="col-3 mt-2">
-        <div class="rk-wizard">
-          <div class="rk-wizard-item active">
-            <div class="step-name">1. Step</div>
-            <div class="step-text">Text Label</div>
-          </div>
-          <div class="rk-wizard-item">
-            <div class="step-name">1. Step</div>
-            <div class="step-text">Text Label</div>
-          </div>
-          <div class="rk-wizard-item">
-            <div class="step-name">1. Step</div>
-            <div class="step-text">Text Label</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12 mt-2">
-        <button class="badge mr-2">Domain</button>
-        <button class="badge active">Domain</button>
-      </div>
-
-      <div class="col-12 mt-2">
-        <div class="rk-radio">
-          <input type="radio" id="rd" name="rdName" checked>
-          <label for="rd">Option 1</label>
-        </div>
-        <div class="rk-radio">
-          <input type="radio" id="rd1" name="rdName" disabled>
-          <label for="rd1">Option 2</label>
-        </div>
-        <div class="rk-radio">
-          <input type="radio" id="rd2" name="rdName">
-          <label for="rd2">Option 2</label>
-        </div>
-      </div>
-
-      <div class="col-12 mt-2">
-        <div class="rk-filter-badge primary mb-2">
-          <div class="unhover">
-            <div class="filter-name">Action</div>
-
-            <div class="equals">
-              <icon-equal></icon-equal>
-            </div>
-
-            <div class="values">
-              google.com<span class="seperator"></span>yahoo.com
+        <div class="rk-col">
+          <div class="rk-base-card" style="padding:0;">
+            <div class="card-item">
+              <div class="rk-panel">
+                <div class="rk-panel-header rk-title-2">
+                  Traffic Based Anomaly
+                </div>
+                <div class="rk-panel-item" style="background-color: white;">
+                  Test
+                </div>
+              </div>
             </div>
           </div>
+        </div>
 
-          <div class="hover">
-            <button class="ripple">
-              <i-feather name="edit-3"></i-feather>
-            </button>
-            <button class="ripple equal">
-              <icon-not-equal></icon-not-equal>
-            </button>
-            <button class="ripple">
-              <i-feather name="trash-2"></i-feather>
-            </button>
+        <div class="row">
+          <div class="col-12">
+            <rk-radio name="ss" checked="true">Option 1</rk-radio>
+            <rk-radio name="ss" disabled="true">Option 2</rk-radio>
+            <rk-radio name="ss">Option 3</rk-radio>
+            <rk-radio name="ss">Option 4</rk-radio>
           </div>
         </div>
-        <div class="rk-filter-badge security">
-          <div class="unhover">
-            <div class="filter-name">Action</div>
 
-            <div class="equals">
-              <icon-not-equal></icon-not-equal>
-            </div>
+        {{chk}}
 
-            <div class="values">
-              google.com
-              <span class="seperator"></span>yahoo.com
-              <span class="seperator"></span>yahoo.com
-            </div>
-          </div>
-
-          <div class="hover">
-            <button class="ripple">
-              <i-feather name="edit-3"></i-feather>
-            </button>
-            <button class="ripple equal">
-              <icon-equal></icon-equal>
-            </button>
-            <button class="ripple">
-              <i-feather name="trash-2"></i-feather>
-            </button>
+        <div class="row mt-4">
+          <div class="col-12">
+            <rk-date (complete)="completed($event)"></rk-date>
           </div>
         </div>
-      </div>
 
-      <div class="col-6 mt-2">
-        <div class="menu" style="width: 200px;">
-          <button class="menu-item active">
-            <div class="icon">
-              <i-feather name="home"></i-feather>
-            </div>
-            <div class="text">
+        <div class="row mt-4">
+          <div class="col-4">
+            <rk-autocomplete [(value)]="auto" [items]="autocompleteItems"></rk-autocomplete>
+          </div>
+        </div>
+
+        {{auto}}
+
+        <div class="row mt-2">
+          <div class="col-4">
+            <rk-select [(value)]="ss" [options]="options"></rk-select>
+          </div>
+        </div>
+
+        {{ss}}
+
+        <div class="row">
+          <div class="col-6">
+            <rk-select [options]="options"></rk-select>
+          </div>
+          <div class="col-6">
+            <rk-select class="d-block" icon="calendar" [options]="options"></rk-select>
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="col-12">
+            <button class="btn">Text</button>
+            <button class="btn btn-default ml-2">Text</button>
+            <button class="btn btn-icon ml-2">
+              <i-feather name="shopping-cart"></i-feather>
               Text
-            </div>
-            <div class="icon arrow">
-              <i-feather name="chevron-down"></i-feather>
-            </div>
-          </button>
-          <button class="menu-item">
-            <div class="icon">
-              <i-feather name="home"></i-feather>
-            </div>
-            <div class="text">
+            </button>
+
+          </div>
+          <div class="col-12 mt-2">
+            <button disabled class="btn">Text</button>
+            <button disabled class="btn btn-default ml-2">Text</button>
+            <button disabled class="btn btn-icon ml-2">
+              <i-feather name="shopping-cart"></i-feather>
               Text
-            </div>
-            <div class="icon arrow">
-              <i-feather name="chevron-down" class="text-blue-grey"></i-feather>
-            </div>
-          </button>
-          <button class="menu-item">
-            <div class="icon">
-              <i-feather name="home"></i-feather>
-            </div>
-            <div class="text">
+            </button>
+
+          </div>
+          <div class="col-12 mt-2">
+            <button class="btn btn-link">Text</button>
+            <button class="btn btn-link btn-default ml-2">Text</button>
+            <button class="btn btn-link btn-icon ml-2">
+              <i-feather name="shopping-cart"></i-feather>
               Text
+            </button>
+
+          </div>
+          <div class="col-12 mt-2">
+            <button disabled class="btn btn-link">Text</button>
+            <button disabled class="btn btn-link btn-default ml-2">Text</button>
+            <button disabled class="btn btn-link btn-icon ml-2">
+              <i-feather name="shopping-cart"></i-feather>
+              Text
+            </button>
+          </div>
+
+          <div class="col-12 mt-2">
+            <button class="btn btn-xl">Text</button>
+            <button class="btn btn-xl btn-default ml-2">Text</button>
+            <button class="btn btn-xl btn-icon ml-2">
+              <i-feather name="shopping-cart"></i-feather>
+              Text
+            </button>
+          </div>
+          <div class="col-12 mt-2">
+            <button class="btn btn-large">Text</button>
+            <button class="btn btn-large btn-default ml-2">Text</button>
+            <button class="btn btn-large btn-icon ml-2">
+              <i-feather name="shopping-cart"></i-feather>
+              Text
+            </button>
+          </div>
+          <div class="col-12 mt-2">
+            <button class="btn btn-medium">Text</button>
+            <button class="btn btn-medium btn-default ml-2">Text</button>
+            <button class="btn btn-medium btn-icon ml-2">
+              <i-feather name="shopping-cart"></i-feather>
+              Text
+            </button>
+          </div>
+          <div class="col-12 mt-2">
+            <button class="btn btn-small">Text</button>
+            <button class="btn btn-small btn-default ml-2">Text</button>
+            <button class="btn btn-small btn-icon ml-2">
+              <i-feather name="shopping-cart"></i-feather>
+              Text
+            </button>
+          </div>
+          <div class="col-12 mt-2">
+            <button class="btn btn-xs">Text</button>
+            <button class="btn btn-xs btn-default ml-2">Text</button>
+            <button class="btn btn-xs btn-icon ml-2">
+              <i-feather name="shopping-cart"></i-feather>
+              Text
+            </button>
+          </div>
+
+          <div class="col-12 my-3">
+            <ng-template>zz</ng-template>
+
+          </div>
+
+          <div class="col-12 text-center">text center</div>
+
+          <div class="col-12 text-center">
+            <input type="text" class="rk-input mr-3" placeholder="Search">
+            <input type="text" class="rk-input mr-3" placeholder="Search" required>
+            <input type="text" disabled class="rk-input mr-3" placeholder="Search">
+
+            <textarea class="rk-input textarea" rows="5" style="resize: none;"></textarea>
+          </div>
+
+          <div class="col-3 mt-2">
+            <div class="rk-wizard">
+              <div class="rk-wizard-item active">
+                <div class="step-name">1. Step</div>
+                <div class="step-text">Text Label</div>
+              </div>
+              <div class="rk-wizard-item">
+                <div class="step-name">1. Step</div>
+                <div class="step-text">Text Label</div>
+              </div>
+              <div class="rk-wizard-item">
+                <div class="step-name">1. Step</div>
+                <div class="step-text">Text Label</div>
+              </div>
             </div>
-          </button>
+          </div>
+
+          <div class="col-12 mt-2">
+            <button class="badge mr-2">Domain</button>
+            <button class="badge active">Domain</button>
+          </div>
+
+          <div class="col-12 mt-2">
+            <div class="rk-radio">
+              <input type="radio" id="rd" name="rdName" checked>
+              <label for="rd">Option 1</label>
+            </div>
+            <div class="rk-radio">
+              <input type="radio" id="rd1" name="rdName" disabled>
+              <label for="rd1">Option 2</label>
+            </div>
+            <div class="rk-radio">
+              <input type="radio" id="rd2" name="rdName">
+              <label for="rd2">Option 2</label>
+            </div>
+          </div>
+
+          <div class="col-12 mt-2">
+            <div class="rk-filter-badge primary mb-2">
+              <div class="unhover">
+                <div class="filter-name">Action</div>
+
+                <div class="equals">
+                  <icon-equal></icon-equal>
+                </div>
+
+                <div class="values">
+                  google.com<span class="seperator"></span>yahoo.com
+                </div>
+              </div>
+
+              <div class="hover">
+                <button class="ripple">
+                  <i-feather name="edit-3"></i-feather>
+                </button>
+                <button class="ripple equal">
+                  <icon-not-equal></icon-not-equal>
+                </button>
+                <button class="ripple">
+                  <i-feather name="trash-2"></i-feather>
+                </button>
+              </div>
+            </div>
+            <div class="rk-filter-badge security">
+              <div class="unhover">
+                <div class="filter-name">Action</div>
+
+                <div class="equals">
+                  <icon-not-equal></icon-not-equal>
+                </div>
+
+                <div class="values">
+                  google.com
+                  <span class="seperator"></span>yahoo.com
+                  <span class="seperator"></span>yahoo.com
+                </div>
+              </div>
+
+              <div class="hover">
+                <button class="ripple">
+                  <i-feather name="edit-3"></i-feather>
+                </button>
+                <button class="ripple equal">
+                  <icon-equal></icon-equal>
+                </button>
+                <button class="ripple">
+                  <i-feather name="trash-2"></i-feather>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6 mt-2">
+            <div class="menu" style="width: 200px;">
+              <button class="menu-item active">
+                <div class="icon">
+                  <i-feather name="home"></i-feather>
+                </div>
+                <div class="text">
+                  Text
+                </div>
+                <div class="icon arrow">
+                  <i-feather name="chevron-down"></i-feather>
+                </div>
+              </button>
+              <button class="menu-item">
+                <div class="icon">
+                  <i-feather name="home"></i-feather>
+                </div>
+                <div class="text">
+                  Text
+                </div>
+                <div class="icon arrow">
+                  <i-feather name="chevron-down" class="text-blue-grey"></i-feather>
+                </div>
+              </button>
+              <button class="menu-item">
+                <div class="icon">
+                  <i-feather name="home"></i-feather>
+                </div>
+                <div class="text">
+                  Text
+                </div>
+              </button>
+            </div>
+          </div>
+
+          <div class="col-3 mt-2">
+            <rk-menu-container>
+              <rk-menu-item text="Anasayfa" icon="home"></rk-menu-item>
+              <rk-menu-item text="Anasayfa" icon="edit"></rk-menu-item>
+            </rk-menu-container>
+          </div>
+
+
+
         </div>
-      </div>
 
-      <div class="col-3 mt-2">
-        <rk-menu-container>
-          <rk-menu-item text="Anasayfa" icon="home"></rk-menu-item>
-          <rk-menu-item text="Anasayfa" icon="edit"></rk-menu-item>
-        </rk-menu-container>
-      </div>
+        <div class="row mt-3">
+          <div class="col-6">
+            <rk-list [config]="listConfig"></rk-list>
+          </div>
+        </div>
 
 
+        <div class="row mt-3">
+          <div class="col-6">
+            <rk-progressbar [value]="75" [showType]="'outside'" [type]="'warning'" [sizeType]="'medium'">
+            </rk-progressbar>
+          </div>
+        </div>
 
-    </div>
-
-    <div class="row mt-3">
-      <div class="col-3">
-        <rk-list [config]="listConfig"></rk-list>
-      </div>
-    </div>
-
-
-    <div class="row mt-3">
-      <div class="col-6">
-        <rk-progressbar [value]="75" [showType]="'outside'" [type]="'warning'" [sizeType]="'medium'"></rk-progressbar>
-      </div>
-    </div>
-
-    <div class="row mt-3">
-      <div class="col-3">
-        <rk-card [config]="cardConfig"></rk-card>
-      </div>
-    </div>
+        <div class="row mt-3">
+          <div class="col-3">
+            <rk-card [config]="cardConfig"></rk-card>
+          </div>
+        </div>
 
 
-    <div class="row mt-3">
-      <div class="col-6">
-        <rk-accordion>
-          <rk-accordion-panel *ngFor="let item of listConfig.items; let i = index" [index]="i">
-            <rk-accordion-header-content>
-              {{ item.content }}
-            </rk-accordion-header-content>
-            <rk-accordion-header-sub-content>
-              {{ item.subContent }}
-            </rk-accordion-header-sub-content>
+        <div class="row mt-3">
+          <div class="col-6">
+            <rk-accordion>
+              <rk-accordion-panel *ngFor="let item of listConfig.items; let i = index" [index]="i">
+                <rk-accordion-header-content>
+                  {{ item.content }}
+                </rk-accordion-header-content>
+                <rk-accordion-header-sub-content>
+                  {{ item.subContent }}
+                </rk-accordion-header-sub-content>
 
-            panel body {{ i + 1 }}
-          </rk-accordion-panel>
-        </rk-accordion>
+                panel body {{ i + 1 }}
+              </rk-accordion-panel>
+            </rk-accordion>
+          </div>
+        </div>
+
       </div>
     </div>
 

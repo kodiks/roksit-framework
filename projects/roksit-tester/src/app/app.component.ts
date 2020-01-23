@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { RkListConfigModel } from 'projects/roksit-lib/src/lib/modules/rk-layout/rk-list/rk-list.component';
 import { RkCardConfigModel } from 'projects/roksit-lib/src/lib/modules/rk-layout/rk-card/rk-card.component';
-import { RkUtilityService, RkApexHelper } from 'projects/roksit-lib/src/public-api';
+import { RkApexHelper } from 'projects/roksit-lib/src/public-api';
 import { RkTableConfigModel } from 'projects/roksit-lib/src/lib/modules/rk-table/rk-table/rk-table.component';
+import { RkUtilityService } from 'projects/roksit-lib/src/lib/services/rk-utility.service';
+import { RkLayoutService } from 'projects/roksit-lib/src/lib/services/rk-layout.service';
+import { RkMenuItem } from 'projects/roksit-lib/src/lib/models/rk-menu.model';
+
 // import { RkAutoCompleteModel } from 'roksit-lib/lib/modules/rk-autocomplete/rk-autocomplete.component';
 
 interface Country {
@@ -51,8 +55,13 @@ export class AppComponent implements OnInit {
   /**
    *
    */
-  constructor(public utilityServie: RkUtilityService) {
-
+  constructor(
+    private rkUtilityService: RkUtilityService,
+    private rkLayoutService: RkLayoutService
+  ) {
+    this.rkLayoutService.sidebarCollapsed.subscribe(collapsed => {
+      this.collapsed = collapsed;
+    });
   }
 
   darkMode = false;
@@ -175,6 +184,54 @@ export class AppComponent implements OnInit {
   ];
 
   ss;
+
+  menuItems: RkMenuItem[] = [
+    { id: 0, text: 'Dashboard', icon: 'dashboard', selected: false },
+    { id: 1, text: 'Monitor', icon: 'monitor', selected: false },
+    { id: 2, text: 'Custom Reports', icon: 'custom-reports', selected: false },
+    {
+      id: 3, text: 'Deployment', icon: 'dashboard', selected: false,
+      subMenu: [
+        { id: 3.1, text: 'Public IP', icon: 'public-ip', selected: false },
+        { id: 3.2, text: 'Devices', icon: 'device', selected: false },
+        { id: 3.3, text: 'Roaming Clients', icon: 'roaming-clients', selected: false },
+      ]
+    },
+    {
+      id: 4, text: 'Settings', icon: 'settings', selected: false,
+      subMenu: [
+        { id: 4.1, text: 'User', icon: 'user', selected: false },
+        { id: 4.2, text: 'Saved Reports', icon: 'saved-reports', selected: false },
+        { id: 4.3, text: 'Security Profiles', icon: 'security-profiles', selected: false },
+        { id: 4.4, text: 'Tools', icon: 'tools', selected: false },
+        { id: 4.5, text: 'Request Changing Domain Category', icon: 'request-category', selected: false },
+        { id: 4.6, text: 'Theme Mode', icon: 'theme-mode', selected: false },
+      ]
+    },
+    { id: 5, text: 'Help', icon: 'help', selected: false }
+  ];
+
+  collapsed: boolean;
+
+  toggleCollapse() {
+    this.rkLayoutService.setSidebarCollapse(!this.collapsed);
+  }
+
+  setActive(menuItem: RkMenuItem, subMenuItem?: RkMenuItem) {
+    this.menuItems.forEach(elem => elem.selected = false);
+
+    menuItem.selected = true;
+
+    this.menuItems.forEach(elem => {
+      if (elem.subMenu) {
+        elem.subMenu.forEach(subMenuElem => subMenuElem.selected = false);
+      }
+    });
+
+    if (subMenuItem) {
+      subMenuItem.selected = true;
+    }
+  }
 
   private prepareTimelineChart() {
     function generateDayWiseTimeSeries(baseval, count, yrange) {
@@ -386,7 +443,7 @@ export class AppComponent implements OnInit {
   toggleDarkModel() {
     this.darkMode = !this.darkMode;
 
-    this.utilityServie.changeTheme(this.darkMode);
+    this.rkUtilityService.changeTheme(this.darkMode);
   }
 
   shuffle(a) {

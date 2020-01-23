@@ -1,10 +1,11 @@
 /*
  * Public API Surface of roksit-lib
  */
-export * from './lib/services/rk-utility.service';
 
+/** Helpers */
 export * from './lib/helpers/rk-apex-helper';
 
+/** Componets Modules */
 export * from './lib/modules/rk-progressbar/rk-progressbar.module';
 export * from './lib/modules/rk-badge/rk-badge.module';
 export * from './lib/modules/rk-date/rk-date.module';
@@ -19,5 +20,10 @@ export * from './lib/modules/rk-switch/rk-switch.module';
 export * from './lib/modules/rk-table/rk-table.module';
 export * from './lib/modules/rk-checkbox/rk-checkbox.module';
 export * from './lib/modules/rk-infobox/rk-infobox.module';
+export * from './lib/modules/rk-sidebar/rk-sidebar.module';
 
+/** Service Modules */
+export * from './lib/services/services.module';
+
+/** Main Module */
 export * from './lib/modules/roksit.module';
