@@ -20,4 +20,7 @@ export * from './lib/modules/rk-table/rk-table.module';
 export * from './lib/modules/rk-checkbox/rk-checkbox.module';
 export * from './lib/modules/rk-infobox/rk-infobox.module';
 
+export * from './lib/modules/icons/icons.module';
+
+
 export * from './lib/modules/roksit.module';
