@@ -1,12 +1,15 @@
 import { Component, OnInit, ElementRef, Input, ViewChild, AfterViewInit } from '@angular/core';
 import { RkTableConfigModel, RkTableColumnModel } from '../rk-table/rk-table.component';
 
+declare const $: any;
+
+
 @Component({
     selector: 'rk-table-container',
     templateUrl: 'rk-table-container.component.html'
 })
 
-export class RkTableContainerComponent implements OnInit {
+export class RkTableContainerComponent implements OnInit, AfterViewInit {
 
     constructor(
         private el: ElementRef
@@ -23,6 +26,14 @@ export class RkTableContainerComponent implements OnInit {
 
     ngOnInit() {
         this.columns = Object.assign([], this.config.columns);
+    }
+
+    ngAfterViewInit() {
+        let $el = $(".badges")[0];
+        let isOverflowed = $el.offsetWidth < $el.scrollWidth;
+        
+        this.leftButton = isOverflowed;
+        this.rightButton = isOverflowed;
     }
 
     changeBadge(ev) {
