@@ -10,9 +10,9 @@ export class RkTablePaginationComponent implements OnInit {
 
     constructor() { }
 
-    @Input() totalCount = 100;
+    @Input() totalCount = 0;
 
-    @Input() pageViewCount = 10;
+    @Input() pageViewCount = 0;
 
     @Input() currentPage = 1;
 
@@ -23,8 +23,7 @@ export class RkTablePaginationComponent implements OnInit {
     @Output() pageViewCountChange: EventEmitter<number> = new EventEmitter();
 
     options: RkSelectModel[] = [
-        { displayText: '3', value: 3, selected: true },
-        { displayText: '10', value: 10 },
+        { displayText: '10', value: 10, selected : true },
         { displayText: '25', value: 25 },
         { displayText: '50', value: 50 },
         { displayText: '100', value: 100 },
@@ -36,8 +35,8 @@ export class RkTablePaginationComponent implements OnInit {
         this.pageChange.emit(pageNumber);
     }
 
-    onPageViewCountChange(pageViewcount) {
-        this.pageViewCountChange.emit(pageViewcount.value as number);
+    onPageViewCountChange() {
+        this.pageViewCountChange.emit(this.pageViewCount);
     }
 
 }

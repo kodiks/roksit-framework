@@ -13,6 +13,14 @@ export class RkTableComponent implements OnInit {
 
   @Input() config: RkTableConfigModel;
 
+  @Input() totalCount = 0;
+
+  @Input() pageViewCount = 0;
+
+  @Input() currentPage = 1;
+
+  @Input() maxSize = 8;
+
   @Output() pageChange: EventEmitter<number> = new EventEmitter();
 
   @Output() pageViewCountChange: EventEmitter<number> = new EventEmitter();

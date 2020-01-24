@@ -5,7 +5,7 @@ import { RkApexHelper, RkLayoutService } from 'projects/roksit-lib/src/public-ap
 import { RkTableConfigModel } from 'projects/roksit-lib/src/lib/modules/rk-table/rk-table/rk-table.component';
 import { RkUtilityService } from 'projects/roksit-lib/src/lib/services/rk-utility.service';
 import { RkMenuItem } from 'projects/roksit-lib/src/lib/models/rk-menu.model';
- 
+
 // import { RkAutoCompleteModel } from 'roksit-lib/lib/modules/rk-autocomplete/rk-autocomplete.component';
 
 interface Country {
@@ -185,29 +185,29 @@ export class AppComponent implements OnInit {
   ss;
 
   menuItems: RkMenuItem[] = [
-    { id: 0, text: 'Dashboard', icon: 'dashboard', selected: false },
-    { id: 1, text: 'Monitor', icon: 'monitor', selected: false },
-    { id: 2, text: 'Custom Reports', icon: 'custom-reports', selected: false },
+    { id: 0, path: '', text: 'Dashboard', icon: 'dashboard', selected: false },
+    { id: 1, path: '', text: 'Monitor', icon: 'monitor', selected: false },
+    { id: 2, path: '', text: 'Custom Reports', icon: 'custom-reports', selected: false },
     {
-      id: 3, text: 'Deployment', icon: 'dashboard', selected: false,
+      id: 3, path: '', text: 'Deployment', icon: 'dashboard', selected: false,
       subMenu: [
-        { id: 3.1, text: 'Public IP', icon: 'public-ip', selected: false },
-        { id: 3.2, text: 'Devices', icon: 'device', selected: false },
-        { id: 3.3, text: 'Roaming Clients', icon: 'roaming-clients', selected: false },
+        { id: 3.1, path: '', text: 'Public IP', icon: 'public-ip', selected: false },
+        { id: 3.2, path: '', text: 'Devices', icon: 'device', selected: false },
+        { id: 3.3, path: '', text: 'Roaming Clients', icon: 'roaming-clients', selected: false },
       ]
     },
     {
-      id: 4, text: 'Settings', icon: 'settings', selected: false,
+      id: 4, path: '', text: 'Settings', icon: 'settings', selected: false,
       subMenu: [
-        { id: 4.1, text: 'User', icon: 'user', selected: false },
-        { id: 4.2, text: 'Saved Reports', icon: 'saved-reports', selected: false },
-        { id: 4.3, text: 'Security Profiles', icon: 'security-profiles', selected: false },
-        { id: 4.4, text: 'Tools', icon: 'tools', selected: false },
-        { id: 4.5, text: 'Request Changing Domain Category', icon: 'request-category', selected: false },
-        { id: 4.6, text: 'Theme Mode', icon: 'theme-mode', selected: false },
+        { id: 4.1, path: '', text: 'User', icon: 'user', selected: false },
+        { id: 4.2, path: '', text: 'Saved Reports', icon: 'saved-reports', selected: false },
+        { id: 4.3, path: '', text: 'Security Profiles', icon: 'security-profiles', selected: false },
+        { id: 4.4, path: '', text: 'Tools', icon: 'tools', selected: false },
+        { id: 4.5, path: '', text: 'Request Changing Domain Category', icon: 'request-category', selected: false },
+        { id: 4.6, path: '', text: 'Theme Mode', icon: 'theme-mode', selected: false },
       ]
     },
-    { id: 5, text: 'Help', icon: 'help', selected: false }
+    { id: 5, path: '', text: 'Help', icon: 'help', selected: false }
   ];
 
   collapsed: boolean;
