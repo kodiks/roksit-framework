@@ -351,6 +351,9 @@ export class AppComponent implements OnInit {
     });
   }
 
+  onValueChange(value : boolean) {
+  }
+
   ngOnInit(): void {
     // this.prepareTimelineChart();
 

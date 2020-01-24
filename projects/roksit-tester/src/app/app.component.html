@@ -32,6 +32,13 @@
 
     <div class="toolbar">
       <h3 class="page">Dashboard</h3>
+      
+      
+      <div class="traffic-types">
+        <rk-radio name="trafficType" [checked]="true" (valueChange)="onValueChange(true)" >Total traffic</rk-radio>
+        <rk-radio name="trafficType" (valueChange)="onValueChange(false)">Block Page</rk-radio>
+      </div>
+
 
       <div class="account">
         <button class="notification-btn ripple">
