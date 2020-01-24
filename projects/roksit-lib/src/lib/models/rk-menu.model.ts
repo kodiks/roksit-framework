@@ -18,7 +18,6 @@ export interface RkMenuItem {
      * @description Menu item has selected for UI
      */
     selected: boolean;
-    path : string;
 
     /**
      * @description Menu item router path for angular router
