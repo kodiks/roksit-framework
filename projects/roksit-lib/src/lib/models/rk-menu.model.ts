@@ -3,6 +3,7 @@ export interface RkMenuItem {
     text: string;
     icon: string;
     selected: boolean;
+    path : string;
 
     subMenu?: RkMenuItem[];
 }
