@@ -1,0 +1,54 @@
+.chart-info {
+  width: 100px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  background: $pale-grey;
+
+  .section {
+    flex: 1;
+    color: $gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+
+    .section-title {
+      color: $blue-grey;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .value {
+      font-size: 24px;
+      color: $gray;
+    }
+
+    &.active {
+      border-radius: 10px;
+      background: rgba($color: #2fdd57, $alpha: 0.8);
+      flex-direction: row;
+      color: $white;
+      font-size: 24px;
+
+      .value {
+        color: $white !important;
+      }
+
+      i-feather {
+        width: 26px;
+        height: 26px;
+
+        svg {
+          position: relative;
+          top: -7px;
+          width: 26px;
+          height: 26px;
+          color: $white;
+        }
+      }
+    }
+  }
+}

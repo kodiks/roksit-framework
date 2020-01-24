@@ -3,7 +3,7 @@
 */
 
 body {
-    background-color: red;
+  background-color: red;
 }
 
 @import "./bootstrap/bootstrap-reboot.scss";
@@ -33,6 +33,9 @@ body {
 @import "./core/components/rk-pagination.scss";
 @import "./core/components/rk-checkbox.scss";
 @import "./core/components/rk-infobox.scss";
+@import "./core/components/rk-selectable-table.scss";
+
+@import "./core/custom/chart-info.scss";
 
 @import "./core/external/flatpickr/flatpickr.scss";
 @import "./core/components/rk-date.scss";

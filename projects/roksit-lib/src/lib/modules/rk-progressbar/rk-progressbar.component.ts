@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
     selector: 'rk-progressbar',
@@ -7,12 +7,13 @@ import { Component, OnInit,Input } from '@angular/core';
 })
 
 export class RkProgressbarComponent implements OnInit {
-    @Input() value: number = 0;
-    @Input() showType: string = "";
-    @Input() sizeType:string ="medium";
-    @Input() type:string="success";
 
     constructor() { }
+
+    @Input() value = 0;
+    @Input() showType = '';
+    @Input() sizeType = 'medium';
+    @Input() type = '';
 
     ngOnInit() { }
 
