@@ -1,8 +1,28 @@
-<div class="rk-info-box " [ngClass]="{ 'active' : isActive }"
+<div class="rk-info-box {{ className }}" [ngClass]="{ 'active' : isActive }"
     [ngStyle]="{ 'background-color' : isActive ? color: 'white' }" (click)="toggleActive()">
     <div class="info-header">
         <span class="l-border" [ngStyle]="{ 'background-color' : !isActive ? color: 'white' }"></span>
-        {{ title }}
+        <span class="text">{{ title }}</span>
+
+        <svg class="svg-image" width="118px" height="26px" viewBox="0 0 118 26" version="1.1"
+            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <defs>
+                <linearGradient x1="15.5195038%" y1="50%" x2="100%" y2="50%" id="linearGradient-{{guid}}">
+                    <stop [attr.stop-color]="isActive ? color : '#FFFFFF'" offset="0%"></stop>
+                    <stop [attr.stop-color]="isActive ? '#FFFFFF' : color" offset="100%"></stop>
+                </linearGradient>
+            </defs>
+            <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+                <g #svgG id="Chart/buttons/Variable-box-Copy" transform="translate(-104.000000, -12.000000)"
+                    stroke="url(#linearGradient-1)" stroke-width="4">
+                    <g id="Chart/veriable-line-Copy" transform="translate(106.466667, 14.000000)">
+                        <path
+                            d="M0,14.7318907 C15.1109775,15.3457195 26.1084273,15.3457195 32.9923493,14.7318907 C43.3182322,13.8111476 43.809941,11.5092896 48.7270281,10.1281749 C53.6441152,8.74706012 55.6109501,16.1130055 61.5114546,16.1130055 C67.4119592,16.1130055 72.8207551,3.2226011 78.2295509,6.90557378 C83.6383468,10.5885465 85.6051816,24.399694 94.4559385,21.6374645 C103.306695,18.875235 101.831569,2.30185793 113.14087,0"
+                            id="Path-3-Copy-2"></path>
+                    </g>
+                </g>
+            </g>
+        </svg>
     </div>
     <div class="info-content">
         <div class="info-allow-block" *ngIf="type == 1">
@@ -27,5 +47,9 @@
                 <span>{{ valueTwo }}</span>
             </div>
         </div>
+    </div>
+
+    <div class="rk-description">
+        {{ description }}
     </div>
 </div>
