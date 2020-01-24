@@ -27,6 +27,9 @@ export * from './lib/modules/icons/icons.module';
 
 /** Service Modules */
 export * from './lib/services/services.module';
+export * from './lib/services/rk-layout.service';
+export * from './lib/services/rk-utility.service';
+
 
 /** Main Module */
 export * from './lib/modules/roksit.module';
