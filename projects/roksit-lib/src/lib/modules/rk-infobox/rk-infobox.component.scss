@@ -1,3 +1,5 @@
+@import "../../assets/scss/core/colors.scss";
+
 .rk-info-box {
   border-radius: 6px;
   border: solid 1px #e4e9f1;
@@ -8,6 +10,7 @@
   transition: 0.2s all;
   user-select: none;
   margin-top: 20px;
+  position: relative;
 
   .info-header {
     padding: 5px;
@@ -28,6 +31,17 @@
       width: 5px;
       height: 20px;
       border-radius: 4.5px;
+    }
+
+    .text {
+      position: relative;
+      z-index: 1;
+    }
+
+    .svg-image {
+      position: absolute;
+      right: 10px;
+      z-index: 0;
     }
   }
 
@@ -121,11 +135,50 @@
     }
   }
 
+  .rk-description {
+    font-size: 8px;
+    color: $blue-grey;
+    position: absolute;
+    top: calc(100% + 7px);
+  }
+
   &.active {
     margin-top: -20px;
     transition: 0.2s all;
+    position: relative;
+    margin-bottom: 60px;
 
-    .info-header {
+    &::after {
+      content: "";
+      width: 101%;
+      display: block;
+      height: 1px;
+      position: absolute;
+      top: calc(100% + 70px);
+      left: 0;
+    }
+
+    &.blue::after {
+      border-bottom: 3px solid #4353ff;
+    }
+
+    &.green::after {
+      border-bottom: 3px solid #3dd49a;
+    }
+
+    &.red::after {
+      border-bottom: 3px solid #f95656;
+    }
+
+    &.gray::after {
+      border-bottom: 3px solid #d8d8d8;
+    }
+
+    &.yellow::after {
+      border-bottom: 3px solid #f9df56;
+    }
+
+    & .info-header {
       color: white;
     }
 
