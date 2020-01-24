@@ -15,6 +15,8 @@ export class RkRadioComponent implements OnInit {
 
     @Input() disabled: boolean;
 
+    @Output() valueChange: EventEmitter<boolean> = new EventEmitter();
+
     guid;
 
     ngOnInit() {
@@ -22,6 +24,10 @@ export class RkRadioComponent implements OnInit {
     }
 
     changeRadio(ev) { }
+
+    onChange() {
+        this.valueChange.emit();
+    }
 
     setGUID() {
         this.guid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
