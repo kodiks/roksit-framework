@@ -73,7 +73,7 @@
 
     <div class="container-fluid">
       <div class="row mt-3">
-        <div class="col-12">
+        <div class="col-12 col-md-6">
 
           <div class="rk-selectable-table">
             <div class="rk-item">
@@ -197,6 +197,23 @@
           </div>
 
         </div>
+
+        <div class="col-12 col-md-6">
+          <div class="chart-info">
+            <div class="section">
+              <span class="section-title">Selected <br /> Time Hit</span>
+              <span class="value">3100</span>
+            </div>
+            <div class="section active">
+              <i-feather name="arrow-up"></i-feather>
+              <span class="value">%20</span>
+            </div>
+            <div class="section">
+              <div class="section-title">Avarage Hit</div>
+              <span class="value">2001</span>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="row mt-4 gutters-sm">
@@ -245,8 +262,7 @@
       <div class="row mt-3">
         <div class="col-12">
           <rk-table-container [config]="tableConfig">
-            <rk-table [config]="tableConfig" (pageChange)="onPageChange($event)"
-            [totalCount]="40" [pageViewCount]="10"
+            <rk-table [config]="tableConfig" (pageChange)="onPageChange($event)" [totalCount]="40" [pageViewCount]="10"
               (pageViewCountChange)="onPageViewCountChange($event)" [info]="true">
               <ng-template #header>
                 <tr>
