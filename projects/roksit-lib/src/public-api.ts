@@ -21,9 +21,12 @@ export * from './lib/modules/rk-table/rk-table.module';
 export * from './lib/modules/rk-checkbox/rk-checkbox.module';
 export * from './lib/modules/rk-infobox/rk-infobox.module';
 export * from './lib/modules/rk-sidebar/rk-sidebar.module';
+export * from './lib/modules/icons/icons.module';
 
 /** Service Modules */
 export * from './lib/services/services.module';
+export * from './lib/services/rk-utility.service';
+export * from './lib/services/rk-layout.service';
 
 /** Main Module */
 export * from './lib/modules/roksit.module';
