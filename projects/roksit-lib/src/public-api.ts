@@ -23,6 +23,9 @@ export * from './lib/modules/rk-infobox/rk-infobox.module';
 export * from './lib/modules/rk-sidebar/rk-sidebar.module';
 export * from './lib/modules/icons/icons.module';
 
+export * from './lib/modules/icons/icons.module';
+
+
 /** Service Modules */
 export * from './lib/services/services.module';
 export * from './lib/services/rk-utility.service';

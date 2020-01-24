@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 // import { RoksitModule  } from 'roksit-lib';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { RoksitModule } from 'projects/roksit-lib/src/public-api';
+import { RoksitModule, ServicesModule } from 'projects/roksit-lib/src/public-api';
 
 @NgModule({
   declarations: [
@@ -16,10 +16,12 @@ import { RoksitModule } from 'projects/roksit-lib/src/public-api';
     BrowserModule,
     RoksitModule.forRoot(),
     CommonModule,
-    FormsModule
+    FormsModule,
+    ServicesModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent],
   schemas : [NO_ERRORS_SCHEMA]
 })
 export class AppModule { }
+ 
