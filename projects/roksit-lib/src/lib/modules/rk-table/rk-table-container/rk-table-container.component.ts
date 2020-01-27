@@ -29,11 +29,13 @@ export class RkTableContainerComponent implements OnInit, AfterViewInit {
     }
 
     ngAfterViewInit() {
-        let $el = $(".badges")[0];
-        let isOverflowed = $el.offsetWidth < $el.scrollWidth;
-        
-        this.leftButton = isOverflowed;
-        this.rightButton = isOverflowed;
+        if ($(".badges").length > 0) {
+            let $el = $(".badges")[0];
+            let isOverflowed = $el.offsetWidth < $el.scrollWidth;
+
+            this.leftButton = isOverflowed;
+            this.rightButton = isOverflowed;
+        }
     }
 
     changeBadge(ev) {
