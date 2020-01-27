@@ -12,7 +12,7 @@ const DEFAULT_TIMES = [
     { value: 24 * 2, displayText: 'Last 2 day' },
     { value: 24 * 3, displayText: 'Last 3 day' },
     { value: 24 * 7, displayText: 'Last 1 week' },
-    { value: 24 * 7, displayText: 'Last 2 week' },
+    { value: 24 * 14, displayText: 'Last 2 week' },
     { value: 24 * 30, displayText: 'Last month' },
     { value: 24 * 30 * 2, displayText: 'Last 2 month' }
 ] as RkDateTime[];
