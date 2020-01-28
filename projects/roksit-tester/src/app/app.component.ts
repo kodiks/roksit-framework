@@ -6,6 +6,7 @@ import { RkTableConfigModel } from 'projects/roksit-lib/src/lib/modules/rk-table
 import { RkUtilityService } from 'projects/roksit-lib/src/lib/services/rk-utility.service';
 import { RkMenuItem } from 'projects/roksit-lib/src/lib/models/rk-menu.model';
 import { RkModalComponent } from 'projects/roksit-lib/src/lib/modules/rk-modal/rk-modal.component';
+import { RkSelectModel } from 'projects/roksit-lib/src/lib/modules/rk-select/rk-select.component';
 
 // import { RkAutoCompleteModel } from 'roksit-lib/lib/modules/rk-autocomplete/rk-autocomplete.component';
 
@@ -65,6 +66,14 @@ export class AppComponent implements OnInit {
   }
 
   darkMode = false;
+
+  __options: RkSelectModel[] = [
+    { value: 32, displayText: '32', selected: true },
+    { value: 33, displayText: '33' },
+    { value: 34, displayText: '34' },
+    { value: 35, displayText: '35' },
+    { value: 36, displayText: '36' }
+  ];
 
   tableConfig: RkTableConfigModel = {
     columns: [
