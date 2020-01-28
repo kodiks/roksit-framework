@@ -52,10 +52,11 @@ export class RkTableConfigModel {
   selectableRows = false;
 }
 
-export interface RkTableColumnModel {
+export interface RkTableColumnModel   {
   id?: number;
   name: string;
   displayText: string;
+  selected?: boolean;
 }
 
 export interface RkTableRowModel {
