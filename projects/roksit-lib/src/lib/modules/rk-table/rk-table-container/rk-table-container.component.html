@@ -1,4 +1,4 @@
-<div class="rk-table-container-header" *ngIf="config" >
+<div class="rk-table-container-header" *ngIf="config">
     <div class="top-content">
         <span class="inf">
             <span class="text-primary">2300</span> queries listed
@@ -26,4 +26,7 @@
         </div>
     </div>
 </div>
+
+<ng-content select=".rk-table-container-header"></ng-content>
+
 <ng-content class="rk-table-contianer" select="rk-table"></ng-content>
