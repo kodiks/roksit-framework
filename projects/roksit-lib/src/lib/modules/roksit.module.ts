@@ -18,6 +18,7 @@ import { RkCheckboxModule } from './rk-checkbox/rk-checkbox.module';
 import { RkInfoBoxModule } from './rk-infobox/rk-infobox.module';
 import { RkSidebarModule } from './rk-sidebar/rk-sidebar.module';
 import { ServicesModule } from '../services/services.module';
+import { RkModalModule } from './rk-modal/rk-modal.module';
 
 @NgModule({
     imports: [
@@ -39,7 +40,8 @@ import { ServicesModule } from '../services/services.module';
         RkCheckboxModule,
         RkInfoBoxModule,
         RkSidebarModule,
-        ServicesModule
+        ServicesModule,
+        RkModalModule
     ],
     exports: [
         IconsModule,
@@ -58,7 +60,8 @@ import { ServicesModule } from '../services/services.module';
         RkCheckboxModule,
         RkInfoBoxModule,
         RkSidebarModule,
-        ServicesModule
+        ServicesModule,
+        RkModalModule
     ],
     declarations: [],
     entryComponents: [],

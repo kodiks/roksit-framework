@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { RkListConfigModel } from 'projects/roksit-lib/src/lib/modules/rk-layout/rk-list/rk-list.component';
 import { RkCardConfigModel } from 'projects/roksit-lib/src/lib/modules/rk-layout/rk-card/rk-card.component';
 import { RkApexHelper, RkLayoutService } from 'projects/roksit-lib/src/public-api';
 import { RkTableConfigModel } from 'projects/roksit-lib/src/lib/modules/rk-table/rk-table/rk-table.component';
 import { RkUtilityService } from 'projects/roksit-lib/src/lib/services/rk-utility.service';
 import { RkMenuItem } from 'projects/roksit-lib/src/lib/models/rk-menu.model';
+import { RkModalComponent } from 'projects/roksit-lib/src/lib/modules/rk-modal/rk-modal.component';
 
 // import { RkAutoCompleteModel } from 'roksit-lib/lib/modules/rk-autocomplete/rk-autocomplete.component';
 
@@ -351,7 +352,13 @@ export class AppComponent implements OnInit {
     });
   }
 
-  onValueChange(value : boolean) {
+  onValueChange(value: boolean) {
+  }
+
+  @ViewChild('modal', { static: false }) modal: RkModalComponent;
+
+  toggle() {
+    this.modal.toggle();
   }
 
   ngOnInit(): void {
