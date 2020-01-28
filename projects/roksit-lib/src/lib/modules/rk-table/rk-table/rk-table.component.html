@@ -12,7 +12,7 @@
             <th *ngIf="config.selectableRows"></th>
             <th *ngFor="let col of config.columns">
               <div class="d-flex align-items-center justify-content-between">
-                {{ col.displayText }}
+                <span class="header-title" > {{ col.displayText }}</span>
 
                 <button class="table-btn ripple">
                   <i-feather name="more-vertical"></i-feather>
