@@ -25,7 +25,9 @@ export class RkTableContainerComponent implements OnInit, AfterViewInit {
     rightButton = true;
 
     ngOnInit() {
-        this.columns = Object.assign([], this.config.columns);
+        this.columns = Object.assign([], this.config.columns); 
+
+        this.config.columns = this.config.columns.filter(item => item.selected);
     }
 
     ngAfterViewInit() {

@@ -17,7 +17,7 @@
                 <i-feather name="chevrons-left"></i-feather>
             </button>
             <div class="badges" id="badges" #badges>
-                <rk-badge *ngFor="let col of columns; let index = index" [name]="col.name" [value]="hasChecked(col)"
+                <rk-badge *ngFor="let col of columns; let index = index" [name]="col.name" [value]="col.selected"
                     (valueChange)="changeBadge($event)">{{ col.displayText }}</rk-badge>
             </div>
             <button class="x-scroll-right-button" *ngIf="rightButton" (click)="scroll('right')">

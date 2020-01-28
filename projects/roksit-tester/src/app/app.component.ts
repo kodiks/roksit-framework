@@ -77,7 +77,7 @@ export class AppComponent implements OnInit {
 
   tableConfig: RkTableConfigModel = {
     columns: [
-      { id: 0, name: 'time', displayText: 'Time', },
+      { id: 0, name: 'time', displayText: 'Time',selected : true },
       { id: 1, name: 'domain', displayText: 'Domain' },
       { id: 2, name: 'subdomain', displayText: 'Subdomain' },
       { id: 3, name: 'srcip', displayText: 'Src.Ip' },
