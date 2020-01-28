@@ -112,6 +112,10 @@ rk-table-container {
       border: none !important;
 
       &.info {
+        .table-content {
+          overflow-x: auto;
+        }
+
         table {
           border: none !important;
 
@@ -201,6 +205,11 @@ table {
         font-size: 11px;
         font-weight: 500;
         position: relative;
+
+        .header-title {
+          min-width: 50px;
+          padding-right: 20px;
+        }
 
         &.index {
           width: 33px;
