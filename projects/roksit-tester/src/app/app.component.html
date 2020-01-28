@@ -32,10 +32,10 @@
 
     <div class="toolbar">
       <h3 class="page">Dashboard</h3>
-      
-      
+
+
       <div class="traffic-types">
-        <rk-radio name="trafficType" [checked]="true" (valueChange)="onValueChange(true)" >Total traffic</rk-radio>
+        <rk-radio name="trafficType" [checked]="true" (valueChange)="onValueChange(true)">Total traffic</rk-radio>
         <rk-radio name="trafficType" (valueChange)="onValueChange(false)">Block Page</rk-radio>
       </div>
 
@@ -77,6 +77,61 @@
         </div>
       </div>
     </div>
+
+    <rk-modal #modal>
+      <rk-modal-header icon="filter">
+        <rk-modal-header-title>Filtrele</rk-modal-header-title>
+        <rk-modal-header-close (click)="modal.toggle()"></rk-modal-header-close>
+      </rk-modal-header>
+
+      <rk-modal-body>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam labore velit reprehenderit aspernatur ea
+          assumenda quasi veritatis obcaecati, eum quis quas doloremque! Corporis rerum perspiciatis pariatur eum nemo
+          asperiores rem?</p>
+
+      </rk-modal-body>
+
+      <rk-modal-footer>
+        <button class="btn w-100 btn-small mr-2">Apply</button>
+        <button class="btn w-100 btn-default btn-small">Clean</button>
+      </rk-modal-footer>
+    </rk-modal>
+
+    <button class="btn" (click)="modal.toggle()">toggle</button>
+
+    <!-- <div class="rk-modal" #modal>
+      <div class="rk-modal-header">
+        <div class="rk-modal-header-icon">
+          <i-feather name="filter"></i-feather>
+        </div>
+
+        <div class="rk-modal-header-title">
+          <h5>Filtreler</h5>
+        </div>
+
+        <div class="rk-modal-header-close">
+          <button>
+            <i-feather name="x-circle"></i-feather>
+          </button>
+        </div>
+      </div>
+
+      <div class="rk-modal-body">
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let item of [1,1,1,1,1,1,1,1,1,1,1,1,1,1]; let index = index">Content
+            {{index}}</li>
+          <li class="list-group-item" *ngFor="let item of [1,1,1,1,1,1,1,1,1,1,1,1,1,1]; let index = index">Content
+            {{index}}</li>
+          <li class="list-group-item" *ngFor="let item of [1,1,1,1,1,1,1,1,1,1,1,1,1,1]; let index = index">Content
+            {{index}}</li>
+        </ul>
+      </div>
+
+      <div class="rk-modal-footer">
+        <button class="btn w-100 btn-small mr-2">Apply</button>
+        <button class="btn w-100 btn-default btn-small">Clean</button>
+      </div>
+    </div> -->
 
     <div class="container-fluid">
       <div class="row mt-3">
