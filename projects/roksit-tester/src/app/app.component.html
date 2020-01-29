@@ -842,7 +842,7 @@
         <div class="row mt-3">
           <div class="col-6">
             <rk-accordion>
-              <rk-accordion-panel *ngFor="let item of listConfig.items; let i = index" [index]="i">
+              <rk-accordion-panel *ngFor="let item of listConfig.items; let i = index" [index]="i+1">
                 <rk-accordion-header-content>
                   {{ item.content }}
                 </rk-accordion-header-content>
