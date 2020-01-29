@@ -10,15 +10,17 @@
         <ng-container *ngIf="config">
           <tr>
             <th *ngIf="config.selectableRows"></th>
-            <th *ngFor="let col of config.columns">
-              <div class="d-flex align-items-center justify-content-between">
-                <span class="header-title" > {{ col.displayText }}</span>
+            <ng-container *ngFor="let col of config.columns">
+              <th *ngIf="col.selected">
+                <div class="d-flex align-items-center justify-content-between">
+                  <span class="header-title"> {{ col.displayText }}</span>
 
-                <button class="table-btn ripple">
-                  <i-feather name="more-vertical"></i-feather>
-                </button>
-              </div>
-            </th>
+                  <button class="table-btn ripple">
+                    <i-feather name="more-vertical"></i-feather>
+                  </button>
+                </div>
+              </th>
+            </ng-container>
           </tr>
         </ng-container>
       </thead>
@@ -33,9 +35,12 @@
             <td *ngIf="config.selectableRows">
               <rk-checkbox [(value)]="row.selected"></rk-checkbox>
             </td>
-            <td *ngFor="let col of config.columns;">
-              {{ row[getColumnNameByIndex(col)] }}
-            </td>
+
+            <ng-container *ngFor="let col of config.columns;">
+              <td *ngIf="col.selected">
+                {{ row[getColumnNameByIndex(col)] }}
+              </td>
+            </ng-container>
           </tr>
         </ng-container>
       </tbody>
