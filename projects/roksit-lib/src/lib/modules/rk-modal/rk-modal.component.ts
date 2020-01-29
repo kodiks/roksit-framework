@@ -17,5 +17,4 @@ export class RkModalComponent {
 
         rkModal.classList.toggle('show');
     }
-
 }

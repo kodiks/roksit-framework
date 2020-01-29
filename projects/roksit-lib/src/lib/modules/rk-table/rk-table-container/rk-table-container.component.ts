@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, Input, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ElementRef, Input, ViewChild, AfterViewInit, ViewEncapsulation } from '@angular/core';
 import { RkTableConfigModel, RkTableColumnModel } from '../rk-table/rk-table.component';
 
 declare const $: any;
@@ -29,9 +29,9 @@ export class RkTableContainerComponent implements OnInit, AfterViewInit {
     }
 
     ngAfterViewInit() {
-        if ($(".badges").length > 0) {
-            let $el = $(".badges")[0];
-            let isOverflowed = $el.offsetWidth < $el.scrollWidth;
+        if ($('.badges').length > 0) {
+            const $el = $('.badges')[0];
+            const isOverflowed = $el.offsetWidth < $el.scrollWidth;
 
             this.leftButton = isOverflowed;
             this.rightButton = isOverflowed;

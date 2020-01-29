@@ -34,10 +34,10 @@
       <h3 class="page">Dashboard</h3>
 
 
-      <div class="traffic-types">
+      <!-- <div class="traffic-types">
         <rk-radio name="trafficType" [checked]="true" (valueChange)="onValueChange(true)">Total traffic</rk-radio>
         <rk-radio name="trafficType" (valueChange)="onValueChange(false)">Block Page</rk-radio>
-      </div>
+      </div> -->
 
 
       <div class="account">
@@ -78,6 +78,20 @@
       </div>
     </div>
 
+    <div class="container-fluid mt-2">
+      <div class="row">
+        <div class="col-12">
+          <div class="rk-input-container">
+            <span>
+              <input type="text" placeholder="IP">
+              /
+            </span>
+            <rk-select [options]="__options"></rk-select>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <rk-modal #modal>
       <rk-modal-header icon="filter">
         <rk-modal-header-title>Filtrele</rk-modal-header-title>
@@ -97,7 +111,13 @@
       </rk-modal-footer>
     </rk-modal>
 
-    <button class="btn" (click)="modal.toggle()">toggle</button>
+    <div class="container-fluid mt-4">
+      <div class="row">
+        <div class="col-12">
+          <button class="btn" (click)="modal.toggle()">toggle</button>
+        </div>
+      </div>
+    </div>
 
     <!-- <div class="rk-modal" #modal>
       <div class="rk-modal-header">
@@ -526,6 +546,7 @@
 
         <div class="row">
           <div class="col-12">
+
             <rk-radio name="ss" checked="true">Option 1</rk-radio>
             <rk-radio name="ss" disabled="true">Option 2</rk-radio>
             <rk-radio name="ss">Option 3</rk-radio>

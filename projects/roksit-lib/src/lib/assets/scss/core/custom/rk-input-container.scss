@@ -1,0 +1,36 @@
+.rk-input-container {
+  width: 100%;
+  border: 1px solid $light-blue-grey;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+
+  > span {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    color: $light-blue-grey;
+    padding-right: 10px;
+
+    input {
+      padding: 0 10px;
+      width: 100%;
+      border: 0;
+      outline: 0;
+      background: transparent;
+      color: $gray;
+
+      ::placeholder {
+          color: $blue-grey;
+      }
+    }
+  }
+
+  rk-select {
+    flex: 1;
+
+    .rk-select {
+        border: none;
+    }
+  }
+}
