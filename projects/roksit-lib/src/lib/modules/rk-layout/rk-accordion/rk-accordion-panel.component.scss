@@ -6,3 +6,9 @@
     border-bottom-right-radius: 12px;
    
 }
+
+.rk-accordion-header {
+    &.with-index {
+        padding-left: 0 !important;
+    }
+}

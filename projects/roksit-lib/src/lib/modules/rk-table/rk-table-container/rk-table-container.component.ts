@@ -25,9 +25,7 @@ export class RkTableContainerComponent implements OnInit, AfterViewInit {
     rightButton = true;
 
     ngOnInit() {
-        this.columns = Object.assign([], this.config.columns); 
-
-        this.config.columns = this.config.columns.filter(item => item.selected);
+        this.columns = Object.assign([], this.config.columns);
     }
 
     ngAfterViewInit() {
@@ -43,17 +41,10 @@ export class RkTableContainerComponent implements OnInit, AfterViewInit {
     changeBadge(ev) {
         const { name, value } = ev;
 
-        if (value) {
-            const findedColumn = this.columns.find(x => x.name === name);
+        let col = this.config.columns.find(item => item.name == name);
 
-            this.config.columns.push(findedColumn);
-        } else {
-            const index = this.config.columns.findIndex(x => x.name === name);
-
-            this.config.columns.splice(index, 1);
-        }
-
-        this.config.columns.sort((a, b) => a.id > b.id ? 1 : -1);
+        if (col)
+            col.selected = value;
     }
 
     hasChecked(col: RkTableColumnModel) {
