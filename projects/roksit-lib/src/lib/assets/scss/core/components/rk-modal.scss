@@ -82,8 +82,38 @@
     display: flex;
     flex-direction: column;
     overflow: auto;
-    padding: 15px;
     height: 100%;
+
+    ul {
+      padding: 0 !important;
+    }
+
+    .rk-modal-item {
+      padding: 15px;
+      border-bottom: 2px solid #eeeef2;
+
+      .modal-item-title {
+        width: 78px;
+        height: 14px;
+        font-family: Roboto;
+        font-size: 12px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #303759;
+        margin-bottom: 10px;
+      }
+
+      li {
+        rk-radio {
+          &:last-of-type {
+            margin-right: 25px;
+          }
+        }
+      }
+    }
   }
 
   .rk-modal-footer {

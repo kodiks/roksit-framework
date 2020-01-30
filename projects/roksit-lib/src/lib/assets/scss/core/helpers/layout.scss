@@ -76,6 +76,10 @@
 }
 
 .rk {
+  &-j-c-sb {
+    justify-content: space-between;
+  }
+
   &-row {
     display: flex;
   }

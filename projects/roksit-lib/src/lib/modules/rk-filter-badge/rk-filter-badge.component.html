@@ -1,0 +1,29 @@
+<div class="rk-filter-badge mb-2" [ngClass]="{ 'primary' : isEqual, 'security' : !isEqual }">
+    <div class="unhover">
+        <div class="filter-name"> {{ filterName }} </div>
+
+        <div class="equals">
+            <icon-equal *ngIf="isEqual" ></icon-equal>
+            <icon-not-equal *ngIf="!isEqual"></icon-not-equal>
+        </div>
+
+        <div class="values">
+            <ng-container *ngFor="let val of filterValues; let i = index">
+                <span *ngIf="i > 0" class="seperator"></span> {{ val }}
+            </ng-container>
+        </div>
+    </div>
+
+    <div class="hover">
+        <button class="ripple" (click)="onEditClick()" >
+            <i-feather name="edit-3"></i-feather>
+        </button>
+        <button class="ripple equal" (click)="toggleEqual()" >
+            <icon-not-equal *ngIf="isEqual"></icon-not-equal>
+            <icon-equal *ngIf="!isEqual" ></icon-equal>
+        </button>
+        <button class="ripple" (click)="onDeleteClick()">
+            <i-feather name="trash-2"></i-feather>
+        </button>
+    </div>
+</div>

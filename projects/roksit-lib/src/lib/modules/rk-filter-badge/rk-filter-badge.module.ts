@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RkFilterBadgeComponent } from './rk-filter-badge.component';
+import { IconsModule } from '../icons/icons.module';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
-    imports: [],
+    imports: [IconsModule,CommonModule],
     exports: [
         RkFilterBadgeComponent
     ],

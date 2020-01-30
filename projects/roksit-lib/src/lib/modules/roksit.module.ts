@@ -41,7 +41,8 @@ import { RkModalModule } from './rk-modal/rk-modal.module';
         RkInfoBoxModule,
         RkSidebarModule,
         ServicesModule,
-        RkModalModule
+        RkModalModule,
+        RkFilterBadgeModule
     ],
     exports: [
         IconsModule,
@@ -61,7 +62,9 @@ import { RkModalModule } from './rk-modal/rk-modal.module';
         RkInfoBoxModule,
         RkSidebarModule,
         ServicesModule,
-        RkModalModule
+        RkModalModule,
+        RkFilterBadgeModule
+
     ],
     declarations: [],
     entryComponents: [],
