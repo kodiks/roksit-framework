@@ -41,10 +41,11 @@ export class RkTableContainerComponent implements OnInit, AfterViewInit {
     changeBadge(ev) {
         const { name, value } = ev;
 
-        let col = this.config.columns.find(item => item.name == name);
+        const col = this.config.columns.find(item => item.name === name);
 
-        if (col)
+        if (col) {
             col.selected = value;
+        }
     }
 
     hasChecked(col: RkTableColumnModel) {

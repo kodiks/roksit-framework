@@ -8,7 +8,21 @@ export class RkSelectComponent implements OnInit {
 
     constructor() { }
 
-    @Input() options: RkSelectModel[];
+    private _options: RkSelectModel[] = [];
+
+    @Input()
+    get options(): RkSelectModel[] { return this._options; }
+    set options(options) {
+        if (options) {
+            this._options = options;
+
+            const selected = options.find(x => x.selected);
+
+            if (selected) {
+                this.selectedOption = selected;
+            }
+        }
+    }
 
     @Input() placeholder = 'Lütfen seçiniz';
 
@@ -22,10 +36,12 @@ export class RkSelectComponent implements OnInit {
     show = false;
 
     ngOnInit() {
-        const selected = this.options.find(x => x.selected);
+        if (this.options) {
+            const selected = this.options.find(x => x.selected);
 
-        if (selected) {
-            this.selectedOption = selected;
+            if (selected) {
+                this.selectedOption = selected;
+            }
         }
     }
 
