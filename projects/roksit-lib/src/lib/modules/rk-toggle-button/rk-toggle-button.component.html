@@ -1,0 +1,7 @@
+<button class="rk-toggle-btn" [ngClass]="{'active': active}" (click)="toggle()">
+    {{ active ? toggleTexts?.pos : toggleTexts?.neg }}
+
+    <ng-content *ngIf="!toggleTexts"></ng-content>
+
+    <i-feather *ngIf="icon" [name]="icon"></i-feather>
+</button>

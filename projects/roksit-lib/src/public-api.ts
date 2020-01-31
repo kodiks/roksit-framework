@@ -23,6 +23,7 @@ export * from './lib/modules/rk-infobox/rk-infobox.module';
 export * from './lib/modules/rk-sidebar/rk-sidebar.module';
 export * from './lib/modules/icons/icons.module';
 export * from './lib/modules/rk-modal/rk-modal.module';
+export * from './lib/modules/rk-toggle-button/rk-toggle-button.module';
 
 /** Service Modules */
 export * from './lib/services/services.module';

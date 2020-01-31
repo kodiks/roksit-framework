@@ -1,0 +1,46 @@
+.rk-toggle-btn {
+  outline: none !important;
+  border: 1px solid rgba(37, 38, 94, 0.2);
+  background: $white;
+  font-size: 10px;
+  font-weight: 500;
+  height: 24px;
+  box-sizing: border-box;
+  padding: 0 6px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $blue-grey;
+  transition: 0.2s all;
+  user-select: none;
+  cursor: pointer;
+  transition: 0.1s all;
+  width: 100%;
+  position: relative;
+
+  i-feather {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 6px;
+  }
+
+  &:hover {
+    border-color: rgba($color: $gray, $alpha: 0.5);
+    color: rgba($color: $gray, $alpha: 0.5);
+    transition: 0.1s all;
+  }
+
+  &.active {
+    border-color: #4fb75d;
+    color: #4fb75d;
+    transition: 0.2s all;
+
+    i-feather {
+      svg {
+        color: $blue-grey;
+      }
+    }
+  }
+}
