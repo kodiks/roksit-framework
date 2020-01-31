@@ -1,24 +1,12 @@
-<div class="rk-accordion-item">
-    <div class="rk-accordion-header" [ngClass]="{ 'with-index' : !!index }"  #panelHeader (click)="onPanelClick()">
+<div class="rk-accordion-header" [ngClass]="{ 'with-index' : !!index, 'active': showAccordion, 'passed': passed }" #panelHeader (click)="onPanelClick()">
 
-        <ul>
-            <div style="display: flex;">
-                <li style="margin-right:7px;color: white;padding-left:10px;padding-top:4px;font-size: 12px;"
-                    class="stepacord" *ngIf="!!index"  >{{ index  }}.Step</li>
-                <li style="padding-right:3px;width: auto;margin-right: 0 !important;" class="content">
-                    <!-- <ng-content select="rk-wizard-item"></ng-content> -->
+    <span class="rk-accordion-header-step">{{ index }}. Step</span>
 
-                    <ng-content select="rk-accordion-header-content"></ng-content>
-                </li>
-            </div>
+    <h5 class="rk-accordion-header-title m-0 ml-2">
+        <ng-content select=".rk-accordion-title"></ng-content>
+    </h5>
+</div>
 
-            <li class="time" style="float: right;">
-                <ng-content select="rk-accordion-header-sub-content"></ng-content>
-            </li>
-        </ul>
-    </div>
-
-    <div [ngClass]="{'show-body' : showAccordion}" class="rk-accordion-content">
-        <ng-content></ng-content>
-    </div>
+<div [ngClass]="{'active' : showAccordion}" class="rk-accordion-content">
+    <ng-content select=".rk-accordion-body"></ng-content>
 </div>

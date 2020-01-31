@@ -78,6 +78,26 @@
       </div>
     </div>
 
+    <div class="container-fluid mt-3">
+      <div class="row">
+        <div class="col-12" style="height: 500px; border:  1px solid #333;">
+          <rk-accordion isWizard="true">
+            <rk-accordion-panel *ngFor="let item of listConfig.items; let i = index" [index]="i + 1">
+              <div class="rk-accordion-title">
+                Header {{ i }}
+              </div>
+
+              <div class="rk-accordion-body">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis error quidem earum. Earum optio
+                veritatis, consequuntur quod sapiente totam repellendus voluptatum dolorum fuga, molestias distinctio
+                rerum atque voluptas aspernatur iste.
+              </div>
+            </rk-accordion-panel>
+          </rk-accordion>
+        </div>
+      </div>
+    </div>
+
     <div class="container-fluid mt-2">
       <div class="row">
         <div class="col-12">
@@ -110,14 +130,14 @@
       </rk-modal-header>
 
       <rk-modal-body>
-        <div class="rk-modal-item" >
+        <div class="rk-modal-item">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam labore velit reprehenderit aspernatur ea
             assumenda quasi veritatis obcaecati, eum quis quas doloremque! Corporis rerum perspiciatis pariatur eum nemo
             asperiores rem?</p>
         </div>
 
-        
-        <div class="rk-modal-item" >
+
+        <div class="rk-modal-item">
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam labore velit reprehenderit aspernatur ea
             assumenda quasi veritatis obcaecati, eum quis quas doloremque! Corporis rerum perspiciatis pariatur eum nemo
             asperiores rem?</p>
@@ -700,7 +720,7 @@
             <textarea class="rk-input textarea" rows="5" style="resize: none;"></textarea>
           </div>
 
-          <div class="col-3 mt-2">
+          <div class="col-12 mt-2">
             <div class="rk-wizard">
               <div class="rk-wizard-item active">
                 <div class="step-name">1. Step</div>
@@ -739,8 +759,8 @@
 
           <div class="col-12 mt-2">
 
-            <rk-filter-badge [name]="'Domain'" [equal]="true"  [values]="['google.com','yahoo.com']" ></rk-filter-badge>
-            <rk-filter-badge [name]="'Domain'" [equal]="false"  [values]="['google.com','yahoo.com']" ></rk-filter-badge>
+            <rk-filter-badge [name]="'Domain'" [equal]="true" [values]="['google.com','yahoo.com']"></rk-filter-badge>
+            <rk-filter-badge [name]="'Domain'" [equal]="false" [values]="['google.com','yahoo.com']"></rk-filter-badge>
           </div>
 
           <div class="col-6 mt-2">
@@ -813,15 +833,16 @@
         <div class="row mt-3">
           <div class="col-6">
             <rk-accordion>
-              <rk-accordion-panel *ngFor="let item of listConfig.items; let i = index" [index]="i+1">
-                <rk-accordion-header-content>
-                  {{ item.content }}
-                </rk-accordion-header-content>
-                <rk-accordion-header-sub-content>
-                  {{ item.subContent }}
-                </rk-accordion-header-sub-content>
+              <rk-accordion-panel *ngFor="let item of listConfig.items; let i = index" [index]="i + 1">
+                <div class="rk-accordion-title">
+                  Header {{ i }}
+                </div>
 
-                panel body {{ i + 1 }}
+                <div class="rk-accordion-body">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Debitis error quidem earum. Earum optio
+                  veritatis, consequuntur quod sapiente totam repellendus voluptatum dolorum fuga, molestias distinctio
+                  rerum atque voluptas aspernatur iste.
+                </div>
               </rk-accordion-panel>
             </rk-accordion>
           </div>

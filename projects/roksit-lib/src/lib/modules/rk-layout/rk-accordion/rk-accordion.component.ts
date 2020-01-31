@@ -1,46 +1,51 @@
-import { Component, OnInit, Input, ContentChildren, QueryList, AfterContentInit, AfterViewChecked, TemplateRef, Output, EventEmitter, OnChanges, AfterViewInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Component, OnInit, ContentChildren, QueryList, AfterViewInit, Input } from '@angular/core';
 import { RkAccordionPanelComponent } from './rk-accordion-panel.component';
-
 
 @Component({
   selector: 'rk-accordion',
   templateUrl: 'rk-accordion.component.html',
-  styleUrls: ['rk-accordion.component.scss']
 })
 
-export class RkAccordionComponent implements OnInit, OnChanges, AfterViewInit {
+export class RkAccordionComponent implements OnInit, AfterViewInit {
+
+  constructor() { }
+
   @ContentChildren(RkAccordionPanelComponent) panels: QueryList<RkAccordionPanelComponent>;
 
-  constructor() {
+  @Input() isWizard: boolean;
 
-  }
-
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   ngAfterViewInit() {
     this.panels.toArray().forEach(component => {
-      component.panelClickEvent.subscribe(comp => {
-        var status = comp.showAccordion;
+      component.panelClickEvent.subscribe((comp: RkAccordionPanelComponent) => {
+        const status = comp.showAccordion;
 
-        this.panels.toArray().forEach(item => item.showAccordion = false);
+        this.panels.toArray().forEach((item, index) => {
+          item.showAccordion = false;
+
+          if (this.isWizard) {
+            item.passed = false;
+
+            if (index < comp.index) {
+              item.passed = true;
+            }
+          }
+
+        });
 
         comp.showAccordion = !status;
       });
     });
   }
-
-  ngOnChanges() {
-  }
 }
 
 export class RkListConfigModel {
   title: string;
-  items: rkListItemModel[];
+  items: RkListItemModel[];
 }
 
-export class rkListItemModel {
+export class RkListItemModel {
   content: string;
   subContent: string;
   isShow?: boolean;
