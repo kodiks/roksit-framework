@@ -15,8 +15,8 @@ export class RkToggleButtonComponent implements OnInit {
     @Input() icon: string;
 
     /**
-     * @param {pos} string Positive Value
-     * @param {neg} string Negative Value
+     * @param pos type: string => Positive Value
+     * @param neg type: string => Negative Value
      * @description Default Values => { pos: 'ON', nge: 'OFF' }
      */
     @Input() toggleTexts: { pos: string, neg: string };
