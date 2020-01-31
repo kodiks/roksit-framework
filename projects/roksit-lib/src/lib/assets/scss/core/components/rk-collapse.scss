@@ -1,0 +1,68 @@
+.rk-collapse {
+  border: 1px solid rgba 37 38 94, 0.05;
+  border-radius: 6px;
+  overflow: hidden;
+
+  .rk-collapse-header {
+    background: rgba($color: $pale-grey, $alpha: 0.5);
+    padding: 10px 8px;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    user-select: none;
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .rk-collapse-header-color {
+        background: $security;
+        width: 6px;
+        height: 16px;
+        border-radius: 3.5px;
+        margin-right: 8px;
+      }
+
+      .rk-collapse-header-title {
+        color: #898ea4;
+        font-size: 12px;
+        font-weight: 500;
+        flex: 1;
+        margin-bottom: 0;
+      }
+
+      .rk-collapse-header-icon {
+        i-feather {
+          svg {
+            color: $blue-grey;
+          }
+        }
+      }
+    }
+
+    .rk-collapse-header-description {
+      margin-top: 5px;
+      padding-left: 12px;
+      font-size: 8px;
+      color: $blue-grey;
+    }
+  }
+
+  .rk-collapse-body {
+    display: none;
+    padding: 14px 0;
+  }
+
+  &.active {
+    .rk-collapse-header-icon {
+      position: relative;
+      transform: rotate(180deg);
+    }
+
+    .rk-collapse-body {
+      display: block;
+    }
+  }
+}

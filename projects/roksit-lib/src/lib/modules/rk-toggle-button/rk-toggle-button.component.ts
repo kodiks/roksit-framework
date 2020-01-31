@@ -19,10 +19,7 @@ export class RkToggleButtonComponent implements OnInit {
      * @param {neg} string Negative Value
      * @description Default Values => { pos: 'ON', nge: 'OFF' }
      */
-    @Input() toggleTexts: { pos: string, neg: string } = {
-        pos: 'ON',
-        neg: 'OFF'
-    };
+    @Input() toggleTexts: { pos: string, neg: string };
 
     /**
      * @description Button change event: Modal => { active: booelan }

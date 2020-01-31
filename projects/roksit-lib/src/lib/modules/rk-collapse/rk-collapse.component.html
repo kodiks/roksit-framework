@@ -1,0 +1,23 @@
+<div class="rk-collapse" [ngClass]="{'active': active}">
+    <div class="rk-collapse-header" (click)="toggle()">
+        <div class="top">
+            <span class="rk-collapse-header-color" [ngStyle]="{'background': color}"></span>
+
+            <h5 class="rk-collapse-header-title">
+                <ng-content select="rk-collapse-title"></ng-content>
+            </h5>
+
+            <div class="rk-collapse-header-icon">
+                <i-feather name="chevron-down"></i-feather>
+            </div>
+        </div>
+
+        <p class="rk-collapse-header-description">
+            <ng-content select="rk-collapse-description"></ng-content>
+        </p>
+    </div>
+
+    <div class="rk-collapse-body">
+        <ng-content select="rk-collapse-body"></ng-content>
+    </div>
+</div>

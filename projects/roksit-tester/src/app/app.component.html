@@ -81,14 +81,56 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-12 mt-3">
+          <rk-collapse color="#f95656">
+            <rk-collapse-title>Malicious</rk-collapse-title>
 
+            <rk-collapse-description>
+              Newly Register, Newly Up, Domain Parking, Dead Sites gibi içerik ve güvenlik riski değişiklik
+              gösterebilen domainleri içerir.
+            </rk-collapse-description>
+
+            <rk-collapse-body>
+              <rk-toggle-button icon="alert-circle" class="d-flex">Advertisement</rk-toggle-button>
+              <rk-toggle-button icon="alert-circle" class="d-flex mt-2">Advertisement</rk-toggle-button>
+              <rk-toggle-button icon="alert-circle" class="d-flex mt-2">Advertisement</rk-toggle-button>
+              <rk-toggle-button icon="alert-circle" class="d-flex mt-2">Advertisement</rk-toggle-button>
+              <rk-toggle-button icon="alert-circle" class="d-flex mt-2">Advertisement</rk-toggle-button>
+            </rk-collapse-body>
+          </rk-collapse>
+        </div>
+
+        <div class="col-12 mt-3">
+          <div class="rk-collapse active">
+            <div class="rk-collapse-header">
+              <div class="top">
+                <span class="rk-collapse-header-color"></span>
+
+                <h5 class="rk-collapse-header-title">Malicious</h5>
+
+                <div class="rk-collapse-header-icon">
+                  <i-feather name="chevron-down"></i-feather>
+                </div>
+              </div>
+
+              <p class="rk-collapse-header-description">
+                Newly Register, Newly Up, Domain Parking, Dead Sites gibi içerik ve güvenlik riski değişiklik
+                gösterebilen domainleri içerir.
+              </p>
+            </div>
+
+            <div class="rk-collapse-body">
+              <rk-toggle-button icon="alert-circle" class="d-flex mt-2">Advertisement</rk-toggle-button>
+              <rk-toggle-button icon="alert-circle" class="d-flex mt-2">Advertisement</rk-toggle-button>
+              <rk-toggle-button icon="alert-circle" class="d-flex mt-2">Advertisement</rk-toggle-button>
+              <rk-toggle-button icon="alert-circle" class="d-flex mt-2">Advertisement</rk-toggle-button>
+              <rk-toggle-button icon="alert-circle" class="d-flex mt-2">Advertisement</rk-toggle-button>
+            </div>
+          </div>
         </div>
 
         <div class="col-12 mt-3">
           <rk-toggle-button [toggleTexts]="{ pos: 'ON', neg: 'OFF' }"></rk-toggle-button>
-          <rk-toggle-button icon="alert-circle" class="d-flex mt-2">
-            Advertisement
-          </rk-toggle-button>
+          <rk-toggle-button icon="alert-circle" class="d-flex mt-2">dvertisement</rk-toggle-button>
         </div>
       </div>
     </div>

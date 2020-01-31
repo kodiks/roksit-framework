@@ -20,6 +20,7 @@ import { RkSidebarModule } from './rk-sidebar/rk-sidebar.module';
 import { ServicesModule } from '../services/services.module';
 import { RkModalModule } from './rk-modal/rk-modal.module';
 import { RkToggleButtonModule } from './rk-toggle-button/rk-toggle-button.module';
+import { RkCollapseModule } from './rk-collapse/rk-collapse.module';
 
 @NgModule({
     imports: [
@@ -44,7 +45,8 @@ import { RkToggleButtonModule } from './rk-toggle-button/rk-toggle-button.module
         ServicesModule,
         RkModalModule,
         RkFilterBadgeModule,
-        RkToggleButtonModule
+        RkToggleButtonModule,
+        RkCollapseModule
     ],
     exports: [
         IconsModule,
@@ -66,7 +68,8 @@ import { RkToggleButtonModule } from './rk-toggle-button/rk-toggle-button.module
         ServicesModule,
         RkModalModule,
         RkFilterBadgeModule,
-        RkToggleButtonModule
+        RkToggleButtonModule,
+        RkCollapseModule
     ],
     declarations: [],
     entryComponents: [],
