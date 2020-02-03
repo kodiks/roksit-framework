@@ -3,7 +3,6 @@ import { RkTableConfigModel, RkTableColumnModel } from '../rk-table/rk-table.com
 
 declare const $: any;
 
-
 @Component({
     selector: 'rk-table-container',
     templateUrl: 'rk-table-container.component.html'
@@ -25,7 +24,9 @@ export class RkTableContainerComponent implements OnInit, AfterViewInit {
     rightButton = true;
 
     ngOnInit() {
-        this.columns = Object.assign([], this.config.columns);
+        if (this.config) {
+            this.columns = Object.assign([], this.config.columns);
+        }
     }
 
     ngAfterViewInit() {

@@ -50,3 +50,26 @@
     }
   }
 }
+
+.rk-search-container {
+  position: relative;
+
+  .rk-input {
+    padding-right: 30px;
+    width: 100%;
+  }
+
+  i-feather[name="search"] {
+    width: 17px;
+    height: 17px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    svg {
+      color: $blue-grey;
+      vertical-align: top;
+    }
+  }
+}
