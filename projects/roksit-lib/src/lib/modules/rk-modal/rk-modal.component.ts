@@ -9,12 +9,16 @@ import { ModalDirective } from 'ngx-bootstrap';
 export class RkModalComponent {
 
     constructor(
-        private el: ElementRef
+        private el: ElementRef<HTMLElement>
     ) { }
 
     toggle() {
         const rkModal = this.el.nativeElement.children.item(0);
 
         rkModal.classList.toggle('show');
+
+        const rkModalBackdrop = this.el.nativeElement.children.item(1);
+
+        rkModalBackdrop.classList.toggle('show');
     }
 }
