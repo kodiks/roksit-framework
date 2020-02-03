@@ -31,14 +31,21 @@ export class RkToggleButtonComponent implements OnInit {
      */
     @Input() active = false;
 
+    /**
+     * @description If true, (toggle) function not working.
+     */
+    @Input() clickClose = false;
+
     ngOnInit() { }
 
     toggle() {
-        this.active = !this.active;
+        if (!this.clickClose) {
+            this.active = !this.active;
 
-        this.changed.emit({
-            active: this.active
-        });
+            this.changed.emit({
+                active: this.active
+            });
+        }
     }
 
 }

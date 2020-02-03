@@ -14,9 +14,15 @@ export class RkAccordionComponent implements OnInit, AfterViewInit {
 
   @Input() isWizard: boolean;
 
+  @Input() activeNumber: number;
+
   ngOnInit() { }
 
   ngAfterViewInit() {
+    if (this.activeNumber) {
+      this.panels.first.showAccordion = true;
+    }
+
     this.panels.toArray().forEach(component => {
       component.panelClickEvent.subscribe((comp: RkAccordionPanelComponent) => {
         const status = comp.showAccordion;
