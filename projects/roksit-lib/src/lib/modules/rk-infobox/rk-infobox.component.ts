@@ -19,11 +19,11 @@ export class RkInfoBoxComponent implements OnInit {
     @Input() valueTwo = 0;
     @Input() description = '';
 
+    @Output() change = new EventEmitter();
+
     @ViewChild('svgG', { static: true }) svgG: ElementRef;
 
     guid;
-
-
 
     // tslint:disable-next-line: no-input-rename
     @Input() className;
@@ -49,5 +49,9 @@ export class RkInfoBoxComponent implements OnInit {
 
     toggleActive() {
         this.isActive = !this.isActive;
+
+        this.change.emit({
+            active: this.isActive
+        });
     }
 }

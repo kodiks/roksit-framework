@@ -20,7 +20,7 @@ export class RkAccordionComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     if (this.activeNumber) {
-      this.panels.first.showAccordion = true;
+      this.panels.toArray()[this.activeNumber - 1].showAccordion = true;
     }
 
     this.panels.toArray().forEach(component => {
