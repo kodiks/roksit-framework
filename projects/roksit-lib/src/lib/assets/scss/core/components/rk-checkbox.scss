@@ -1,69 +1,77 @@
-$rk-checkbox-width: 22px;
-$rk-checkbox-height: 22px;
+@mixin checkbox($size, $rk-checkbox-width: 22px, $rk-checkbox-height: 22px) {
+  /* The rk-checkbox */
+  .rk-checkbox-#{$size} {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: $gray;
+  }
 
-/* The rk */
-.rk-checkbox {
-  display: flex;
-  align-items: center;
-  position: relative;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 22px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  color: $gray;
+  /* Hide the browser's default checkbox */
+  .rk-checkbox-#{$size} input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  /* Create a custom checkbox */
+  .rk-checkbox-#{$size} .checkmark {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: $rk-checkbox-height;
+    width: $rk-checkbox-width;
+    background-color: #eee;
+    border-radius: 3px;
+  }
+
+  /* On mouse-over, add a grey background color */
+  .rk-checkbox-#{$size}:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+
+  /* When the checkbox is checked, add a blue background */
+  .rk-checkbox-#{$size} input:checked ~ .checkmark {
+    background-color: $primary;
+  }
+
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .rk-checkbox-#{$size} .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  /* Show the checkmark when checked */
+  .rk-checkbox-#{$size} input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  /* Style the checkmark/indicator */
+  .rk-checkbox-#{$size} .checkmark:after {
+    left: calc(50% - 6px);
+    top: 50%;
+    width: 7px;
+    height: 13px;
+    border: solid $white;
+    border-width: 0px 3px 3px 0px;
+    transform: rotate(45deg) translate(-50%, -50%);
+    border-radius: 1px;
+  }
 }
 
-/* Hide the browser's default checkbox */
-.rk-checkbox input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-}
+/* Small Checkbox */
+@include checkbox("sm", 18px, 18px);
 
-/* Create a custom checkbox */
-.rk-checkbox .checkmark {
-  position: relative;
-  top: 0;
-  left: 0;
-  height: $rk-checkbox-height;
-  width: $rk-checkbox-width;
-  background-color: #eee;
-  border-radius: 3px;
-}
+/* Medium Checkbox */
+@include checkbox("md", 22px, 22px);
 
-/* On mouse-over, add a grey background color */
-.rk-checkbox:hover input ~ .checkmark {
-  background-color: #ccc;
-}
-
-/* When the checkbox is checked, add a blue background */
-.rk-checkbox input:checked ~ .checkmark {
-  background-color: $primary;
-}
-
-/* Create the checkmark/indicator (hidden when not checked) */
-.rk-checkbox .checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-/* Show the checkmark when checked */
-.rk-checkbox input:checked ~ .checkmark:after {
-  display: block;
-}
-
-/* Style the checkmark/indicator */
-.rk-checkbox .checkmark:after {
-  left: 8px;
-  top: 3px;
-  width: 7px;
-  height: 13px;
-  border: solid $white;
-  border-width: 0px 3px 3px 0px;
-  transform: rotate(45deg);
-  border-radius: 1px;
-}
+/* Large Checkbox */
+@include checkbox("lg", 26px, 26px);
