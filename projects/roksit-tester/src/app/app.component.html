@@ -448,7 +448,7 @@
       <div class="row mt-3">
         <div class="col-12">
           <rk-table-container [config]="tableConfig">
-            <rk-table [config]="tableConfig" (pageChange)="onPageChange($event)" [totalCount]="40" [pageViewCount]="10"
+            <rk-table (selectedChange)="selectedChange($event)" [config]="tableConfig" (pageChange)="onPageChange($event)" [totalCount]="40" [pageViewCount]="10"
               (pageViewCountChange)="onPageViewCountChange($event)" [info]="true">
               <ng-template #header>
                 <tr>

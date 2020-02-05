@@ -29,6 +29,8 @@ export class RkTableComponent implements OnInit {
 
   @ContentChild('body', { static: true }) body: TemplateRef<ElementRef>;
 
+  @Output() selectedChange = new EventEmitter();
+
   ngOnInit() { }
 
   onPageChange(pageNumber: number) {
@@ -44,6 +46,24 @@ export class RkTableComponent implements OnInit {
 
     return column.name;
   }
+
+  valueChange($event, t) {
+    this.config.rows.forEach(elem => {
+      elem.selected = $event;
+    });
+
+    this.selectedChange.emit({
+      statuses: $event,
+      rows: this.config.rows
+    });
+  }
+
+  selectedChanged($event, row) {
+    this.selectedChange.emit({
+      status: $event,
+      rows: row
+    });
+  }
 }
 
 export class RkTableConfigModel {
@@ -52,7 +72,7 @@ export class RkTableConfigModel {
   selectableRows = false;
 }
 
-export interface RkTableColumnModel   {
+export interface RkTableColumnModel {
   id?: number;
   name: string;
   displayText: string;

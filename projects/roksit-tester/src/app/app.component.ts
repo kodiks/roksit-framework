@@ -226,6 +226,10 @@ export class AppComponent implements OnInit {
     this.rkLayoutService.setSidebarCollapse(!this.collapsed);
   }
 
+  selectedChange($event) {
+    console.log($event);
+  }
+
   setActive(menuItem: RkMenuItem, subMenuItem?: RkMenuItem) {
     this.menuItems.forEach(elem => elem.selected = false);
 

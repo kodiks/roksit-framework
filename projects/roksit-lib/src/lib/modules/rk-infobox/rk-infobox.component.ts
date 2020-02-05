@@ -48,7 +48,7 @@ export class RkInfoBoxComponent implements OnInit {
     }
 
     toggleActive() {
-        this.isActive = !this.isActive;
+        // this.isActive = !this.isActive;
 
         this.change.emit({
             active: this.isActive

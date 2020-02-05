@@ -9,7 +9,9 @@
 
         <ng-container *ngIf="config">
           <tr>
-            <th *ngIf="config.selectableRows"></th>
+            <th *ngIf="config.selectableRows">
+              <rk-checkbox [value]="false" (valueChange)="valueChange($event, 'all')"></rk-checkbox>
+            </th>
             <ng-container *ngFor="let col of config.columns">
               <th *ngIf="col.selected">
                 <div class="d-flex align-items-center justify-content-between">
@@ -33,7 +35,7 @@
         <ng-container *ngIf="config">
           <tr *ngFor="let row of config.rows" [ngClass]="{'selected': row?.selected}">
             <td *ngIf="config.selectableRows">
-              <rk-checkbox [(value)]="row.selected"></rk-checkbox>
+              <rk-checkbox [(value)]="row.selected" (valueChange)="selectedChanged($event, row)"></rk-checkbox>
             </td>
 
             <ng-container *ngFor="let col of config.columns;">
