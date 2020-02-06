@@ -26,6 +26,12 @@ rk-table-container {
       font-weight: bold;
     }
 
+    .rk-table-description {
+      font-size: 9px;
+      color: #aab5c7;
+      margin-bottom: 0;
+    }
+
     .top-content {
       flex: 1;
       display: flex;
@@ -261,6 +267,29 @@ table {
           color: $blue-grey;
         }
       }
+    }
+  }
+}
+
+table.table.table-borderless {
+  border: none;
+
+  td,
+  th {
+    border: none !important;
+  }
+
+  tbody {
+    tr {
+      &:first-child {
+        td {
+          border-top: none !important;
+        }
+      }
+    }
+
+    td {
+      border-top: 1px solid #eeeef2 !important;
     }
   }
 }

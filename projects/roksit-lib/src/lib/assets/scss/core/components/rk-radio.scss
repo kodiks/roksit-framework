@@ -58,7 +58,8 @@ $disabled-rk-radio-color: #979ebc;
   }
 
   label {
-    display: inline-block;
+    display: flex;
+    align-items: center;
     min-height: $rk-radio-size;
     position: relative;
     padding: 0 0 0 ($rk-radio-size + 10px);
