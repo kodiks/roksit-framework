@@ -30,7 +30,7 @@
     "@angular/platform-browser-dynamic": "~8.2.0",
     "@angular/router": "~8.2.0",
     "@ng-bootstrap/ng-bootstrap": "^5.1.5",
-    "angular-feather": "^6.0.8",
+    "angular-feather": "^6.0.4",
     "angularx-flatpickr": "^6.2.0",
     "apexcharts": "^3.15.2",
     "bootstrap": "^4.4.1",
