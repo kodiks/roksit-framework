@@ -1,4 +1,5 @@
-import { Component, ElementRef, Output, EventEmitter } from '@angular/core';
+import { Component, ElementRef, Output, EventEmitter, HostListener } from '@angular/core';
+import { KeyCodes } from '../../helpers/KeyCodes';
 
 @Component({
     selector: 'rk-modal',
@@ -11,7 +12,14 @@ export class RkModalComponent {
         private el: ElementRef<HTMLElement>
     ) { }
 
-    @Output() close = new EventEmitter();
+    @Output() close: EventEmitter<{ closed: boolean }> = new EventEmitter();
+
+    @HostListener('window:keydown', ['$event'])
+    keydown($event: KeyboardEvent) {
+        if ($event.keyCode === KeyCodes.ESCAPE) {
+            this.closeFunc();
+        }
+    }
 
     toggle() {
         const rkModal = this.el.nativeElement.children.item(0);
@@ -28,5 +36,19 @@ export class RkModalComponent {
                 closed: true
             });
         }
+    }
+
+    private closeFunc() {
+        const rkModal = this.el.nativeElement.children.item(0);
+
+        rkModal.classList.remove('show');
+
+        const rkModalBackdrop = this.el.nativeElement.children.item(1);
+
+        rkModalBackdrop.classList.remove('show');
+
+        this.close.emit({
+            closed: true
+        });
     }
 }
