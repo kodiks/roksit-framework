@@ -59,6 +59,7 @@ $disabled-rk-radio-color: #979ebc;
 
   label {
     display: flex;
+    user-select: none;
     align-items: center;
     min-height: $rk-radio-size;
     position: relative;
