@@ -10,7 +10,7 @@ rk-table-container {
   margin-bottom: 55px;
   position: relative;
   border: 1px solid $table-border-color;
-  overflow: hidden;
+  // overflow: hidden;
 
   .rk-table-container-header {
     padding: 11px 19px 7px;
@@ -122,6 +122,9 @@ rk-table-container {
     .table {
       margin-bottom: 0;
       border: none !important;
+      border-bottom-left-radius: 13px;
+      border-bottom-right-radius: 13px;
+      overflow: hidden;
 
       &.info {
         .table-content {

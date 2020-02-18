@@ -887,4 +887,9 @@ span.flatpickr-weekday {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  select {
+    border: 0;
+    background: transparent;
+  }
 }
