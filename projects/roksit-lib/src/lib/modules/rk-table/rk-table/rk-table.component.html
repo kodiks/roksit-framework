@@ -9,7 +9,7 @@
 
         <ng-container *ngIf="config">
           <tr>
-            <th *ngIf="config.selectableRows">
+            <th *ngIf="config.selectableRows" style="width: 65px">
               <rk-checkbox [value]="false" (valueChange)="valueChange($event, 'all')"></rk-checkbox>
             </th>
             <ng-container *ngFor="let col of config.columns">
@@ -34,7 +34,7 @@
 
         <ng-container *ngIf="config">
           <tr *ngFor="let row of config.rows" [ngClass]="{'selected': row?.selected}">
-            <td *ngIf="config.selectableRows">
+            <td *ngIf="config.selectableRows" style="width: 65px">
               <rk-checkbox [(value)]="row.selected" (valueChange)="selectedChanged($event, row)"></rk-checkbox>
             </td>
 

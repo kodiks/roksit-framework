@@ -124,7 +124,6 @@ rk-table-container {
       border: none !important;
       border-bottom-left-radius: 13px;
       border-bottom-right-radius: 13px;
-      overflow: hidden;
 
       &.info {
         .table-content {
@@ -166,6 +165,14 @@ rk-table-container {
           &:last-child {
             td {
               border-bottom: none !important;
+
+              &:first-child{
+                border-bottom-left-radius: 13px;
+              }
+
+              &:last-child {
+                border-bottom-right-radius: 13px;
+              }
             }
           }
         }

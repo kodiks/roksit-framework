@@ -10,7 +10,7 @@ export class RkFilterBadgeComponent implements OnInit {
 
     @Input('name') filterName = '';
     @Input('values') filterValues = '';
-    @Input('equal') isEqual: boolean = false;
+    @Input('equal') isEqual = false;
 
     @Output('deleted') onDelete = new EventEmitter();
     @Output('edited') onEdit = new EventEmitter();
@@ -29,5 +29,4 @@ export class RkFilterBadgeComponent implements OnInit {
     onDeleteClick() {
         this.onDelete.emit();
     }
-
 }
