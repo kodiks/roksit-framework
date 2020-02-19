@@ -14,6 +14,10 @@ export class RkCheckboxComponent implements OnInit {
 
     @Input() size: 'sm' | 'md' | 'lg' = 'md';
 
+    @Input() alignment: 'left' | 'right' = 'left';
+
+    @Input() className = 'mr-2';
+
     guid;
 
     ngOnInit() {

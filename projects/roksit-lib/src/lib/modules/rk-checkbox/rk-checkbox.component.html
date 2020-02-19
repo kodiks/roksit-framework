@@ -1,7 +1,11 @@
 <label class="rk-checkbox-{{ size }}">
-    <span class="d-inline-block mr-2">
+    <span class="d-inline-block {{ className }}" *ngIf="alignment === 'left'">
         <ng-content></ng-content>
     </span>
     <input type="checkbox" [checked]="value" (change)="valueChanged()">
     <span class="checkmark"></span>
+
+    <span class="d-inline-block ml-2" *ngIf="alignment === 'right'">
+        <ng-content></ng-content>
+    </span>
 </label>
