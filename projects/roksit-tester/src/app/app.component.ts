@@ -80,7 +80,7 @@ export class AppComponent implements OnInit {
       { id: 0, name: 'time', displayText: 'Time' },
       { id: 1, name: 'domain', displayText: 'Domain' },
       { id: 2, name: 'subdomain', displayText: 'Subdomain' },
-      { id: 3, name: 'srcip', displayText: 'Src.Ip' },
+      { id: 3, name: 'srcip', displayText: 'Src.Ip', isLink: true },
       { id: 4, name: 'srccountry', displayText: 'Src. Country' },
       { id: 5, name: 'dstip', displayText: 'Dst.Ip' },
       { id: 6, name: 'dstcountry', displayText: 'Dst.Country' },

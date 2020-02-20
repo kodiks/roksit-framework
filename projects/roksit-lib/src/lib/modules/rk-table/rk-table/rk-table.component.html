@@ -40,7 +40,13 @@
 
             <ng-container *ngFor="let col of config.columns;">
               <td *ngIf="col.selected">
-                {{ row[getColumnNameByIndex(col)] }}
+                <ng-container *ngIf="col.isLink; else unLinkTemplate">
+                  <button class="btn btn-link table-link-button" (click)="linkClicked(col, row[getColumnNameByIndex(col)])">{{ row[getColumnNameByIndex(col)] }}</button>
+                </ng-container>
+
+                <ng-template #unLinkTemplate>
+                  {{ row[getColumnNameByIndex(col)] }}
+                </ng-template>
               </td>
             </ng-container>
           </tr>

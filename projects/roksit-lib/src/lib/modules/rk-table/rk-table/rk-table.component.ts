@@ -31,6 +31,8 @@ export class RkTableComponent implements OnInit {
 
   @Output() selectedChange = new EventEmitter();
 
+  @Output() linkColumnClicked = new EventEmitter();
+
   ngOnInit() { }
 
   onPageChange(pageNumber: number) {
@@ -64,6 +66,13 @@ export class RkTableComponent implements OnInit {
       rows: row
     });
   }
+
+  linkClicked(colModel: RkTableColumnModel, column: string) {
+    this.linkColumnClicked.emit({
+      columnModel: colModel,
+      value: column
+    });
+  }
 }
 
 export class RkTableConfigModel {
@@ -77,6 +86,7 @@ export interface RkTableColumnModel {
   name: string;
   displayText: string;
   selected?: boolean;
+  isLink?: boolean;
 }
 
 export interface RkTableRowModel {
