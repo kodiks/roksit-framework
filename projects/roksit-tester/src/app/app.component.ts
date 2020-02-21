@@ -246,6 +246,10 @@ export class AppComponent implements OnInit {
     }
   }
 
+  tableExportEvent($event) {
+    console.log($event);
+  }
+
   private prepareTimelineChart() {
     function generateDayWiseTimeSeries(baseval, count, yrange) {
       let i = 0;

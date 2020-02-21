@@ -1,12 +1,10 @@
 <div class="rk-table-container-header" *ngIf="config">
     <div class="top-content">
         <span class="inf">
-            <span class="text-primary">2300</span> queries listed
+            <span class="text-primary">{{ config?.rows?.length }}</span> queries listed
         </span>
 
-        <button class="btn btn-small btn-icon btn-link">
-            <i-feather name="arrow-down"></i-feather> Export
-        </button>
+        <ng-content select="rk-table-export"></ng-content>
     </div>
 
     <div class="bottom-content">

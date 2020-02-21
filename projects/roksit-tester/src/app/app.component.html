@@ -81,6 +81,66 @@
     <div class="container-fluid">
       <div class="row mt-3">
         <div class="col-12">
+          <rk-table-container [config]="tableConfig">
+            <rk-table-export (event)="tableExportEvent($event)"></rk-table-export>
+            
+            <rk-table (selectedChange)="selectedChange($event)" [config]="tableConfig"
+              (pageChange)="onPageChange($event)" [totalCount]="40" [pageViewCount]="10"
+              (pageViewCountChange)="onPageViewCountChange($event)" [info]="true">
+              <ng-template #header>
+                <tr>
+                  <th class="index">#</th>
+                  <th scope="col">
+                    Time
+                    <button class="table-btn ripple">
+                      <i-feather name="more-vertical"></i-feather>
+                    </button>
+                  </th>
+                  <th scope="col">
+                    Subdomain
+                    <button class="table-btn ripple">
+                      <i-feather name="more-vertical"></i-feather>
+                    </button>
+                  </th>
+                  <th scope="col">
+                    Src.Ip
+                    <button class="table-btn ripple">
+                      <i-feather name="more-vertical"></i-feather>
+                    </button>
+                  </th>
+                  <th scope="col">
+                    Dst.Ip
+                    <button class="table-btn ripple">
+                      <i-feather name="more-vertical"></i-feather>
+                    </button>
+                  </th>
+                  <th scope="col">
+                    Action
+                    <button class="table-btn ripple">
+                      <i-feather name="more-vertical"></i-feather>
+                    </button>
+                  </th>
+                </tr>
+              </ng-template>
+              <ng-template #body>
+                <tr *ngFor="let country of countries; index as i">
+                  <td class="index">{{ i + 1 }}</td>
+                  <td>2019.11.27 11:15:51</td>
+                  <td>
+                    bal-edf-pcs-app-vmss-02.westus.cloudapp.azure.com
+                  </td>
+                  <td>12.244.23.112</td>
+                  <td>198.222.165.78</td>
+                  <td>Allow</td>
+                </tr>
+              </ng-template>
+            </rk-table>
+          </rk-table-container>
+        </div>
+      </div>
+      
+      <div class="row mt-3">
+        <div class="col-12">
           <div style="width: 220px">
 
             <div class="rk-category-container">
@@ -485,70 +545,11 @@
             description="Pornogrphy, Adult, Gamblig gibi istenmeyen domainleri içerir.">
           </rk-infobox>
         </div>
-
       </div>
 
       <div class="row mt-3">
         <div class="col-12">
           <rk-badge>Text</rk-badge>
-        </div>
-      </div>
-
-      <div class="row mt-3">
-        <div class="col-12">
-          <rk-table-container [config]="tableConfig">
-            <rk-table (selectedChange)="selectedChange($event)" [config]="tableConfig"
-              (pageChange)="onPageChange($event)" [totalCount]="40" [pageViewCount]="10"
-              (pageViewCountChange)="onPageViewCountChange($event)" [info]="true">
-              <ng-template #header>
-                <tr>
-                  <th class="index">#</th>
-                  <th scope="col">
-                    Time
-                    <button class="table-btn ripple">
-                      <i-feather name="more-vertical"></i-feather>
-                    </button>
-                  </th>
-                  <th scope="col">
-                    Subdomain
-                    <button class="table-btn ripple">
-                      <i-feather name="more-vertical"></i-feather>
-                    </button>
-                  </th>
-                  <th scope="col">
-                    Src.Ip
-                    <button class="table-btn ripple">
-                      <i-feather name="more-vertical"></i-feather>
-                    </button>
-                  </th>
-                  <th scope="col">
-                    Dst.Ip
-                    <button class="table-btn ripple">
-                      <i-feather name="more-vertical"></i-feather>
-                    </button>
-                  </th>
-                  <th scope="col">
-                    Action
-                    <button class="table-btn ripple">
-                      <i-feather name="more-vertical"></i-feather>
-                    </button>
-                  </th>
-                </tr>
-              </ng-template>
-              <ng-template #body>
-                <tr *ngFor="let country of countries; index as i">
-                  <td class="index">{{ i + 1 }}</td>
-                  <td>2019.11.27 11:15:51</td>
-                  <td>
-                    bal-edf-pcs-app-vmss-02.westus.cloudapp.azure.com
-                  </td>
-                  <td>12.244.23.112</td>
-                  <td>198.222.165.78</td>
-                  <td>Allow</td>
-                </tr>
-              </ng-template>
-            </rk-table>
-          </rk-table-container>
         </div>
       </div>
 

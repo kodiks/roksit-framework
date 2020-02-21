@@ -9,6 +9,9 @@ import { RkSelectModule } from '../rk-select/rk-select.module';
 import { RkTableContainerComponent } from './rk-table-container/rk-table-container.component';
 import { RkBadgeModule } from '../rk-badge/rk-badge.module';
 import { RkCheckboxModule } from '../rk-checkbox/rk-checkbox.module';
+import { RkTableExportComponent } from './rk-table-export/rk-table-export.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BsDropdownModule } from 'ngx-bootstrap';
 
 @NgModule({
     imports: [
@@ -17,17 +20,21 @@ import { RkCheckboxModule } from '../rk-checkbox/rk-checkbox.module';
         NgbPaginationModule,
         RkSelectModule,
         RkBadgeModule,
-        RkCheckboxModule
+        RkCheckboxModule,
+        NgbModule,
+        BsDropdownModule.forRoot()
     ],
     exports: [
         RkTablePaginationComponent,
         RkTableComponent,
-        RkTableContainerComponent
+        RkTableContainerComponent,
+        RkTableExportComponent
     ],
     declarations: [
         RkTablePaginationComponent,
         RkTableComponent,
-        RkTableContainerComponent
+        RkTableContainerComponent,
+        RkTableExportComponent
     ],
     providers: [
         RkTableService
