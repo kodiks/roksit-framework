@@ -19,6 +19,24 @@ $disabled-rk-radio-color: #979ebc;
   }
 }
 
+.rk-radio-for-table {
+  .rk-radio {
+    input[type="radio"]{
+      &:checked + label {
+        color: $rk-radio-checked-color;
+      }
+    }
+
+    label {
+      color: #898ea4;
+
+      &::before {
+        border-color: #898ea4;
+      }
+    }
+  }
+}
+
 .rk-radio {
   margin: 16px 0;
 

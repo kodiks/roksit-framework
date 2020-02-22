@@ -52,13 +52,13 @@
                             </div>
 
                             <div class="rk-num hour">
-                                <input type="number" [(ngModel)]="startHour" class="rk-input" value="00">
+                                <input type="number" [(ngModel)]="startHour" class="rk-input" value="00" min="0" max="23">
                                 <button class="inc" (click)="setStartHour(startHour - 1)"></button>
                                 <button class="dec" (click)="setStartHour(startHour + 1)"></button>
                             </div>
 
                             <div class="rk-num minute">
-                                <input type="number" [(ngModel)]="startMinute" class="rk-input" value="00">
+                                <input type="number" [(ngModel)]="startMinute" class="rk-input" value="00" min="0" max="59">
                                 <button class="inc" (click)="setStartMinute(startMinute - 1)"></button>
                                 <button class="dec" (click)="setStartMinute(startMinute + 1)"></button>
                             </div>
@@ -78,13 +78,13 @@
                             </div>
 
                             <div class="rk-num hour">
-                                <input type="number" [(ngModel)]="endHour" class="rk-input" value="00">
+                                <input type="number" [(ngModel)]="endHour" class="rk-input" value="00" min="0" max="23">
                                 <button class="inc" (click)="setEndHour(endHour - 1)"></button>
                                 <button class="dec" (click)="setEndHour(endHour + 1)"></button>
                             </div>
 
                             <div class="rk-num minute">
-                                <input type="number" [(ngModel)]="endMinute" class="rk-input" value="00">
+                                <input type="number" [(ngModel)]="endMinute" class="rk-input" value="00" min="0" max="59">
                                 <button class="inc" (click)="setEndMinute(endMinute - 1)"></button>
                                 <button class="dec" (click)="setEndMinute(endMinute + 1)"></button>
                             </div>
