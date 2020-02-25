@@ -1,0 +1,30 @@
+.rk-color {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 160px;
+
+  .color {
+    width: 100%;
+    height: 80px;
+    border: 1px solid #e4e9f1;
+    background: white;
+    border-radius: 13px;
+
+    &.white {
+      background: white;
+    }
+
+    &.dark {
+      background: #445165;
+    }
+  }
+
+  .label {
+    display: block;
+    margin: 16px auto;
+    color: #898ea4;
+    font-weight: bold;
+    font-size: 12px;
+  }
+}

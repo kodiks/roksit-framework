@@ -80,10 +80,27 @@
 
     <div class="container-fluid">
       <div class="row mt-3">
+        <div class="col-12 d-flex">
+          <rk-color name="color-select" class="mr-2" [checked]="true" (colorChanged)="colorChanged($event)"></rk-color>
+          <rk-color name="color-select" color="dark" (colorChanged)="colorChanged($event)"></rk-color>
+        </div>
+      </div>
+      
+      <div class="row mt-3">
+        <div class="col-12">
+          <div class="rk-basic-card">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit, quam! Commodi animi nulla voluptates
+            accusamus obcaecati, dicta eaque veniam id quisquam neque eos beatae magni quae exercitationem repellat,
+            harum iusto?
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-3">
         <div class="col-12">
           <rk-table-container [config]="tableConfig">
             <rk-table-export (event)="tableExportEvent($event)"></rk-table-export>
-            
+
             <rk-table (selectedChange)="selectedChange($event)" [config]="tableConfig"
               (pageChange)="onPageChange($event)" [totalCount]="40" [pageViewCount]="10"
               (pageViewCountChange)="onPageViewCountChange($event)" [info]="true">
@@ -138,7 +155,7 @@
           </rk-table-container>
         </div>
       </div>
-      
+
       <div class="row mt-3">
         <div class="col-12">
           <div style="width: 220px">
@@ -158,7 +175,7 @@
                 </div>
               </div>
             </div>
-            
+
           </div>
         </div>
       </div>

@@ -25,6 +25,7 @@ export * from './lib/modules/icons/icons.module';
 export * from './lib/modules/rk-modal/rk-modal.module';
 export * from './lib/modules/rk-toggle-button/rk-toggle-button.module';
 export * from './lib/modules/rk-collapse/rk-collapse.module';
+export * from './lib/modules/rk-color/rk-color.module';
 
 /** Service Modules */
 export * from './lib/services/services.module';

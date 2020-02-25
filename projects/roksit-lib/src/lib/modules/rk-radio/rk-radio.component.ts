@@ -15,6 +15,8 @@ export class RkRadioComponent implements OnInit {
 
     @Input() disabled: boolean;
 
+    @Input() value;
+
     @Output() valueChange: EventEmitter<boolean> = new EventEmitter();
 
     guid;

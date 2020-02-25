@@ -1,0 +1,5 @@
+<div class="rk-color">
+    <div class="color {{ color }}"></div>
+    <label class="label">{{ color === 'white' ? 'White Mode' : 'Dark Mode' }}</label>
+    <rk-radio class="rk-radio-m-0" [name]="name" [checked]="checked" (click)="colorClick()"></rk-radio>
+</div>

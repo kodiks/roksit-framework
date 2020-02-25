@@ -250,6 +250,10 @@ export class AppComponent implements OnInit {
     console.log($event);
   }
 
+  colorChanged($event: { color: 'white' | 'black' }) {
+    console.log($event.color);
+  }
+
   private prepareTimelineChart() {
     function generateDayWiseTimeSeries(baseval, count, yrange) {
       let i = 0;
