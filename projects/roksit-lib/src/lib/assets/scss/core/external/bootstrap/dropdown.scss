@@ -23,6 +23,7 @@
 
   .rk-img {
     width: 44px;
+    min-width: 44px;
     height: 44px;
     border-radius: 44px;
     display: block;
@@ -36,6 +37,7 @@
 
   .rk-text {
     flex: 1;
+    overflow: hidden;
     padding-left: 16px;
     text-align: left;
 
