@@ -1,6 +1,6 @@
 <div class="progressbar" [ngClass]="{'medium-size': sizeType == 'medium', 'small-size': sizeType=='small'}">
     <div>
-        <p>
+        <p class="m-0">
             <span class="percentage" *ngIf="showType == 'outside'">
                 <span style="padding-left: 9px;">{{ value | number: '0.1-2' }}%</span>
             </span>

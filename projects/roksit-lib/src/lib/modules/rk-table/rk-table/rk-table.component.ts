@@ -87,8 +87,10 @@ export interface RkTableColumnModel {
   displayText: string;
   selected?: boolean;
   isLink?: boolean;
+  isProgress?: boolean;
 }
 
 export interface RkTableRowModel {
   selected: false;
+  progressValue?: number;
 }

@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RoksitModule, ServicesModule } from 'projects/roksit-lib/src/public-api';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BsDropdownModule } from 'ngx-bootstrap';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { RoksitModule, ServicesModule } from 'projects/roksit-lib/src/public-api
     RoksitModule.forRoot(),
     CommonModule,
     FormsModule,
-    ServicesModule.forRoot()
+    ServicesModule.forRoot(),
+    NgbModule,
+    BsDropdownModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

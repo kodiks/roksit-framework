@@ -80,12 +80,45 @@
 
     <div class="container-fluid">
       <div class="row mt-3">
+        <div class="col-12 d-flex justify-content-center">
+
+          <div class="btn-group" dropdown placement="bottom right">
+            <button dropdownToggle type="button" class="btn btn-icon btn-link">
+              <i-feather name="bell"></i-feather>
+            </button>
+
+            <div *dropdownMenu class="dropdown-menu dropdown-menu-right rk-list-dropdown-container" role="menu">
+              <div class="rk-list">
+                <div class="rk-list-header">
+                  <div class="rk-list-header-title">Notifications <span class="length">(3)</span></div>
+                </div>
+
+                <div class="rk-list-body">
+                  <div class="rk-list-item" *ngFor="let item of [1,1,1,1]">
+                    <div class="text">
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    </div>
+
+                    <div class="arrow">
+                      <i-feather name="chevron-right"></i-feather>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="row mt-3">
         <div class="col-12 d-flex">
           <rk-color name="color-select" class="mr-2" [checked]="true" (colorChanged)="colorChanged($event)"></rk-color>
           <rk-color name="color-select" color="dark" (colorChanged)="colorChanged($event)"></rk-color>
         </div>
       </div>
-      
+
       <div class="row mt-3">
         <div class="col-12">
           <div class="rk-basic-card">

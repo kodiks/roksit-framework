@@ -12,6 +12,7 @@ import { RkCheckboxModule } from '../rk-checkbox/rk-checkbox.module';
 import { RkTableExportComponent } from './rk-table-export/rk-table-export.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BsDropdownModule } from 'ngx-bootstrap';
+import { RkProgressBarModule } from '../rk-progressbar/rk-progressbar.module';
 
 @NgModule({
     imports: [
@@ -22,7 +23,8 @@ import { BsDropdownModule } from 'ngx-bootstrap';
         RkBadgeModule,
         RkCheckboxModule,
         NgbModule,
-        BsDropdownModule.forRoot()
+        BsDropdownModule.forRoot(),
+        RkProgressBarModule
     ],
     exports: [
         RkTablePaginationComponent,

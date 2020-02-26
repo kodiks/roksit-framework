@@ -40,12 +40,19 @@
 
             <ng-container *ngFor="let col of config.columns;">
               <td *ngIf="col.selected">
-                <ng-container *ngIf="col.isLink; else unLinkTemplate">
-                  <button class="btn btn-link table-link-button" (click)="linkClicked(col, row[getColumnNameByIndex(col)])">{{ row[getColumnNameByIndex(col)] }}</button>
+                <ng-container *ngIf="col.isLink; else progressBarTemplate">
+                  <button class="btn btn-link table-link-button"
+                    (click)="linkClicked(col, row[getColumnNameByIndex(col)])">{{ row[getColumnNameByIndex(col)] }}</button>
                 </ng-container>
 
-                <ng-template #unLinkTemplate>
-                  {{ row[getColumnNameByIndex(col)] }}
+                <ng-template #progressBarTemplate>
+                  <ng-container *ngIf="col.isProgress; else unLinkTemplate">
+                    <rk-progressbar [value]="row.progressValue" [showType]="'outside'" [sizeType]="'small'"></rk-progressbar>
+                  </ng-container>
+
+                  <ng-template #unLinkTemplate>
+                    {{ row[getColumnNameByIndex(col)] }}
+                  </ng-template>
                 </ng-template>
               </td>
             </ng-container>

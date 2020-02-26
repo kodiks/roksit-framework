@@ -4,28 +4,27 @@ import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'rk-list',
-  templateUrl: 'rk-list.component.html',
-  styleUrls: ['rk-list.component.scss']
+  template: ''
 })
 
-export class RkListComponent implements OnInit { 
-  @Input() config : RkListConfigModel = new RkListConfigModel();
+export class RkListComponent implements OnInit {
+  @Input() config: RkListConfigModel = new RkListConfigModel();
 
   constructor() {
 
   }
 
   ngOnInit() {
-    
+
   }
 }
 
 export class RkListConfigModel {
-  title : string;
-  items : rkListItemModel[];
+  title: string;
+  items: rkListItemModel[];
 }
 
 export class rkListItemModel {
-  content : string;
-  subContent : string;
+  content: string;
+  subContent: string;
 }
