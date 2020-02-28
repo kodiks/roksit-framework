@@ -1,12 +1,19 @@
 import { Component, ElementRef, Output, EventEmitter, HostListener } from '@angular/core';
 import { KeyCodes } from '../../helpers/KeyCodes';
 
+export interface RkModalModel {
+    /**
+     * @description Rk Modal toggle function
+     */
+    toggle(): void;
+}
+
 @Component({
     selector: 'rk-modal',
     templateUrl: 'rk-modal.component.html'
 })
 
-export class RkModalComponent {
+export class RkModalComponent implements RkModalModel {
 
     constructor(
         private el: ElementRef<HTMLElement>
