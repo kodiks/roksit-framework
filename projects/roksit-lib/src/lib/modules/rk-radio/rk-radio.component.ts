@@ -1,5 +1,11 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
+export interface RkRadioOutput {
+    name: string;
+    value: string | number | any;
+    checked: boolean;
+}
+
 @Component({
     selector: 'rk-radio',
     templateUrl: 'rk-radio.component.html'
@@ -17,7 +23,7 @@ export class RkRadioComponent implements OnInit {
 
     @Input() value;
 
-    @Output() valueChange: EventEmitter<boolean> = new EventEmitter();
+    @Output() valueChange: EventEmitter<RkRadioOutput> = new EventEmitter();
 
     guid;
 
@@ -28,7 +34,11 @@ export class RkRadioComponent implements OnInit {
     changeRadio(ev) { }
 
     onChange() {
-        this.valueChange.emit();
+        this.valueChange.emit({
+            name: this.name,
+            value: this.value,
+            checked: this.checked
+        } as RkRadioOutput);
     }
 
     setGUID() {
@@ -41,5 +51,6 @@ export class RkRadioComponent implements OnInit {
             return v.toString(16);
         });
     }
+
 
 }

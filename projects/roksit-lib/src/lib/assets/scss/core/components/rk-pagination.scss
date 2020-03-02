@@ -7,6 +7,10 @@
   height: 37px;
   top: -1px;
 
+  .page-link {
+    border-radius: 0 !important;
+  }
+
   i-feather {
     position: relative;
     top: 50%;
@@ -44,11 +48,11 @@
       .page-item {
         padding: 0;
         height: 31px;
-        width: 31px;
         margin-left: 2px;
         display: flex;
         align-items: center;
         justify-content: center;
+        overflow: hidden;
 
         &.disabled {
           i-feather svg {
@@ -83,6 +87,7 @@
           color: $primary !important;
           border: none;
           border-radius: 5px !important;
+          margin-left: auto;
 
           &:focus {
             box-shadow: none;

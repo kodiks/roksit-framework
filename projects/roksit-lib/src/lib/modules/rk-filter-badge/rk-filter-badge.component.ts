@@ -5,6 +5,7 @@ export interface RkFilterOutput {
     values: string[];
     equal: boolean;
 
+    // type?: 'edit' | 'change' | 'delete';
     index?: number;
 }
 
@@ -41,10 +42,20 @@ export class RkFilterBadgeComponent implements OnInit {
     }
 
     onEditClick() {
-        this.onEdit.emit();
+        this.onEdit.emit({
+            name: this.filterName,
+            values: this.filterValues,
+            equal: this.isEqual,
+            index: this._index
+        } as RkFilterOutput);
     }
 
     onDeleteClick() {
-        this.onDelete.emit();
+        this.onDelete.emit({
+            name: this.filterName,
+            values: this.filterValues,
+            equal: this.isEqual,
+            index: this._index
+        } as RkFilterOutput);
     }
 }
