@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, Input, ViewChild, AfterViewInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ElementRef, Input, ViewChild, AfterViewInit, ViewEncapsulation, Output, EventEmitter } from '@angular/core';
 import { RkTableConfigModel, RkTableColumnModel } from '../rk-table/rk-table.component';
 
 declare const $: any;
@@ -22,6 +22,8 @@ export class RkTableContainerComponent implements OnInit, AfterViewInit {
 
     leftButton = true;
     rightButton = true;
+
+    @Output() columnBadgeChange = new EventEmitter();
 
     ngOnInit() {
         if (this.config) {
@@ -47,6 +49,8 @@ export class RkTableContainerComponent implements OnInit, AfterViewInit {
         if (col) {
             col.selected = value;
         }
+
+        this.columnBadgeChange.emit(ev);
     }
 
     hasChecked(col: RkTableColumnModel) {

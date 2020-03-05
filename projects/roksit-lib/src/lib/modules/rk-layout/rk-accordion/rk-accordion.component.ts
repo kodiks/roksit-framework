@@ -14,14 +14,20 @@ export class RkAccordionComponent implements OnInit, AfterViewInit {
 
   @Input() isWizard: boolean;
 
-  @Input() activeNumber: number;
+  private _activeNumber: number;
+
+  @Input()
+  get activeNumber(): number { return this._activeNumber; }
+  set activeNumber(value: number) {
+    this._activeNumber = value;
+
+    this.setActivePanel();
+  }
 
   ngOnInit() { }
 
   ngAfterViewInit() {
-    if (this.activeNumber) {
-      this.panels.toArray()[this.activeNumber - 1].showAccordion = true;
-    }
+    this.setActivePanel();
 
     this.panels.toArray().forEach(component => {
       component.panelClickEvent.subscribe((comp: RkAccordionPanelComponent) => {
@@ -43,6 +49,12 @@ export class RkAccordionComponent implements OnInit, AfterViewInit {
         comp.showAccordion = !status;
       });
     });
+  }
+
+  private setActivePanel() {
+    if (this.activeNumber) {
+      this.panels.toArray()[this.activeNumber - 1].showAccordion = true;
+    }
   }
 }
 

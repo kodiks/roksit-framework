@@ -52,6 +52,7 @@ const COUNTRIES: Country[] = [
   providers: []
 })
 export class AppComponent implements OnInit {
+  filters: any = [];
 
   /**
    *
@@ -252,6 +253,12 @@ export class AppComponent implements OnInit {
 
   colorChanged($event: { color: 'white' | 'black' }) {
     console.log($event.color);
+  }
+
+  addFilter() {
+    const zz = this.filters.push('zz');
+    
+    this.filters = zz;
   }
 
   private prepareTimelineChart() {
