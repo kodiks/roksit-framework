@@ -53,7 +53,11 @@ export class RkAccordionComponent implements OnInit, AfterViewInit {
 
   private setActivePanel() {
     if (this.activeNumber) {
-      this.panels.toArray()[this.activeNumber - 1].showAccordion = true;
+      if (this.panels) {
+        this.panels.forEach(elem => elem.showAccordion = false);
+
+        this.panels.toArray()[this.activeNumber - 1].showAccordion = true;
+      }
     }
   }
 }

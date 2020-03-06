@@ -52,7 +52,7 @@ const COUNTRIES: Country[] = [
   providers: []
 })
 export class AppComponent implements OnInit {
-  filters: any = [];
+  filters: string[] = [];
 
   /**
    *
@@ -256,9 +256,11 @@ export class AppComponent implements OnInit {
   }
 
   addFilter() {
-    const zz = this.filters.push('zz');
-    
-    this.filters = zz;
+    const filters = (JSON.parse(JSON.stringify(this.filters)) as string[]);
+
+    filters.push('category');
+
+    this.filters = filters;
   }
 
   private prepareTimelineChart() {
