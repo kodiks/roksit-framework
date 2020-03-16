@@ -1,5 +1,9 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
+export interface RkAutoCompleteOutput {
+    value: string | number;
+}
+
 @Component({
     selector: 'rk-autocomplete',
     templateUrl: 'rk-autocomplete.component.html'
@@ -18,7 +22,10 @@ export class RkAutoCompleteComponent implements OnInit {
 
     @Output() valueChange = new EventEmitter();
 
-    @Output() change = new EventEmitter();
+    @Output() onSelect = new EventEmitter();
+
+    // tslint:disable-next-line: no-output-rename no-output-on-prefix
+    @Output('enterPress') onEnter = new EventEmitter();
 
     ngOnInit() { }
 
@@ -27,7 +34,7 @@ export class RkAutoCompleteComponent implements OnInit {
 
         this.term = obj;
 
-        this.change.emit(obj);
+        this.onSelect.emit(obj);
 
         this.valueChange.emit(obj.value);
     }
@@ -36,6 +43,13 @@ export class RkAutoCompleteComponent implements OnInit {
         setTimeout(() => {
             this.showDropdown = isShow;
         }, 100);
+    }
+
+    onEnterPress($event: KeyboardEvent) {
+        this.onEnter.emit({
+            // tslint:disable-next-line: no-string-literal
+            value: $event.target['value']
+        } as RkAutoCompleteOutput);
     }
 }
 

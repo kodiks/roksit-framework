@@ -25,7 +25,6 @@ import { BsDropdownModule } from 'ngx-bootstrap';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  schemas : [NO_ERRORS_SCHEMA]
+  schemas: [NO_ERRORS_SCHEMA]
 })
 export class AppModule { }
- 

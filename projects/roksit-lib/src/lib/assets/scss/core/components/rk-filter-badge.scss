@@ -72,6 +72,10 @@
       color: $gray;
       display: inline-flex;
       align-items: center;
+      // max-width: 200px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
 
       .seperator {
         display: inline-flex;

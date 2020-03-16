@@ -37,8 +37,12 @@ export class RkModalComponent implements RkModalModel {
 
         rkModalBackdrop.classList.toggle('show');
 
+        document.body.classList.add('overflow-hidden');
+
         const show = rkModal.classList.contains('show');
         if (!show) {
+            document.body.classList.remove('overflow-hidden');
+            
             this.close.emit({
                 closed: true
             });

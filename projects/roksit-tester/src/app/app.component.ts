@@ -52,7 +52,6 @@ const COUNTRIES: Country[] = [
   providers: []
 })
 export class AppComponent implements OnInit {
-  filters: string[] = [];
 
   /**
    *
@@ -65,9 +64,11 @@ export class AppComponent implements OnInit {
       this.collapsed = collapsed;
     });
   }
+  filters: string[] = [];
 
   darkMode = false;
 
+  // tslint:disable-next-line: variable-name
   __options: RkSelectModel[] = [
     { value: 32, displayText: '32', selected: true },
     { value: 33, displayText: '33' },
@@ -127,20 +128,20 @@ export class AppComponent implements OnInit {
 
   options: any[] = [
     { displayText: 'Text 1', value: 1 },
-    { displayText: 'Text 2', value: 1 },
-    { displayText: 'Text 3', value: 1 },
-    { displayText: 'Text 4', value: 1 },
-    { displayText: 'Text 6', value: 1 },
-    { displayText: 'Text 7', value: 1 },
-    { displayText: 'Text 8', value: 1 },
-    { displayText: 'Text 9', value: 1 },
-    { displayText: 'Text 10', value: 1 },
-    { displayText: 'Text 11', value: 1 },
-    { displayText: 'Text 12', value: 1 },
-    { displayText: 'Text 13', value: 1 },
-    { displayText: 'Text 14', value: 1 },
-    { displayText: 'Text 15', value: 1 },
-    { displayText: 'Text 16', value: 1 },
+    { displayText: 'Text 2', value: 2 },
+    { displayText: 'Text 3', value: 3 },
+    { displayText: 'Text 4', value: 4 },
+    { displayText: 'Text 6', value: 5 },
+    { displayText: 'Text 7', value: 6 },
+    { displayText: 'Text 8', value: 7 },
+    { displayText: 'Text 9', value: 8 },
+    { displayText: 'Text 10', value: 9 },
+    { displayText: 'Text 11', value: 10 },
+    { displayText: 'Text 12', value: 11 },
+    { displayText: 'Text 13', value: 12 },
+    { displayText: 'Text 14', value: 13 },
+    { displayText: 'Text 15', value: 14 },
+    { displayText: 'Text 16', value: 15 },
   ];
 
   listConfig: RkListConfigModel = {
@@ -222,6 +223,8 @@ export class AppComponent implements OnInit {
   ];
 
   collapsed: boolean;
+
+  @ViewChild('modal', { static: false }) modal: RkModalComponent;
 
   toggleCollapse() {
     this.rkLayoutService.setSidebarCollapse(!this.collapsed);
@@ -353,7 +356,7 @@ export class AppComponent implements OnInit {
           },
         }
       },
-      colors: [function ({ value, seriesIndex, w }) {
+      colors: [({ value, seriesIndex, w }) => {
         if (value < 55) {
           return '#f95656';
         } else if (value >= 55 && value < 80) {
@@ -382,10 +385,7 @@ export class AppComponent implements OnInit {
     });
   }
 
-  onValueChange(value: boolean) {
-  }
-
-  @ViewChild('modal', { static: false }) modal: RkModalComponent;
+  onValueChange(value: boolean) { }
 
   toggle() {
     this.modal.toggle();

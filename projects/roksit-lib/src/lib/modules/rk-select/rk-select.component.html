@@ -5,12 +5,17 @@
         {{ selectedOption ? selectedOption.displayText : placeholder }}
     </div>
 
-    <i-feather name="chevron-down" (click)="show ? setShow(false) : setShow(true)" class="rk-select-icon" [ngClass]="{'transformed': show}"></i-feather>
+    <i-feather name="chevron-down" (click)="show ? setShow(false) : setShow(true)" class="rk-select-icon"
+        [ngClass]="{'transformed': show}"></i-feather>
 
     <div class="rk-select-items-container" *ngIf="show">
+        <div class="rk-select-search" *ngIf="isSearchable">
+            <input type="text" class="rk-input w-100" [(ngModel)]="searchTerm" [placeholder]="searchPlaceholder">
+        </div>
         <div class="rk-select-items">
             <div class="rk-select-item" [ngClass]="{'active': index == selectedIndex}"
-                *ngFor="let option of options; let index = index" (click)="selectOption(option, index)">
+                *ngFor="let option of options | filter: searchTerm : 'displayText'; let index = index"
+                (click)="selectOption(option, index)" [title]="option.displayText">
                 {{ option.displayText }}
             </div>
         </div>

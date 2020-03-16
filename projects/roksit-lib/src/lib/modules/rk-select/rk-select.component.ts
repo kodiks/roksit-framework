@@ -8,6 +8,7 @@ export class RkSelectComponent implements OnInit {
 
     constructor() { }
 
+    // tslint:disable-next-line: variable-name
     private _options: RkSelectModel[] = [];
 
     @Input()
@@ -28,6 +29,12 @@ export class RkSelectComponent implements OnInit {
 
     @Input() value;
     @Output() valueChange = new EventEmitter();
+
+    @Input() isSearchable = false;
+
+    @Input() searchTerm = '';
+
+    @Input() searchPlaceholder = '...';
 
     selectedIndex: number;
 
@@ -52,6 +59,10 @@ export class RkSelectComponent implements OnInit {
         this.valueChange.emit(option.value);
 
         this.setShow(false);
+
+        if (this.isSearchable) {
+            this.searchTerm = '';
+        }
     }
 
     setShow(show: boolean) {
