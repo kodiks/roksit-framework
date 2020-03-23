@@ -1,6 +1,6 @@
 <div class="rk-filter-badge" [ngClass]="{ 'primary' : isEqual, 'security' : !isEqual }" [@must]="mustState" [@mustnot]="mustnotState">
     <div class="unhover">
-        <div class="filter-name"> {{ filterName }} </div>
+        <div class="filter-name"> {{ placeholder ? placeholder : filterName }} </div>
 
         <div class="equals">
             <icon-equal *ngIf="isEqual" ></icon-equal>

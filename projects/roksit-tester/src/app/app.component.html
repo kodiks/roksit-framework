@@ -79,6 +79,50 @@
     </div>
 
     <div class="container-fluid">
+      <div class="row mt-4 gutters-sm">
+        <div class="col-md">
+          <rk-infobox [active]="true" [title]="'Total'" className="blue" [color]="'#4353ff'" [type]="1"
+            [valueOne]="245" [valueTwo]="345" description="Toplam DNS sorgu sayısı">
+          </rk-infobox>
+        </div>
+
+        <div class="col-md">
+          <rk-infobox [active]="false" [type]="2" [title]="'Safe'" className="green" [color]="'#3dd49a'"
+            [valueOne]="35000" [valueTwo]="5463453"
+            description="Haber, Spor, Arama motoru gibi içerik ve güvenlik anlamında risk içermeyen domainleri kapsar.">
+          </rk-infobox>
+        </div>
+
+        <div class="col-md">
+          <rk-infobox [active]="false" [type]="2" [title]="'Malicious'" className="red" [color]="'#f95656'"
+            [valueOne]="35000" [valueTwo]="32000"
+            description="Malware, Botnet, Phishing gibi güvenlik riski yüksek domainleri kapsar.">
+          </rk-infobox>
+        </div>
+
+        <div class="col-md">
+          <rk-infobox [active]="false" [type]="2" [title]="'Variable'" className="gray" [color]="'#d8d8d8'"
+            [valueOne]="35000" [valueTwo]="32000"
+            description="Newly Register, Newly Up, Domain Parking, Dead Sites gibi içerik ve güvenlik riski değişiklik gösterebilen domainleri içerir.">
+          </rk-infobox>
+        </div>
+
+        <div class="col-md">
+          <rk-infobox [active]="false" [type]="2" [title]="'Harmful Content'" className="yellow" [color]="'#f9df56'"
+            [valueOne]="35000" [valueTwo]="32000"
+            description="Pornogrphy, Adult, Gamblig gibi istenmeyen domainleri içerir.">
+          </rk-infobox>
+        </div>
+      </div>
+
+
+      <div class="row mt-4">
+        <div class="col-4">
+          <rk-autocomplete [onSelectClear]="true" (onSelect)="onSelect($event)" [items]="autocompleteItems">
+          </rk-autocomplete>
+        </div>
+      </div>
+
       <div class="row mt-3">
         <div class="col-12">
           <rk-select [options]="options" isSearchable="true"></rk-select>
@@ -125,7 +169,7 @@
       </div>
 
       <div class="row">
-        <div class="mt-3">
+        <div class="col-12 mt-3">
           <rk-filter-badge [name]="'test'" [equal]="true" [values]="filters"></rk-filter-badge>
         </div>
       </div>
@@ -579,41 +623,6 @@
         </div>
       </div>
 
-      <div class="row mt-4 gutters-sm">
-        <div class="col-md">
-          <rk-infobox [active]="true" [title]="'Total'" className="blue" [color]="'#4353ff'" [type]="1" [valueOne]="345"
-            [valueTwo]="345" description="Toplam DNS sorgu sayısı">
-          </rk-infobox>
-        </div>
-
-        <div class="col-md">
-          <rk-infobox [active]="false" [type]="2" [title]="'Safe'" className="green" [color]="'#3dd49a'"
-            [valueOne]="'35.000'" [valueTwo]="'32.000'"
-            description="Haber, Spor, Arama motoru gibi içerik ve güvenlik anlamında risk içermeyen domainleri kapsar.">
-          </rk-infobox>
-        </div>
-
-        <div class="col-md">
-          <rk-infobox [active]="false" [type]="2" [title]="'Malicious'" className="red" [color]="'#f95656'"
-            [valueOne]="'35.000'" [valueTwo]="'32.000'"
-            description="Malware, Botnet, Phishing gibi güvenlik riski yüksek domainleri kapsar.">
-          </rk-infobox>
-        </div>
-
-        <div class="col-md">
-          <rk-infobox [active]="false" [type]="2" [title]="'Variable'" className="gray" [color]="'#d8d8d8'"
-            [valueOne]="'35.000'" [valueTwo]="'32.000'"
-            description="Newly Register, Newly Up, Domain Parking, Dead Sites gibi içerik ve güvenlik riski değişiklik gösterebilen domainleri içerir.">
-          </rk-infobox>
-        </div>
-
-        <div class="col-md">
-          <rk-infobox [active]="false" [type]="2" [title]="'Harmful Content'" className="yellow" [color]="'#f9df56'"
-            [valueOne]="'35.000'" [valueTwo]="'32.000'"
-            description="Pornogrphy, Adult, Gamblig gibi istenmeyen domainleri içerir.">
-          </rk-infobox>
-        </div>
-      </div>
 
       <div class="row mt-3">
         <div class="col-12">
@@ -787,11 +796,7 @@
           </div>
         </div>
 
-        <div class="row mt-4">
-          <div class="col-4">
-            <rk-autocomplete [(value)]="auto" [items]="autocompleteItems"></rk-autocomplete>
-          </div>
-        </div>
+
 
         {{auto}}
 

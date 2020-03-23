@@ -59,26 +59,16 @@
         padding: 4px 12px;
 
         span {
-          &:first-of-type {
-            font-size: 9px;
-            font-weight: normal;
-            font-stretch: normal;
-            font-style: normal;
-            line-height: normal;
-            letter-spacing: normal;
+          &:first-child {
+            font-size: 10px;
             text-align: center;
             color: var(--blue-grey);
           }
 
           &:last-of-type {
-            font-size: 11px;
+            font-size: 16px;
             font-weight: bold;
-            font-stretch: normal;
-            font-style: normal;
-            line-height: normal;
-            letter-spacing: normal;
             color: var(--slate);
-            padding-top: 3px;
           }
         }
       }
@@ -126,9 +116,6 @@
         }
       }
 
-      .info-hit {
-      }
-
       .info-domain {
         margin-top: 3px;
       }
@@ -136,8 +123,8 @@
   }
 
   .rk-description {
-    font-size: 8px;
-    color: $blue-grey;
+    font-size: 10px;
+    color: $gray;
     position: absolute;
     top: calc(100% + 7px);
   }

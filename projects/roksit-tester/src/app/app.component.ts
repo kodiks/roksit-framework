@@ -7,6 +7,7 @@ import { RkUtilityService } from 'projects/roksit-lib/src/lib/services/rk-utilit
 import { RkMenuItem } from 'projects/roksit-lib/src/lib/models/rk-menu.model';
 import { RkModalComponent } from 'projects/roksit-lib/src/lib/modules/rk-modal/rk-modal.component';
 import { RkSelectModel } from 'projects/roksit-lib/src/lib/modules/rk-select/rk-select.component';
+import { RkAutoCompleteModel } from 'projects/roksit-lib/src/lib/modules/rk-autocomplete/rk-autocomplete.component';
 
 // import { RkAutoCompleteModel } from 'roksit-lib/lib/modules/rk-autocomplete/rk-autocomplete.component';
 
@@ -72,8 +73,8 @@ export class AppComponent implements OnInit {
   __options: RkSelectModel[] = [
     { value: 32, displayText: '32', selected: true },
     { value: 33, displayText: '33' },
-    { value: 34, displayText: '34' },
-    { value: 35, displayText: '35' },
+    { value: 34, displayText: '34', icon: 'plus' },
+    { value: 35, displayText: '35', styles: { background: 'red' } },
     { value: 36, displayText: '36' }
   ];
 
@@ -225,6 +226,10 @@ export class AppComponent implements OnInit {
   collapsed: boolean;
 
   @ViewChild('modal', { static: false }) modal: RkModalComponent;
+  searchTerm: RkAutoCompleteModel = {
+    text: '',
+    value: ''
+  } as RkAutoCompleteModel;
 
   toggleCollapse() {
     this.rkLayoutService.setSidebarCollapse(!this.collapsed);
@@ -261,7 +266,7 @@ export class AppComponent implements OnInit {
   addFilter() {
     const filters = (JSON.parse(JSON.stringify(this.filters)) as string[]);
 
-    filters.push('category');
+    filters.unshift(`category-${Date.now()}`);
 
     this.filters = filters;
   }
@@ -481,7 +486,6 @@ export class AppComponent implements OnInit {
     }
   }
 
-
   toggleDarkModel() {
     this.darkMode = !this.darkMode;
 
@@ -502,5 +506,11 @@ export class AppComponent implements OnInit {
 
   completed($event) {
     console.log($event);
+  }
+
+  onSelect($event) {
+    console.log($event);
+
+    $event = { text: '', value: '' } as RkAutoCompleteModel;
   }
 }

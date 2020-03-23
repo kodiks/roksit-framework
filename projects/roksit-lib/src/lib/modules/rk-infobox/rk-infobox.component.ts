@@ -15,8 +15,26 @@ export class RkInfoBoxComponent implements OnInit {
     @Input('type') type = 1;
     @Input() title = '';
     @Input() color = '';
-    @Input() valueOne = 0;
-    @Input() valueTwo = 0;
+
+    private _valueOne = 0;
+    private _valueTwo = 0;
+
+    @Input()
+    get valueOne() { return this._valueOne; }
+    set valueOne(val) {
+        if (val) {
+            this._valueOne = this.thousndSeperator(val);
+        }
+    }
+
+    @Input()
+    get valueTwo() { return this._valueTwo; }
+    set valueTwo(val) {
+        if (val) {
+            this._valueTwo = this.thousndSeperator(val);
+        }
+    }
+
     @Input() description = '';
 
     @Output() change = new EventEmitter();
@@ -32,6 +50,10 @@ export class RkInfoBoxComponent implements OnInit {
         this.guid = this.getGuid(6);
 
         this.svgG.nativeElement.setAttribute('stroke', `url(#linearGradient-${this.guid})`);
+    }
+
+    private thousndSeperator(val) {
+        return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
     }
 
     getGuid(len) {

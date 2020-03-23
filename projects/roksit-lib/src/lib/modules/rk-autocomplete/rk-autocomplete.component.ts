@@ -13,7 +13,7 @@ export class RkAutoCompleteComponent implements OnInit {
 
     constructor() { }
 
-    term = {} as RkAutoCompleteModel;
+    @Input() term = { text: '', value: '' } as RkAutoCompleteModel;
     showDropdown = false;
 
     @Input() items: RkAutoCompleteModel[] = [];
@@ -21,6 +21,8 @@ export class RkAutoCompleteComponent implements OnInit {
     @Input() value;
 
     @Output() valueChange = new EventEmitter();
+
+    @Input() onSelectClear = false;
 
     @Output() onSelect = new EventEmitter();
 
@@ -32,7 +34,9 @@ export class RkAutoCompleteComponent implements OnInit {
     selectOption(item: RkAutoCompleteModel) {
         const obj = Object.assign({}, item);
 
-        this.term = obj;
+        if (!this.onSelectClear) {
+            this.term = obj;
+        }
 
         this.onSelect.emit(obj);
 
@@ -42,7 +46,7 @@ export class RkAutoCompleteComponent implements OnInit {
     setShowDropdown(isShow) {
         setTimeout(() => {
             this.showDropdown = isShow;
-        }, 100);
+        }, 200);
     }
 
     onEnterPress($event: KeyboardEvent) {

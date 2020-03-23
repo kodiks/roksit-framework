@@ -1,3 +1,8 @@
+rk-filter-badge {
+  display: inline-block;
+  max-width: 100%;
+}
+
 .rk-filter-badge {
   display: flex;
   padding: 7px 13px;
@@ -10,6 +15,7 @@
   font-size: 11px;
   overflow: hidden;
   position: relative;
+  max-width: 100%;
 
   &.primary {
     border-color: $primary;
@@ -54,6 +60,7 @@
   .unhover {
     display: flex;
     align-items: center;
+    max-width: 100%;
 
     .filter-name {
       font-weight: 500;
@@ -70,12 +77,10 @@
     .values {
       font-weight: 400;
       color: $gray;
-      display: inline-flex;
-      align-items: center;
-      // max-width: 200px;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      line-height: 25px;
 
       .seperator {
         display: inline-flex;
@@ -83,6 +88,8 @@
         height: 16px;
         background: $primary;
         margin: 0 5px;
+        position: relative;
+        top: 4px;
       }
     }
   }
@@ -97,7 +104,7 @@
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     background: $primary;
     color: $white;
     font-size: 15px;

@@ -3,6 +3,8 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
 
 export interface RkFilterOutput {
     name: string;
+    placeholder?: string;
+
     values: string[];
     equal: boolean;
 
@@ -37,6 +39,9 @@ export class RkFilterBadgeComponent implements OnInit {
 
     // tslint:disable-next-line: no-input-rename
     @Input('name') filterName = '';
+
+    // tslint:disable-next-line: no-input-rename
+    @Input('displayText') placeholder?: string;
 
     // tslint:disable-next-line: variable-name
     private _values = [];

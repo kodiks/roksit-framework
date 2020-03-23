@@ -21,6 +21,8 @@ export class RkSelectComponent implements OnInit {
 
             if (selected) {
                 this.selectedOption = selected;
+            } else {
+                this.selectedOption = null;
             }
         }
     }
@@ -76,4 +78,10 @@ export interface RkSelectModel {
     displayText: string;
     value: string | number;
     selected?: boolean;
+
+    /**
+     * @description Feather Icon
+     */
+    icon?: string;
+    styles?: any;
 }

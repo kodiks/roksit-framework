@@ -15,8 +15,10 @@
         <div class="rk-select-items">
             <div class="rk-select-item" [ngClass]="{'active': index == selectedIndex}"
                 *ngFor="let option of options | filter: searchTerm : 'displayText'; let index = index"
-                (click)="selectOption(option, index)" [title]="option.displayText">
+                (click)="selectOption(option, index)" [title]="option.displayText" [ngStyle]="option?.styles">
                 {{ option.displayText }}
+
+                <i-feather [name]="option.icon" *ngIf="option.icon" style="margin-top: -5px;"></i-feather>
             </div>
         </div>
     </div>
