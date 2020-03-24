@@ -38,6 +38,16 @@ export class RkSelectComponent implements OnInit {
 
     @Input() searchPlaceholder = '...';
 
+    @Input() isShowButton = false;
+
+    @Input() buttonText: string;
+
+    @Input() buttonIcon: string;
+
+    @Input() buttonCallback: () => {};
+
+    @Output() buttonClickEmitter = new EventEmitter();
+
     selectedIndex: number;
 
     selectedOption: RkSelectModel;
@@ -71,6 +81,17 @@ export class RkSelectComponent implements OnInit {
         this.show = show;
     }
 
+    buttonClick() {
+        if (this.buttonCallback) {
+            this.buttonCallback();
+        } else {
+            this.buttonClickEmitter.emit({
+                clicked: true
+            });
+        }
+
+        this.setShow(false);
+    }
 }
 
 export interface RkSelectModel {

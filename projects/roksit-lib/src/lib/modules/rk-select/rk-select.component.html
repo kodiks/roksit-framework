@@ -21,5 +21,12 @@
                 <i-feather [name]="option.icon" *ngIf="option.icon" style="margin-top: -5px;"></i-feather>
             </div>
         </div>
+
+        <button class="rk-select-button ripple" *ngIf="isShowButton" (click)="buttonClick()">
+            <i-feather [name]="buttonIcon" *ngIf="buttonIcon"></i-feather>
+
+            {{ buttonText }}
+        </button>
     </div>
+
 </div>
