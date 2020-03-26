@@ -1,71 +1,96 @@
 :root {
-  --white-color: #ffffff;
-  --slate: #445165;
-  --blue-gray: #97a5bb;
+  --primary: #507df3;
+  --primary-1: rgba(80, 126, 243, 0.1);
+  --primary-8: rgba(80, 126, 243, 0.8);
+  --primary-9: rgba(80, 126, 243, 0.9);
+  --primary-box-shadow: rgba(51, 151, 197, 0.3);
+  --primary-light-200: #bdeaff;
+  --primary-light-100: #eaf4f9;
+  --security: #f95656;
+  --harmful: #f9df56;
+  --safe: #3dd49a;
+  --safe-hover: #359e76;
+  --grey: #d8d8d8;
+  --unsafe: #f99256;
+  --total: #4353ff;
+  --gray: #445165;
+  --gray-2: rgba(68, 81, 101, 0.2);
+  --gray-5: rgba(68, 81, 101, 0.5);
+  --gray-8: rgba(68, 81, 101, 0.8);
+  --light-grey: #898ea4;
+  --blue-grey: #97a5bb;
+  --blue-grey-darken: #696e77;
+  --blue-grey-5: rgba(151, 165, 187, 0.5);
   --light-blue-grey: #ccd4e0;
-  --lightish-blue: #4353ff;
+  --light-blue-grey-2: rgba(204, 212, 224, 0.2);
+  --light-blue-grey-5: rgba(204, 212, 224, 0.5);
+  --pale-gray: #f0f3f8;
+  --pale-gray-5: rgba(240, 243, 248, 0.5);
+  --white: #ffffff;
+  --disabled: rgba(68, 81, 101, 0.1);
+  --text-dark: #303759;
+  --base-light-color: #e4e9f1;
 }
 
-$primary: #3397c5;
+// $primary: #3397c5;
 
-$primary-light-200: #bdeaff;
+// $primary-light-200: #bdeaff;
 
-$primary-light-100: #eaf4f9;
+// $primary-light-100: #eaf4f9;
 
-$accent: #ff7b00;
+// $accent: #ff7b00;
 
-$security: #f95656;
+// $security: #f95656;
 
-$harmfull: #f9df56;
+// $harmfull: #f9df56;
 
-$safe: #3dd49a;
+// $safe: #3dd49a;
 
-$grey: #d8d8d8;
+// $grey: #d8d8d8;
 
-$unsafe: #f99256;
+// $unsafe: #f99256;
 
-$total: #4353ff;
+// $total: #4353ff;
 
-$blue-grey: #97a5bb;
+// $blue-grey: #97a5bb;
 
-$gray: #445165;
+// $gray: #445165;
 
-$light-blue-grey: #ccd4e0;
+// $light-blue-grey: #ccd4e0;
 
-$o-grey: rgba(37, 38, 94, 0.2);
+// $o-grey: rgba(37, 38, 94, 0.2);
 
-$disabled: rgba(68, 81, 101, 0.1);
+// $disabled: rgba(68, 81, 101, 0.1);
 
-$border-color: #eeeef2;
+// $border-color: #eeeef2;
 
-$text-color: #303759;
+// $text-color: #303759;
 
-$pale-grey: #f0f3f8;
+// $pale-grey: #f0f3f8;
 
-$light-grey: #898ea4;
-/*
-    Base Colors
-*/
+// $light-grey: #898ea4;
+// /*
+//     Base Colors
+// */
 
-$white: #ffffff;
+// $white: #ffffff;
 
-$slate: #445165;
+// $slate: #445165;
 
 $theme-colors: (
-  "primary": $primary,
-  "primary-light-200": $primary-light-200,
-  "accent": $accent,
-  "security": $security,
-  "harmfull": $harmfull,
-  "safe": $safe,
-  "unsafe": $unsafe,
-  "total": $total,
-  "blue-grey": $blue-grey,
-  "gray": $gray,
-  "light-blue-grey": $light-blue-grey,
-  "o-grey": $o-grey,
-  "disabled": $disabled,
-  "white": $white
+  "primary": var(--primary),
+  "primary-light-200": var(--primary-light-200),
+  "security": var(--security),
+  "harmfull": var(--harmful),
+  "safe": var(--safe),
+  "unsafe": var(--unsafe),
+  "total": var(--total),
+  "blue-grey": var(--blue-grey),
+  "gray": var(--gray),
+  "light-blue-grey": var(--light-blue-grey),
+  "disabled": var(--disabled),
+  "white": var(--white),
+  "pale-gray": var(--pale-gray),
 );
 
 @each $name, $theme-color in $theme-colors {

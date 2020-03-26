@@ -5,12 +5,12 @@
   width: 400px;
   right: -100%;
   top: 0;
-  background: $white;
+  background: var(--white);
   // border-left: 1px solid #eeeef2;
   display: flex;
   flex-direction: column;
   z-index: 900;
-  box-shadow: -8px 0 25px -18px rgba(40, 88, 109, 0.3);
+  box-shadow: -8px 0 25px -18px var(--primary-box-shadow);
   transition: 0.2s all;
 
   &.show {
@@ -29,14 +29,14 @@
     .rk-modal-header-icon {
       i-feather {
         svg {
-          color: $blue-grey;
+          color: var(--blue-grey);
         }
       }
     }
 
     .rk-modal-header-title {
       h5 {
-        color: #303759;
+        color: var(--text-dark);
         font-size: 16px;
         font-weight: 500;
         margin-bottom: 0;
@@ -52,12 +52,12 @@
       button {
         outline: 0;
         border: 0;
-        background: $white;
+        background: var(--white);
 
         &:hover {
           i-feather {
             svg {
-              fill: darken($color: $blue-grey, $amount: 10%);
+              fill: var(--blue-grey-darken);
               transition: 0.2s;
             }
           }
@@ -65,8 +65,8 @@
 
         i-feather {
           svg {
-            color: $white;
-            fill: $blue-grey;
+            color: var(--white);
+            fill: var(--blue-grey);
           }
         }
       }
@@ -102,7 +102,7 @@
         font-style: normal;
         line-height: normal;
         letter-spacing: normal;
-        color: #303759;
+        color: var(--text-dark);
         margin-bottom: 10px;
       }
 
@@ -118,7 +118,7 @@
 
   .rk-modal-footer {
     height: 53px;
-    background: rgba($color: $primary, $alpha: .8);
+    background: var(--primary-8);
     display: flex;
     align-items: center;
     justify-content: space-between;

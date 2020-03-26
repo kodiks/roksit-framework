@@ -1,8 +1,3 @@
-:root {
-  --cardBgColor: #f0f3f8;
-  --titleColor: #445165;
-}
-
 .rk-base-card {
   display: block;
   width: 100%;
@@ -16,7 +11,7 @@
     width: 100%;
     flex-grow: 1;
     margin: 0 2px;
-    background-color: var(--cardBgColor);
+    background-color: var(--gray);
     padding: 20px;
     display: flex;
 
@@ -49,7 +44,7 @@
     margin-right: 15px;
 
     .value {
-      color: #3397c5;
+      color: var(--primary);
     }
   }
 

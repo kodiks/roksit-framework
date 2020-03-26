@@ -23,7 +23,7 @@
     font-style: normal;
     line-height: normal;
     letter-spacing: normal;
-    color: var(--slate);
+    color: var(--gray);
 
     .l-border {
       margin-right: 10px;
@@ -68,7 +68,7 @@
           &:last-of-type {
             font-size: 16px;
             font-weight: bold;
-            color: var(--slate);
+            color: var(--gray);
           }
         }
       }
@@ -100,7 +100,7 @@
             font-style: normal;
             line-height: normal;
             letter-spacing: normal;
-            color: var(--blue-gray);
+            color: var(--blue-grey);
           }
 
           &:last-of-type {
@@ -110,7 +110,7 @@
             font-style: normal;
             line-height: normal;
             letter-spacing: normal;
-            color: var(--slate);
+            color: var(--gray);
             padding-left: 10px;
           }
         }
@@ -124,7 +124,7 @@
 
   .rk-description {
     font-size: 10px;
-    color: $gray;
+    color: var(--gray);
     position: absolute;
     top: calc(100% + 7px);
   }

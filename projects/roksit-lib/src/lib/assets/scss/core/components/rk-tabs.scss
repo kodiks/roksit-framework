@@ -8,8 +8,8 @@
   .rk-tab {
     flex: 1;
     border-radius: 5px;
-    background: $white;
-    color: $blue-grey;
+    background: var(--white);
+    color: var(--blue-grey);
     font-size: 12px;
     display: flex;
     align-items: center;
@@ -25,13 +25,13 @@
     }
 
     &:hover {
-      background: $primary;
-      color: $white;
+      background: var(--primary);
+      color: var(--white);
     }
 
     &.active {
-      background: $primary;
-      color: $white;
+      background: var(--primary);
+      color: var(--white);
     }
   }
 }

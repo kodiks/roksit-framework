@@ -1,6 +1,6 @@
 .rk-selectable-table {
   border-radius: 6px;
-  background: rgba($color: $pale-grey, $alpha: 0.5);
+  background: var(--pale-gray-5);
   width: 170px;
   height: 300px;
   max-height: 300px;
@@ -21,13 +21,13 @@
 
     &:hover,
     &.active {
-      background: #3397c5;
+      background: var(--primary);
       border-radius: 5px;
       box-shadow: 0 10px 24px 0 rgba(37, 38, 94, 0.12);
       cursor: pointer;
 
       .rk-selectable-table-item-title {
-        color: $white !important;
+        color: var(--white) !important;
       }
 
       .rk-selectable-badge {
@@ -39,7 +39,7 @@
       }
 
       .progress {
-        background: rgba($color: $blue-grey, $alpha: 0.5) !important;
+        background: var(--blue-grey-5) !important;
       }
 
       .progress-bar {
@@ -59,7 +59,7 @@
       width: 100%;
 
       .rk-selectable-table-item-title {
-        color: $blue-grey;
+        color: var(--blue-grey);
         font-weight: 500;
         font-size: 12px;
       }
@@ -70,7 +70,7 @@
         height: 12px;
         padding: 6px;
         background-color: rgba($color: #145683, $alpha: 0.5);
-        color: $white;
+        color: var(--white);
         border-radius: 11px;
         font-size: 8px;
         font-weight: 500;
@@ -82,7 +82,7 @@
         width: 12px;
 
         svg {
-          color: $white;
+          color: var(--white);
           width: 12px;
           height: 12px;
         }

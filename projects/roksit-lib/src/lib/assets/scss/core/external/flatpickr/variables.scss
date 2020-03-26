@@ -31,10 +31,10 @@ $monthBackground: transparent !default;
 $weekdaysBackground: transparent !default;
 $weekdaysForeground: rgba(black, 0.54) !default;
 
-$dayForeground: $primary !default;
+$dayForeground: var(--primary) !default;
 $dayHoverBackground: #e6e6e6 !default;
 
-$todayColor: $primary !default;
-$selectedDayBackground: $primary !default;
+$todayColor: var(--primary) !default;
+$selectedDayBackground: var(--primary) !default;
 
 $invertedBg: invert($calendarBackground);

@@ -8,9 +8,9 @@ rk-filter-badge {
   padding: 7px 13px;
   height: 26px;
   width: fit-content;
-  background: white;
+  background: var(--white);
   align-items: center;
-  border: 1px solid $primary;
+  border: 1px solid var(--primary);
   border-radius: 18px;
   font-size: 11px;
   overflow: hidden;
@@ -18,42 +18,42 @@ rk-filter-badge {
   max-width: 100%;
 
   &.primary {
-    border-color: $primary;
+    border-color: var(--primary);
 
     .unhover {
       .equals {
         svg path {
-          fill: $primary;
+          fill: var(--primary);
         }
       }
 
       .values .seperator {
-        background: $primary;
+        background: var(--primary);
       }
     }
 
     .hover {
-      background: $primary;
+      background: var(--primary);
     }
   }
 
   &.security {
-    border-color: $security;
+    border-color: var(--security);
 
     .unhover {
       .equals {
         svg path {
-          fill: $security;
+          fill: var(--security);
         }
       }
 
       .values .seperator {
-        background: $security;
+        background: var(--security);
       }
     }
 
     .hover {
-      background: $security;
+      background: var(--security);
     }
   }
 
@@ -64,11 +64,11 @@ rk-filter-badge {
 
     .filter-name {
       font-weight: 500;
-      color: $gray;
+      color: var(--gray);
     }
 
     .equals {
-      color: $primary;
+      color: var(--primary);
       font-size: 20px;
       margin: 0 8px;
       margin-top: -2px;
@@ -76,7 +76,7 @@ rk-filter-badge {
 
     .values {
       font-weight: 400;
-      color: $gray;
+      color: var(--gray);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -86,7 +86,7 @@ rk-filter-badge {
         display: inline-flex;
         width: 1px;
         height: 16px;
-        background: $primary;
+        background: var(--primary);
         margin: 0 5px;
         position: relative;
         top: 4px;
@@ -105,8 +105,8 @@ rk-filter-badge {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    background: $primary;
-    color: $white;
+    background: var(--primary);
+    color: var(--white);
     font-size: 15px;
     transition: 0.2s;
 
@@ -114,7 +114,7 @@ rk-filter-badge {
       background: transparent;
       border: none;
       outline: none;
-      color: $white;
+      color: var(--white);
       border-radius: 50px;
       .feather {
         width: 18px;
@@ -123,7 +123,7 @@ rk-filter-badge {
 
       &.equal {
         svg path {
-          fill: $white;
+          fill: var(--white);
         }
       }
     }

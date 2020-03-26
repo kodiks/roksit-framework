@@ -14,7 +14,7 @@ rk-table-container {
 
   .rk-table-container-header {
     padding: 11px 19px 7px;
-    background: $white;
+    background: var(--white);
     border-top-left-radius: 13px;
     border-top-right-radius: 13px;
     display: flex;
@@ -40,7 +40,7 @@ rk-table-container {
 
       .inf {
         font-size: 12px;
-        color: $blue-grey;
+        color: var(--blue-grey);
       }
     }
 
@@ -51,7 +51,7 @@ rk-table-container {
       .text {
         font-size: 12px;
         font-weight: 700;
-        color: $light-grey;
+        color: var(--light-grey);
       }
 
       .badges-container {
@@ -91,7 +91,7 @@ rk-table-container {
           top: -3px;
 
           svg {
-            color: $blue-grey;
+            color: var(--blue-grey);
           }
         }
 
@@ -109,7 +109,7 @@ rk-table-container {
           z-index: 99;
 
           svg {
-            color: $blue-grey;
+            color: var(--blue-grey);
           }
         }
       }
@@ -134,8 +134,8 @@ rk-table-container {
           border: none !important;
 
           th {
-            background-color: var(--white-color) !important ;
-            background: var(--white-color) !important;
+            background-color: var(--white) !important;
+            background: var(--white) !important;
             border-bottom: 1px solid #eeeff2;
             border-top: none !important;
             border-left: none !important;
@@ -159,7 +159,7 @@ rk-table-container {
         tr {
           &.selected {
             td {
-              background: rgba($color: $primary, $alpha: 0.1);
+              background: var(--primary-1);
             }
           }
           &:last-child {
@@ -219,7 +219,7 @@ table {
     tr {
       th {
         background: $table-header-background-color;
-        color: $blue-grey;
+        color: var(--blue-grey);
         border-bottom: none !important;
         border-left: none !important;
         border-top: 1px solid $table-border-color !important;
@@ -255,7 +255,7 @@ table {
             height: 17px;
             width: 17px;
             svg {
-              color: $blue-grey;
+              color: var(--blue-grey);
             }
           }
         }
@@ -264,17 +264,17 @@ table {
   }
 
   tbody {
-    color: $gray;
+    color: var(--gray);
     font-size: 10px;
     font-weight: 500;
 
     tr {
       td {
-        background: $white;
+        background: var(--white);
         border-color: $table-border-color;
 
         &.index {
-          color: $blue-grey;
+          color: var(--blue-grey);
         }
       }
     }
@@ -310,10 +310,10 @@ table.table.table-borderless {
   display: inline-block;
   font-size: 10px;
   background: transparent;
-  color: rgba($color: $primary, $alpha: 0.8);
+  color: var(--primary-8);
 
   &:hover {
-    color: $primary;
+    color: var(--primary);
   }
 }
 

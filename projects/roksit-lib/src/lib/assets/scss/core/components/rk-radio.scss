@@ -1,9 +1,6 @@
-$rk-radio-checked-color: $primary;
-$rk-radio-border-color: $primary;
 $rk-radio-size: 22px;
 $rk-radio-checked-size: 10px;
 $rk-radio-ripple-size: 15px;
-$rk-radio-label-color: #303759;
 
 $disabled-rk-radio-color: #979ebc;
 
@@ -23,7 +20,7 @@ $disabled-rk-radio-color: #979ebc;
   .rk-radio {
     input[type="radio"]{
       &:checked + label {
-        color: $rk-radio-checked-color;
+        color: var(--primary);
       }
     }
 
@@ -47,7 +44,7 @@ $disabled-rk-radio-color: #979ebc;
   input[type="radio"] {
     display: none;
     &:checked + label:before {
-      border-color: $rk-radio-checked-color;
+      border-color: var(--primary);
       //   animation: ripple 0.2s linear forwards;
     }
     &:checked + label:after {
@@ -85,7 +82,7 @@ $disabled-rk-radio-color: #979ebc;
     margin-bottom: 0;
     cursor: pointer;
     vertical-align: middle;
-    color: $rk-radio-label-color;
+    color: var(--text-dark);
     padding-top: 2px;
     font-size: 12px;
     &:before,
@@ -101,7 +98,7 @@ $disabled-rk-radio-color: #979ebc;
       top: 0;
       width: $rk-radio-size;
       height: $rk-radio-size;
-      border: 2px solid $rk-radio-border-color;
+      border: 2px solid var(--primary);
     }
     &:after {
       top: $rk-radio-size / 2 - $rk-radio-checked-size / 2;
@@ -109,7 +106,7 @@ $disabled-rk-radio-color: #979ebc;
       width: $rk-radio-checked-size;
       height: $rk-radio-checked-size;
       transform: scale(0);
-      background: $rk-radio-checked-color;
+      background: var(--primary);
     }
   }
 }

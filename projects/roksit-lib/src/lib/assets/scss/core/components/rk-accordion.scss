@@ -10,15 +10,15 @@
 
       .rk-accordion-header {
         min-height: 36px;
-        background: $pale-grey;
+        background: var(--pale-gray);
         color: #898ea4;
         border-radius: 6px;
         padding: 0 13px;
         border-left: none;
 
         &.active {
-          box-shadow: 0 2px 10px 0 rgba(51, 151, 197, 0.3);
-          color: $primary;
+          box-shadow: 0 2px 10px 0 var(--primary-box-shadow);
+          color: var(--primary);
         }
 
         .rk-accordion-header-step {
@@ -63,15 +63,15 @@
 
       &.active,
       &.passed {
-        border-left-color: $primary;
+        border-left-color: var(--primary);
 
         .rk-accordion-header-step {
-          background: $primary;
-          border-left: 1px solid $primary;
+          background: var(--primary);
+          border-left: 1px solid var(--primary);
         }
 
         .rk-accordion-header-title {
-          color: $primary;
+          color: var(--primary);
         }
       }
 
@@ -80,7 +80,7 @@
         height: 24px;
         font-size: 10px;
         color: white;
-        background: $light-blue-grey;
+        background: var(--light-blue-grey);
         border-top-right-radius: 24px;
         border-bottom-right-radius: 24px;
         display: flex;
@@ -89,7 +89,7 @@
       }
 
       .rk-accordion-header-title {
-        color: #303759;
+        color: var(--text-dark);
         font-size: 18px;
         font-weight: 500;
       }
@@ -105,7 +105,7 @@
 
       &.active {
         display: block;
-        border-left: 1px solid $primary;
+        border-left: 1px solid var(--primary);
       }
     }
   }

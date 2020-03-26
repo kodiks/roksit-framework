@@ -11,7 +11,7 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    color: $gray;
+    color: var(--gray);
     user-select: none;
 
     &.ml-none {
@@ -32,19 +32,19 @@
       left: 0;
       height: $rk-checkbox-height;
       width: $rk-checkbox-width;
-      border: 2px solid $light-blue-grey;
+      border: 2px solid var(--light-blue-grey);
       border-radius: 3px;
     }
 
     &:hover {
       input ~ .checkmark {
-        border-color: $blue-grey;
+        border-color: var(--blue-grey);
       }
     }
 
     & input:checked ~ .checkmark {
-      background-color: $primary;
-      border-color: $primary;
+      background-color: var(--primary);
+      border-color: var(--primary);
     }
 
     & .checkmark::after {
@@ -62,7 +62,7 @@
       top: 50%;
       width: 7px;
       height: 13px;
-      border: solid $white;
+      border: solid var(--white);
       border-width: 0px 3px 3px 0px;
       transform: rotate(45deg) translate(-50%, -50%);
       border-radius: 1px;

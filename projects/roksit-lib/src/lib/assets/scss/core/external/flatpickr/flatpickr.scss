@@ -600,7 +600,7 @@ span.flatpickr-weekday {
   &.notAllowed,
   &.notAllowed.prevMonthDay,
   &.notAllowed.nextMonthDay {
-    color: $light-blue-grey;
+    color: var(--light-blue-grey);
     background: transparent;
 
     @if global-variable-exists(disabled_border_color) {
@@ -843,13 +843,13 @@ span.flatpickr-weekday {
 .flatpickr-months .flatpickr-prev-month:hover,
 .flatpickr-months .flatpickr-next-month:hover {
   svg g {
-    fill: rgba($color: $gray, $alpha: 0.8);
+    fill: var(--gray-8);
   }
 }
 
 span.flatpickr-weekday {
   font-size: 14px;
-  color: $blue-grey;
+  color: var(--blue-grey);
   font-weight: 400;
 }
 
@@ -860,7 +860,7 @@ span.flatpickr-weekday {
 .flatpickr-current-month .flatpickr-monthDropdown-months {
   pointer-events: none;
   font-weight: 500;
-  color: $gray;
+  color: var(--gray);
   -webkit-appearance: none;
   font-size: 14px;
   text-align-last: right;
@@ -869,7 +869,7 @@ span.flatpickr-weekday {
 .flatpickr-current-month input.cur-year {
   font-size: 14px;
   font-weight: 500;
-  color: $gray;
+  color: var(--gray);
   position: relative;
   top: -1px;
 }

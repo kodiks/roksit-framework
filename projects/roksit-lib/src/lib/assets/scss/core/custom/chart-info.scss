@@ -4,11 +4,11 @@
   display: flex;
   flex-direction: column;
   border-radius: 10px;
-  background: $pale-grey;
+  background: var(--pale-gray);
 
   .section {
     flex: 1;
-    color: $gray;
+    color: var(--gray);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,25 +16,25 @@
     text-align: center;
 
     .section-title {
-      color: $blue-grey;
+      color: var(--blue-grey);
       font-size: 12px;
       font-weight: 500;
     }
 
     .value {
       font-size: 24px;
-      color: $gray;
+      color: var(--gray);
     }
 
     &.active {
       border-radius: 10px;
       background: rgba($color: #2fdd57, $alpha: 0.8);
       flex-direction: row;
-      color: $white;
+      color: var(--white);
       font-size: 24px;
 
       .value {
-        color: $white !important;
+        color: var(--white) !important;
       }
 
       i-feather {
@@ -46,7 +46,7 @@
           top: -7px;
           width: 26px;
           height: 26px;
-          color: $white;
+          color: var(--white);
         }
       }
     }

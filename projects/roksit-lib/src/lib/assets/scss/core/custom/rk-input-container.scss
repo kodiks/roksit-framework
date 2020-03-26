@@ -1,6 +1,6 @@
 .rk-input-container {
   width: 100%;
-  border: 1px solid $light-blue-grey;
+  border: 1px solid var(--light-blue-grey);
   display: flex;
   align-items: center;
   border-radius: 5px;
@@ -9,7 +9,7 @@
     flex: 1;
     display: flex;
     align-items: center;
-    color: $light-blue-grey;
+    color: var(--light-blue-grey);
     padding-right: 10px;
 
     input {
@@ -18,10 +18,10 @@
       border: 0;
       outline: 0;
       background: transparent;
-      color: $gray;
+      color: var(--gray);
 
-      ::placeholder {
-          color: $blue-grey;
+      ::placeholder  {
+        color: var(--blue-grey);
       }
     }
   }
@@ -30,7 +30,7 @@
     flex: 1;
 
     .rk-select {
-        border: none;
+      border: none;
     }
   }
 }
