@@ -288,7 +288,7 @@ import {
     IconEqualComponent, IconNotEqualComponent, IconDashboard,
     IconCustomReports, IconDeployment, IconDevice, IconMonitor,
     IconRoamingClients, IconSettings, IconHelp, IconPublicIp,
-    IconRequestCategory, IconThemeColor, IconTools
+    IconRequestCategory, IconThemeColor, IconTools, IconClone
 } from './icons.component';
 import { IconForMenuComponent } from './icon-for-menu.component';
 import { CommonModule } from '@angular/common';
@@ -599,7 +599,8 @@ export const allIcons = {
         IconPublicIp,
         IconRequestCategory,
         IconThemeColor,
-        IconTools
+        IconTools,
+        IconClone
     ],
     exports: [
         IconForMenuComponent,
@@ -617,7 +618,8 @@ export const allIcons = {
         IconPublicIp,
         IconRequestCategory,
         IconThemeColor,
-        IconTools
+        IconTools,
+        IconClone
     ]
 })
 export class IconsModule {

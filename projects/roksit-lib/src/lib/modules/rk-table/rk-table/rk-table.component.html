@@ -63,7 +63,7 @@
   </div>
 
   <div class="table-pagination" *ngIf="showPagination">
-    <rk-table-pagination [maxSize]="maxSize" [totalCount]="totalCount" [pageViewCount]="pageViewCount"
+    <rk-table-pagination [maxSize]="maxSize" [totalCountPlaceholder]="totalCountPlaceholder" [totalCount]="totalCount" [pageViewCount]="pageViewCount"
       [currentPage]="currentPage" (pageChange)="onPageChange($event)"
       (pageViewCountChange)="onPageViewCountChange($event)">
     </rk-table-pagination>

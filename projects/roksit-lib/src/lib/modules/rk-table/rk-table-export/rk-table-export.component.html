@@ -7,7 +7,7 @@
     <div *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu">
         <ul class="rk-dropdown default">
             <!-- EXCEL -->
-            <li (click)="clicked('excel')">
+            <li (click)="clicked('excel')" *ngIf="showTypes.excel">
                 <a class="dropdown-item">
                     <svg class="dropdown-item-icon" id="Capa_1" enable-background="new 0 0 511.962 511.962" height="32"
                         viewBox="0 0 511.962 511.962" width="32" xmlns="http://www.w3.org/2000/svg">
@@ -29,7 +29,7 @@
             </li>
 
             <!-- PDF -->
-            <li (click)="clicked('pdf')">
+            <li (click)="clicked('pdf')" *ngIf="showTypes.pdf">
                 <a class="dropdown-item">
                     <svg class="dropdown-item-icon" height="32" viewBox="-16 0 512 512" width="32"
                         xmlns="http://www.w3.org/2000/svg">

@@ -3,7 +3,7 @@
         <rk-select [options]="options" [(value)]="pageViewCount" (valueChange)="onPageViewCountChange()" ></rk-select>
 
         <span class="page">
-            {{ (currentPage - 1) * pageViewCount  }} - {{  currentPage  * pageViewCount }} / {{ totalCount }}
+            {{ (currentPage - 1) * pageViewCount  }} - {{  currentPage  * pageViewCount }} / {{ totalCountPlaceholder ? totalCountPlaceholder : totalCount }}
         </span>
     </div>
 

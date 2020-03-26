@@ -79,10 +79,19 @@
     </div>
 
     <div class="container-fluid">
+
+      <div class="row mt-4">
+        <div class="col-12 mt-3">
+          <rk-checkbox size="sm" class="mr-2">Rk Checkbox</rk-checkbox>
+          <rk-checkbox size="md" class="mr-2">Rk Checkbox</rk-checkbox>
+          <rk-checkbox size="lg" class="mr-2">Rk Checkbox</rk-checkbox>
+        </div>
+      </div>
+
       <div class="row mt-4 gutters-sm">
         <div class="col-md">
-          <rk-infobox [active]="true" [title]="'Total'" className="blue" [color]="'#4353ff'" [type]="1"
-            [valueOne]="245" [valueTwo]="345" description="Toplam DNS sorgu sayısı">
+          <rk-infobox [active]="true" [title]="'Total'" className="blue" [color]="'#4353ff'" [type]="1" [valueOne]="245"
+            [valueTwo]="345" description="Toplam DNS sorgu sayısı">
           </rk-infobox>
         </div>
 
@@ -125,7 +134,8 @@
 
       <div class="row mt-3">
         <div class="col-12">
-          <rk-select [options]="options" isSearchable="true" [isShowButton]="true" buttonText="Create New Profile" buttonIcon="plus"></rk-select>
+          <rk-select [options]="options" isSearchable="true" [isShowButton]="true" buttonText="Create New Profile"
+            buttonIcon="plus"></rk-select>
         </div>
       </div>
 
@@ -295,11 +305,7 @@
           </table>
         </div>
 
-        <div class="col-12 mt-3">
-          <rk-checkbox size="sm" class="mr-2">Rk Checkbox</rk-checkbox>
-          <rk-checkbox size="md" class="mr-2">Rk Checkbox</rk-checkbox>
-          <rk-checkbox size="lg" class="mr-2">Rk Checkbox</rk-checkbox>
-        </div>
+
 
         <div class="col-12 mt-3">
           <div class="rk-search-container">

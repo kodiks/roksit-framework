@@ -1,6 +1,11 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 export type ExportTypes = 'excel' | 'pdf';
+
+export interface RkTableExportVisibles {
+    excel: boolean;
+    pdf: boolean;
+}
 
 @Component({
     selector: 'rk-table-export',
@@ -9,6 +14,11 @@ export type ExportTypes = 'excel' | 'pdf';
 export class RkTableExportComponent implements OnInit {
 
     constructor() { }
+
+    @Input() showTypes: RkTableExportVisibles = {
+        excel: true,
+        pdf: true
+    };
 
     @Output() event: EventEmitter<ExportTypes> = new EventEmitter<ExportTypes>();
 

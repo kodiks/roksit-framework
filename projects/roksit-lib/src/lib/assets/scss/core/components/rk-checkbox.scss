@@ -32,18 +32,19 @@
       left: 0;
       height: $rk-checkbox-height;
       width: $rk-checkbox-width;
-      background-color: #eee;
+      border: 2px solid $light-blue-grey;
       border-radius: 3px;
     }
 
     &:hover {
       input ~ .checkmark {
-        background-color: #ccc;
+        border-color: $blue-grey;
       }
     }
 
     & input:checked ~ .checkmark {
       background-color: $primary;
+      border-color: $primary;
     }
 
     & .checkmark::after {

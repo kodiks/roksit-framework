@@ -12,6 +12,8 @@ export class RkTablePaginationComponent implements OnInit {
 
     @Input() totalCount = 0;
 
+    @Input() totalCountPlaceholder: number;
+
     @Input() pageViewCount = 0;
 
     @Input() currentPage = 1;
