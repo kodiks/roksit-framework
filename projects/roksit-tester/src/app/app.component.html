@@ -81,6 +81,12 @@
     <div class="container-fluid">
 
       <div class="row mt-4">
+        <div class="col-12">
+          <rk-date (complete)="completed($event)"></rk-date>
+        </div>
+      </div>
+
+      <div class="row mt-4">
         <div class="col-12 mt-3">
           <rk-checkbox size="sm" class="mr-2">Rk Checkbox</rk-checkbox>
           <rk-checkbox size="md" class="mr-2">Rk Checkbox</rk-checkbox>
@@ -796,11 +802,7 @@
 
         {{chk}}
 
-        <div class="row mt-4">
-          <div class="col-12">
-            <rk-date (complete)="completed($event)"></rk-date>
-          </div>
-        </div>
+
 
 
 

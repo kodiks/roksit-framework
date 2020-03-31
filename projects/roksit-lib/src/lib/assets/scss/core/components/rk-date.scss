@@ -28,6 +28,8 @@ rk-date {
 .rk-date-btn {
   position: relative;
   z-index: 100;
+  height: 36px !important;
+  padding: 0 15px !important;
 }
 
 .rk-date-container {
@@ -205,33 +207,6 @@ rk-date {
         margin-bottom: 0;
       }
     }
-
-    // .rk-dp-time {
-    //   display: flex;
-    //   flex-direction: row;
-    //   align-items: center;
-    //   justify-content: space-between;
-    //   margin: 10px 0;
-
-    //   .time-icon {
-    //     color: $blue-grey;
-    //   }
-
-    //   .hour,
-    //   .minute {
-    //     margin-left: 10px;
-    //     flex: 1;
-
-    //     .rk-input {
-    //       width: 100%;
-    //     }
-    //   }
-
-    //   .rk-select {
-    //     flex: 1;
-    //     margin-left: 10px;
-    //   }
-    // }
   }
 
   .rk-date-actions {
