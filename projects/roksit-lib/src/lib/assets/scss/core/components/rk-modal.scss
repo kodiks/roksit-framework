@@ -24,6 +24,7 @@
     align-items: center;
     position: relative;
     border-bottom: 2px solid #eeeef2;
+    border-bottom-color: var(--table-border);
     padding: 30px 20px 10px;
 
     .rk-modal-header-icon {
@@ -36,7 +37,7 @@
 
     .rk-modal-header-title {
       h5 {
-        color: var(--text-dark);
+        color: var(--title-color);
         font-size: 16px;
         font-weight: 500;
         margin-bottom: 0;
@@ -65,7 +66,7 @@
 
         i-feather {
           svg {
-            color: var(--white);
+            color: var(--text-light);
             fill: var(--blue-grey);
           }
         }
@@ -118,7 +119,7 @@
 
   .rk-modal-footer {
     height: 53px;
-    background: var(--primary-8);
+    background: var(--modal-footer);
     display: flex;
     align-items: center;
     justify-content: space-between;

@@ -28,7 +28,7 @@
   touch-action: manipulation;
   box-shadow: none;
 
-  background: $calendarBackground;
+  background: var(--white);
 
   &.open,
   &.inline {

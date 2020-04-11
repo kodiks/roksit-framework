@@ -1,5 +1,5 @@
 <div class="rk-info-box {{ className }}" [ngClass]="{ 'active' : isActive }"
-    [ngStyle]="{ 'background-color' : isActive ? color: 'white' }" (click)="toggleActive()">
+    [ngStyle]="{ 'background-color' : isActive ? color: 'var(--infobox-bg)' }" (click)="toggleActive()">
     <div class="info-header">
         <span class="l-border" [ngStyle]="{ 'background-color' : !isActive ? color: 'white' }"></span>
         <span class="text">{{ title }}</span>
@@ -49,7 +49,7 @@
         </div>
     </div>
 
-    <div class="rk-description">
+    <div class="rk-description" [ngStyle]="{'color': isActive && themeColor === 'dark' ? '#FFFFFF' : 'var(--gray)'}">
         {{ description }}
     </div>
 </div>

@@ -98,7 +98,7 @@ $switch-bg-color: #cbd0e5;
 .rk-form-switch input:checked + i + span::before {
   content: "ON";
   left: 5px;
-  color: white;
+  color: var(--text-light);
   transition: 0.2s;
 }
 

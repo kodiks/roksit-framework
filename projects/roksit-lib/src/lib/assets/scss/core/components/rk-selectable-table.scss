@@ -27,7 +27,7 @@
       cursor: pointer;
 
       .rk-selectable-table-item-title {
-        color: var(--white) !important;
+        color: var(--text-light) !important;
       }
 
       .rk-selectable-badge {
@@ -70,7 +70,7 @@
         height: 12px;
         padding: 6px;
         background-color: rgba($color: #145683, $alpha: 0.5);
-        color: var(--white);
+        color: var(--text-light);
         border-radius: 11px;
         font-size: 8px;
         font-weight: 500;
@@ -82,7 +82,7 @@
         width: 12px;
 
         svg {
-          color: var(--white);
+          color: var(--text-light);
           width: 12px;
           height: 12px;
         }

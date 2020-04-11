@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
+import { RkUtilityService, ThemeColor } from '../../services/rk-utility.service';
 
 @Component({
     selector: 'rk-infobox',
@@ -7,7 +8,16 @@ import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef }
 })
 
 export class RkInfoBoxComponent implements OnInit {
-    constructor() { }
+
+    constructor(
+        private utilityService: RkUtilityService
+    ) {
+        utilityService.themeColor.subscribe(result => {
+            this.themeColor = result;
+        });
+    }
+
+    themeColor: ThemeColor = 'light';
 
     // tslint:disable-next-line: no-input-rename
     @Input('active') isActive = false;

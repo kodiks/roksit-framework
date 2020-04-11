@@ -18,12 +18,12 @@ export interface RkFilterOutput {
     animations: [
         trigger('must', [
             state('true', style({ background: '#4FC3F7', color: '#fff' })),
-            state('false', style({ background: '#ffffff', color: '#3397c5' })),
+            state('false', style({ background: 'var(--body-bg)', color: '#3397c5' })),
             transition('0 <=> 1', animate('500ms ease'))
         ]),
         trigger('mustnot', [
             state('true', style({ background: '#ef9a9a' })),
-            state('false', style({ background: '#ffffff' })),
+            state('false', style({ background: 'var(--body-bg)' })),
             transition('0 <=> 1', animate('500ms ease'))
         ]),
     ]

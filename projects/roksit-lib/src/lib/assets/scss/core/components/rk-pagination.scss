@@ -7,6 +7,10 @@
   height: 37px;
   top: -1px;
 
+  a {
+    background: var(--white);
+  }
+
   .page-link {
     border-radius: 0 !important;
   }
@@ -88,6 +92,7 @@
           border: none;
           border-radius: 5px !important;
           margin-left: auto;
+          background: var(--white);
 
           &:focus {
             box-shadow: none;
@@ -96,7 +101,7 @@
 
         &.active {
           .page-link {
-            color: var(--white) !important;
+            color: var(--text-light) !important;
             background: var(--primary) !important;
           }
         }

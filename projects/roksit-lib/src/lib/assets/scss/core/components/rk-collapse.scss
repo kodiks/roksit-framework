@@ -1,10 +1,10 @@
 .rk-collapse {
-  border: 1px solid rgba 37 38 94, 0.05;
+  border: 1px solid rgba(37, 38, 94, 0.05);
   border-radius: 6px;
   overflow: hidden;
 
   .rk-collapse-header {
-    background: var(--pale-gray-5);
+    background: var(--collapse-active);
     padding: 10px 8px;
     min-height: 80px;
     display: flex;

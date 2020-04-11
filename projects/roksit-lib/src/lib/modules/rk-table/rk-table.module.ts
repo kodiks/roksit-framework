@@ -11,7 +11,7 @@ import { RkBadgeModule } from '../rk-badge/rk-badge.module';
 import { RkCheckboxModule } from '../rk-checkbox/rk-checkbox.module';
 import { RkTableExportComponent } from './rk-table-export/rk-table-export.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { BsDropdownModule } from 'ngx-bootstrap';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { RkProgressBarModule } from '../rk-progressbar/rk-progressbar.module';
 
 @NgModule({

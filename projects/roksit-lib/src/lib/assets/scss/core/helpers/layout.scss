@@ -11,7 +11,7 @@
     width: 100%;
     flex-grow: 1;
     margin: 0 2px;
-    background-color: var(--pale-gray);
+    background-color: var(--card-bg);
     padding: 20px;
     display: flex;
 
@@ -37,7 +37,7 @@
 
 .rk-data-row {
   padding: 10px 15px;
-  background-color: white;
+  background-color: var(--body-bg);
   border-radius: 30px;
 
   &.active {
@@ -134,7 +134,7 @@
 
   .rk-panel-item {
     margin-top: 10px;
-    background-color: white;
+    background-color: var(--body-bg);
     padding: 15px;
     border-radius: 10px;
   }

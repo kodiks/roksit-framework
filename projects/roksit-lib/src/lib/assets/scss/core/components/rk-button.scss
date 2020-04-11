@@ -71,13 +71,13 @@
 
   &.btn-primary {
     background: var(--primary);
-    color: var(--white) !important;
+    color: var(--text-light) !important;
     border-color: var(--primary);
     display: flex;
     align-items: center;
 
     i-feather svg {
-      color: var(--white) !important;
+      color: var(--text-light) !important;
     }
 
     .arrow-icon {
@@ -121,7 +121,7 @@
 
     &:not(.btn-link):focus {
       .feather {
-        color: var(--white);
+        color: var(--text-light);
       }
     }
   }
@@ -157,7 +157,7 @@
 
   &:not(.btn-link):focus {
     outline: none !important;
-    color: var(--white);
+    color: var(--text-light);
     background: var(--primary);
     border-color: var(--primary);
   }
@@ -176,7 +176,7 @@
 
 .btn-fill {
   background: var(--primary);
-  color: var(--white);
+  color: var(--text-light);
   border-radius: 5px;
   font-weight: 500;
   font-size: 14px;

@@ -22,7 +22,7 @@
 
   &:hover {
     background: var(--primary);
-    color: var(--white) !important;
+    color: var(--text-light) !important;
     border-color: var(--primary);
   }
 
@@ -59,7 +59,7 @@
     font-weight: 500;
     border: 0;
     outline: 0 !important;
-    color: white;
+    color: var(--text-light);
     cursor: pointer;
 
     i-feather {
@@ -67,7 +67,7 @@
       height: auto;
 
       svg {
-        color: white;
+        color: var(--text-light);
       }
     }
 
@@ -88,12 +88,12 @@
     overflow-y: auto;
     max-height: 480px;
     text-align: left;
-    background: white;
+    background: var(--body-bg);
 
     .rk-select-search {
       padding: 10px 20px;
-      background: white;
-      border-bottom: 1px solid #ccd4e0;
+      background: var(--body-bg);
+      border-bottom: 1px solid var(--infobox-border);
       margin-bottom: 10px;
     }
 
@@ -122,17 +122,17 @@
 
         &:hover {
           background: var(--primary);
-          color: var(--white);
+          color: var(--text-light);
         }
 
         &:active {
           background: var(--primary);
-          color: var(--white);
+          color: var(--text-light);
         }
 
         &.active {
           background: var(--primary);
-          color: var(--white);
+          color: var(--text-light);
         }
       }
     }

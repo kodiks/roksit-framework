@@ -44,10 +44,10 @@
     &:focus,
     &.active {
       background: var(--primary);
-      color: var(--white);
+      color: var(--text-light);
       box-shadow: 0 2px 10px 0 rgba(37, 38, 94, 0.15);
       i-feather {
-        color: var(--white);
+        color: var(--text-light);
       }
     }
 

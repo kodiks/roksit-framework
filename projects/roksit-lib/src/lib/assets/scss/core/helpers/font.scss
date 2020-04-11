@@ -1,7 +1,6 @@
-.rk-title  {
-
+.rk-title {
     &-1 {
-        color: var(--gray);
+        color: var(--title-color);
         font-weight: 500;
         font-stretch: normal;
         font-style: normal;
@@ -12,7 +11,7 @@
     }
 
     &-2 {
-        color: var(--gray);
+        color: var(--title-color);
         font-weight: 500;
         font-stretch: normal;
         font-style: normal;

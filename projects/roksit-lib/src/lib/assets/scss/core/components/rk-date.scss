@@ -121,13 +121,13 @@ rk-date {
 
           &:hover {
             background: var(--primary-8);
-            color: var(--white);
+            color: var(--text-light);
             cursor: pointer;
           }
 
           &.active {
             background: var(--primary);
-            color: var(--white);
+            color: var(--text-light);
           }
         }
       }

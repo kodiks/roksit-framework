@@ -7,6 +7,10 @@
     margin: 0;
   }
 
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
   button {
     position: absolute;
     background: transparent;

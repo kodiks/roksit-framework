@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RoksitModule, ServicesModule } from 'projects/roksit-lib/src/public-api';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { BsDropdownModule } from 'ngx-bootstrap';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 @NgModule({
   declarations: [

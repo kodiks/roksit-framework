@@ -1,15 +1,12 @@
-$table-border-color: #eeeff2;
-$table-header-background-color: #f9f9fa;
-
 rk-table-container {
   display: flex;
   flex-direction: column;
   width: 100%;
-  background: white;
+  background: var(--table-bg);
   border-radius: 13px;
   margin-bottom: 55px;
   position: relative;
-  border: 1px solid $table-border-color;
+  border: 1px solid var(--table-border);
   // overflow: hidden;
 
   .rk-table-container-header {
@@ -83,7 +80,7 @@ rk-table-container {
           padding: 0;
           border: none;
           outline: none;
-          background: linear-gradient(to right, #ffffff, transparent);
+          background: linear-gradient(to right, var(--table-bg), transparent);
           text-align: left;
           position: absolute;
           left: 0;
@@ -101,7 +98,7 @@ rk-table-container {
           padding: 0;
           border: none;
           outline: none;
-          background: linear-gradient(to left, #ffffff, transparent);
+          background: linear-gradient(to left, var(--table-bg), transparent);
           text-align: right;
           position: absolute;
           right: 0;
@@ -134,9 +131,9 @@ rk-table-container {
           border: none !important;
 
           th {
-            background-color: var(--white) !important;
+            background-color: var(--text-light) !important;
             background: var(--white) !important;
-            border-bottom: 1px solid #eeeff2;
+            border-bottom: 1px solid var(--table-border);
             border-top: none !important;
             border-left: none !important;
             border-right: none !important;
@@ -179,7 +176,7 @@ rk-table-container {
 
         th,
         td {
-          border: 1px solid $table-border-color !important;
+          border: 1px solid var(--table-border) !important;
           &:first-child {
             border-left: none !important;
           }
@@ -201,12 +198,12 @@ rk-table-container {
 }
 
 table {
-  border: 1px solid $table-border-color;
+  border: 1px solid var(--table-border);
 
   &.table-bordered {
     tr {
       td {
-        border-right: 1px solid $table-border-color;
+        border-right: 1px solid var(--table-border);
 
         &:last-child  {
           border-right: none;
@@ -218,12 +215,12 @@ table {
   thead {
     tr {
       th {
-        background: $table-header-background-color;
+        background: var(--table-header-bg);
         color: var(--blue-grey);
         border-bottom: none !important;
         border-left: none !important;
-        border-top: 1px solid $table-border-color !important;
-        border-right: 1px solid $table-border-color !important;
+        border-top: 1px solid var(--table-border) !important;
+        border-right: 1px solid var(--table-border) !important;
         font-size: 11px;
         font-weight: 500;
         position: relative;
@@ -271,7 +268,7 @@ table {
     tr {
       td {
         background: var(--white);
-        border-color: $table-border-color;
+        border-color: var(--table-border);
 
         &.index {
           color: var(--blue-grey);
@@ -299,7 +296,7 @@ table.table.table-borderless {
     }
 
     td {
-      border-top: 1px solid #eeeef2 !important;
+      border-top: 1px solid var(--table-border) !important;
     }
   }
 }

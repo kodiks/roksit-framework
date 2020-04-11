@@ -2,9 +2,10 @@
 
 .rk-info-box {
   border-radius: 6px;
-  border: solid 1px #e4e9f1;
+  border: solid 1px white;
+  border-color: var(--infobox-border);
+  background-color: var(--infobox-bg);
   padding: 5px;
-  background-color: white;
   cursor: pointer;
   width: 100%;
   transition: 0.2s all;
@@ -134,7 +135,7 @@
     transition: 0.2s all;
     position: relative;
     margin-bottom: 60px;
-
+    
     &::after {
       content: "";
       width: 101%;
@@ -166,20 +167,20 @@
     }
 
     & .info-header {
-      color: white;
+      color: var(--text-light);
     }
 
     .info-allow,
     .info-block {
       span {
-        color: white !important;
+        color: var(--text-light) !important;
       }
     }
 
     .info-hit,
     .info-domain {
       span {
-        color: white !important;
+        color: var(--text-light) !important;
       }
     }
   }
