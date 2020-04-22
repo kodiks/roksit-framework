@@ -3,5 +3,9 @@
         "activityBar.background": "#183138",
         "titleBar.activeBackground": "#22454E",
         "titleBar.activeForeground": "#F7FBFC"
-    }
+    },
+    "vscode_custom_css.imports": [
+        "file:///Users/{vu}/the-dark-knight.css"
+    ],
+    "vscode_custom_css.policy": true,
 }

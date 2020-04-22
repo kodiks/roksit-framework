@@ -4,17 +4,17 @@ import { RkSelectModel } from '../rk-select/rk-select.component';
 declare const $: any;
 
 const DEFAULT_TIMES = [
-    { value: 1, displayText: '1 hour' },
-    { value: 3, displayText: '3 hour' },
-    { value: 6, displayText: '6 hour' },
-    { value: 12, displayText: '12 hour' },
-    { value: 24, displayText: 'Last 1 day' },
-    { value: 24 * 2, displayText: 'Last 2 day' },
-    { value: 24 * 3, displayText: 'Last 3 day' },
-    { value: 24 * 7, displayText: 'Last 1 week' },
-    { value: 24 * 14, displayText: 'Last 2 week' },
-    { value: 24 * 30, displayText: 'Last month' },
-    { value: 24 * 30 * 2, displayText: 'Last 2 month' }
+    { value: 60 * 1, displayText: '1 hour' },
+    { value: 60 * 3, displayText: '3 hour' },
+    { value: 60 * 6, displayText: '6 hour' },
+    { value: 60 * 12, displayText: '12 hour' },
+    { value: 60 * 24, displayText: 'Last 1 day' },
+    { value: 60 * 24 * 2, displayText: 'Last 2 day' },
+    { value: 60 * 24 * 3, displayText: 'Last 3 day' },
+    { value: 60 * 24 * 7, displayText: 'Last 1 week' },
+    { value: 60 * 24 * 14, displayText: 'Last 2 week' },
+    { value: 60 * 24 * 30, displayText: 'Last month' },
+    { value: 60 * 24 * 30 * 2, displayText: 'Last 2 month' }
 ] as RkDateTime[];
 
 @Component({
@@ -52,11 +52,13 @@ export class RkDateComponent implements OnInit, AfterViewInit {
     }
 
     private setParametersByDates() {
-        this.startMinute = this.startDate.getMinutes();
-        this.startHour = this.startDate.getHours();
+        if (this.startDate && this.endDate) {
+            this.startMinute = this.startDate.getMinutes();
+            this.startHour = this.startDate.getHours();
 
-        this.endMinute = this.endDate.getMinutes();
-        this.endHour = this.endDate.getHours();
+            this.endMinute = this.endDate.getMinutes();
+            this.endHour = this.endDate.getHours();
+        }
     }
 
     /**
@@ -159,18 +161,22 @@ export class RkDateComponent implements OnInit, AfterViewInit {
         });
     }
 
-    selectTime(time: RkDateTime) {
+    selectTime(time: RkDateTime, dates?: { startDate: Date, endDate: Date }) {
         this.times.forEach(_time => _time.selected = false);
 
         time.selected = true;
 
-        const startDate = new Date();
-        const endDate = new Date();
+        const startDate = dates ? dates.startDate : new Date();
+        const endDate = dates ? dates.endDate : new Date();
 
-        startDate.setHours(startDate.getHours() - time.value);
+        if (!dates) {
+            startDate.setMinutes(startDate.getMinutes() - time.value);
+        }
 
         this.startDate = startDate;
         this.endDate = endDate;
+
+        this.setParametersByDates();
     }
 
 }

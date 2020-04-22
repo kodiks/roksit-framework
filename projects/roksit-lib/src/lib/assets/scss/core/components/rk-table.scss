@@ -221,7 +221,7 @@ table {
         border-left: none !important;
         border-top: 1px solid var(--table-border) !important;
         border-right: 1px solid var(--table-border) !important;
-        font-size: 11px;
+        font-size: 12px;
         font-weight: 500;
         position: relative;
 
@@ -248,6 +248,26 @@ table {
           top: 50%;
           transform: translateY(-50%);
 
+          svg {
+            fill: var(--grey);
+          }
+
+          &.sort-icon-transformed {
+            transform: translateY(-50%) rotate(180deg) !important;
+          }
+
+          &.active {
+            svg {
+              fill: var(--gray) !important;
+            }
+          }
+
+          &:hover {
+            svg {
+              fill: #898989;
+            }
+          }
+
           i-feather {
             height: 17px;
             width: 17px;
@@ -262,7 +282,7 @@ table {
 
   tbody {
     color: var(--gray);
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 500;
 
     tr {
@@ -305,7 +325,7 @@ table.table.table-borderless {
   padding: 0;
   margin: 0;
   display: inline-block;
-  font-size: 10px;
+  font-size: 11px;
   background: transparent;
   color: var(--primary-8);
 

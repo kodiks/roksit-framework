@@ -36,6 +36,8 @@ export class RkAutoCompleteComponent implements OnInit {
 
         if (!this.onSelectClear) {
             this.term = obj;
+        } else {
+            this.term = { text: '', value: '' } as RkAutoCompleteModel;
         }
 
         this.onSelect.emit(obj);

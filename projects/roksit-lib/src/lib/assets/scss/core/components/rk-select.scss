@@ -90,6 +90,11 @@
     text-align: left;
     background: var(--body-bg);
 
+    &.up {
+      top: auto;
+      bottom: 40px;
+    }
+
     .rk-select-search {
       padding: 10px 20px;
       background: var(--body-bg);

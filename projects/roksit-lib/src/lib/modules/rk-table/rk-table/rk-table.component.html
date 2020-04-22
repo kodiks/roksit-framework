@@ -1,5 +1,5 @@
 <div class="table" [ngClass]="{ 'info' : info }">
-  <div class="table-content table-responsive">
+  <div class="table-content table-responsive" [ngStyle]="{'height': tableHeight ? tableHeight : 'auto'}">
     <table class="table table-bordered">
       <thead>
         <ng-container *ngIf="!config">
@@ -15,10 +15,11 @@
             <ng-container *ngFor="let col of config.columns">
               <th *ngIf="col.selected">
                 <div class="d-flex align-items-center justify-content-between">
-                  <span class="header-title"> {{ col.displayText }}</span>
+                  <span class="header-title pr-4"> {{ col.displayText }}</span>
 
-                  <button class="table-btn ripple">
-                    <i-feather name="more-vertical"></i-feather>
+                  <button class="table-btn ripple" (click)="sort(col)"
+                    [ngClass]="{'sort-icon-transformed': sortDirection === 'desc' && sortedColumn === col.name, 'active': sortedColumn === col.name }">
+                    <icon-sort></icon-sort>
                   </button>
                 </div>
               </th>
@@ -30,7 +31,6 @@
         <ng-container *ngIf="!config">
           <ng-container *ngTemplateOutlet="body"></ng-container>
         </ng-container>
-
 
         <ng-container *ngIf="config">
           <tr *ngFor="let row of config.rows" [ngClass]="{'selected': row?.selected}">
@@ -47,7 +47,8 @@
 
                 <ng-template #progressBarTemplate>
                   <ng-container *ngIf="col.isProgress; else unLinkTemplate">
-                    <rk-progressbar [value]="row.progressValue" [showType]="'outside'" [sizeType]="'small'"></rk-progressbar>
+                    <rk-progressbar [value]="row.progressValue" [showType]="'outside'" [sizeType]="'small'">
+                    </rk-progressbar>
                   </ng-container>
 
                   <ng-template #unLinkTemplate>
@@ -63,8 +64,9 @@
   </div>
 
   <div class="table-pagination" *ngIf="showPagination">
-    <rk-table-pagination [maxSize]="maxSize" [totalCountPlaceholder]="totalCountPlaceholder" [totalCount]="totalCount" [pageViewCount]="pageViewCount"
-      [currentPage]="currentPage" (pageChange)="onPageChange($event)"
+    <rk-table-pagination [options]="paginationOptions" [maxSize]="maxSize"
+      [totalCountPlaceholder]="totalCountPlaceholder" [totalCount]="totalCount" [pageViewCount]="pageViewCount"
+      [currentPage]="currentPage" (pageChange)="onPageChange($event)" [selectDirection]="paginationSelectDirection"
       (pageViewCountChange)="onPageViewCountChange($event)">
     </rk-table-pagination>
   </div>

@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
+export type SelectDirection = 'up' | 'down';
+
 @Component({
     selector: 'rk-select',
     templateUrl: 'rk-select.component.html'
@@ -43,6 +45,8 @@ export class RkSelectComponent implements OnInit {
     @Input() buttonText: string;
 
     @Input() buttonIcon: string;
+
+    @Input() direction: SelectDirection = 'down';
 
     @Input() buttonCallback: () => {};
 

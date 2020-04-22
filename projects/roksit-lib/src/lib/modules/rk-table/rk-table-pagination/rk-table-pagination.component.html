@@ -1,6 +1,6 @@
 <div class="rk-pagination-contianer">
     <div class="rk-pagination-actions">
-        <rk-select [options]="options" [(value)]="pageViewCount" (valueChange)="onPageViewCountChange()" ></rk-select>
+        <rk-select [options]="options" [(value)]="pageViewCount" (valueChange)="onPageViewCountChange()" [direction]="selectDirection"></rk-select>
 
         <span class="page">
             {{ (currentPage - 1) * pageViewCount  }} - {{  currentPage  * pageViewCount }} / {{ totalCountPlaceholder ? totalCountPlaceholder : totalCount }}

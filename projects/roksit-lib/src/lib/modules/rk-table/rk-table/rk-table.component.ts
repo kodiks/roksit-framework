@@ -1,4 +1,7 @@
 import { Component, OnInit, Input, TemplateRef, Output, EventEmitter, ElementRef, ContentChild } from '@angular/core';
+import { RkSelectModel, SelectDirection } from '../../rk-select/rk-select.component';
+
+export type SortType = 'desc' | 'asc';
 
 @Component({
   selector: 'rk-table',
@@ -23,6 +26,17 @@ export class RkTableComponent implements OnInit {
 
   @Input() maxSize = 8;
 
+  @Input() tableHeight: number;
+
+  @Input() paginationOptions: RkSelectModel[] = [
+    { displayText: '10', value: 10, selected: true },
+    { displayText: '25', value: 25 },
+    { displayText: '50', value: 50 },
+    { displayText: '100', value: 100 },
+  ];
+
+  @Input() paginationSelectDirection: SelectDirection = 'down';
+
   @Output() pageChange: EventEmitter<number> = new EventEmitter();
 
   @Output() pageViewCountChange: EventEmitter<number> = new EventEmitter();
@@ -34,6 +48,12 @@ export class RkTableComponent implements OnInit {
   @Output() selectedChange = new EventEmitter();
 
   @Output() linkColumnClicked = new EventEmitter();
+
+  sortDirection: SortType = 'asc';
+
+  sortedColumn = '';
+
+  isSorted = false;
 
   ngOnInit() { }
 
@@ -74,6 +94,18 @@ export class RkTableComponent implements OnInit {
       columnModel: colModel,
       value: column
     });
+  }
+
+  sort(col: RkTableColumnModel) {
+    this.isSorted = true;
+
+    this.config.rows = this.config.rows.sort((a, b) => {
+      return this.sortDirection === 'asc' ? (a[col.name] > b[col.name] ? 1 : -1) : (a[col.name] < b[col.name] ? 1 : -1);
+    });
+
+    this.sortedColumn = col.name;
+
+    this.sortDirection = this.sortDirection === 'asc' ? 'desc' : 'asc';
   }
 }
 

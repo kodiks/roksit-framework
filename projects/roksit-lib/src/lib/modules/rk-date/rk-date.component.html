@@ -12,7 +12,7 @@
             <div class="d-flex align-items-center">
                 <h4>Start hour</h4>
                 <div class="rk-input- ml-3">
-                    <input type="text" class="rk-input" readonly [ngModel]="startDate | date: 'dd/MM/yyyy HH:mm'">
+                    <input type="text" class="rk-input" readonly (ngModelChange)="changeStartDate()" [ngModel]="startDate | date: 'dd/MM/yyyy HH:mm'">
                 </div>
             </div>
 
@@ -21,7 +21,7 @@
             <div class="d-flex align-items-center">
                 <h4>End hour</h4>
                 <div class="rk-input- ml-3">
-                    <input type="text" class="rk-input" readonly [ngModel]="endDate | date: 'dd/MM/yyyy HH:mm'">
+                    <input type="text" class="rk-input" readonly (ngModelChange)="changeEndDate()" [ngModel]="endDate | date: 'dd/MM/yyyy HH:mm'">
                 </div>
             </div>
 
@@ -68,7 +68,7 @@
 
                         <div class="rk-datepicker-input">
                             <input class="rk-input" type="text" mwlFlatpickr [(ngModel)]="startDate"
-                                (change)="changeStartDate()" [convertModelValue]="true" [hidden]="true">
+                                (ngModelChange)="changeStartDate()" [convertModelValue]="true" [hidden]="true">
                         </div>
                     </div>
                     <div class="rk-pickers">
@@ -94,7 +94,7 @@
 
                         <div class="rk-datepicker-input">
                             <input class="rk-input" type="text" mwlFlatpickr [(ngModel)]="endDate"
-                                (change)="changeEndDate()" [convertModelValue]="true" [hidden]="true">
+                                (ngModelChange)="changeEndDate()" [convertModelValue]="true" [hidden]="true">
                         </div>
                     </div>
                 </div>

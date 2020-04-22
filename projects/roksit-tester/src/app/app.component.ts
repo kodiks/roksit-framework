@@ -80,13 +80,13 @@ export class AppComponent implements OnInit {
 
   tableConfig: RkTableConfigModel = {
     columns: [
-      { id: 0, name: 'time', displayText: 'Time' },
-      { id: 1, name: 'domain', displayText: 'Domain' },
-      { id: 2, name: 'subdomain', displayText: 'Subdomain' },
+      { id: 0, name: 'time', displayText: 'Time', selected: true },
+      { id: 1, name: 'domain', displayText: 'Domain', selected: true },
+      { id: 2, name: 'subdomain', displayText: 'Subdomain', selected: true },
       { id: 3, name: 'srcip', displayText: 'Src.Ip', isLink: true },
       { id: 4, name: 'srccountry', displayText: 'Src. Country' },
-      { id: 5, name: 'dstip', displayText: 'Dst.Ip' },
-      { id: 6, name: 'dstcountry', displayText: 'Dst.Country' },
+      { id: 5, name: 'dstip', displayText: 'Dst.Ip', selected: true },
+      { id: 6, name: 'dstcountry', displayText: 'Dst.Country', selected: true },
       { id: 7, name: 'location', displayText: 'Location/Agent' },
       { id: 8, name: 'userid', displayText: 'User Id' },
       { id: 9, name: 'action', displayText: 'Action' },
@@ -96,27 +96,27 @@ export class AppComponent implements OnInit {
     rows: [
       {
         selected: true, time: '20:04', domain: 'trafficmanager.net', subdomain: 'app.trafficmanager.net', srcip: '176.23.4.52',
+        srccountry: 'Turkey', dstip: '142.45.23.231', dstcountry: 'America', location: 'X Agent', userid: 23, action: '-',
+        app: 'TraManager', cat: 'Network'
+      },
+      {
+        selected: false, time: '20:59', domain: 'example.com', subdomain: 'app.trafficmanager.net', srcip: '176.23.4.52',
         srccountry: 'Turkey', dstip: '142.45.23.231', dstcountry: 'England', location: 'X Agent', userid: 23, action: '-',
         app: 'TraManager', cat: 'Network'
       },
       {
-        selected: false, time: '20:04', domain: 'trafficmanager.net', subdomain: 'app.trafficmanager.net', srcip: '176.23.4.52',
-        srccountry: 'Turkey', dstip: '142.45.23.231', dstcountry: 'England', location: 'X Agent', userid: 23, action: '-',
+        selected: true, time: '20:02', domain: 'example.net', subdomain: 'app.trafficmanager.net', srcip: '176.23.4.52',
+        srccountry: 'Turkey', dstip: '142.45.23.231', dstcountry: 'Brasil', location: 'X Agent', userid: 23, action: '-',
         app: 'TraManager', cat: 'Network'
       },
       {
-        selected: true, time: '20:04', domain: 'trafficmanager.net', subdomain: 'app.trafficmanager.net', srcip: '176.23.4.52',
-        srccountry: 'Turkey', dstip: '142.45.23.231', dstcountry: 'England', location: 'X Agent', userid: 23, action: '-',
+        selected: true, time: '20:39', domain: 'arnold.net', subdomain: 'app.trafficmanager.net', srcip: '176.23.4.52',
+        srccountry: 'Turkey', dstip: '142.45.23.231', dstcountry: 'Turkey', location: 'X Agent', userid: 23, action: '-',
         app: 'TraManager', cat: 'Network'
       },
       {
-        selected: true, time: '20:04', domain: 'trafficmanager.net', subdomain: 'app.trafficmanager.net', srcip: '176.23.4.52',
-        srccountry: 'Turkey', dstip: '142.45.23.231', dstcountry: 'England', location: 'X Agent', userid: 23, action: '-',
-        app: 'TraManager', cat: 'Network'
-      },
-      {
-        selected: false, time: '20:04', domain: 'trafficmanager.net', subdomain: 'app.trafficmanager.net', srcip: '176.23.4.52',
-        srccountry: 'Turkey', dstip: '142.45.23.231', dstcountry: 'England', location: 'X Agent', userid: 23, action: '-',
+        selected: false, time: '20:17', domain: 'trafficmanager.net', subdomain: 'app.trafficmanager.net', srcip: '176.23.4.52',
+        srccountry: 'Turkey', dstip: '142.45.23.231', dstcountry: 'France', location: 'X Agent', userid: 23, action: '-',
         app: 'TraManager', cat: 'Network'
       },
     ],

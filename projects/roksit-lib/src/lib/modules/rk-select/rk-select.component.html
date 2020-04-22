@@ -8,7 +8,7 @@
     <i-feather name="chevron-down" (click)="show ? setShow(false) : setShow(true)" class="rk-select-icon"
         [ngClass]="{'transformed': show}"></i-feather>
 
-    <div class="rk-select-items-container" *ngIf="show">
+    <div class="rk-select-items-container" [ngClass]="{'up': direction === 'up'}" *ngIf="show">
         <div class="rk-select-search" *ngIf="isSearchable">
             <input type="text" class="rk-input w-100" [(ngModel)]="searchTerm" [placeholder]="searchPlaceholder">
         </div>
