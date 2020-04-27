@@ -1,62 +1,72 @@
 .rk-selectable-container {
-  padding-right: 10px;
+  padding-right: 15px;
   max-height: 282px;
   overflow: auto;
+}
 
-  table.rk-selectable-table {
-    font-size: 12px;
-    border: 0;
-    border-spacing: 0 5px;
-    border-collapse: separate;
+table.rk-selectable-table {
+  width: 100%;
+  font-size: 12px;
+  border: 0;
+  border-spacing: 0 5px;
+  border-collapse: separate;
 
-    tr {
-      border-radius: 6px;
-      overflow: hidden;
-      background: rgba(80, 126, 243, 0.05);
-      height: 36px;
+  thead {
+    th {
+      border-bottom: 1px solid var(--table-border) !important;
+      border-left: none !important;
+      border-right: none !important;
+      padding: 10px;
+    }
+  }
 
-      &:hover {
-        background: rgba(80, 126, 243, 0.15);
-        cursor: pointer;
-      }
+  tr {
+    border-radius: 6px;
+    overflow: hidden;
+    background: rgba(80, 126, 243, 0.05);
+    height: 36px;
 
-      &.active {
-        background: var(--primary);
+    &:hover {
+      background: rgba(80, 126, 243, 0.15);
+      cursor: pointer;
+    }
 
-        td {
-          color: white !important;
-        }
-      }
+    &.active {
+      background: var(--primary);
 
       td {
-        padding: 10px;
+        color: white !important;
+      }
+    }
 
-        &:first-child {
-          border-top-left-radius: 6px;
-          border-bottom-left-radius: 6px;
-        }
+    td {
+      padding: 10px;
 
-        &:last-child {
-          border-top-right-radius: 6px;
-          border-bottom-right-radius: 6px;
-        }
+      &:first-child {
+        border-top-left-radius: 6px;
+        border-bottom-left-radius: 6px;
+      }
 
-        &.idx {
-          color: var(--blue-grey);
-        }
+      &:last-child {
+        border-top-right-radius: 6px;
+        border-bottom-right-radius: 6px;
+      }
 
-        &.text {
-          color: var(--primary);
-        }
+      &.idx {
+        color: var(--blue-grey);
+      }
 
-        &.value {
-          color: var(--gray);
-        }
+      &.text {
+        color: var(--primary);
+      }
 
-        &.percent {
-          color: var(--gray);
-          font-weight: 500;
-        }
+      &.value {
+        color: var(--gray);
+      }
+
+      &.percent {
+        color: var(--gray);
+        font-weight: 500;
       }
     }
   }

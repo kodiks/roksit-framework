@@ -80,18 +80,18 @@ export class AppComponent implements OnInit {
 
   tableConfig: RkTableConfigModel = {
     columns: [
-      { id: 0, name: 'time', displayText: 'Time', selected: true },
-      { id: 1, name: 'domain', displayText: 'Domain', selected: true },
-      { id: 2, name: 'subdomain', displayText: 'Subdomain', selected: true },
+      { id: 0, name: 'time', displayText: 'Time', selected: true, isLink: true },
+      { id: 1, name: 'domain', displayText: 'Domain', selected: true, isLink: true },
+      { id: 2, name: 'subdomain', displayText: 'Subdomain', selected: true, isLink: true },
       { id: 3, name: 'srcip', displayText: 'Src.Ip', isLink: true },
-      { id: 4, name: 'srccountry', displayText: 'Src. Country' },
-      { id: 5, name: 'dstip', displayText: 'Dst.Ip', selected: true },
-      { id: 6, name: 'dstcountry', displayText: 'Dst.Country', selected: true },
-      { id: 7, name: 'location', displayText: 'Location/Agent' },
-      { id: 8, name: 'userid', displayText: 'User Id' },
-      { id: 9, name: 'action', displayText: 'Action' },
-      { id: 10, name: 'app', displayText: 'Application' },
-      { id: 11, name: 'cat', displayText: 'Category' }
+      { id: 4, name: 'srccountry', displayText: 'Src. Country', isLink: true },
+      { id: 5, name: 'dstip', displayText: 'Dst.Ip', selected: true, isLink: true },
+      { id: 6, name: 'dstcountry', displayText: 'Dst.Country', selected: true, isLink: true },
+      { id: 7, name: 'location', displayText: 'Location/Agent', isLink: true },
+      { id: 8, name: 'userid', displayText: 'User Id', isLink: true },
+      { id: 9, name: 'action', displayText: 'Action', isLink: true },
+      { id: 10, name: 'app', displayText: 'Application', isLink: true },
+      { id: 11, name: 'cat', displayText: 'Category', isLink: true }
     ],
     rows: [
       {

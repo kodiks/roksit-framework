@@ -130,6 +130,12 @@ rk-table-container {
         table {
           border: none !important;
 
+          tr:nth-of-type(odd) {
+            td {
+              background: var(--primary-1);
+            }
+          }
+
           th {
             background-color: var(--text-light) !important;
             background: var(--white) !important;
@@ -156,7 +162,7 @@ rk-table-container {
         tr {
           &.selected {
             td {
-              background: var(--primary-1);
+              background: var(--primary-2) !important;
             }
           }
           &:last-child {
@@ -280,7 +286,7 @@ table {
     }
   }
 
-  tbody {
+  tbody:not(.rk-selectable-table-body) {
     color: var(--gray);
     font-size: 11px;
     font-weight: 500;

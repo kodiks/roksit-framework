@@ -7,13 +7,14 @@
   font-weight: 500;
   border-radius: 18px;
   transition: 0.2s;
-  border: 0;
+  border: 1px solid #e4e9f1;
   outline: 0 !important;
   white-space: nowrap;
 
   &.active {
-    background: var(--primary-light-100);
+    background: var(--primary-1);
     color: var(--primary);
+    border-color: var(--primary-1);
     transition: 0.2s;
   }
 }

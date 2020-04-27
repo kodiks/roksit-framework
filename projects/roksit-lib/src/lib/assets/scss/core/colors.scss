@@ -1,6 +1,7 @@
 :root {
   --primary: #507df3;
   --primary-1: rgba(80, 126, 243, 0.1);
+  --primary-2: rgba(80, 126, 243, 0.2);
   --primary-8: rgba(80, 126, 243, 0.8);
   --primary-9: rgba(80, 126, 243, 0.9);
   --primary-box-shadow: rgba(51, 151, 197, 0.3);
@@ -19,6 +20,7 @@
   --gray-8: rgba(68, 81, 101, 0.8);
   --light-grey: #898ea4;
   --blue-grey: #97a5bb;
+  --blue-grey-3: rgba(151, 165, 187, 0.3);
   --blue-grey-darken: #696e77;
   --blue-grey-5: rgba(151, 165, 187, 0.5);
   --light-blue-grey: #ccd4e0;
@@ -45,51 +47,6 @@
   --collapse-active: rgba(240, 243, 248, 0.5);
   --modal-footer: rgba(80, 126, 243, 0.8);
 }
-
-// $primary: #3397c5;
-
-// $primary-light-200: #bdeaff;
-
-// $primary-light-100: #eaf4f9;
-
-// $accent: #ff7b00;
-
-// $security: #f95656;
-
-// $harmfull: #f9df56;
-
-// $safe: #3dd49a;
-
-// $grey: #d8d8d8;
-
-// $unsafe: #f99256;
-
-// $total: #4353ff;
-
-// $blue-grey: #97a5bb;
-
-// $gray: #445165;
-
-// $light-blue-grey: #ccd4e0;
-
-// $o-grey: rgba(37, 38, 94, 0.2);
-
-// $disabled: rgba(68, 81, 101, 0.1);
-
-// $border-color: #eeeef2;
-
-// $text-color: #303759;
-
-// $pale-grey: #f0f3f8;
-
-// $light-grey: #898ea4;
-// /*
-//     Base Colors
-// */
-
-// $white: #ffffff;
-
-// $slate: #445165;
 
 $theme-colors: (
   "primary": var(--primary),

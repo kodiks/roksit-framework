@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import {NgbProgressbarModule} from '@ng-bootstrap/ng-bootstrap';
 import { RkProgressbarComponent } from './rk-progressbar.component';
 import { CommonModule } from '@angular/common';
+import { RkProgressbarNewComponent } from './new/rk-progressbar-n.component';
 
 @NgModule({
     imports: [
@@ -9,12 +10,16 @@ import { CommonModule } from '@angular/common';
         NgbProgressbarModule
     ],
     exports: [
-        RkProgressbarComponent
+        RkProgressbarComponent,
+        RkProgressbarNewComponent
     ],
     declarations: [
-        RkProgressbarComponent
+        RkProgressbarComponent,
+        RkProgressbarNewComponent
     ],
-    providers: [],
-    entryComponents : [RkProgressbarComponent]
+    entryComponents : [
+        RkProgressbarComponent,
+        RkProgressbarNewComponent
+    ]
 })
 export class RkProgressBarModule { }

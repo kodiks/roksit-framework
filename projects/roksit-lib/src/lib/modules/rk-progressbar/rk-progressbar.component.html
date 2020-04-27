@@ -4,7 +4,7 @@
             <span class="percentage" *ngIf="showType == 'outside'">
                 <span style="padding-left: 9px;">{{ value | number: '0.1-2' }}%</span>
             </span>
-            <ngb-progressbar [showValue]="showType == 'inside'" [type]="type" [value]="value"></ngb-progressbar>
+            <ngb-progressbar [showValue]="showType == 'inside'" [type]="type" [value]="value | number: '0.1-2'"></ngb-progressbar>
         </p>
     </div>
 </div>
