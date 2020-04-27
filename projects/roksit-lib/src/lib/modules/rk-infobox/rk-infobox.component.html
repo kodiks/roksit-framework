@@ -1,4 +1,4 @@
-<div class="rk-infobox" [ngClass]="{'active': isActive}"
+<div class="rk-infobox" [ngClass]="{'active': isActive}" (click)="toggleActive()"
     [ngStyle]="{'border-bottom-color': isActive ? color : 'rgba(37, 38, 94, 0.05)'}">
     <div>
         <div class="head">
@@ -23,7 +23,7 @@
             </svg>
         </div>
 
-        <div class="content">
+        <div class="__content">
             <div class="info-allow-block" *ngIf="type == 1">
                 <div class="info-allow">
                     <span>Allow</span>
