@@ -56,7 +56,8 @@ export class RkUtilityService {
         { key: 'table-border', lightVal: '#eeeff2', darkVal: '#2d2d33' },
         { key: 'chart-info-bg', lightVal: '#f0f3f8', darkVal: '#1c1d20' },
         { key: 'collapse-active', lightVal: 'rgba(240, 243, 248, 0.5)', darkVal: '#2d2d33' },
-        { key: 'modal-footer', lightVal: 'rgba(80, 126, 243, 0.8)', darkVal: '#2d2d33' }
+        { key: 'modal-footer', lightVal: 'rgba(80, 126, 243, 0.8)', darkVal: '#2d2d33' },
+        { key: 'white-05', lightVal: 'rgba(255,255,255,0.5)', darkVal: 'rgba(29, 29, 33, .5)' }
     ];
 
     changeTheme(isDark: boolean = false) {
