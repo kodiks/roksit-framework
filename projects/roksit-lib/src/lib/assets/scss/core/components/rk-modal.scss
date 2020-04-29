@@ -13,6 +13,10 @@
   box-shadow: -8px 0 25px -18px var(--primary-box-shadow);
   transition: 0.2s all;
 
+  &.bg-light-blue {
+    background: var(--modal-light-blue-color);
+  }
+
   &.show {
     right: 0;
     transition: 0.2s all;

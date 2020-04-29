@@ -1,4 +1,4 @@
-import { Component, ElementRef, Output, EventEmitter, HostListener } from '@angular/core';
+import { Component, ElementRef, Output, EventEmitter, HostListener, Input } from '@angular/core';
 import { KeyCodes } from '../../helpers/KeyCodes';
 
 export interface RkModalModel {
@@ -19,6 +19,8 @@ export class RkModalComponent implements RkModalModel {
         private el: ElementRef<HTMLElement>
     ) { }
 
+    @Input() isLightBlueBg = false;
+    
     @Output() close: EventEmitter<{ closed: boolean }> = new EventEmitter();
 
     @HostListener('window:keydown', ['$event'])
