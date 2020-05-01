@@ -153,5 +153,9 @@ rk-infobox {
         box-shadow: 0 2px 10px 0 var(--primary-box-shadow);
         border-bottom: 4px solid #dddddd;
         transition: 0.2s;
+
+        .footer {
+            color: var(--gray);
+        }
     }
 }
