@@ -25,25 +25,24 @@
 
         <div class="__content">
             <div class="info-allow-block" *ngIf="type == 1">
-                <div class="info-allow">
+                <div class="info-allow py-0">
                     <span>Allow</span>
                     <span class="allow">{{ valueOne }}</span>
                 </div>
-                <div class="info-block">
+                <div class="info-block py-0">
                     <span>Block</span>
                     <span class="block">{{ valueTwo }}</span>
                 </div>
             </div>
 
-            <div class="info-allow-block" *ngIf="type == 2">
-                <div class="info-allow">
+            <div class="info-allow-block type-2" *ngIf="type == 2">
+                <div class="info-allow pt-0">
                     <span>Hit Count</span>
                     <span>{{ valueOne }}</span>
                 </div>
 
-                <div class="info-block">
-                    <span>Unique Domain</span>
-                    <span>{{ valueTwo }}</span>
+                <div class="info-block pt-0" [ngStyle]="{color: color}">
+                    %{{ valueTwo }}
                 </div>
             </div>
         </div>

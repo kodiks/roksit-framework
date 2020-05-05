@@ -63,8 +63,6 @@
               "projects/roksit-tester/src/assets"
             ],
             "styles": [
-              // "node_modules/roksit-lib/assets/scss/roksit.core.scss",
-              // "dist/roksit-lib/assets/scss/roksit.core.scss",
               "node_modules/flatpickr/dist/flatpickr.css",
               "projects/roksit-lib/src/lib/assets/scss/roksit.core.scss",
               "projects/roksit-tester/src/styles.scss"
@@ -168,5 +166,8 @@
       }
     }
   },
-  "defaultProject": "roksit-lib"
+  "defaultProject": "roksit-lib",
+  "cli": {
+    "analytics": "1a3226d9-700d-414f-ad56-b7fd8a31537d"
+  }
 }
