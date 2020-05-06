@@ -79,6 +79,35 @@
     </div>
 
     <div class="container-fluid">
+      <div class="row">
+        <div class="rk-base-card">
+          <div class="card-item">
+            <div class="container-fluid">
+              <div class="row mt-3">
+                <div class="col-6">
+                  <label for="chk" class="rk-chk-label">
+                    <span>
+                      Gece Modu
+                    </span>
+                    <div class="rk-form-switch">
+                      <input type="checkbox" (change)="toggleDarkModel()" id="chk">
+                      <i></i>
+                      <span></span>
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row mt-4">
+        <div class="col-12">
+          <rk-date (complete)="completed($event)"></rk-date>
+        </div>
+      </div>
 
       <div class="row my-4 gutters-sm">
         <div class="col-md">
@@ -196,35 +225,6 @@
         </div>
       </div>
 
-      <div class="row">
-        <div class="rk-base-card">
-          <div class="card-item">
-            <div class="container-fluid">
-              <div class="row mt-3">
-                <div class="col-6">
-                  <label for="chk" class="rk-chk-label">
-                    <span>
-                      Gece Modu
-                    </span>
-                    <div class="rk-form-switch">
-                      <input type="checkbox" (change)="toggleDarkModel()" id="chk">
-                      <i></i>
-                      <span></span>
-                    </div>
-                  </label>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="row mt-4">
-        <div class="col-12">
-          <rk-date (complete)="completed($event)"></rk-date>
-        </div>
-      </div>
 
       <div class="row mt-4">
         <div class="col-12 mt-3">

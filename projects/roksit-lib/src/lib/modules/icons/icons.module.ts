@@ -288,7 +288,7 @@ import {
     IconEqualComponent, IconNotEqualComponent, IconDashboard,
     IconCustomReports, IconDeployment, IconDevice, IconMonitor,
     IconRoamingClients, IconSettings, IconHelp, IconPublicIp,
-    IconRequestCategory, IconThemeColor, IconTools, IconClone, IconSort, IconSortReverse
+    IconRequestCategory, IconThemeColor, IconTools, IconClone, IconSort, IconSortReverse, IconRequestChanging
 } from './icons.component';
 import { IconForMenuComponent } from './icon-for-menu.component';
 import { CommonModule } from '@angular/common';
@@ -602,7 +602,8 @@ export const allIcons = {
         IconTools,
         IconClone,
         IconSort,
-        IconSortReverse
+        IconSortReverse,
+        IconRequestChanging
     ],
     exports: [
         IconForMenuComponent,
@@ -623,7 +624,8 @@ export const allIcons = {
         IconTools,
         IconClone,
         IconSort,
-        IconSortReverse
+        IconSortReverse,
+        IconRequestChanging
     ]
 })
 export class IconsModule {

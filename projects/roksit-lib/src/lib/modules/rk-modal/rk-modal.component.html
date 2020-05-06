@@ -1,4 +1,4 @@
-<div class="rk-modal" [ngClass]="{'bg-light-blue': isLightBlueBg}">
+<div class="rk-modal {{ className }}" [ngClass]="{'bg-light-blue': isLightBlueBg}">
     <ng-content select="rk-modal-header"></ng-content>
 
     <ng-content select="rk-modal-body"></ng-content>

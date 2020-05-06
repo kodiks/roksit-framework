@@ -44,10 +44,11 @@ export class RkUtilityService {
         { key: 'text-light', lightVal: '#ffffff', darkVal: '#ffffff' },
         { key: 'disabled', lightVal: 'rgba(68, 81, 101, 0.1)', darkVal: 'rgba(68, 81, 101, 0.1)' },
         { key: 'text-dark', lightVal: '#303759', darkVal: '#ffffff' },
-        { key: 'base-light-color', lightVal: '#e4e9f1', darkVal: '#e4e9f1' },
+        { key: 'base-light-color', lightVal: '#e4e9f1', darkVal: '#343436' },
         { key: 'body-bg', lightVal: '#ffffff', darkVal: '#222327' },
         { key: 'card-bg', lightVal: '#f0f3f8', darkVal: '#1c1d20' },
-        { key: 'infobox-bg', lightVal: '#ffffff', darkVal: '#222327' },
+        { key: 'infobox-bg', lightVal: 'rgba(255,255,255, .5)', darkVal: 'rgb(34, 35, 39, .5)' },
+        { key: 'infobox-bg-active', lightVal: 'rgba(255,255,255, 1)', darkVal: '#222327' },
         { key: 'infobox-border', lightVal: '#e4e9f1', darkVal: '#2b2c31' },
         { key: 'title-color', lightVal: '#445165', darkVal: '#ffffff' },
         { key: 'base-border-color', lightVal: '#ccd4e0', darkVal: '#222327' },
@@ -59,7 +60,10 @@ export class RkUtilityService {
         { key: 'collapse-active', lightVal: 'rgba(240, 243, 248, 0.5)', darkVal: '#2d2d33' },
         { key: 'modal-footer', lightVal: 'rgba(80, 126, 243, 0.8)', darkVal: '#2d2d33' },
         { key: 'white-05', lightVal: 'rgba(255,255,255,0.5)', darkVal: 'rgba(29, 29, 33, .5)' },
-        { key: 'modal-light-blue-color', lightVal: '#f4f7fc', darkVal: '#1c1d20' }
+        { key: 'modal-light-blue-color', lightVal: '#f4f7fc', darkVal: '#1c1d20' },
+        { key: 'scrollbar-thumb-color', lightVal: 'rgb(187, 187, 187)', darkVal: '#1c1d20' },
+        { key: 'scrollbar-thumb-hover-color', lightVal: '#888888', darkVal: '#18191b' },
+        { key: 'scrollbar-track-color', lightVal: '#eeeeee', darkVal: 'rgba(34, 35, 39, .5)' },
     ];
 
     changeTheme(isDark: boolean = false) {
