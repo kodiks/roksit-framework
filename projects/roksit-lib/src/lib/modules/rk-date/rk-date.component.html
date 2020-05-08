@@ -10,7 +10,7 @@
     <div class="rk-date-container" *ngIf="showContainer">
         <div class="rk-date-header">
             <div class="d-flex align-items-center">
-                <h4>Start hour</h4>
+                <h4>{{ config?.startHourText }}</h4>
                 <div class="rk-input- ml-3">
                     <input type="text" class="rk-input" readonly (ngModelChange)="changeStartDate()" [ngModel]="startDate | date: 'dd/MM/yyyy HH:mm'">
                 </div>
@@ -19,21 +19,21 @@
             <i-feather name="arrow-right" class="ml-2 mr-1"></i-feather>
 
             <div class="d-flex align-items-center">
-                <h4>End hour</h4>
+                <h4>{{ config?.endHourText }}</h4>
                 <div class="rk-input- ml-3">
                     <input type="text" class="rk-input" readonly (ngModelChange)="changeEndDate()" [ngModel]="endDate | date: 'dd/MM/yyyy HH:mm'">
                 </div>
             </div>
 
             <div class="d-flex align-items-center ml-2 rk-date-buttons">
-                <button class="btn px-0 btn-default btn-small mr-2" (click)="setShowContainer(false)">Cancel</button>
-                <button class="btn px-0 btn-small" (click)="compelete()">Apply</button>
+                <button class="btn px-0 btn-default btn-small mr-2" (click)="setShowContainer(false)">{{ config?.cancelText }}</button>
+                <button class="btn px-0 btn-small" (click)="compelete()">{{ config?.applyText }}</button>
             </div>
         </div>
 
         <div class="rk-date-content">
             <div class="rk-select-dates">
-                <h6 class="rk-date-head">Select Date</h6>
+                <h6 class="rk-date-head">{{ config?.selectDateText }}</h6>
 
                 <ul class="rk-date-select">
                     <li *ngFor="let time of times" [ngClass]="{'active': time.selected}" (click)="selectTime(time)">
@@ -43,7 +43,7 @@
             </div>
 
             <div class="rk-datepickers">
-                <h6 class="rk-date-head pl-3">Custom</h6>
+                <h6 class="rk-date-head pl-3">{{ config?.customText }}</h6>
                 <div class="d-flex">
                     <div class="rk-pickers">
                         <div class="rk-dp-time">

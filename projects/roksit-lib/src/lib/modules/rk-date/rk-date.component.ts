@@ -39,6 +39,15 @@ export class RkDateComponent implements OnInit, AfterViewInit {
 
     @Input() times: RkDateTime[] = DEFAULT_TIMES;
 
+    @Input() config: RkDateConfig = {
+        startHourText: 'Start Hour',
+        endHourText: 'End Hour',
+        applyText: 'Apply',
+        cancelText: 'Cancel',
+        customText: 'Custom',
+        selectDateText: 'Select Date'
+    };
+
     // tslint:disable-next-line: no-output-native
     @Output() complete = new EventEmitter();
 
@@ -196,4 +205,13 @@ export interface RkDateTime {
      * @description For UI
      */
     selected?: boolean;
+}
+
+export interface RkDateConfig {
+    startHourText?: string;
+    endHourText?: string;
+    applyText?: string;
+    cancelText?: string;
+    selectDateText?: string;
+    customText?: string;
 }
