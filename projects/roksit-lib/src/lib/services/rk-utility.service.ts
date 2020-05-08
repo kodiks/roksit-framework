@@ -18,7 +18,7 @@ export class RkUtilityService {
         { key: 'primary-8', lightVal: 'rgba(80, 126, 243, 0.8)', darkVal: 'rgba(80, 126, 243, 0.8)' },
         { key: 'primary-9', lightVal: 'rgba(80, 126, 243, 0.9)', darkVal: 'rgba(80, 126, 243, 0.9)' },
         { key: 'primary-box-shadow', lightVal: 'rgba(51, 151, 197, 0.3)', darkVal: 'rgba(0, 0, 0, 0.3)' },
-        { key: 'primary-light-200', lightVal: '#bdeaff', darkVal: '#bdeaff' },
+        { key: 'primary-light-200', lightVal: 'rgba(80, 125, 243, 0.2)', darkVal: 'rgba(80, 125, 243, 0.2)' },
         { key: 'primary-light-200', lightVal: '#eaf4f9', darkVal: '#eaf4f9' },
         { key: 'security', lightVal: '#f95656', darkVal: '#f95656' },
         { key: 'harmful', lightVal: '#f9df56', darkVal: '#f9df56' },

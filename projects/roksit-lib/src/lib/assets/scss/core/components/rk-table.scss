@@ -227,7 +227,7 @@ table {
         border-left: none !important;
         border-top: 1px solid var(--table-border) !important;
         border-right: 1px solid var(--table-border) !important;
-        font-size: 12px;
+        font-size: 13px;
         font-weight: 500;
         position: relative;
 
@@ -288,7 +288,7 @@ table {
 
   tbody:not(.rk-selectable-table-body) {
     color: var(--gray);
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 500;
 
     tr {
@@ -331,7 +331,7 @@ table.table.table-borderless {
   padding: 0;
   margin: 0;
   display: inline-block;
-  font-size: 11px;
+  font-size: 12px;
   background: transparent;
   color: var(--primary-8);
 
