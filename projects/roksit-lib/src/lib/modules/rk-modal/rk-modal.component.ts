@@ -20,7 +20,9 @@ export class RkModalComponent implements RkModalModel {
     ) { }
 
     @Input() isLightBlueBg = false;
-    
+
+    @Input() className: string;
+
     @Output() close: EventEmitter<{ closed: boolean }> = new EventEmitter();
 
     @HostListener('window:keydown', ['$event'])
@@ -44,7 +46,7 @@ export class RkModalComponent implements RkModalModel {
         const show = rkModal.classList.contains('show');
         if (!show) {
             document.body.classList.remove('overflow-hidden');
-            
+
             this.close.emit({
                 closed: true
             });
