@@ -8,7 +8,8 @@
       "angular-feather/icons": "angular-feather/icons",
       "@ng-bootstrap/ng-bootstrap": "@ng-bootstrap/ng-bootstrap",
       "angularx-flatpickr": "angularx-flatpickr",
-      "apexcharts": "apexcharts"
+      "apexcharts": "apexcharts",
+      "ng2-odometer": "ng2-odometer"
     }
   } 
 }

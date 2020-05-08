@@ -33,7 +33,7 @@ export class RkInfoBoxComponent implements OnInit {
     get valueOne() { return this._valueOne; }
     set valueOne(val) {
         if (val) {
-            this._valueOne = this.thousndSeperator(val);
+            this._valueOne = val // this.thousndSeperator(val);
         }
     }
 
@@ -41,7 +41,7 @@ export class RkInfoBoxComponent implements OnInit {
     get valueTwo() { return this._valueTwo; }
     set valueTwo(val) {
         if (val) {
-            this._valueTwo = this.thousndSeperator(val);
+            this._valueTwo = val // this.thousndSeperator(val);
         }
     }
 
@@ -50,6 +50,8 @@ export class RkInfoBoxComponent implements OnInit {
     @Output() change = new EventEmitter();
 
     @ViewChild('svgG', { static: true }) svgG: ElementRef;
+
+    onHover = false;
 
     guid;
 
@@ -62,7 +64,7 @@ export class RkInfoBoxComponent implements OnInit {
         this.svgG.nativeElement.setAttribute('stroke', `url(#linearGradient-${this.guid})`);
     }
 
-    private thousndSeperator(val) {
+    thousndSeperator(val) {
         return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
     }
 

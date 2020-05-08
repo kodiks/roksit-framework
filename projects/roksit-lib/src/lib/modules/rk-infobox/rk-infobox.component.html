@@ -1,5 +1,6 @@
-<div class="rk-infobox" [ngClass]="{'active': isActive}" (click)="toggleActive()"
-    [ngStyle]="{'border-bottom-color': isActive ? color : 'rgba(37, 38, 94, 0.05)'}">
+<div class="rk-infobox" [ngClass]="{'active': isActive || onHover}" (click)="toggleActive()"
+    (mouseenter)="onHover = true" (mouseleave)="onHover = false"
+    [ngStyle]="{'border-bottom-color': isActive || onHover ? color : 'rgba(37, 38, 94, 0.05)'}">
     <div>
         <div class="head">
             <div class="left-side">
@@ -27,22 +28,28 @@
             <div class="info-allow-block" *ngIf="type == 1">
                 <div class="info-allow py-0">
                     <span>Allow</span>
-                    <span class="allow">{{ valueOne }}</span>
+                    <span class="allow">
+                        <ng2-odometer [number]="valueOne" [config]="{ format: '(.ddd),dd' }"></ng2-odometer>
+                    </span>
                 </div>
                 <div class="info-block py-0">
                     <span>Block</span>
-                    <span class="block">{{ valueTwo }}</span>
+                    <span class="block">
+                        <ng2-odometer [number]="valueOne" [config]="{ format: '(.ddd),dd' }"></ng2-odometer>
+                    </span>
                 </div>
             </div>
 
             <div class="info-allow-block type-2" *ngIf="type == 2">
                 <div class="info-allow pt-0">
                     <span>Hit Count</span>
-                    <span>{{ valueOne }}</span>
+                    <span>
+                        {{ thousndSeperator(valueOne) }}
+                    </span>
                 </div>
 
                 <div class="info-block pt-0" [ngStyle]="{color: color}">
-                    %{{ valueTwo }}
+                    %<ng2-odometer [number]="valueTwo" [config]="{ format: '(.ddd),dd' }"></ng2-odometer>
                 </div>
             </div>
         </div>
