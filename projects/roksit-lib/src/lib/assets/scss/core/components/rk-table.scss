@@ -333,10 +333,10 @@ table.table.table-borderless {
   display: inline-block;
   font-size: 12px;
   background: transparent;
-  color: var(--primary-8);
+  color: var(--primary);
 
   &:hover {
-    color: var(--primary);
+    color: var(--primary-hover);
   }
 }
 
