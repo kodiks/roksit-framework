@@ -1,0 +1,164 @@
+.anomaly-table {
+    width: 100%;
+    height: 160px;
+    display: flex;
+    justify-content: stretch;
+    border: 1px solid var(--infobox-border);
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    .description {
+        background: var(--pale-gray);
+        color: var(--gray);
+        font-size: 11px;
+        min-width: 104px;
+        width: 104px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .month-item {
+        min-width: 280px;
+        border-right: 1px solid var(--infobox-border);
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 5px 7px;
+
+        h6.month-name {
+            font-size: 11px;
+            color: var(--gray);
+            font-weight: normal;
+        }
+
+        .month-weeks {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+
+            .week-item {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-end;
+                position: relative;
+
+                $vp-colors: (
+                    "blue": #68b6ff,
+                    "darkblue": #507df3,
+                    "red": #f95656,
+                );
+
+                @each $name, $color in $vp-colors {
+                    &.#{$name} {
+                        .week-detail {
+                            .detail-percent {
+                                color: $color;
+                            }
+                        }
+
+                        .vertical-progress {
+                            background-color: $color !important;
+                        }
+                    }
+                }
+                
+                &:hover {
+                    .week-detail {
+                        opacity: 1;
+                    }
+                }
+
+                .count {
+                    font-size: 13px;
+                }
+
+                .vertical-progress {
+                    display: block;
+                    width: 24px;
+                    height: 82px;
+                    border: 1px solid rgba(0, 0, 0, 0.3);
+                    border-radius: 50px;
+                    position: relative;
+                    background: repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0), rgb(0, 0, 0, 0.1) 3px);
+
+                    span {
+                        color: white;
+                        font-size: 11px;
+                        position: absolute;
+                        bottom: 10px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                    }
+
+                   
+                }
+
+                .week-detail {
+                    width: 100%;
+                    height: 160px;
+                    position: absolute;
+                    z-index: 99;
+                    top: -46px;
+                    left: 0;
+                    opacity: 0;
+                    transition: 0.2s;
+                    box-shadow: 0 2px 10px 0 var(--primary-box-shadow);
+                    display: flex;
+                    background: var(--white);
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+
+                    .detail-percent {
+                        color: #f95656;
+                        font-size: 14px;
+                        font-weight: bold;
+                        padding-bottom: 4px;
+                        text-align: center;
+                        border-bottom: 1px solid rgba(68, 81, 101, 0.2);
+                    }
+
+                    .hit-count,
+                    .avg-count {
+                        margin-top: 4px;
+                        border-bottom: 1px solid rgba(68, 81, 101, 0.2);
+                        color: var(--text-dark);
+                        font-size: 11px;
+                        text-align: center;
+
+                        .b {
+                            font-weight: 500;
+                            font-size: 13px;
+                        }
+                    }
+
+                    .avg-count {
+                        border-bottom: none;
+                    }
+
+                    .vertical-progress-smalled {
+                        width: 24px;
+                        height: 24px;
+                        border-radius: 24px;
+                        border: 1px solid rgba(0, 0, 0, 0.3);
+                        position: relative;
+                        background: repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0), rgb(0, 0, 0, 0.1) 3px);
+
+                        span {
+                            font-size: 11px;
+                            color: white;
+                            bottom: auto;
+                            top: 50%;
+                            transform: translate(-50%, -50%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -82,6 +82,58 @@
 
       <div class="row">
         <div class="col-12">
+
+          <div class="anomaly-table">
+            <div class="description">
+              <p>
+                Change between
+                <br>
+                07:00-08:00
+                <br>
+                hours per week
+              </p>
+
+              <p>Week Number</p>
+            </div>
+
+            <div class="month-item" *ngFor="let i of [1,2,3,4]">
+              <h6 class="month-name">December</h6>
+
+              <div class="month-weeks">
+                <div class="week-item {{ j % 3 == 0 ? 'blue' : (j % 2 == 0 ? 'darkblue' : 'red') }}" *ngFor="let j of [1,2,3,4]">
+                  <div class="week-detail">
+                    <div class="detail-percent">+ %75</div>
+
+                    <div class="hit-count">
+                      Hit Count: <br>
+                      <span class="b">+80800</span>
+                    </div>
+                    
+                    <div class="avg-count">
+                      Avg Count: <br>
+                      <span class="b">4324</span>
+                    </div>
+
+                    <div class="vertical-progress vertical-progress-smalled">
+                      <span>5</span>
+                    </div>                    
+                  </div>
+                  
+                  <div class="count">{{ j % 2 == 0 ? '+%' + j : '-%' + j  }}</div>
+
+                  <div class="vertical-progress">
+                    <span>{{ i }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
           <table class="table table-pill">
             <thead>
               <tr>
@@ -101,7 +153,7 @@
           </table>
         </div>
       </div>
-      
+
       <div class="row mt-3">
         <div class="col-12">
           <button class="btn" (click)="modal.toggle()">toggle</button>
