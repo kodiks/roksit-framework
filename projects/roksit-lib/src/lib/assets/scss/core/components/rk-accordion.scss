@@ -75,6 +75,15 @@
         }
       }
 
+      &.passed {
+        background: var(--white) !important;
+        border-left: none !important;
+
+        .rk-accordion-header-title {
+          color: var(--text-dark);
+        }
+      }
+
       .rk-accordion-header-step {
         min-width: 51px;
         height: 24px;

@@ -79,6 +79,35 @@
     </div>
 
     <div class="container-fluid">
+
+      <div class="row">
+        <div class="col-12">
+          <table class="table table-pill">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let item of [1,2,3,4,5,6]" [ngClass]="{'selected': item % 2 == 0}">
+                <td>1</td>
+                <td>Cihan</td>
+                <td>cihan.celen@mail.com</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+      <div class="row mt-3">
+        <div class="col-12">
+          <button class="btn" (click)="modal.toggle()">toggle</button>
+        </div>
+      </div>
+
       <div class="row">
         <div class="rk-base-card">
           <div class="card-item">
@@ -525,30 +554,34 @@
 
     <rk-modal #modal>
       <rk-modal-header icon="filter">
-        <rk-modal-header-title>Filtrele</rk-modal-header-title>
+        <rk-modal-header-title>
+          <h5>Filtrele</h5>
+        </rk-modal-header-title>
         <rk-modal-header-close (click)="modal.toggle()"></rk-modal-header-close>
       </rk-modal-header>
 
       <rk-modal-body>
-        <div class="rk-modal-item mt-3" *ngFor="let item of [1,1,1,1,1,1,1,1,1,1,1,1]">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam labore velit reprehenderit aspernatur ea
-            assumenda quasi veritatis obcaecati, eum quis quas doloremque! Corporis rerum perspiciatis pariatur eum nemo
-            asperiores rem?</p>
-        </div>
 
+        <div class="px-3">
 
-        <div class="rk-modal-item">
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam labore velit reprehenderit aspernatur ea
-            assumenda quasi veritatis obcaecati, eum quis quas doloremque! Corporis rerum perspiciatis pariatur eum nemo
-            asperiores rem?</p>
+          <div class="rk-modal-card my-2" *ngFor="let item of [1,1,1]">
+            <h6>Lorem Title</h6>
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit, mollitia quod enim distinctio iste,
+              eum
+              impedit officiis eos exercitationem reiciendis explicabo ipsam, veritatis neque maxime ad amet sunt quasi
+              fugit.
+            </p>
+          </div>
+
         </div>
 
       </rk-modal-body>
-      <!-- 
+
       <rk-modal-footer>
-        <button class="btn w-100 btn-small mr-2">Apply</button>
-        <button class="btn w-100 btn-default btn-small">Clean</button>
-      </rk-modal-footer> -->
+        <button class="btn w-100 btn-default btn-small">Cancel</button>
+        <button class="btn w-100 btn-small btn-fill">Apply</button>
+      </rk-modal-footer>
     </rk-modal>
 
     <div class="container-fluid mt-4">

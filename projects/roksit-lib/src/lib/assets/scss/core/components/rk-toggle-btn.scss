@@ -1,9 +1,9 @@
 .rk-toggle-btn {
   outline: none !important;
-  border: 1px solid rgba(37, 38, 94, 0.2);
-  background: var(--white);
+  border: 1px solid var(--toggle-btn-color);
+  background: var(--toggle-btn-color);
   font-size: 10px;
-  font-weight: 500;
+  font-weight: 400;
   height: 24px;
   box-sizing: border-box;
   padding: 0 6px;
@@ -11,7 +11,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--blue-grey);
+  color: var(--white);
   transition: 0.2s all;
   user-select: none;
   cursor: pointer;
@@ -26,20 +26,22 @@
     right: 6px;
   }
 
-  &:hover {
-    border-color: var(--gray-5);
-    color: var(--gray-5);
-    transition: 0.1s all;
-  }
+  // &:hover {
+  //   border-color: var(--gray-5);
+  //   color: var(--gray-5);
+  //   transition: 0.1s all;
+  // }
 
   &.active {
-    border-color: var(--safe);
-    color: var(--safe);
+    border-color: var(--toggle-btn-border-color);
+    background: var(--white);
+    color: var(--toggle-btn-text-color);
+    font-weight: 500;
     transition: 0.2s all;
 
     i-feather {
       svg {
-        color: var(--blue-grey);
+        color: var(--white);
       }
     }
   }

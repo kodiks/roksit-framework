@@ -2,15 +2,16 @@
   border: 1px solid rgba(37, 38, 94, 0.05);
   border-radius: 6px;
   overflow: hidden;
+  background: var(--collapse-bg-color);
 
   .rk-collapse-header {
-    background: var(--collapse-active);
     padding: 10px 8px;
-    min-height: 80px;
+    min-height: 78px;
     display: flex;
     flex-direction: column;
     cursor: pointer;
     user-select: none;
+    border-bottom: none;
 
     .top {
       display: flex;
@@ -56,6 +57,10 @@
   }
 
   &.active {
+    .rk-collapse-header {
+      border-bottom: 1px solid var(--base-light-color);
+    }
+
     .rk-collapse-header-icon {
       position: relative;
       transform: rotate(180deg);

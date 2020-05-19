@@ -4,7 +4,7 @@
   --primary-1: rgba(80, 126, 243, 0.1);
   --primary-2: rgba(80, 126, 243, 0.2);
   --primary-8: rgba(80, 126, 243, 0.8);
-  --primary-9: rgba(80, 126, 243, 0.9);
+  --primary-9: #3d68d9;
   --primary-box-shadow: rgba(51, 151, 197, 0.3);
   --primary-light-200: rgba(80, 125, 243, 0.2);
   --primary-light-100: #eaf4f9;
@@ -52,6 +52,10 @@
   --scrollbar-thumb-color: rgb(187, 187, 187);
   --scrollbar-thumb-hover-color: #888888;
   --scrollbar-track-color: #eeeeee;
+  --toggle-btn-color: #28a745;
+  --toggle-btn-text-color: #4fb75d;
+  --toggle-btn-border-color: #e4e9f1;
+  --collapse-bg-color: #ffffff;
 }
 
 $theme-colors: (

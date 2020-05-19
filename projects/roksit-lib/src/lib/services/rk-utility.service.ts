@@ -64,6 +64,10 @@ export class RkUtilityService {
         { key: 'scrollbar-thumb-color', lightVal: 'rgb(187, 187, 187)', darkVal: '#1c1d20' },
         { key: 'scrollbar-thumb-hover-color', lightVal: '#888888', darkVal: '#18191b' },
         { key: 'scrollbar-track-color', lightVal: '#eeeeee', darkVal: 'rgba(34, 35, 39, .5)' },
+        { key: 'toggle-btn-color', lightVal: '#28a745', darkVal: '#28a745' },
+        { key: 'toggle-btn-text-color', lightVal: '#4fb75d', darkVal: '#4fb75d' },
+        { key: 'toggle-btn-border-color', lightVal: '#e4e9f1', darkVal: '#2c2d30' },
+        { key: 'collapse-bg-color', lightVal: '#ffffff', darkVal: '#18191b' }
     ];
 
     changeTheme(isDark: boolean = false) {
