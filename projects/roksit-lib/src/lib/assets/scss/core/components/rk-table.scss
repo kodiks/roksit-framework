@@ -203,6 +203,16 @@ rk-table-container {
   }
 }
 
+.fixed-headers {
+  thead {
+    th {
+      position: sticky;
+      top: 0;
+      z-index: 99;
+    }
+  }
+}
+
 table {
   border: 1px solid var(--table-border);
 

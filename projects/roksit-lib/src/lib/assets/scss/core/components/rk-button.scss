@@ -29,7 +29,7 @@
   overflow: hidden;
   transform: translate3d(0, 0, 0);
 
-  &:before:not(.no-animation) {
+  &:not(.no-animation):before {
     content: "";
     display: block;
     position: absolute;

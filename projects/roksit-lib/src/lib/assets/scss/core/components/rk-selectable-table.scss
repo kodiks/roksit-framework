@@ -20,16 +20,20 @@ table.rk-selectable-table {
     }
   }
 
+  tbody {
+    tr {
+      &:hover {
+        background: rgba(80, 126, 243, 0.15);
+        cursor: pointer;
+      }
+    }
+  }
+
   tr {
     border-radius: 6px;
     overflow: hidden;
     background: rgba(80, 126, 243, 0.05);
     height: 36px;
-
-    &:hover {
-      background: rgba(80, 126, 243, 0.15);
-      cursor: pointer;
-    }
 
     &.active {
       background: var(--primary);
