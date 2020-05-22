@@ -4,8 +4,20 @@
     <i-feather class="search-icon" name="search"></i-feather>
 
     <div class="rk-autocomplete-dropdown" [hidden]="!showDropdown">
-        <div class="rk-ac-dropdown-item" *ngFor="let item of items | filter: term.text : 'text'" (click)="selectOption(item)">
-            <span [innerHTML]="item.text | highlight: term.text"></span>
-        </div>
+        <ng-container *ngIf="grouped; else elseTemplate">
+            <div class="rk-ac-dropdown-group" *ngFor="let group of items">
+                <div class="rk-ac-dropdown-group-title">{{ group.text }}</div>
+                
+                <div class="rk-ac-dropdown-item" *ngFor="let item of group.groupItems | filter: term.text : 'text'" (click)="selectOption(item)">
+                    <span [innerHTML]="item.text | highlight: term.text"></span>
+                </div>
+            </div>
+        </ng-container>
+        
+        <ng-template #elseTemplate>
+            <div class="rk-ac-dropdown-item" *ngFor="let item of items | filter: term.text : 'text'" (click)="selectOption(item)">
+                <span [innerHTML]="item.text | highlight: term.text"></span>
+            </div>
+        </ng-template>
     </div>
 </div>

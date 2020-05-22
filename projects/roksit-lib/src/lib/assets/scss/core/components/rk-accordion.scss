@@ -84,6 +84,15 @@
         }
       }
 
+      &.active {
+        background-color: var(--primary) !important;
+        color: white !important;
+
+        .rk-accordion-header-title {
+          color: white !important;
+        }
+      }
+
       .rk-accordion-header-step {
         min-width: 51px;
         height: 24px;

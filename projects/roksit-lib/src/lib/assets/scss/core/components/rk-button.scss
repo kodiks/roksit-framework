@@ -137,6 +137,17 @@
     color: var(--blue-grey);
   }
 
+  &.btn-safe {
+    background: var(--safe) !important;
+    border-color: var(--safe) !important;
+    color: var(--white) !important;
+
+    &:hover {
+      background: #3ac08d !important;
+      border-color: #3ac08d !important;
+    }
+  }
+
   &.btn-icon {
     i-feather {
       margin-right: 10px;

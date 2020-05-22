@@ -24,6 +24,9 @@ export class RkAutoCompleteComponent implements OnInit {
 
     @Input() onSelectClear = false;
 
+    @Input() grouped = false;
+
+    // tslint:disable-next-line: no-output-on-prefix
     @Output() onSelect = new EventEmitter();
 
     // tslint:disable-next-line: no-output-rename no-output-on-prefix
@@ -62,4 +65,6 @@ export class RkAutoCompleteComponent implements OnInit {
 export interface RkAutoCompleteModel {
     value?: string | number;
     text: string;
+
+    groupItems?: RkAutoCompleteModel[];
 }

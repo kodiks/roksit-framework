@@ -145,6 +145,39 @@ export class AppComponent implements OnInit {
     { displayText: 'Text 16', value: 15 },
   ];
 
+  groupedOptions: RkSelectModel[] = [
+    {
+      displayText: 'Safe',
+      value: 0,
+      groupItems: [
+        { displayText: 'Test 1', value: 1 },
+        { displayText: 'Test 2', value: 2 },
+        { displayText: 'Test 3', value: 3 },
+        { displayText: 'Test 4', value: 4 },
+      ]
+    },
+    {
+      displayText: 'Malicious',
+      value: 1,
+      groupItems: [
+        { displayText: 'Text 1', value: 5 },
+        { displayText: 'Text 2', value: 6 },
+        { displayText: 'Text 3', value: 7 },
+        { displayText: 'Text 4', value: 8 },
+      ]
+    },
+    {
+      displayText: 'Variable',
+      value: 2,
+      groupItems: [
+        { displayText: 'Temt 1', value: 9 },
+        { displayText: 'Temt 2', value: 10 },
+        { displayText: 'Temt 3', value: 11 },
+        { displayText: 'Temt 4', value: 12 },
+      ]
+    },
+  ];
+
   listConfig: RkListConfigModel = {
     title: 'Title',
     items: [{
@@ -172,27 +205,37 @@ export class AppComponent implements OnInit {
     }
   };
 
-  autocompleteItems: any[] = [
-    { text: 'Search Text 0', value: 'Search Text 0' },
-    { text: 'Search Text 1', value: 'Search Text 1' },
-    { text: 'Search Text 2', value: 'Search Text 2' },
-    { text: 'Text 3 Search', value: 'Text 3 Search' },
-    { text: 'Search 3 Text ', value: 'Search 3 Text' },
-    { text: 'Text Search 3', value: 'Text Search 3' },
-    { text: 'Search Text 4', value: 'Search Text 4' },
-    { text: 'Search Text 6', value: 'Search Text 6' },
-    { text: 'Search 1 Text', value: 'Search 1 Text' },
-    { text: 'Search Text 3', value: 'Search Text 3' },
-    { text: 'Search Text 0', value: 'Search Text 0' },
-    { text: 'Search Text 1', value: 'Search Text 1' },
-    { text: 'Search Text 2', value: 'Search Text 2' },
-    { text: 'Text 3 Search', value: 'Text 3 Search' },
-    { text: 'Search 3 Text ', value: 'Search 3 Text' },
-    { text: 'Text Search 3', value: 'Text Search 3' },
-    { text: 'Search Text 4', value: 'Search Text 4' },
-    { text: 'Search Text 6', value: 'Search Text 6' },
-    { text: 'Search 1 Text', value: 'Search 1 Text' },
-    { text: 'Search Text 3', value: 'Search Text 3' },
+  autocompleteItems: RkAutoCompleteModel[] = [
+    {
+      text: 'Safe',
+      value: 0,
+      groupItems: [
+        { text: 'Test 1', value: 1 },
+        { text: 'Test 2', value: 2 },
+        { text: 'Test 3', value: 3 },
+        { text: 'Test 4', value: 4 },
+      ]
+    },
+    {
+      text: 'Malicious',
+      value: 1,
+      groupItems: [
+        { text: 'Text 1', value: 5 },
+        { text: 'Text 2', value: 6 },
+        { text: 'Text 3', value: 7 },
+        { text: 'Text 4', value: 8 },
+      ]
+    },
+    {
+      text: 'Variable',
+      value: 2,
+      groupItems: [
+        { text: 'Temt 1', value: 9 },
+        { text: 'Temt 2', value: 10 },
+        { text: 'Temt 3', value: 11 },
+        { text: 'Temt 4', value: 12 },
+      ]
+    },
   ];
 
   ss;

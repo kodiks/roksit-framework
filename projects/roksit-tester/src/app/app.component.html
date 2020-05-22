@@ -80,7 +80,32 @@
 
     <div class="container-fluid">
 
-      <div class="row">
+      <button class="btn btn-safe">
+        Text
+        <i-feather name="plus"></i-feather>
+      </button>
+      
+      <div class="row mt-4">
+        <div class="col-4">
+          <rk-autocomplete [onSelectClear]="true" [grouped]="true" (onSelect)="onSelect($event)" [items]="autocompleteItems">
+          </rk-autocomplete>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col-12">
+          <rk-select [options]="groupedOptions" [grouped]="true"></rk-select>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col-12">
+          <rk-select [options]="options" isSearchable="true" [isShowButton]="true" buttonText="Create New Profile"
+            buttonIcon="plus"></rk-select>
+        </div>
+      </div>
+
+      <div class="row mt-3">
         <div class="col-12">
 
           <div class="anomaly-table">
@@ -100,7 +125,8 @@
               <h6 class="month-name">December</h6>
 
               <div class="month-weeks">
-                <div class="week-item {{ j % 3 == 0 ? 'blue' : (j % 2 == 0 ? 'darkblue' : 'red') }}" *ngFor="let j of [1,2,3,4]">
+                <div class="week-item {{ j % 3 == 0 ? 'blue' : (j % 2 == 0 ? 'darkblue' : 'red') }}"
+                  *ngFor="let j of [1,2,3,4]">
                   <div class="week-detail">
                     <div class="detail-percent">+ %75</div>
 
@@ -108,7 +134,7 @@
                       Hit Count: <br>
                       <span class="b">+80800</span>
                     </div>
-                    
+
                     <div class="avg-count">
                       Avg Count: <br>
                       <span class="b">4324</span>
@@ -116,9 +142,9 @@
 
                     <div class="vertical-progress vertical-progress-smalled">
                       <span>5</span>
-                    </div>                    
+                    </div>
                   </div>
-                  
+
                   <div class="count">{{ j % 2 == 0 ? '+%' + j : '-%' + j  }}</div>
 
                   <div class="vertical-progress">
@@ -312,20 +338,6 @@
           <rk-checkbox size="sm" class="mr-2">Rk Checkbox</rk-checkbox>
           <rk-checkbox size="md" class="mr-2">Rk Checkbox</rk-checkbox>
           <rk-checkbox size="lg" class="mr-2">Rk Checkbox</rk-checkbox>
-        </div>
-      </div>
-
-      <div class="row mt-4">
-        <div class="col-4">
-          <rk-autocomplete [onSelectClear]="true" (onSelect)="onSelect($event)" [items]="autocompleteItems">
-          </rk-autocomplete>
-        </div>
-      </div>
-
-      <div class="row mt-3">
-        <div class="col-12">
-          <rk-select [options]="options" isSearchable="true" [isShowButton]="true" buttonText="Create New Profile"
-            buttonIcon="plus"></rk-select>
         </div>
       </div>
 
@@ -1205,7 +1217,7 @@
 
         <div class="row mt-3">
           <div class="col-6">
-            <rk-accordion>
+            <rk-accordion [isWizard]="true">
               <rk-accordion-panel *ngFor="let item of listConfig.items; let i = index" [index]="i + 1">
                 <div class="rk-accordion-title">
                   Header {{ i }}

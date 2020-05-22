@@ -108,6 +108,19 @@
       max-height: 230px;
       overflow-y: auto;
 
+      .rk-select-group-item {
+        .rk-select-group-title {
+          font-size: 14px;
+          font-weight: 500;
+          color: var(--blue-grey);
+          padding-left: 20px;
+        }
+
+        .rk-select-item {
+          padding-left: 25px;
+        }
+      }
+
       .rk-select-item {
         width: 100%;
         height: 30px;

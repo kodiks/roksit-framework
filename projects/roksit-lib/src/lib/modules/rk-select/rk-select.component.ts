@@ -29,6 +29,8 @@ export class RkSelectComponent implements OnInit {
         }
     }
 
+    @Input() grouped = false;
+
     @Input() placeholder = 'Lütfen seçiniz';
 
     @Input() value;
@@ -54,6 +56,8 @@ export class RkSelectComponent implements OnInit {
 
     selectedIndex: number;
 
+    selectedGroupIndex: number;
+
     selectedOption: RkSelectModel;
 
     show = false;
@@ -68,9 +72,10 @@ export class RkSelectComponent implements OnInit {
         }
     }
 
-    public selectOption(option: RkSelectModel, index: number) {
+    public selectOption(option: RkSelectModel, index: number, groupIndex?: number) {
         this.selectedOption = option;
         this.selectedIndex = index;
+        this.selectedGroupIndex = groupIndex;
 
         this.valueChange.emit(option.value);
 
@@ -101,8 +106,10 @@ export class RkSelectComponent implements OnInit {
 export interface RkSelectModel {
     name?: string;
     displayText: string;
-    value: string | number;
+    value?: string | number;
     selected?: boolean;
+
+    groupItems?: RkSelectModel[];
 
     /**
      * @description Feather Icon

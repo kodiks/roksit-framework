@@ -13,13 +13,29 @@
             <input type="text" class="rk-input w-100" [(ngModel)]="searchTerm" [placeholder]="searchPlaceholder">
         </div>
         <div class="rk-select-items">
-            <div class="rk-select-item" [ngClass]="{'active': index == selectedIndex}"
-                *ngFor="let option of options | filter: searchTerm : 'displayText'; let index = index"
-                (click)="selectOption(option, index)" [title]="option.displayText" [ngStyle]="option?.styles">
-                {{ option.displayText }}
+            <ng-container *ngIf="grouped; else elseTemplate">
+                <div class="rk-select-group-item" *ngFor="let option of options; let groupIndex = index">
+                    <div class="rk-select-group-title">{{ option.displayText }}</div>
 
-                <i-feather [name]="option.icon" *ngIf="option.icon" style="margin-top: -5px;"></i-feather>
-            </div>
+                    <div class="rk-select-item" [ngClass]="{'active': index == selectedIndex && groupIndex == selectedGroupIndex}"
+                        *ngFor="let groupItem of option?.groupItems | filter: searchTerm : 'displayText'; let index = index"
+                        (click)="selectOption(groupItem, index, groupIndex)" [title]="groupItem.displayText" [ngStyle]="groupItem?.styles">
+                        {{ groupItem.displayText }}
+
+                        <i-feather [name]="groupItem.icon" *ngIf="groupItem.icon" style="margin-top: -5px;"></i-feather>
+                    </div>
+                </div>
+            </ng-container>
+
+            <ng-template #elseTemplate>
+                <div class="rk-select-item" [ngClass]="{'active': index == selectedIndex}"
+                    *ngFor="let option of options | filter: searchTerm : 'displayText'; let index = index"
+                    (click)="selectOption(option, index)" [title]="option.displayText" [ngStyle]="option?.styles">
+                    {{ option.displayText }}
+
+                    <i-feather [name]="option.icon" *ngIf="option.icon" style="margin-top: -5px;"></i-feather>
+                </div>
+            </ng-template>
         </div>
 
         <button class="rk-select-button ripple" *ngIf="isShowButton" (click)="buttonClick()">
