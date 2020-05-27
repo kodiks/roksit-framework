@@ -37,7 +37,20 @@ export class RkDateComponent implements OnInit, AfterViewInit {
 
     @Input() alignment: 'left' | 'right' = 'left';
 
-    @Input() times: RkDateTime[] = DEFAULT_TIMES;
+    private _times: RkDateTime[] = DEFAULT_TIMES;
+
+    @Input()
+    get times(): RkDateTime[] { return this._times; }
+    set times(times: RkDateTime[]) {
+        this._times = times;
+        this.timesForRkSelect = times.map(x => {
+            return { displayText: x.displayText, value: x.value };
+        });
+    }
+
+    timesForRkSelect: RkSelectModel[] = DEFAULT_TIMES.map(x => {
+        return { displayText: x.displayText, value: x.value };
+    });
 
     @Input() config: RkDateConfig = {
         startHourText: 'Start Hour',
@@ -45,8 +58,13 @@ export class RkDateComponent implements OnInit, AfterViewInit {
         applyText: 'Apply',
         cancelText: 'Cancel',
         customText: 'Custom',
-        selectDateText: 'Select Date'
+        selectDateText: 'Select Date',
+        placeholder: 'Please Select',
+        startDate: 'Start Date',
+        endDate: 'End Date'
     };
+
+    @Input() tab = 1;
 
     // tslint:disable-next-line: no-output-native
     @Output() complete = new EventEmitter();
@@ -188,6 +206,18 @@ export class RkDateComponent implements OnInit, AfterViewInit {
         this.setParametersByDates();
     }
 
+    setTab(val: number) {
+        this.tab = val;
+    }
+
+    selectTimeForSelect($event) {
+        const time = this.times.find(x => x.value === $event);
+
+        if (time) {
+            this.selectTime(time);
+        }
+    }
+
 }
 
 export interface RkDateTime {
@@ -214,4 +244,7 @@ export interface RkDateConfig {
     cancelText?: string;
     selectDateText?: string;
     customText?: string;
+    placeholder?: string;
+    startDate?: string;
+    endDate?: string;
 }

@@ -132,53 +132,53 @@ rk-date {
         }
       }
     }
+  }
+  .rk-datepickers,
+  .rk-datepickers-mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
-    .rk-datepickers {
+    .rk-pickers {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      border-right: 1px solid var(--base-light-color);
+      padding-bottom: 10px;
 
-      .rk-pickers {
+      &:last-child {
+        border-right: none;
+      }
+
+      .rk-datepicker-input {
+        margin-top: 10px;
+        margin-left: 13px;
+      }
+
+      .rk-dp-time {
         display: flex;
-        flex-direction: column;
-        border-right: 1px solid var(--base-light-color);
-        padding-bottom: 10px;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 16px;
 
-        &:last-child {
-          border-right: none;
+        .time-icon {
+          color: var(--blue-grey);
         }
 
-        .rk-datepicker-input {
-          margin-top: 10px;
-          margin-left: 13px;
+        .hour,
+        .minute {
+          margin-left: 10px;
+          flex: 1;
+          width: 60px;
+
+          .rk-input {
+            width: 100%;
+          }
         }
 
-        .rk-dp-time {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          padding: 0 16px;
-
-          .time-icon {
-            color: var(--blue-grey);
-          }
-
-          .hour,
-          .minute {
-            margin-left: 10px;
-            flex: 1;
-            width: 60px;
-
-            .rk-input {
-              width: 100%;
-            }
-          }
-
-          .rk-select {
-            flex: 1;
-            margin-left: 10px;
-            width: 60px;
-          }
+        .rk-select {
+          flex: 1;
+          margin-left: 10px;
+          width: 60px;
         }
       }
     }
@@ -212,5 +212,124 @@ rk-date {
   .rk-date-actions {
     width: 108px;
     padding: 20px 12px;
+  }
+}
+
+.rk-select-dates-mobile {
+  display: none;
+}
+
+.rk-datepickers-mobile {
+  display: none !important;
+}
+
+.rk-date-tabs {
+  display: none;
+}
+
+.rk-date-buttons-mobile {
+  display: none;
+}
+
+@media (max-width: 375px) {
+  .rk-date-container {
+    width: calc(100vw - 50px) !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .rk-date-container {
+    width: 350px;
+    height: 600px;
+
+    .rk-date-header {
+      height: 120px;
+      flex-direction: column;
+
+      > i-feather {
+        display: none;
+      }
+
+      .rk-in {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .rk-input {
+        width: 230px;
+      }
+
+      .rk-date-buttons {
+        display: none !important;
+      }
+    }
+
+    .rk-date-content {
+      padding: 17px 20px;
+      flex-direction: column;
+
+      .rk-select-dates {
+        display: none !important;
+      }
+
+      .rk-select-dates-mobile {
+        display: block;
+
+        .rk-date-head {
+          padding-left: 0;
+          height: auto;
+          line-height: 1;
+          margin-bottom: 7px;
+        }
+      }
+
+      .rk-datepickers {
+        display: none;
+      }
+
+      .rk-datepickers-mobile {
+        display: flex !important;
+
+        .rk-datepicker-input {
+          margin: 0;
+          margin-top: 7px;
+
+          .flatpickr-calendar {
+            width: 100%;
+
+            .flatpickr-rContainer {
+              width: 100%;
+
+              .flatpickr-days {
+                width: 100%;
+
+                .dayContainer {
+                  width: 100%;
+                  min-width: 100%;
+                  max-width: 100%;
+
+                  .flatpickr-day {
+                    max-width: inherit !important;
+                    margin: 2px 0;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .rk-date-tabs {
+        display: flex;
+      }
+    }
+
+    .rk-date-buttons-mobile {
+      display: flex;
+
+      .btn {
+        flex: 1;
+      }
+    }
   }
 }

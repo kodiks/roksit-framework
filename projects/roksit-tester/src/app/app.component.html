@@ -80,14 +80,25 @@
 
     <div class="container-fluid">
 
-      <button class="btn btn-safe">
-        Text
-        <i-feather name="plus"></i-feather>
-      </button>
-      
+      <div class="row mt-4">
+        <div class="col-12">
+          <rk-date (complete)="completed($event)"></rk-date>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col-12">
+          <button class="btn btn-safe">
+            Text
+            <i-feather name="plus"></i-feather>
+          </button>
+        </div>
+      </div>
+
       <div class="row mt-4">
         <div class="col-4">
-          <rk-autocomplete [onSelectClear]="true" [grouped]="true" (onSelect)="onSelect($event)" [items]="autocompleteItems">
+          <rk-autocomplete [onSelectClear]="true" [grouped]="true" (onSelect)="onSelect($event)"
+            [items]="autocompleteItems">
           </rk-autocomplete>
         </div>
       </div>
@@ -210,11 +221,7 @@
       </div>
 
 
-      <div class="row mt-4">
-        <div class="col-12">
-          <rk-date (complete)="completed($event)"></rk-date>
-        </div>
-      </div>
+
 
       <div class="row my-4 gutters-sm">
         <div class="col-md">

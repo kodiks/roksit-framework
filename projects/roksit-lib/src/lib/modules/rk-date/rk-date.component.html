@@ -9,24 +9,27 @@
 
     <div class="rk-date-container" *ngIf="showContainer">
         <div class="rk-date-header">
-            <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center rk-in">
                 <h4>{{ config?.startHourText }}</h4>
                 <div class="rk-input- ml-3">
-                    <input type="text" class="rk-input" readonly (ngModelChange)="changeStartDate()" [ngModel]="startDate | date: 'dd/MM/yyyy HH:mm'">
+                    <input type="text" class="rk-input" readonly (ngModelChange)="changeStartDate()"
+                        [ngModel]="startDate | date: 'dd/MM/yyyy HH:mm'">
                 </div>
             </div>
 
             <i-feather name="arrow-right" class="ml-2 mr-1"></i-feather>
 
-            <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center rk-in">
                 <h4>{{ config?.endHourText }}</h4>
                 <div class="rk-input- ml-3">
-                    <input type="text" class="rk-input" readonly (ngModelChange)="changeEndDate()" [ngModel]="endDate | date: 'dd/MM/yyyy HH:mm'">
+                    <input type="text" class="rk-input" readonly (ngModelChange)="changeEndDate()"
+                        [ngModel]="endDate | date: 'dd/MM/yyyy HH:mm'">
                 </div>
             </div>
 
             <div class="d-flex align-items-center ml-2 rk-date-buttons">
-                <button class="btn px-0 btn-default btn-small mr-2" (click)="setShowContainer(false)">{{ config?.cancelText }}</button>
+                <button class="btn px-0 btn-default btn-small mr-2"
+                    (click)="setShowContainer(false)">{{ config?.cancelText }}</button>
                 <button class="btn px-0 btn-small" (click)="compelete()">{{ config?.applyText }}</button>
             </div>
         </div>
@@ -42,6 +45,12 @@
                 </ul>
             </div>
 
+            <div class="rk-select-dates-mobile">
+                <h6 class="rk-date-head">{{ config?.selectDateText }}</h6>
+
+                <rk-select [options]="timesForRkSelect" [placeholder]="config?.placeholder" (valueChange)="selectTimeForSelect($event)"></rk-select>
+            </div>
+
             <div class="rk-datepickers">
                 <h6 class="rk-date-head pl-3">{{ config?.customText }}</h6>
                 <div class="d-flex">
@@ -52,13 +61,15 @@
                             </div>
 
                             <div class="rk-num hour">
-                                <input type="number" [(ngModel)]="startHour" class="rk-input" value="00" min="0" max="23">
+                                <input type="number" [(ngModel)]="startHour" class="rk-input" value="00" min="0"
+                                    max="23">
                                 <button class="inc" (click)="setStartHour(startHour - 1)"></button>
                                 <button class="dec" (click)="setStartHour(startHour + 1)"></button>
                             </div>
 
                             <div class="rk-num minute">
-                                <input type="number" [(ngModel)]="startMinute" class="rk-input" value="00" min="0" max="59">
+                                <input type="number" [(ngModel)]="startMinute" class="rk-input" value="00" min="0"
+                                    max="59">
                                 <button class="inc" (click)="setStartMinute(startMinute - 1)"></button>
                                 <button class="dec" (click)="setStartMinute(startMinute + 1)"></button>
                             </div>
@@ -84,7 +95,8 @@
                             </div>
 
                             <div class="rk-num minute">
-                                <input type="number" [(ngModel)]="endMinute" class="rk-input" value="00" min="0" max="59">
+                                <input type="number" [(ngModel)]="endMinute" class="rk-input" value="00" min="0"
+                                    max="59">
                                 <button class="inc" (click)="setEndMinute(endMinute - 1)"></button>
                                 <button class="dec" (click)="setEndMinute(endMinute + 1)"></button>
                             </div>
@@ -98,6 +110,73 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="rk-date-tabs rk-tabs my-2">
+                <div class="rk-tab" [ngClass]="{'active': tab === 1}" (click)="setTab(1)">{{ config?.startDate }}</div>
+                <div class="rk-tab" [ngClass]="{'active': tab === 2}" (click)="setTab(2)">{{ config?.endDate }}</div>
+            </div>
+
+            <div class="rk-datepickers-mobile">
+                <div class="rk-pickers" *ngIf="tab === 1">
+                    <div class="rk-dp-time">
+                        <div class="time-icon">
+                            <i-feather name="clock"></i-feather>
+                        </div>
+
+                        <div class="rk-num hour">
+                            <input type="number" [(ngModel)]="startHour" class="rk-input" value="00" min="0" max="23">
+                            <button class="inc" (click)="setStartHour(startHour - 1)"></button>
+                            <button class="dec" (click)="setStartHour(startHour + 1)"></button>
+                        </div>
+
+                        <div class="rk-num minute">
+                            <input type="number" [(ngModel)]="startMinute" class="rk-input" value="00" min="0" max="59">
+                            <button class="inc" (click)="setStartMinute(startMinute - 1)"></button>
+                            <button class="dec" (click)="setStartMinute(startMinute + 1)"></button>
+                        </div>
+
+                        <rk-select [options]="timeTypes"></rk-select>
+                    </div>
+
+                    <div class="rk-datepicker-input">
+                        <input class="rk-input" type="text" mwlFlatpickr [(ngModel)]="startDate"
+                            (ngModelChange)="changeStartDate()" [convertModelValue]="true" [hidden]="true">
+                    </div>
+                </div>
+
+                <div class="rk-pickers" *ngIf="tab === 2">
+                    <div class="rk-dp-time">
+                        <div class="time-icon">
+                            <i-feather name="clock"></i-feather>
+                        </div>
+
+                        <div class="rk-num hour">
+                            <input type="number" [(ngModel)]="endHour" class="rk-input" value="00" min="0" max="23">
+                            <button class="inc" (click)="setEndHour(endHour - 1)"></button>
+                            <button class="dec" (click)="setEndHour(endHour + 1)"></button>
+                        </div>
+
+                        <div class="rk-num minute">
+                            <input type="number" [(ngModel)]="endMinute" class="rk-input" value="00" min="0" max="59">
+                            <button class="inc" (click)="setEndMinute(endMinute - 1)"></button>
+                            <button class="dec" (click)="setEndMinute(endMinute + 1)"></button>
+                        </div>
+
+                        <rk-select [options]="timeTypes"></rk-select>
+                    </div>
+
+                    <div class="rk-datepicker-input">
+                        <input class="rk-input" type="text" mwlFlatpickr [(ngModel)]="endDate"
+                            (ngModelChange)="changeEndDate()" [convertModelValue]="true" [hidden]="true">
+                    </div>
+                </div>
+            </div>
+
+            <div class="rk-date-buttons-mobile">
+                <button class="btn px-0 btn-default btn-small mr-2"
+                    (click)="setShowContainer(false)">{{ config?.cancelText }}</button>
+                <button class="btn px-0 btn-small" (click)="compelete()">{{ config?.applyText }}</button>
             </div>
         </div>
     </div>
