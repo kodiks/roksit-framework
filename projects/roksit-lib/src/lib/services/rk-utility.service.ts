@@ -21,7 +21,7 @@ export class RkUtilityService {
         { key: 'primary-light-200', lightVal: 'rgba(80, 125, 243, 0.2)', darkVal: 'rgba(80, 125, 243, 0.2)' },
         { key: 'primary-light-200', lightVal: '#eaf4f9', darkVal: '#eaf4f9' },
         { key: 'security', lightVal: '#f95656', darkVal: '#f95656' },
-        { key: 'harmful', lightVal: '#f9df56', darkVal: '#f9df56' },
+        { key: 'harmful', lightVal: '#EFBB1E', darkVal: '#EFBB1E' },
         { key: 'safe', lightVal: '#3dd49a', darkVal: '#3dd49a' },
         { key: 'safe-hover', lightVal: '#359e76', darkVal: '#359e76' },
         { key: 'grey', lightVal: '#d8d8d8', darkVal: '#d8d8d8' },
